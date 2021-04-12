@@ -1,8 +1,0 @@
-/* XPECT_SETUP uk.ac.kcl.inf.languages.dot.xpect.XPectTests END_SETUP*/
-
-graph marta {
-	node1
-	node2
-	
-	node1--node2
-}
