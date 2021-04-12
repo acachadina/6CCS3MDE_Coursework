@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dotLanguage" nsURI="http://www.ac.uk/kcl/inf/DotLanguage" nsPrefix="dotLanguage">
+  <eClassifiers xsi:type="ecore:EClass" name="DotLanguage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="graphs" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Graph">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//UndirectedStatement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Digraph">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//DirectedStatement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectedStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UndirectedStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeDeclaration" eSuperTypes="#//DirectedStatement #//UndirectedStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodeName" eType="#//NodeId"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optionalAttributes" eType="#//AttributeList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeId">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" eType="#//Attribute"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LabelAttribute" eSuperTypes="#//Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ColorAttribute" eSuperTypes="#//Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Color"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Color">
+    <eLiterals name="red" literal="red"/>
+    <eLiterals name="blue" value="1" literal="blue"/>
+    <eLiterals name="green" value="2" literal="green"/>
+    <eLiterals name="black" value="3" literal="black"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectedEdgeDeclaration" eSuperTypes="#//DirectedStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="firstNode" eType="#//NodeId"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="secondNode" eType="#//NodeId"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UndirectedEdgeDeclaration" eSuperTypes="#//UndirectedStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="firstNode" eType="#//NodeId"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="secondNode" eType="#//NodeId"/>
+  </eClassifiers>
+</ecore:EPackage>

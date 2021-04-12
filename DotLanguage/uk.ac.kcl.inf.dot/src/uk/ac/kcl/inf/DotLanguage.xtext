@@ -1,0 +1,72 @@
+grammar uk.ac.kcl.inf.DotLanguage with org.eclipse.xtext.common.Terminals
+
+generate dotLanguage "http://www.ac.uk/kcl/inf/DotLanguage"
+
+
+
+/**
+ * TODO: subgraphs???
+ */
+
+DotLanguage:
+	graphs += (Graph | Digraph)*;
+	
+	
+Graph:
+	"graph" name=ID "{" statements += UndirectedStatement* "}"
+;
+
+Digraph:
+	"digraph" name=ID "{" statements += DirectedStatement* "}"
+;
+
+DirectedStatement: 
+	NodeDeclaration ("," | ";")? | DirectedEdgeDeclaration ("," | ";")?
+;
+
+UndirectedStatement: 
+	NodeDeclaration ("," | ";")? | UndirectedEdgeDeclaration ("," | ";")?
+;
+
+NodeDeclaration:
+	nodeName = NodeId (optionalAttributes = AttributeList)?
+;
+
+NodeId:
+	name = ID
+;
+
+AttributeList:
+	"[" attributes = Attribute (',' attributes = Attribute)? "]"
+;
+
+// the only supported attributes for now 
+// will be 'color' and 'label'
+// color defaults to black and the label to the node's ID
+Attribute:
+	LabelAttribute | ColorAttribute
+;
+
+LabelAttribute:
+	"label=" label = ID
+;
+
+ColorAttribute:
+	"color=" color = Color
+;
+
+enum Color:
+	red | blue | green | black
+;
+
+// a node can be a reference to a declared node for now
+DirectedEdgeDeclaration:
+	firstNode = [NodeId] "->" secondNode = [NodeId]
+;
+
+UndirectedEdgeDeclaration:
+	firstNode = [NodeId] "--" secondNode = [NodeId]
+;
+
+
+
