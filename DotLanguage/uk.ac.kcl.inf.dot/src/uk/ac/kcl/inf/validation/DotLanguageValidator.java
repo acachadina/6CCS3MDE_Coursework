@@ -3,6 +3,11 @@
  */
 package uk.ac.kcl.inf.validation;
 
+import org.eclipse.xtext.validation.Check;
+
+import uk.ac.kcl.inf.dotLanguage.DotLanguagePackage;
+import uk.ac.kcl.inf.dotLanguage.Graph;
+
 
 /**
  * This class contains custom validation rules. 
@@ -21,5 +26,29 @@ public class DotLanguageValidator extends AbstractDotLanguageValidator {
 //					INVALID_NAME);
 //		}
 //	}
+	
+
+// STATIC SEMANTIC CHECKS
+	
+//	public static DIRECTED_EDGE_IN_GRAPH = 'uk.ac.kcl.inf.dotLanguage.DIRECTED_EDGE_IN_GRAPH'
+	/**
+	 * Check the graph keyword.
+	 */
+	
+	@Check
+	public void checkGraphKeyword(Graph graph) {
+		String graphString = graph.toString();
+//		if(graphString.substring(0,6) != "graph") {
+//			error("");
+//		}
+		if(graphString.contains("->")){
+			error("Graphs must use undirected edge operator --", 
+					graph, 
+					DotLanguagePackage.Literals.DIRECTED
+//					DIRECTED_EDGE_IN_GRAPH
+					);
+		}
+	}
+	
 	
 }
