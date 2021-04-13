@@ -25,6 +25,14 @@
     </genClasses>
     <genClasses ecoreClass="DotLanguage.ecore#//DirectedStatement"/>
     <genClasses ecoreClass="DotLanguage.ecore#//UndirectedStatement"/>
+    <genClasses ecoreClass="DotLanguage.ecore#//DirectedSubgraphDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DotLanguage.ecore#//DirectedSubgraphDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//DirectedSubgraphDeclaration/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="DotLanguage.ecore#//UndirectedSubgraphDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DotLanguage.ecore#//UndirectedSubgraphDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//UndirectedSubgraphDeclaration/statements"/>
+    </genClasses>
     <genClasses ecoreClass="DotLanguage.ecore#//NodeDeclaration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//NodeDeclaration/nodeName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//NodeDeclaration/optionalAttributes"/>
@@ -33,21 +41,20 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DotLanguage.ecore#//NodeId/name"/>
     </genClasses>
     <genClasses ecoreClass="DotLanguage.ecore#//AttributeList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//AttributeList/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//AttributeList/attr"/>
     </genClasses>
-    <genClasses ecoreClass="DotLanguage.ecore#//Attribute"/>
-    <genClasses ecoreClass="DotLanguage.ecore#//LabelAttribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DotLanguage.ecore#//LabelAttribute/label"/>
-    </genClasses>
-    <genClasses ecoreClass="DotLanguage.ecore#//ColorAttribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DotLanguage.ecore#//ColorAttribute/color"/>
+    <genClasses ecoreClass="DotLanguage.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DotLanguage.ecore#//Attribute/attributeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DotLanguage.ecore#//Attribute/attributeValue"/>
     </genClasses>
     <genClasses ecoreClass="DotLanguage.ecore#//DirectedEdgeDeclaration">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//DirectedEdgeDeclaration/firstNode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DotLanguage.ecore#//DirectedEdgeDeclaration/edge"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//DirectedEdgeDeclaration/secondNode"/>
     </genClasses>
     <genClasses ecoreClass="DotLanguage.ecore#//UndirectedEdgeDeclaration">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//UndirectedEdgeDeclaration/firstNode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DotLanguage.ecore#//UndirectedEdgeDeclaration/edge"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//UndirectedEdgeDeclaration/secondNode"/>
     </genClasses>
   </genPackages>

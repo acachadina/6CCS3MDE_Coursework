@@ -23,6 +23,7 @@ import uk.ac.kcl.inf.dotLanguage.NodeId;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.dotLanguage.impl.DirectedEdgeDeclarationImpl#getFirstNode <em>First Node</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.dotLanguage.impl.DirectedEdgeDeclarationImpl#getEdge <em>Edge</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.dotLanguage.impl.DirectedEdgeDeclarationImpl#getSecondNode <em>Second Node</em>}</li>
  * </ul>
  *
@@ -39,6 +40,26 @@ public class DirectedEdgeDeclarationImpl extends DirectedStatementImpl implement
    * @ordered
    */
   protected NodeId firstNode;
+
+  /**
+   * The default value of the '{@link #getEdge() <em>Edge</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEdge()
+   * @generated
+   * @ordered
+   */
+  protected static final String EDGE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getEdge() <em>Edge</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEdge()
+   * @generated
+   * @ordered
+   */
+  protected String edge = EDGE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getSecondNode() <em>Second Node</em>}' reference.
@@ -122,6 +143,31 @@ public class DirectedEdgeDeclarationImpl extends DirectedStatementImpl implement
    * @generated
    */
   @Override
+  public String getEdge()
+  {
+    return edge;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setEdge(String newEdge)
+  {
+    String oldEdge = edge;
+    edge = newEdge;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DotLanguagePackage.DIRECTED_EDGE_DECLARATION__EDGE, oldEdge, edge));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NodeId getSecondNode()
   {
     if (secondNode != null && secondNode.eIsProxy())
@@ -174,6 +220,8 @@ public class DirectedEdgeDeclarationImpl extends DirectedStatementImpl implement
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__FIRST_NODE:
         if (resolve) return getFirstNode();
         return basicGetFirstNode();
+      case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__EDGE:
+        return getEdge();
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__SECOND_NODE:
         if (resolve) return getSecondNode();
         return basicGetSecondNode();
@@ -193,6 +241,9 @@ public class DirectedEdgeDeclarationImpl extends DirectedStatementImpl implement
     {
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__FIRST_NODE:
         setFirstNode((NodeId)newValue);
+        return;
+      case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__EDGE:
+        setEdge((String)newValue);
         return;
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__SECOND_NODE:
         setSecondNode((NodeId)newValue);
@@ -214,6 +265,9 @@ public class DirectedEdgeDeclarationImpl extends DirectedStatementImpl implement
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__FIRST_NODE:
         setFirstNode((NodeId)null);
         return;
+      case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__EDGE:
+        setEdge(EDGE_EDEFAULT);
+        return;
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__SECOND_NODE:
         setSecondNode((NodeId)null);
         return;
@@ -233,10 +287,29 @@ public class DirectedEdgeDeclarationImpl extends DirectedStatementImpl implement
     {
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__FIRST_NODE:
         return firstNode != null;
+      case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__EDGE:
+        return EDGE_EDEFAULT == null ? edge != null : !EDGE_EDEFAULT.equals(edge);
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__SECOND_NODE:
         return secondNode != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (edge: ");
+    result.append(edge);
+    result.append(')');
+    return result.toString();
   }
 
 } //DirectedEdgeDeclarationImpl

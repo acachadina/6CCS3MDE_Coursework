@@ -69,6 +69,24 @@ public interface DotLanguageFactory extends EFactory
   UndirectedStatement createUndirectedStatement();
 
   /**
+   * Returns a new object of class '<em>Directed Subgraph Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Directed Subgraph Declaration</em>'.
+   * @generated
+   */
+  DirectedSubgraphDeclaration createDirectedSubgraphDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Undirected Subgraph Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Undirected Subgraph Declaration</em>'.
+   * @generated
+   */
+  UndirectedSubgraphDeclaration createUndirectedSubgraphDeclaration();
+
+  /**
    * Returns a new object of class '<em>Node Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -103,24 +121,6 @@ public interface DotLanguageFactory extends EFactory
    * @generated
    */
   Attribute createAttribute();
-
-  /**
-   * Returns a new object of class '<em>Label Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Label Attribute</em>'.
-   * @generated
-   */
-  LabelAttribute createLabelAttribute();
-
-  /**
-   * Returns a new object of class '<em>Color Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Color Attribute</em>'.
-   * @generated
-   */
-  ColorAttribute createColorAttribute();
 
   /**
    * Returns a new object of class '<em>Directed Edge Declaration</em>'.

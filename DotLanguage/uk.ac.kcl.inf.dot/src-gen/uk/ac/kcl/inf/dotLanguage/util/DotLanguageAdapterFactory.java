@@ -101,6 +101,16 @@ public class DotLanguageAdapterFactory extends AdapterFactoryImpl
         return createUndirectedStatementAdapter();
       }
       @Override
+      public Adapter caseDirectedSubgraphDeclaration(DirectedSubgraphDeclaration object)
+      {
+        return createDirectedSubgraphDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseUndirectedSubgraphDeclaration(UndirectedSubgraphDeclaration object)
+      {
+        return createUndirectedSubgraphDeclarationAdapter();
+      }
+      @Override
       public Adapter caseNodeDeclaration(NodeDeclaration object)
       {
         return createNodeDeclarationAdapter();
@@ -119,16 +129,6 @@ public class DotLanguageAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAttribute(Attribute object)
       {
         return createAttributeAdapter();
-      }
-      @Override
-      public Adapter caseLabelAttribute(LabelAttribute object)
-      {
-        return createLabelAttributeAdapter();
-      }
-      @Override
-      public Adapter caseColorAttribute(ColorAttribute object)
-      {
-        return createColorAttributeAdapter();
       }
       @Override
       public Adapter caseDirectedEdgeDeclaration(DirectedEdgeDeclaration object)
@@ -238,6 +238,36 @@ public class DotLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.dotLanguage.DirectedSubgraphDeclaration <em>Directed Subgraph Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.dotLanguage.DirectedSubgraphDeclaration
+   * @generated
+   */
+  public Adapter createDirectedSubgraphDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.dotLanguage.UndirectedSubgraphDeclaration <em>Undirected Subgraph Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.dotLanguage.UndirectedSubgraphDeclaration
+   * @generated
+   */
+  public Adapter createUndirectedSubgraphDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.dotLanguage.NodeDeclaration <em>Node Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -293,36 +323,6 @@ public class DotLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAttributeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.dotLanguage.LabelAttribute <em>Label Attribute</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.kcl.inf.dotLanguage.LabelAttribute
-   * @generated
-   */
-  public Adapter createLabelAttributeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.dotLanguage.ColorAttribute <em>Color Attribute</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.kcl.inf.dotLanguage.ColorAttribute
-   * @generated
-   */
-  public Adapter createColorAttributeAdapter()
   {
     return null;
   }

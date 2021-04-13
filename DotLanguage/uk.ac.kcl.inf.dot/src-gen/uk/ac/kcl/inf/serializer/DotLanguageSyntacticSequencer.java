@@ -21,18 +21,14 @@ import uk.ac.kcl.inf.services.DotLanguageGrammarAccess;
 public class DotLanguageSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected DotLanguageGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_DirectedStatement___CommaKeyword_0_1_0_or_SemicolonKeyword_0_1_1__q;
-	protected AbstractElementAlias match_DirectedStatement___CommaKeyword_1_1_0_or_SemicolonKeyword_1_1_1__q;
-	protected AbstractElementAlias match_UndirectedStatement___CommaKeyword_0_1_0_or_SemicolonKeyword_0_1_1__q;
-	protected AbstractElementAlias match_UndirectedStatement___CommaKeyword_1_1_0_or_SemicolonKeyword_1_1_1__q;
+	protected AbstractElementAlias match_DirectedStatement___CommaKeyword_1_0_or_SemicolonKeyword_1_1__q;
+	protected AbstractElementAlias match_UndirectedStatement___CommaKeyword_1_0_or_SemicolonKeyword_1_1__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DotLanguageGrammarAccess) access;
-		match_DirectedStatement___CommaKeyword_0_1_0_or_SemicolonKeyword_0_1_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getDirectedStatementAccess().getCommaKeyword_0_1_0()), new TokenAlias(false, false, grammarAccess.getDirectedStatementAccess().getSemicolonKeyword_0_1_1()));
-		match_DirectedStatement___CommaKeyword_1_1_0_or_SemicolonKeyword_1_1_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getDirectedStatementAccess().getCommaKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getDirectedStatementAccess().getSemicolonKeyword_1_1_1()));
-		match_UndirectedStatement___CommaKeyword_0_1_0_or_SemicolonKeyword_0_1_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getUndirectedStatementAccess().getCommaKeyword_0_1_0()), new TokenAlias(false, false, grammarAccess.getUndirectedStatementAccess().getSemicolonKeyword_0_1_1()));
-		match_UndirectedStatement___CommaKeyword_1_1_0_or_SemicolonKeyword_1_1_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getUndirectedStatementAccess().getCommaKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getUndirectedStatementAccess().getSemicolonKeyword_1_1_1()));
+		match_DirectedStatement___CommaKeyword_1_0_or_SemicolonKeyword_1_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getDirectedStatementAccess().getCommaKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getDirectedStatementAccess().getSemicolonKeyword_1_1()));
+		match_UndirectedStatement___CommaKeyword_1_0_or_SemicolonKeyword_1_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getUndirectedStatementAccess().getCommaKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getUndirectedStatementAccess().getSemicolonKeyword_1_1()));
 	}
 	
 	@Override
@@ -47,14 +43,10 @@ public class DotLanguageSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_DirectedStatement___CommaKeyword_0_1_0_or_SemicolonKeyword_0_1_1__q.equals(syntax))
-				emit_DirectedStatement___CommaKeyword_0_1_0_or_SemicolonKeyword_0_1_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_DirectedStatement___CommaKeyword_1_1_0_or_SemicolonKeyword_1_1_1__q.equals(syntax))
-				emit_DirectedStatement___CommaKeyword_1_1_0_or_SemicolonKeyword_1_1_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_UndirectedStatement___CommaKeyword_0_1_0_or_SemicolonKeyword_0_1_1__q.equals(syntax))
-				emit_UndirectedStatement___CommaKeyword_0_1_0_or_SemicolonKeyword_0_1_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_UndirectedStatement___CommaKeyword_1_1_0_or_SemicolonKeyword_1_1_1__q.equals(syntax))
-				emit_UndirectedStatement___CommaKeyword_1_1_0_or_SemicolonKeyword_1_1_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_DirectedStatement___CommaKeyword_1_0_or_SemicolonKeyword_1_1__q.equals(syntax))
+				emit_DirectedStatement___CommaKeyword_1_0_or_SemicolonKeyword_1_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_UndirectedStatement___CommaKeyword_1_0_or_SemicolonKeyword_1_1__q.equals(syntax))
+				emit_UndirectedStatement___CommaKeyword_1_0_or_SemicolonKeyword_1_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -64,21 +56,13 @@ public class DotLanguageSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (',' | ';')?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     name=ID '{' '}' (ambiguity) (rule end)
 	 *     nodeName=NodeId (ambiguity) (rule end)
 	 *     optionalAttributes=AttributeList (ambiguity) (rule end)
-	 */
-	protected void emit_DirectedStatement___CommaKeyword_0_1_0_or_SemicolonKeyword_0_1_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     (',' | ';')?
-	 *
-	 * This ambiguous syntax occurs at:
 	 *     secondNode=[NodeId|ID] (ambiguity) (rule end)
+	 *     statements+=DirectedStatement '}' (ambiguity) (rule end)
 	 */
-	protected void emit_DirectedStatement___CommaKeyword_1_1_0_or_SemicolonKeyword_1_1_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_DirectedStatement___CommaKeyword_1_0_or_SemicolonKeyword_1_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -87,21 +71,13 @@ public class DotLanguageSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (',' | ';')?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     name=ID '{' '}' (ambiguity) (rule end)
 	 *     nodeName=NodeId (ambiguity) (rule end)
 	 *     optionalAttributes=AttributeList (ambiguity) (rule end)
-	 */
-	protected void emit_UndirectedStatement___CommaKeyword_0_1_0_or_SemicolonKeyword_0_1_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     (',' | ';')?
-	 *
-	 * This ambiguous syntax occurs at:
 	 *     secondNode=[NodeId|ID] (ambiguity) (rule end)
+	 *     statements+=UndirectedStatement '}' (ambiguity) (rule end)
 	 */
-	protected void emit_UndirectedStatement___CommaKeyword_1_1_0_or_SemicolonKeyword_1_1_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_UndirectedStatement___CommaKeyword_1_0_or_SemicolonKeyword_1_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

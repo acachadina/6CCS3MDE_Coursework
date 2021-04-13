@@ -1,6 +1,16 @@
 graph anna {
-	node1
+	node1 [color=red, label=anna]
 	node2
 	
 	node1--node2
+	node2--node1
+	
+}
+
+digraph marta {
+	node2 [color=red, label=anna]
+	node1 [color=red, label=anna]
+	
+	node1->node2 
+	node2->node1
 }
