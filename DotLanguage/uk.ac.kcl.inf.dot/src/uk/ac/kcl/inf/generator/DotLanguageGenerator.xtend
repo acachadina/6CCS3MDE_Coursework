@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import uk.ac.kcl.inf.dotLanguage.DotLanguage
 
 /**
  * Generates code from your model files on save.
@@ -16,10 +17,43 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class DotLanguageGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		val model = resource.contents.head as DotLanguage
+		
+		val className = resource.deriveClassName
+		fsa.generateFile(className + ".java", model.doGenerateClass(className))
+		
+				
 	}
+		
+	def deriveClassName(Resource resource) {
+		val originalFilename = resource.URI.lastSegment
+		
+		// string to the first dot
+		originalFilename.substring(0, originalFilename.indexOf('.')).toFirstUpper + "Dot"
+		
+	}
+	
+	
+	def doGenerateClass(DotLanguage program, String className) '''
+		
+		import uk.ac.kcl.inf.dotLanguage.library.*;
+		
+		public class «className» {
+			public static void main (String args[]){
+				DotFrame tf = new DotFrame();
+				
+				Dot d = new Dot(tf){
+					@Override
+					
+					public void run() {
+						
+					}
+					
+				}
+			}
+		}
+	
+	'''
+
+		
 }
