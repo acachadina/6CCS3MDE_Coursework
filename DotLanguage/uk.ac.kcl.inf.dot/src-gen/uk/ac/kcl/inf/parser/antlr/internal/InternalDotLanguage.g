@@ -633,35 +633,10 @@ ruleAttributeList returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
-		(
-			otherlv_2=','
-			{
-				newLeafNode(otherlv_2, grammarAccess.getAttributeListAccess().getCommaKeyword_2_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAttributeListAccess().getAttrAttributeParserRuleCall_2_1_0());
-					}
-					lv_attr_3_0=ruleAttribute
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAttributeListRule());
-						}
-						add(
-							$current,
-							"attr",
-							lv_attr_3_0,
-							"uk.ac.kcl.inf.DotLanguage.Attribute");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		otherlv_4=']'
+		)*
+		otherlv_2=']'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getAttributeListAccess().getRightSquareBracketKeyword_3());
+			newLeafNode(otherlv_2, grammarAccess.getAttributeListAccess().getRightSquareBracketKeyword_2());
 		}
 	)
 ;
@@ -722,6 +697,12 @@ ruleAttribute returns [EObject current=null]
 				}
 			)
 		)
+		(
+			otherlv_3=','
+			{
+				newLeafNode(otherlv_3, grammarAccess.getAttributeAccess().getCommaKeyword_3());
+			}
+		)?
 	)
 ;
 

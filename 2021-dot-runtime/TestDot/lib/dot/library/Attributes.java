@@ -7,8 +7,9 @@ import java.util.List;
 
 public class Attributes{
 
-    private Color color;
-    private String label;
+    private Color lineColor = new Color(0,0,0);
+    private String label = null;
+    private Color fillColor = new Color(255,255,255);
 
 
     public Attributes(HashMap<String, String> attributes){
@@ -18,24 +19,25 @@ public class Attributes{
     	
     	for(String attribute : attributes.keySet()) {
     		switch(attribute) {
-    		case "color" : {
-    			color = toColor(attributes.get(attribute));
-    			break;
+	    		case "fillColor" : {
+	    			fillColor = toColor(attributes.get(attribute));
+	    			break;
+	    		}
+	    		case "label" : {
+	    			label = attributes.get(attribute);
+	    			break;
+	    		}
+	    		case "lineColor" : {
+	    			lineColor = toColor(attributes.get(attribute));
+	    			break;
+	    		}
     		}
-    		case "label" : {
-    			label = attributes.get(attribute);
-    			break;
-    		}
-    }
     	}
+    	
 
     }
 
-    public Attributes(){
-    	//default 
-    	color = new Color(255,255,255);
-    	label = null;
-    }
+    public Attributes(){}
     
     public Color toColor(String colorString) {
     	try {
@@ -46,13 +48,17 @@ public class Attributes{
     	}
     }
 
-    public Color getColor(){
-        return color;
+    public Color getFillColor(){
+        return fillColor;
     }
 
     public String getLabel(){
         return label;
     }
+
+	public Color getLineColor() {
+		return lineColor;
+	}
 
 
 }

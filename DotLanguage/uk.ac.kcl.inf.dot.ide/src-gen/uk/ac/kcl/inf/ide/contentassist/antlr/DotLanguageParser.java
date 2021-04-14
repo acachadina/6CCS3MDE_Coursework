@@ -45,7 +45,6 @@ public class DotLanguageParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getUndirectedSubgraphDeclarationAccess().getGroup(), "rule__UndirectedSubgraphDeclaration__Group__0");
 			builder.put(grammarAccess.getNodeDeclarationAccess().getGroup(), "rule__NodeDeclaration__Group__0");
 			builder.put(grammarAccess.getAttributeListAccess().getGroup(), "rule__AttributeList__Group__0");
-			builder.put(grammarAccess.getAttributeListAccess().getGroup_2(), "rule__AttributeList__Group_2__0");
 			builder.put(grammarAccess.getAttributeAccess().getGroup(), "rule__Attribute__Group__0");
 			builder.put(grammarAccess.getDirectedEdgeDeclarationAccess().getGroup(), "rule__DirectedEdgeDeclaration__Group__0");
 			builder.put(grammarAccess.getUndirectedEdgeDeclarationAccess().getGroup(), "rule__UndirectedEdgeDeclaration__Group__0");
@@ -62,7 +61,6 @@ public class DotLanguageParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getNodeDeclarationAccess().getOptionalAttributesAssignment_1(), "rule__NodeDeclaration__OptionalAttributesAssignment_1");
 			builder.put(grammarAccess.getNodeIdAccess().getNameAssignment(), "rule__NodeId__NameAssignment");
 			builder.put(grammarAccess.getAttributeListAccess().getAttrAssignment_1(), "rule__AttributeList__AttrAssignment_1");
-			builder.put(grammarAccess.getAttributeListAccess().getAttrAssignment_2_1(), "rule__AttributeList__AttrAssignment_2_1");
 			builder.put(grammarAccess.getAttributeAccess().getAttributeNameAssignment_0(), "rule__Attribute__AttributeNameAssignment_0");
 			builder.put(grammarAccess.getAttributeAccess().getAttributeValueAssignment_2(), "rule__Attribute__AttributeValueAssignment_2");
 			builder.put(grammarAccess.getDirectedEdgeDeclarationAccess().getFirstNodeAssignment_0(), "rule__DirectedEdgeDeclaration__FirstNodeAssignment_0");

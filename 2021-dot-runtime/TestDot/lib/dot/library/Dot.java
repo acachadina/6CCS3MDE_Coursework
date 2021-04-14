@@ -73,12 +73,14 @@ public abstract class Dot
 
         if(graph.containsNode(firstNode)) {
             node1 = graph.getNode(firstNode);
+            node1.setConnected();
         } else{
             node1 = new DotNode(firstNode, new Attributes());
         }
 
         if(graph.containsNode(secondNode)) {
             node2 = graph.getNode(secondNode);
+            node2.setConnected();
         } else{
             node2 = new DotNode(secondNode, new Attributes());
         }

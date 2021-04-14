@@ -22,6 +22,7 @@ public class DotGraph
     private LinkedHashMap<DotNode, List<DotNode>> edges = new LinkedHashMap<>();
     private Attributes attributes = new Attributes();
     private boolean isDirected;
+    private int notConnectedY = 40;
 
     public DotGraph(boolean isDirected){
         this.isDirected = isDirected;
@@ -50,18 +51,6 @@ public class DotGraph
 
     }
 
-    public Color getColor(DotNode node){
-        // check if node has defined attributes, otherwise take the ones
-        // for the graph
-        Color nodeColor = node.getColor();
-
-        if(nodeColor == null){
-            return attributes.getColor();
-        }
-
-        return node.getColor();
-    }
-    
     public String getLabel(DotNode node) {
     	if(node.getLabel() == null) {
     		return node.getName();
@@ -115,22 +104,18 @@ public class DotGraph
 
     }
 
-    public  void drawNode(Graphics g, DotNode node, int height, int width){
+    public  void drawNode(Graphics g, DotNode node, int height, int width, int x, int y){
         // given the center coordinates of the circle, get the
         // ones for the upper left corner
-        int upperLeftX = node.getX() - (width/2);
-        int upperLeftY = node.getY() - (height/2);
-
-        if(node.getX() != 0 && node.getY() != 0) {
-            g.setColor(getColor(node));
-            g.fillOval(upperLeftX, upperLeftY, width, height);
-            g.drawOval(upperLeftX, upperLeftY, width, height);
-            g.setColor(new Color(0,0,0));
-            
-            int labelX = node.getX() - (width/3);
-            int labelY = node.getY();
-            g.drawString(getLabel(node), labelX, labelY);
-        }
+    	g.setColor(node.getFillColor());
+        g.fillOval(x, y, width, height);
+        g.setColor(node.getLineColor());
+        g.drawOval(x, y, width, height);
+        g.setColor(new Color(0,0,0)); 
+        
+        int labelX = node.getX() - (width/3);
+        int labelY = node.getY();
+        g.drawString(getLabel(node), labelX, labelY); 
     }
 
     public void create(Graphics g, int width, int height){
@@ -170,13 +155,18 @@ public class DotGraph
 
         // Draw nodes
         for(DotNode node : nodes.values()) {
-            // int nodeHeight = Math.max(height, f.getHeight());
-            // int nodeWidth = Math.max(width, f.stringWidint nodeHeight = Math.max(height, f.getHeight());
-        	
         	int nodeHeight = Math.max(50, f.getHeight());
             int nodeWidth = Math.max(50, f.stringWidth(getLabel(node))+50/2);
-
-            drawNode(g, node, nodeHeight, nodeWidth);
+            
+            if(!node.isConnected()) {
+        		node.setCoords(50, notConnectedY);
+            	notConnectedY += (nodeHeight + 5);
+        	}
+            
+            int upperLeftX = node.getX() - (nodeWidth/2);
+            int upperLeftY = node.getY() - (nodeHeight/2);
+            
+            drawNode(g, node, nodeHeight, nodeWidth, upperLeftX, upperLeftY);       	            	                      
         }
         
         System.out.println("Nodes drawn ");

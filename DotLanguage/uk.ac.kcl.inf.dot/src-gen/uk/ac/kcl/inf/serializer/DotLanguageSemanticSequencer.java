@@ -85,7 +85,7 @@ public class DotLanguageSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     AttributeList returns AttributeList
 	 *
 	 * Constraint:
-	 *     (attr+=Attribute attr+=Attribute?)
+	 *     attr+=Attribute+
 	 */
 	protected void sequence_AttributeList(ISerializationContext context, AttributeList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

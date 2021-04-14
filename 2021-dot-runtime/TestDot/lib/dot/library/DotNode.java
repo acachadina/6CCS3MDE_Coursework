@@ -6,7 +6,7 @@ import java.awt.*;
 public class DotNode
 {
     private String name;
-    private boolean drawn = false;      //whether it has been drawn in the graph or not
+    private boolean connected = false;      //whether it is connected to an edge
     private int x,y = 0;
     private Attributes attributes = new Attributes();
 
@@ -28,8 +28,12 @@ public class DotNode
         this.y = y;
     }
 
-    public Color getColor(){
-        return attributes.getColor();
+    public Color getFillColor(){
+        return attributes.getFillColor();
+    }
+    
+    public Color getLineColor(){
+        return attributes.getLineColor();
     }
 
     public String getLabel(){
@@ -39,4 +43,12 @@ public class DotNode
     public String getName(){
         return name;
     }
+    
+    public void setConnected() {
+    	connected = true;
+    }
+
+	public boolean isConnected() {
+		return connected;
+	}
 }

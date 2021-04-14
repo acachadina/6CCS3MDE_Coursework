@@ -333,45 +333,29 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cAttrAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cAttrAttributeParserRuleCall_1_0 = (RuleCall)cAttrAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cAttrAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cAttrAttributeParserRuleCall_2_1_0 = (RuleCall)cAttrAssignment_2_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cRightSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//// the only supported attributes for now 
 		//// will be 'color' and 'label'
 		//// color defaults to black and the label to the node's ID
 		//AttributeList:
-		//	"[" attr+=Attribute (',' attr+=Attribute)? "]";
+		//	"[" attr+=Attribute* "]";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"[" attr+=Attribute (',' attr+=Attribute)? "]"
+		//"[" attr+=Attribute* "]"
 		public Group getGroup() { return cGroup; }
 		
 		//"["
 		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
 		
-		//attr+=Attribute
+		//attr+=Attribute*
 		public Assignment getAttrAssignment_1() { return cAttrAssignment_1; }
 		
 		//Attribute
 		public RuleCall getAttrAttributeParserRuleCall_1_0() { return cAttrAttributeParserRuleCall_1_0; }
 		
-		//(',' attr+=Attribute)?
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//','
-		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
-		
-		//attr+=Attribute
-		public Assignment getAttrAssignment_2_1() { return cAttrAssignment_2_1; }
-		
-		//Attribute
-		public RuleCall getAttrAttributeParserRuleCall_2_1_0() { return cAttrAttributeParserRuleCall_2_1_0; }
-		
 		//"]"
-		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
+		public Keyword getRightSquareBracketKeyword_2() { return cRightSquareBracketKeyword_2; }
 	}
 	public class AttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.DotLanguage.Attribute");
@@ -381,12 +365,13 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cAttributeValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cAttributeValueIDTerminalRuleCall_2_0 = (RuleCall)cAttributeValueAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Attribute:
-		//	attributeName=ID "=" attributeValue=ID;
+		//	attributeName=ID "=" attributeValue=ID ','?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//attributeName=ID "=" attributeValue=ID
+		//attributeName=ID "=" attributeValue=ID ','?
 		public Group getGroup() { return cGroup; }
 		
 		//attributeName=ID
@@ -403,6 +388,9 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ID
 		public RuleCall getAttributeValueIDTerminalRuleCall_2_0() { return cAttributeValueIDTerminalRuleCall_2_0; }
+		
+		//','?
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
 	}
 	public class DirectedEdgeDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.DotLanguage.DirectedEdgeDeclaration");
@@ -725,7 +713,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	//// will be 'color' and 'label'
 	//// color defaults to black and the label to the node's ID
 	//AttributeList:
-	//	"[" attr+=Attribute (',' attr+=Attribute)? "]";
+	//	"[" attr+=Attribute* "]";
 	public AttributeListElements getAttributeListAccess() {
 		return pAttributeList;
 	}
@@ -735,7 +723,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Attribute:
-	//	attributeName=ID "=" attributeValue=ID;
+	//	attributeName=ID "=" attributeValue=ID ','?;
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;
 	}

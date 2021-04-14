@@ -17,10 +17,15 @@ public class TestDot {
 			
 			HashMap<String, String> attrnode2 = new HashMap<>();
 			attrnode2.put("color","blue");
-			attrnode2.put("label","node2");
+			attrnode2.put("marta","hola");
+			attrnode2.put("label","hello");
 			addNode("anna", "node2", attrnode2, false);
 			
 			addNode("anna", "node3", null, false);
+			
+			addNode("anna", "node4", null, false);
+			
+			addNode("anna", "node5", null, false);
 			
 			addEdge("anna", "node1", "node2"); 
 			

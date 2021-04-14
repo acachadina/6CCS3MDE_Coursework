@@ -59,11 +59,11 @@ NodeId:
 // will be 'color' and 'label'
 // color defaults to black and the label to the node's ID
 AttributeList:
-	"[" attr += Attribute (',' attr += Attribute)? "]"
+	"[" attr += Attribute* "]"
 ;
 
 Attribute:
-	attributeName = ID "=" attributeValue = ID
+	attributeName = ID "=" attributeValue = ID (',')?
 ;
 
 

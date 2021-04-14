@@ -657,11 +657,11 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             if ( (LA5_0==RULE_ID) ) {
                 int LA5_1 = input.LA(2);
 
-                if ( (LA5_1==21) ) {
-                    alt5=2;
-                }
-                else if ( (LA5_1==EOF||LA5_1==RULE_ID||LA5_1==13||(LA5_1>=15 && LA5_1<=18)) ) {
+                if ( (LA5_1==EOF||LA5_1==RULE_ID||LA5_1==13||(LA5_1>=15 && LA5_1<=18)) ) {
                     alt5=1;
+                }
+                else if ( (LA5_1==21) ) {
+                    alt5=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -860,11 +860,11 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
             if ( (LA7_0==RULE_ID) ) {
                 int LA7_1 = input.LA(2);
 
-                if ( (LA7_1==22) ) {
-                    alt7=2;
-                }
-                else if ( (LA7_1==EOF||LA7_1==RULE_ID||LA7_1==13||(LA7_1>=15 && LA7_1<=18)) ) {
+                if ( (LA7_1==EOF||LA7_1==RULE_ID||LA7_1==13||(LA7_1>=15 && LA7_1<=18)) ) {
                     alt7=1;
+                }
+                else if ( (LA7_1==22) ) {
+                    alt7=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -1613,118 +1613,81 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttributeList"
-    // InternalDotLanguage.g:606:1: ruleAttributeList returns [EObject current=null] : (otherlv_0= '[' ( (lv_attr_1_0= ruleAttribute ) ) (otherlv_2= ',' ( (lv_attr_3_0= ruleAttribute ) ) )? otherlv_4= ']' ) ;
+    // InternalDotLanguage.g:606:1: ruleAttributeList returns [EObject current=null] : (otherlv_0= '[' ( (lv_attr_1_0= ruleAttribute ) )* otherlv_2= ']' ) ;
     public final EObject ruleAttributeList() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_2=null;
-        Token otherlv_4=null;
         EObject lv_attr_1_0 = null;
-
-        EObject lv_attr_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalDotLanguage.g:612:2: ( (otherlv_0= '[' ( (lv_attr_1_0= ruleAttribute ) ) (otherlv_2= ',' ( (lv_attr_3_0= ruleAttribute ) ) )? otherlv_4= ']' ) )
-            // InternalDotLanguage.g:613:2: (otherlv_0= '[' ( (lv_attr_1_0= ruleAttribute ) ) (otherlv_2= ',' ( (lv_attr_3_0= ruleAttribute ) ) )? otherlv_4= ']' )
+            // InternalDotLanguage.g:612:2: ( (otherlv_0= '[' ( (lv_attr_1_0= ruleAttribute ) )* otherlv_2= ']' ) )
+            // InternalDotLanguage.g:613:2: (otherlv_0= '[' ( (lv_attr_1_0= ruleAttribute ) )* otherlv_2= ']' )
             {
-            // InternalDotLanguage.g:613:2: (otherlv_0= '[' ( (lv_attr_1_0= ruleAttribute ) ) (otherlv_2= ',' ( (lv_attr_3_0= ruleAttribute ) ) )? otherlv_4= ']' )
-            // InternalDotLanguage.g:614:3: otherlv_0= '[' ( (lv_attr_1_0= ruleAttribute ) ) (otherlv_2= ',' ( (lv_attr_3_0= ruleAttribute ) ) )? otherlv_4= ']'
+            // InternalDotLanguage.g:613:2: (otherlv_0= '[' ( (lv_attr_1_0= ruleAttribute ) )* otherlv_2= ']' )
+            // InternalDotLanguage.g:614:3: otherlv_0= '[' ( (lv_attr_1_0= ruleAttribute ) )* otherlv_2= ']'
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_4); 
+            otherlv_0=(Token)match(input,18,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAttributeListAccess().getLeftSquareBracketKeyword_0());
             		
-            // InternalDotLanguage.g:618:3: ( (lv_attr_1_0= ruleAttribute ) )
-            // InternalDotLanguage.g:619:4: (lv_attr_1_0= ruleAttribute )
-            {
-            // InternalDotLanguage.g:619:4: (lv_attr_1_0= ruleAttribute )
-            // InternalDotLanguage.g:620:5: lv_attr_1_0= ruleAttribute
-            {
+            // InternalDotLanguage.g:618:3: ( (lv_attr_1_0= ruleAttribute ) )*
+            loop12:
+            do {
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-            					newCompositeNode(grammarAccess.getAttributeListAccess().getAttrAttributeParserRuleCall_1_0());
-            				
-            pushFollow(FOLLOW_9);
-            lv_attr_1_0=ruleAttribute();
-
-            state._fsp--;
+                if ( (LA12_0==RULE_ID) ) {
+                    alt12=1;
+                }
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getAttributeListRule());
-            					}
-            					add(
-            						current,
-            						"attr",
-            						lv_attr_1_0,
-            						"uk.ac.kcl.inf.DotLanguage.Attribute");
-            					afterParserOrEnumRuleCall();
-            				
+                switch (alt12) {
+            	case 1 :
+            	    // InternalDotLanguage.g:619:4: (lv_attr_1_0= ruleAttribute )
+            	    {
+            	    // InternalDotLanguage.g:619:4: (lv_attr_1_0= ruleAttribute )
+            	    // InternalDotLanguage.g:620:5: lv_attr_1_0= ruleAttribute
+            	    {
 
-            }
+            	    					newCompositeNode(grammarAccess.getAttributeListAccess().getAttrAttributeParserRuleCall_1_0());
+            	    				
+            	    pushFollow(FOLLOW_9);
+            	    lv_attr_1_0=ruleAttribute();
 
-
-            }
-
-            // InternalDotLanguage.g:637:3: (otherlv_2= ',' ( (lv_attr_3_0= ruleAttribute ) ) )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
-
-            if ( (LA12_0==15) ) {
-                alt12=1;
-            }
-            switch (alt12) {
-                case 1 :
-                    // InternalDotLanguage.g:638:4: otherlv_2= ',' ( (lv_attr_3_0= ruleAttribute ) )
-                    {
-                    otherlv_2=(Token)match(input,15,FOLLOW_4); 
-
-                    				newLeafNode(otherlv_2, grammarAccess.getAttributeListAccess().getCommaKeyword_2_0());
-                    			
-                    // InternalDotLanguage.g:642:4: ( (lv_attr_3_0= ruleAttribute ) )
-                    // InternalDotLanguage.g:643:5: (lv_attr_3_0= ruleAttribute )
-                    {
-                    // InternalDotLanguage.g:643:5: (lv_attr_3_0= ruleAttribute )
-                    // InternalDotLanguage.g:644:6: lv_attr_3_0= ruleAttribute
-                    {
-
-                    						newCompositeNode(grammarAccess.getAttributeListAccess().getAttrAttributeParserRuleCall_2_1_0());
-                    					
-                    pushFollow(FOLLOW_10);
-                    lv_attr_3_0=ruleAttribute();
-
-                    state._fsp--;
+            	    state._fsp--;
 
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getAttributeListRule());
-                    						}
-                    						add(
-                    							current,
-                    							"attr",
-                    							lv_attr_3_0,
-                    							"uk.ac.kcl.inf.DotLanguage.Attribute");
-                    						afterParserOrEnumRuleCall();
-                    					
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getAttributeListRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"attr",
+            	    						lv_attr_1_0,
+            	    						"uk.ac.kcl.inf.DotLanguage.Attribute");
+            	    					afterParserOrEnumRuleCall();
+            	    				
 
-                    }
-
-
-                    }
+            	    }
 
 
-                    }
-                    break;
+            	    }
+            	    break;
 
-            }
+            	default :
+            	    break loop12;
+                }
+            } while (true);
 
-            otherlv_4=(Token)match(input,19,FOLLOW_2); 
+            otherlv_2=(Token)match(input,19,FOLLOW_2); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getAttributeListAccess().getRightSquareBracketKeyword_3());
+            			newLeafNode(otherlv_2, grammarAccess.getAttributeListAccess().getRightSquareBracketKeyword_2());
             		
 
             }
@@ -1749,7 +1712,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttribute"
-    // InternalDotLanguage.g:670:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
+    // InternalDotLanguage.g:645:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
     public final EObject entryRuleAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -1757,8 +1720,8 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDotLanguage.g:670:50: (iv_ruleAttribute= ruleAttribute EOF )
-            // InternalDotLanguage.g:671:2: iv_ruleAttribute= ruleAttribute EOF
+            // InternalDotLanguage.g:645:50: (iv_ruleAttribute= ruleAttribute EOF )
+            // InternalDotLanguage.g:646:2: iv_ruleAttribute= ruleAttribute EOF
             {
              newCompositeNode(grammarAccess.getAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -1785,31 +1748,32 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttribute"
-    // InternalDotLanguage.g:677:1: ruleAttribute returns [EObject current=null] : ( ( (lv_attributeName_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_attributeValue_2_0= RULE_ID ) ) ) ;
+    // InternalDotLanguage.g:652:1: ruleAttribute returns [EObject current=null] : ( ( (lv_attributeName_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_attributeValue_2_0= RULE_ID ) ) (otherlv_3= ',' )? ) ;
     public final EObject ruleAttribute() throws RecognitionException {
         EObject current = null;
 
         Token lv_attributeName_0_0=null;
         Token otherlv_1=null;
         Token lv_attributeValue_2_0=null;
+        Token otherlv_3=null;
 
 
         	enterRule();
 
         try {
-            // InternalDotLanguage.g:683:2: ( ( ( (lv_attributeName_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_attributeValue_2_0= RULE_ID ) ) ) )
-            // InternalDotLanguage.g:684:2: ( ( (lv_attributeName_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_attributeValue_2_0= RULE_ID ) ) )
+            // InternalDotLanguage.g:658:2: ( ( ( (lv_attributeName_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_attributeValue_2_0= RULE_ID ) ) (otherlv_3= ',' )? ) )
+            // InternalDotLanguage.g:659:2: ( ( (lv_attributeName_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_attributeValue_2_0= RULE_ID ) ) (otherlv_3= ',' )? )
             {
-            // InternalDotLanguage.g:684:2: ( ( (lv_attributeName_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_attributeValue_2_0= RULE_ID ) ) )
-            // InternalDotLanguage.g:685:3: ( (lv_attributeName_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_attributeValue_2_0= RULE_ID ) )
+            // InternalDotLanguage.g:659:2: ( ( (lv_attributeName_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_attributeValue_2_0= RULE_ID ) ) (otherlv_3= ',' )? )
+            // InternalDotLanguage.g:660:3: ( (lv_attributeName_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_attributeValue_2_0= RULE_ID ) ) (otherlv_3= ',' )?
             {
-            // InternalDotLanguage.g:685:3: ( (lv_attributeName_0_0= RULE_ID ) )
-            // InternalDotLanguage.g:686:4: (lv_attributeName_0_0= RULE_ID )
+            // InternalDotLanguage.g:660:3: ( (lv_attributeName_0_0= RULE_ID ) )
+            // InternalDotLanguage.g:661:4: (lv_attributeName_0_0= RULE_ID )
             {
-            // InternalDotLanguage.g:686:4: (lv_attributeName_0_0= RULE_ID )
-            // InternalDotLanguage.g:687:5: lv_attributeName_0_0= RULE_ID
+            // InternalDotLanguage.g:661:4: (lv_attributeName_0_0= RULE_ID )
+            // InternalDotLanguage.g:662:5: lv_attributeName_0_0= RULE_ID
             {
-            lv_attributeName_0_0=(Token)match(input,RULE_ID,FOLLOW_11); 
+            lv_attributeName_0_0=(Token)match(input,RULE_ID,FOLLOW_10); 
 
             					newLeafNode(lv_attributeName_0_0, grammarAccess.getAttributeAccess().getAttributeNameIDTerminalRuleCall_0_0());
             				
@@ -1833,13 +1797,13 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getAttributeAccess().getEqualsSignKeyword_1());
             		
-            // InternalDotLanguage.g:707:3: ( (lv_attributeValue_2_0= RULE_ID ) )
-            // InternalDotLanguage.g:708:4: (lv_attributeValue_2_0= RULE_ID )
+            // InternalDotLanguage.g:682:3: ( (lv_attributeValue_2_0= RULE_ID ) )
+            // InternalDotLanguage.g:683:4: (lv_attributeValue_2_0= RULE_ID )
             {
-            // InternalDotLanguage.g:708:4: (lv_attributeValue_2_0= RULE_ID )
-            // InternalDotLanguage.g:709:5: lv_attributeValue_2_0= RULE_ID
+            // InternalDotLanguage.g:683:4: (lv_attributeValue_2_0= RULE_ID )
+            // InternalDotLanguage.g:684:5: lv_attributeValue_2_0= RULE_ID
             {
-            lv_attributeValue_2_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+            lv_attributeValue_2_0=(Token)match(input,RULE_ID,FOLLOW_11); 
 
             					newLeafNode(lv_attributeValue_2_0, grammarAccess.getAttributeAccess().getAttributeValueIDTerminalRuleCall_2_0());
             				
@@ -1856,6 +1820,27 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
+
+            }
+
+            // InternalDotLanguage.g:700:3: (otherlv_3= ',' )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
+
+            if ( (LA13_0==15) ) {
+                alt13=1;
+            }
+            switch (alt13) {
+                case 1 :
+                    // InternalDotLanguage.g:701:4: otherlv_3= ','
+                    {
+                    otherlv_3=(Token)match(input,15,FOLLOW_2); 
+
+                    				newLeafNode(otherlv_3, grammarAccess.getAttributeAccess().getCommaKeyword_3());
+                    			
+
+                    }
+                    break;
 
             }
 
@@ -1882,7 +1867,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDirectedEdgeDeclaration"
-    // InternalDotLanguage.g:729:1: entryRuleDirectedEdgeDeclaration returns [EObject current=null] : iv_ruleDirectedEdgeDeclaration= ruleDirectedEdgeDeclaration EOF ;
+    // InternalDotLanguage.g:710:1: entryRuleDirectedEdgeDeclaration returns [EObject current=null] : iv_ruleDirectedEdgeDeclaration= ruleDirectedEdgeDeclaration EOF ;
     public final EObject entryRuleDirectedEdgeDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -1890,8 +1875,8 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDotLanguage.g:729:64: (iv_ruleDirectedEdgeDeclaration= ruleDirectedEdgeDeclaration EOF )
-            // InternalDotLanguage.g:730:2: iv_ruleDirectedEdgeDeclaration= ruleDirectedEdgeDeclaration EOF
+            // InternalDotLanguage.g:710:64: (iv_ruleDirectedEdgeDeclaration= ruleDirectedEdgeDeclaration EOF )
+            // InternalDotLanguage.g:711:2: iv_ruleDirectedEdgeDeclaration= ruleDirectedEdgeDeclaration EOF
             {
              newCompositeNode(grammarAccess.getDirectedEdgeDeclarationRule()); 
             pushFollow(FOLLOW_1);
@@ -1918,7 +1903,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDirectedEdgeDeclaration"
-    // InternalDotLanguage.g:736:1: ruleDirectedEdgeDeclaration returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( (lv_directedEdge_1_0= ruleDirectedEdge ) ) ( (otherlv_2= RULE_ID ) ) ) ;
+    // InternalDotLanguage.g:717:1: ruleDirectedEdgeDeclaration returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( (lv_directedEdge_1_0= ruleDirectedEdge ) ) ( (otherlv_2= RULE_ID ) ) ) ;
     public final EObject ruleDirectedEdgeDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -1931,17 +1916,17 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDotLanguage.g:742:2: ( ( ( (otherlv_0= RULE_ID ) ) ( (lv_directedEdge_1_0= ruleDirectedEdge ) ) ( (otherlv_2= RULE_ID ) ) ) )
-            // InternalDotLanguage.g:743:2: ( ( (otherlv_0= RULE_ID ) ) ( (lv_directedEdge_1_0= ruleDirectedEdge ) ) ( (otherlv_2= RULE_ID ) ) )
+            // InternalDotLanguage.g:723:2: ( ( ( (otherlv_0= RULE_ID ) ) ( (lv_directedEdge_1_0= ruleDirectedEdge ) ) ( (otherlv_2= RULE_ID ) ) ) )
+            // InternalDotLanguage.g:724:2: ( ( (otherlv_0= RULE_ID ) ) ( (lv_directedEdge_1_0= ruleDirectedEdge ) ) ( (otherlv_2= RULE_ID ) ) )
             {
-            // InternalDotLanguage.g:743:2: ( ( (otherlv_0= RULE_ID ) ) ( (lv_directedEdge_1_0= ruleDirectedEdge ) ) ( (otherlv_2= RULE_ID ) ) )
-            // InternalDotLanguage.g:744:3: ( (otherlv_0= RULE_ID ) ) ( (lv_directedEdge_1_0= ruleDirectedEdge ) ) ( (otherlv_2= RULE_ID ) )
+            // InternalDotLanguage.g:724:2: ( ( (otherlv_0= RULE_ID ) ) ( (lv_directedEdge_1_0= ruleDirectedEdge ) ) ( (otherlv_2= RULE_ID ) ) )
+            // InternalDotLanguage.g:725:3: ( (otherlv_0= RULE_ID ) ) ( (lv_directedEdge_1_0= ruleDirectedEdge ) ) ( (otherlv_2= RULE_ID ) )
             {
-            // InternalDotLanguage.g:744:3: ( (otherlv_0= RULE_ID ) )
-            // InternalDotLanguage.g:745:4: (otherlv_0= RULE_ID )
+            // InternalDotLanguage.g:725:3: ( (otherlv_0= RULE_ID ) )
+            // InternalDotLanguage.g:726:4: (otherlv_0= RULE_ID )
             {
-            // InternalDotLanguage.g:745:4: (otherlv_0= RULE_ID )
-            // InternalDotLanguage.g:746:5: otherlv_0= RULE_ID
+            // InternalDotLanguage.g:726:4: (otherlv_0= RULE_ID )
+            // InternalDotLanguage.g:727:5: otherlv_0= RULE_ID
             {
 
             					if (current==null) {
@@ -1958,11 +1943,11 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDotLanguage.g:757:3: ( (lv_directedEdge_1_0= ruleDirectedEdge ) )
-            // InternalDotLanguage.g:758:4: (lv_directedEdge_1_0= ruleDirectedEdge )
+            // InternalDotLanguage.g:738:3: ( (lv_directedEdge_1_0= ruleDirectedEdge ) )
+            // InternalDotLanguage.g:739:4: (lv_directedEdge_1_0= ruleDirectedEdge )
             {
-            // InternalDotLanguage.g:758:4: (lv_directedEdge_1_0= ruleDirectedEdge )
-            // InternalDotLanguage.g:759:5: lv_directedEdge_1_0= ruleDirectedEdge
+            // InternalDotLanguage.g:739:4: (lv_directedEdge_1_0= ruleDirectedEdge )
+            // InternalDotLanguage.g:740:5: lv_directedEdge_1_0= ruleDirectedEdge
             {
 
             					newCompositeNode(grammarAccess.getDirectedEdgeDeclarationAccess().getDirectedEdgeDirectedEdgeParserRuleCall_1_0());
@@ -1989,11 +1974,11 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDotLanguage.g:776:3: ( (otherlv_2= RULE_ID ) )
-            // InternalDotLanguage.g:777:4: (otherlv_2= RULE_ID )
+            // InternalDotLanguage.g:757:3: ( (otherlv_2= RULE_ID ) )
+            // InternalDotLanguage.g:758:4: (otherlv_2= RULE_ID )
             {
-            // InternalDotLanguage.g:777:4: (otherlv_2= RULE_ID )
-            // InternalDotLanguage.g:778:5: otherlv_2= RULE_ID
+            // InternalDotLanguage.g:758:4: (otherlv_2= RULE_ID )
+            // InternalDotLanguage.g:759:5: otherlv_2= RULE_ID
             {
 
             					if (current==null) {
@@ -2033,7 +2018,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUndirectedEdgeDeclaration"
-    // InternalDotLanguage.g:793:1: entryRuleUndirectedEdgeDeclaration returns [EObject current=null] : iv_ruleUndirectedEdgeDeclaration= ruleUndirectedEdgeDeclaration EOF ;
+    // InternalDotLanguage.g:774:1: entryRuleUndirectedEdgeDeclaration returns [EObject current=null] : iv_ruleUndirectedEdgeDeclaration= ruleUndirectedEdgeDeclaration EOF ;
     public final EObject entryRuleUndirectedEdgeDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -2041,8 +2026,8 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDotLanguage.g:793:66: (iv_ruleUndirectedEdgeDeclaration= ruleUndirectedEdgeDeclaration EOF )
-            // InternalDotLanguage.g:794:2: iv_ruleUndirectedEdgeDeclaration= ruleUndirectedEdgeDeclaration EOF
+            // InternalDotLanguage.g:774:66: (iv_ruleUndirectedEdgeDeclaration= ruleUndirectedEdgeDeclaration EOF )
+            // InternalDotLanguage.g:775:2: iv_ruleUndirectedEdgeDeclaration= ruleUndirectedEdgeDeclaration EOF
             {
              newCompositeNode(grammarAccess.getUndirectedEdgeDeclarationRule()); 
             pushFollow(FOLLOW_1);
@@ -2069,7 +2054,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUndirectedEdgeDeclaration"
-    // InternalDotLanguage.g:800:1: ruleUndirectedEdgeDeclaration returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( (lv_undirectedEdge_1_0= ruleUndirectedEdge ) ) ( (otherlv_2= RULE_ID ) ) ) ;
+    // InternalDotLanguage.g:781:1: ruleUndirectedEdgeDeclaration returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( (lv_undirectedEdge_1_0= ruleUndirectedEdge ) ) ( (otherlv_2= RULE_ID ) ) ) ;
     public final EObject ruleUndirectedEdgeDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -2082,17 +2067,17 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDotLanguage.g:806:2: ( ( ( (otherlv_0= RULE_ID ) ) ( (lv_undirectedEdge_1_0= ruleUndirectedEdge ) ) ( (otherlv_2= RULE_ID ) ) ) )
-            // InternalDotLanguage.g:807:2: ( ( (otherlv_0= RULE_ID ) ) ( (lv_undirectedEdge_1_0= ruleUndirectedEdge ) ) ( (otherlv_2= RULE_ID ) ) )
+            // InternalDotLanguage.g:787:2: ( ( ( (otherlv_0= RULE_ID ) ) ( (lv_undirectedEdge_1_0= ruleUndirectedEdge ) ) ( (otherlv_2= RULE_ID ) ) ) )
+            // InternalDotLanguage.g:788:2: ( ( (otherlv_0= RULE_ID ) ) ( (lv_undirectedEdge_1_0= ruleUndirectedEdge ) ) ( (otherlv_2= RULE_ID ) ) )
             {
-            // InternalDotLanguage.g:807:2: ( ( (otherlv_0= RULE_ID ) ) ( (lv_undirectedEdge_1_0= ruleUndirectedEdge ) ) ( (otherlv_2= RULE_ID ) ) )
-            // InternalDotLanguage.g:808:3: ( (otherlv_0= RULE_ID ) ) ( (lv_undirectedEdge_1_0= ruleUndirectedEdge ) ) ( (otherlv_2= RULE_ID ) )
+            // InternalDotLanguage.g:788:2: ( ( (otherlv_0= RULE_ID ) ) ( (lv_undirectedEdge_1_0= ruleUndirectedEdge ) ) ( (otherlv_2= RULE_ID ) ) )
+            // InternalDotLanguage.g:789:3: ( (otherlv_0= RULE_ID ) ) ( (lv_undirectedEdge_1_0= ruleUndirectedEdge ) ) ( (otherlv_2= RULE_ID ) )
             {
-            // InternalDotLanguage.g:808:3: ( (otherlv_0= RULE_ID ) )
-            // InternalDotLanguage.g:809:4: (otherlv_0= RULE_ID )
+            // InternalDotLanguage.g:789:3: ( (otherlv_0= RULE_ID ) )
+            // InternalDotLanguage.g:790:4: (otherlv_0= RULE_ID )
             {
-            // InternalDotLanguage.g:809:4: (otherlv_0= RULE_ID )
-            // InternalDotLanguage.g:810:5: otherlv_0= RULE_ID
+            // InternalDotLanguage.g:790:4: (otherlv_0= RULE_ID )
+            // InternalDotLanguage.g:791:5: otherlv_0= RULE_ID
             {
 
             					if (current==null) {
@@ -2109,11 +2094,11 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDotLanguage.g:821:3: ( (lv_undirectedEdge_1_0= ruleUndirectedEdge ) )
-            // InternalDotLanguage.g:822:4: (lv_undirectedEdge_1_0= ruleUndirectedEdge )
+            // InternalDotLanguage.g:802:3: ( (lv_undirectedEdge_1_0= ruleUndirectedEdge ) )
+            // InternalDotLanguage.g:803:4: (lv_undirectedEdge_1_0= ruleUndirectedEdge )
             {
-            // InternalDotLanguage.g:822:4: (lv_undirectedEdge_1_0= ruleUndirectedEdge )
-            // InternalDotLanguage.g:823:5: lv_undirectedEdge_1_0= ruleUndirectedEdge
+            // InternalDotLanguage.g:803:4: (lv_undirectedEdge_1_0= ruleUndirectedEdge )
+            // InternalDotLanguage.g:804:5: lv_undirectedEdge_1_0= ruleUndirectedEdge
             {
 
             					newCompositeNode(grammarAccess.getUndirectedEdgeDeclarationAccess().getUndirectedEdgeUndirectedEdgeParserRuleCall_1_0());
@@ -2140,11 +2125,11 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDotLanguage.g:840:3: ( (otherlv_2= RULE_ID ) )
-            // InternalDotLanguage.g:841:4: (otherlv_2= RULE_ID )
+            // InternalDotLanguage.g:821:3: ( (otherlv_2= RULE_ID ) )
+            // InternalDotLanguage.g:822:4: (otherlv_2= RULE_ID )
             {
-            // InternalDotLanguage.g:841:4: (otherlv_2= RULE_ID )
-            // InternalDotLanguage.g:842:5: otherlv_2= RULE_ID
+            // InternalDotLanguage.g:822:4: (otherlv_2= RULE_ID )
+            // InternalDotLanguage.g:823:5: otherlv_2= RULE_ID
             {
 
             					if (current==null) {
@@ -2184,7 +2169,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDirectedEdge"
-    // InternalDotLanguage.g:857:1: entryRuleDirectedEdge returns [String current=null] : iv_ruleDirectedEdge= ruleDirectedEdge EOF ;
+    // InternalDotLanguage.g:838:1: entryRuleDirectedEdge returns [String current=null] : iv_ruleDirectedEdge= ruleDirectedEdge EOF ;
     public final String entryRuleDirectedEdge() throws RecognitionException {
         String current = null;
 
@@ -2192,8 +2177,8 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDotLanguage.g:857:52: (iv_ruleDirectedEdge= ruleDirectedEdge EOF )
-            // InternalDotLanguage.g:858:2: iv_ruleDirectedEdge= ruleDirectedEdge EOF
+            // InternalDotLanguage.g:838:52: (iv_ruleDirectedEdge= ruleDirectedEdge EOF )
+            // InternalDotLanguage.g:839:2: iv_ruleDirectedEdge= ruleDirectedEdge EOF
             {
              newCompositeNode(grammarAccess.getDirectedEdgeRule()); 
             pushFollow(FOLLOW_1);
@@ -2220,7 +2205,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDirectedEdge"
-    // InternalDotLanguage.g:864:1: ruleDirectedEdge returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= '->' ;
+    // InternalDotLanguage.g:845:1: ruleDirectedEdge returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= '->' ;
     public final AntlrDatatypeRuleToken ruleDirectedEdge() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2230,8 +2215,8 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDotLanguage.g:870:2: (kw= '->' )
-            // InternalDotLanguage.g:871:2: kw= '->'
+            // InternalDotLanguage.g:851:2: (kw= '->' )
+            // InternalDotLanguage.g:852:2: kw= '->'
             {
             kw=(Token)match(input,21,FOLLOW_2); 
 
@@ -2258,7 +2243,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUndirectedEdge"
-    // InternalDotLanguage.g:879:1: entryRuleUndirectedEdge returns [String current=null] : iv_ruleUndirectedEdge= ruleUndirectedEdge EOF ;
+    // InternalDotLanguage.g:860:1: entryRuleUndirectedEdge returns [String current=null] : iv_ruleUndirectedEdge= ruleUndirectedEdge EOF ;
     public final String entryRuleUndirectedEdge() throws RecognitionException {
         String current = null;
 
@@ -2266,8 +2251,8 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDotLanguage.g:879:54: (iv_ruleUndirectedEdge= ruleUndirectedEdge EOF )
-            // InternalDotLanguage.g:880:2: iv_ruleUndirectedEdge= ruleUndirectedEdge EOF
+            // InternalDotLanguage.g:860:54: (iv_ruleUndirectedEdge= ruleUndirectedEdge EOF )
+            // InternalDotLanguage.g:861:2: iv_ruleUndirectedEdge= ruleUndirectedEdge EOF
             {
              newCompositeNode(grammarAccess.getUndirectedEdgeRule()); 
             pushFollow(FOLLOW_1);
@@ -2294,7 +2279,7 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUndirectedEdge"
-    // InternalDotLanguage.g:886:1: ruleUndirectedEdge returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= '--' ;
+    // InternalDotLanguage.g:867:1: ruleUndirectedEdge returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= '--' ;
     public final AntlrDatatypeRuleToken ruleUndirectedEdge() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2304,8 +2289,8 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDotLanguage.g:892:2: (kw= '--' )
-            // InternalDotLanguage.g:893:2: kw= '--'
+            // InternalDotLanguage.g:873:2: (kw= '--' )
+            // InternalDotLanguage.g:874:2: kw= '--'
             {
             kw=(Token)match(input,22,FOLLOW_2); 
 
@@ -2343,9 +2328,9 @@ public class InternalDotLanguageParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000022010L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000018002L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000088000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000080010L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000008002L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000400000L});
 
