@@ -135,19 +135,18 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final RuleCall cNodeDeclarationParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
 		private final RuleCall cDirectedEdgeDeclarationParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
-		private final RuleCall cDirectedSubgraphDeclarationParserRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Keyword cCommaKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
 		private final Keyword cSemicolonKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
 		
 		//DirectedStatement:
-		//	(NodeDeclaration | DirectedEdgeDeclaration | DirectedSubgraphDeclaration) ("," | ";")?;
+		//	(NodeDeclaration | DirectedEdgeDeclaration) ("," | ";")?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(NodeDeclaration | DirectedEdgeDeclaration | DirectedSubgraphDeclaration) ("," | ";")?
+		//(NodeDeclaration | DirectedEdgeDeclaration) ("," | ";")?
 		public Group getGroup() { return cGroup; }
 		
-		//(NodeDeclaration | DirectedEdgeDeclaration | DirectedSubgraphDeclaration)
+		//(NodeDeclaration | DirectedEdgeDeclaration)
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 		
 		//NodeDeclaration
@@ -155,9 +154,6 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//DirectedEdgeDeclaration
 		public RuleCall getDirectedEdgeDeclarationParserRuleCall_0_1() { return cDirectedEdgeDeclarationParserRuleCall_0_1; }
-		
-		//DirectedSubgraphDeclaration
-		public RuleCall getDirectedSubgraphDeclarationParserRuleCall_0_2() { return cDirectedSubgraphDeclarationParserRuleCall_0_2; }
 		
 		//("," | ";")?
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
@@ -174,19 +170,18 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final RuleCall cNodeDeclarationParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
 		private final RuleCall cUndirectedEdgeDeclarationParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
-		private final RuleCall cUndirectedSubgraphDeclarationParserRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Keyword cCommaKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
 		private final Keyword cSemicolonKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
 		
 		//UndirectedStatement:
-		//	(NodeDeclaration | UndirectedEdgeDeclaration | UndirectedSubgraphDeclaration) ("," | ";")?;
+		//	(NodeDeclaration | UndirectedEdgeDeclaration) ("," | ";")?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(NodeDeclaration | UndirectedEdgeDeclaration | UndirectedSubgraphDeclaration) ("," | ";")?
+		//(NodeDeclaration | UndirectedEdgeDeclaration) ("," | ";")?
 		public Group getGroup() { return cGroup; }
 		
-		//(NodeDeclaration | UndirectedEdgeDeclaration | UndirectedSubgraphDeclaration)
+		//(NodeDeclaration | UndirectedEdgeDeclaration)
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 		
 		//NodeDeclaration
@@ -194,9 +189,6 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//UndirectedEdgeDeclaration
 		public RuleCall getUndirectedEdgeDeclarationParserRuleCall_0_1() { return cUndirectedEdgeDeclarationParserRuleCall_0_1; }
-		
-		//UndirectedSubgraphDeclaration
-		public RuleCall getUndirectedSubgraphDeclarationParserRuleCall_0_2() { return cUndirectedSubgraphDeclarationParserRuleCall_0_2; }
 		
 		//("," | ";")?
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
@@ -206,84 +198,6 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//";"
 		public Keyword getSemicolonKeyword_1_1() { return cSemicolonKeyword_1_1; }
-	}
-	public class DirectedSubgraphDeclarationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.DotLanguage.DirectedSubgraphDeclaration");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSubgraphKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cStatementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cStatementsDirectedStatementParserRuleCall_3_0 = (RuleCall)cStatementsAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		//DirectedSubgraphDeclaration:
-		//	"subgraph" name=ID "{" statements+=DirectedStatement* "}";
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"subgraph" name=ID "{" statements+=DirectedStatement* "}"
-		public Group getGroup() { return cGroup; }
-		
-		//"subgraph"
-		public Keyword getSubgraphKeyword_0() { return cSubgraphKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//statements+=DirectedStatement*
-		public Assignment getStatementsAssignment_3() { return cStatementsAssignment_3; }
-		
-		//DirectedStatement
-		public RuleCall getStatementsDirectedStatementParserRuleCall_3_0() { return cStatementsDirectedStatementParserRuleCall_3_0; }
-		
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
-	}
-	public class UndirectedSubgraphDeclarationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.DotLanguage.UndirectedSubgraphDeclaration");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSubgraphKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cStatementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cStatementsUndirectedStatementParserRuleCall_3_0 = (RuleCall)cStatementsAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		//UndirectedSubgraphDeclaration:
-		//	"subgraph" name=ID "{" statements+=UndirectedStatement* "}";
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"subgraph" name=ID "{" statements+=UndirectedStatement* "}"
-		public Group getGroup() { return cGroup; }
-		
-		//"subgraph"
-		public Keyword getSubgraphKeyword_0() { return cSubgraphKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//statements+=UndirectedStatement*
-		public Assignment getStatementsAssignment_3() { return cStatementsAssignment_3; }
-		
-		//UndirectedStatement
-		public RuleCall getStatementsUndirectedStatementParserRuleCall_3_0() { return cStatementsUndirectedStatementParserRuleCall_3_0; }
-		
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class NodeDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.DotLanguage.NodeDeclaration");
@@ -339,16 +253,16 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//// will be 'color' and 'label'
 		//// color defaults to black and the label to the node's ID
 		//AttributeList:
-		//	"[" attr+=Attribute* "]";
+		//	"[" attr+=Attribute+ "]";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"[" attr+=Attribute* "]"
+		//"[" attr+=Attribute+ "]"
 		public Group getGroup() { return cGroup; }
 		
 		//"["
 		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
 		
-		//attr+=Attribute*
+		//attr+=Attribute+
 		public Assignment getAttrAssignment_1() { return cAttrAssignment_1; }
 		
 		//Attribute
@@ -401,15 +315,14 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cDirectedEdgeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cDirectedEdgeDirectedEdgeParserRuleCall_1_0 = (RuleCall)cDirectedEdgeAssignment_1.eContents().get(0);
 		private final Assignment cSecondNodeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cSecondNodeNodeIdCrossReference_2_0 = (CrossReference)cSecondNodeAssignment_2.eContents().get(0);
-		private final RuleCall cSecondNodeNodeIdIDTerminalRuleCall_2_0_1 = (RuleCall)cSecondNodeNodeIdCrossReference_2_0.eContents().get(1);
+		private final RuleCall cSecondNodeRightEdgeDeclarationParserRuleCall_2_0 = (RuleCall)cSecondNodeAssignment_2.eContents().get(0);
 		
 		//// a node can be a reference to a declared node for now
 		//DirectedEdgeDeclaration:
-		//	firstNode=[NodeId] directedEdge=DirectedEdge secondNode=[NodeId];
+		//	firstNode=[NodeId] directedEdge=DirectedEdge secondNode=RightEdgeDeclaration;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//firstNode=[NodeId] directedEdge=DirectedEdge secondNode=[NodeId]
+		//firstNode=[NodeId] directedEdge=DirectedEdge secondNode=RightEdgeDeclaration
 		public Group getGroup() { return cGroup; }
 		
 		//firstNode=[NodeId]
@@ -427,14 +340,11 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//DirectedEdge
 		public RuleCall getDirectedEdgeDirectedEdgeParserRuleCall_1_0() { return cDirectedEdgeDirectedEdgeParserRuleCall_1_0; }
 		
-		//secondNode=[NodeId]
+		//secondNode=RightEdgeDeclaration
 		public Assignment getSecondNodeAssignment_2() { return cSecondNodeAssignment_2; }
 		
-		//[NodeId]
-		public CrossReference getSecondNodeNodeIdCrossReference_2_0() { return cSecondNodeNodeIdCrossReference_2_0; }
-		
-		//ID
-		public RuleCall getSecondNodeNodeIdIDTerminalRuleCall_2_0_1() { return cSecondNodeNodeIdIDTerminalRuleCall_2_0_1; }
+		//RightEdgeDeclaration
+		public RuleCall getSecondNodeRightEdgeDeclarationParserRuleCall_2_0() { return cSecondNodeRightEdgeDeclarationParserRuleCall_2_0; }
 	}
 	public class UndirectedEdgeDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.DotLanguage.UndirectedEdgeDeclaration");
@@ -445,14 +355,13 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cUndirectedEdgeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cUndirectedEdgeUndirectedEdgeParserRuleCall_1_0 = (RuleCall)cUndirectedEdgeAssignment_1.eContents().get(0);
 		private final Assignment cSecondNodeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cSecondNodeNodeIdCrossReference_2_0 = (CrossReference)cSecondNodeAssignment_2.eContents().get(0);
-		private final RuleCall cSecondNodeNodeIdIDTerminalRuleCall_2_0_1 = (RuleCall)cSecondNodeNodeIdCrossReference_2_0.eContents().get(1);
+		private final RuleCall cSecondNodeRightEdgeDeclarationParserRuleCall_2_0 = (RuleCall)cSecondNodeAssignment_2.eContents().get(0);
 		
 		//UndirectedEdgeDeclaration:
-		//	firstNode=[NodeId] undirectedEdge=UndirectedEdge secondNode=[NodeId];
+		//	firstNode=[NodeId] undirectedEdge=UndirectedEdge secondNode=RightEdgeDeclaration;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//firstNode=[NodeId] undirectedEdge=UndirectedEdge secondNode=[NodeId]
+		//firstNode=[NodeId] undirectedEdge=UndirectedEdge secondNode=RightEdgeDeclaration
 		public Group getGroup() { return cGroup; }
 		
 		//firstNode=[NodeId]
@@ -470,14 +379,69 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//UndirectedEdge
 		public RuleCall getUndirectedEdgeUndirectedEdgeParserRuleCall_1_0() { return cUndirectedEdgeUndirectedEdgeParserRuleCall_1_0; }
 		
-		//secondNode=[NodeId]
+		//secondNode=RightEdgeDeclaration
 		public Assignment getSecondNodeAssignment_2() { return cSecondNodeAssignment_2; }
 		
+		//RightEdgeDeclaration
+		public RuleCall getSecondNodeRightEdgeDeclarationParserRuleCall_2_0() { return cSecondNodeRightEdgeDeclarationParserRuleCall_2_0; }
+	}
+	public class RightEdgeDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.DotLanguage.RightEdgeDeclaration");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cSecondNodeAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final CrossReference cSecondNodeNodeIdCrossReference_0_0 = (CrossReference)cSecondNodeAssignment_0.eContents().get(0);
+		private final RuleCall cSecondNodeNodeIdIDTerminalRuleCall_0_0_1 = (RuleCall)cSecondNodeNodeIdCrossReference_0_0.eContents().get(1);
+		private final RuleCall cNodeListParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//RightEdgeDeclaration:
+		//	secondNode=[NodeId] | NodeList;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//secondNode=[NodeId] | NodeList
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//secondNode=[NodeId]
+		public Assignment getSecondNodeAssignment_0() { return cSecondNodeAssignment_0; }
+		
 		//[NodeId]
-		public CrossReference getSecondNodeNodeIdCrossReference_2_0() { return cSecondNodeNodeIdCrossReference_2_0; }
+		public CrossReference getSecondNodeNodeIdCrossReference_0_0() { return cSecondNodeNodeIdCrossReference_0_0; }
 		
 		//ID
-		public RuleCall getSecondNodeNodeIdIDTerminalRuleCall_2_0_1() { return cSecondNodeNodeIdIDTerminalRuleCall_2_0_1; }
+		public RuleCall getSecondNodeNodeIdIDTerminalRuleCall_0_0_1() { return cSecondNodeNodeIdIDTerminalRuleCall_0_0_1; }
+		
+		//NodeList
+		public RuleCall getNodeListParserRuleCall_1() { return cNodeListParserRuleCall_1; }
+	}
+	public class NodeListElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.DotLanguage.NodeList");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNodesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cNodesNodeIdCrossReference_1_0 = (CrossReference)cNodesAssignment_1.eContents().get(0);
+		private final RuleCall cNodesNodeIdIDTerminalRuleCall_1_0_1 = (RuleCall)cNodesNodeIdCrossReference_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//NodeList:
+		//	'{' nodes+=[NodeId]+ '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'{' nodes+=[NodeId]+ '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+		
+		//nodes+=[NodeId]+
+		public Assignment getNodesAssignment_1() { return cNodesAssignment_1; }
+		
+		//[NodeId]
+		public CrossReference getNodesNodeIdCrossReference_1_0() { return cNodesNodeIdCrossReference_1_0; }
+		
+		//ID
+		public RuleCall getNodesNodeIdIDTerminalRuleCall_1_0_1() { return cNodesNodeIdIDTerminalRuleCall_1_0_1; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2() { return cRightCurlyBracketKeyword_2; }
 	}
 	public class DirectedEdgeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.DotLanguage.DirectedEdge");
@@ -551,8 +515,6 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private final DigraphElements pDigraph;
 	private final DirectedStatementElements pDirectedStatement;
 	private final UndirectedStatementElements pUndirectedStatement;
-	private final DirectedSubgraphDeclarationElements pDirectedSubgraphDeclaration;
-	private final UndirectedSubgraphDeclarationElements pUndirectedSubgraphDeclaration;
 	private final NodeDeclarationElements pNodeDeclaration;
 	private final NodeIdElements pNodeId;
 	private final AttributeListElements pAttributeList;
@@ -560,6 +522,8 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private final ColorElements eColor;
 	private final DirectedEdgeDeclarationElements pDirectedEdgeDeclaration;
 	private final UndirectedEdgeDeclarationElements pUndirectedEdgeDeclaration;
+	private final RightEdgeDeclarationElements pRightEdgeDeclaration;
+	private final NodeListElements pNodeList;
 	private final DirectedEdgeElements pDirectedEdge;
 	private final UndirectedEdgeElements pUndirectedEdge;
 	
@@ -577,8 +541,6 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDigraph = new DigraphElements();
 		this.pDirectedStatement = new DirectedStatementElements();
 		this.pUndirectedStatement = new UndirectedStatementElements();
-		this.pDirectedSubgraphDeclaration = new DirectedSubgraphDeclarationElements();
-		this.pUndirectedSubgraphDeclaration = new UndirectedSubgraphDeclarationElements();
 		this.pNodeDeclaration = new NodeDeclarationElements();
 		this.pNodeId = new NodeIdElements();
 		this.pAttributeList = new AttributeListElements();
@@ -586,6 +548,8 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		this.eColor = new ColorElements();
 		this.pDirectedEdgeDeclaration = new DirectedEdgeDeclarationElements();
 		this.pUndirectedEdgeDeclaration = new UndirectedEdgeDeclarationElements();
+		this.pRightEdgeDeclaration = new RightEdgeDeclarationElements();
+		this.pNodeList = new NodeListElements();
 		this.pDirectedEdge = new DirectedEdgeElements();
 		this.pUndirectedEdge = new UndirectedEdgeElements();
 	}
@@ -650,7 +614,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//DirectedStatement:
-	//	(NodeDeclaration | DirectedEdgeDeclaration | DirectedSubgraphDeclaration) ("," | ";")?;
+	//	(NodeDeclaration | DirectedEdgeDeclaration) ("," | ";")?;
 	public DirectedStatementElements getDirectedStatementAccess() {
 		return pDirectedStatement;
 	}
@@ -660,33 +624,13 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//UndirectedStatement:
-	//	(NodeDeclaration | UndirectedEdgeDeclaration | UndirectedSubgraphDeclaration) ("," | ";")?;
+	//	(NodeDeclaration | UndirectedEdgeDeclaration) ("," | ";")?;
 	public UndirectedStatementElements getUndirectedStatementAccess() {
 		return pUndirectedStatement;
 	}
 	
 	public ParserRule getUndirectedStatementRule() {
 		return getUndirectedStatementAccess().getRule();
-	}
-	
-	//DirectedSubgraphDeclaration:
-	//	"subgraph" name=ID "{" statements+=DirectedStatement* "}";
-	public DirectedSubgraphDeclarationElements getDirectedSubgraphDeclarationAccess() {
-		return pDirectedSubgraphDeclaration;
-	}
-	
-	public ParserRule getDirectedSubgraphDeclarationRule() {
-		return getDirectedSubgraphDeclarationAccess().getRule();
-	}
-	
-	//UndirectedSubgraphDeclaration:
-	//	"subgraph" name=ID "{" statements+=UndirectedStatement* "}";
-	public UndirectedSubgraphDeclarationElements getUndirectedSubgraphDeclarationAccess() {
-		return pUndirectedSubgraphDeclaration;
-	}
-	
-	public ParserRule getUndirectedSubgraphDeclarationRule() {
-		return getUndirectedSubgraphDeclarationAccess().getRule();
 	}
 	
 	//NodeDeclaration:
@@ -713,7 +657,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	//// will be 'color' and 'label'
 	//// color defaults to black and the label to the node's ID
 	//AttributeList:
-	//	"[" attr+=Attribute* "]";
+	//	"[" attr+=Attribute+ "]";
 	public AttributeListElements getAttributeListAccess() {
 		return pAttributeList;
 	}
@@ -744,7 +688,7 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//// a node can be a reference to a declared node for now
 	//DirectedEdgeDeclaration:
-	//	firstNode=[NodeId] directedEdge=DirectedEdge secondNode=[NodeId];
+	//	firstNode=[NodeId] directedEdge=DirectedEdge secondNode=RightEdgeDeclaration;
 	public DirectedEdgeDeclarationElements getDirectedEdgeDeclarationAccess() {
 		return pDirectedEdgeDeclaration;
 	}
@@ -754,13 +698,33 @@ public class DotLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//UndirectedEdgeDeclaration:
-	//	firstNode=[NodeId] undirectedEdge=UndirectedEdge secondNode=[NodeId];
+	//	firstNode=[NodeId] undirectedEdge=UndirectedEdge secondNode=RightEdgeDeclaration;
 	public UndirectedEdgeDeclarationElements getUndirectedEdgeDeclarationAccess() {
 		return pUndirectedEdgeDeclaration;
 	}
 	
 	public ParserRule getUndirectedEdgeDeclarationRule() {
 		return getUndirectedEdgeDeclarationAccess().getRule();
+	}
+	
+	//RightEdgeDeclaration:
+	//	secondNode=[NodeId] | NodeList;
+	public RightEdgeDeclarationElements getRightEdgeDeclarationAccess() {
+		return pRightEdgeDeclaration;
+	}
+	
+	public ParserRule getRightEdgeDeclarationRule() {
+		return getRightEdgeDeclarationAccess().getRule();
+	}
+	
+	//NodeList:
+	//	'{' nodes+=[NodeId]+ '}';
+	public NodeListElements getNodeListAccess() {
+		return pNodeList;
+	}
+	
+	public ParserRule getNodeListRule() {
+		return getNodeListAccess().getRule();
 	}
 	
 	//DirectedEdge:

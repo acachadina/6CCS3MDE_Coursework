@@ -25,14 +25,6 @@
     </genClasses>
     <genClasses ecoreClass="DotLanguage.ecore#//DirectedStatement"/>
     <genClasses ecoreClass="DotLanguage.ecore#//UndirectedStatement"/>
-    <genClasses ecoreClass="DotLanguage.ecore#//DirectedSubgraphDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DotLanguage.ecore#//DirectedSubgraphDeclaration/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//DirectedSubgraphDeclaration/statements"/>
-    </genClasses>
-    <genClasses ecoreClass="DotLanguage.ecore#//UndirectedSubgraphDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DotLanguage.ecore#//UndirectedSubgraphDeclaration/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//UndirectedSubgraphDeclaration/statements"/>
-    </genClasses>
     <genClasses ecoreClass="DotLanguage.ecore#//NodeDeclaration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//NodeDeclaration/nodeName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//NodeDeclaration/optionalAttributes"/>
@@ -50,12 +42,18 @@
     <genClasses ecoreClass="DotLanguage.ecore#//DirectedEdgeDeclaration">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//DirectedEdgeDeclaration/firstNode"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DotLanguage.ecore#//DirectedEdgeDeclaration/directedEdge"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//DirectedEdgeDeclaration/secondNode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//DirectedEdgeDeclaration/secondNode"/>
     </genClasses>
     <genClasses ecoreClass="DotLanguage.ecore#//UndirectedEdgeDeclaration">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//UndirectedEdgeDeclaration/firstNode"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DotLanguage.ecore#//UndirectedEdgeDeclaration/undirectedEdge"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//UndirectedEdgeDeclaration/secondNode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//UndirectedEdgeDeclaration/secondNode"/>
+    </genClasses>
+    <genClasses ecoreClass="DotLanguage.ecore#//RightEdgeDeclaration">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//RightEdgeDeclaration/secondNode"/>
+    </genClasses>
+    <genClasses ecoreClass="DotLanguage.ecore#//NodeList">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DotLanguage.ecore#//NodeList/nodes"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

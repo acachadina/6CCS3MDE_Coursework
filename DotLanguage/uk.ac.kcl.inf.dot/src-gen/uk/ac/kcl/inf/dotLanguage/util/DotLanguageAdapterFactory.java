@@ -101,16 +101,6 @@ public class DotLanguageAdapterFactory extends AdapterFactoryImpl
         return createUndirectedStatementAdapter();
       }
       @Override
-      public Adapter caseDirectedSubgraphDeclaration(DirectedSubgraphDeclaration object)
-      {
-        return createDirectedSubgraphDeclarationAdapter();
-      }
-      @Override
-      public Adapter caseUndirectedSubgraphDeclaration(UndirectedSubgraphDeclaration object)
-      {
-        return createUndirectedSubgraphDeclarationAdapter();
-      }
-      @Override
       public Adapter caseNodeDeclaration(NodeDeclaration object)
       {
         return createNodeDeclarationAdapter();
@@ -139,6 +129,16 @@ public class DotLanguageAdapterFactory extends AdapterFactoryImpl
       public Adapter caseUndirectedEdgeDeclaration(UndirectedEdgeDeclaration object)
       {
         return createUndirectedEdgeDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseRightEdgeDeclaration(RightEdgeDeclaration object)
+      {
+        return createRightEdgeDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseNodeList(NodeList object)
+      {
+        return createNodeListAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -238,36 +238,6 @@ public class DotLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.dotLanguage.DirectedSubgraphDeclaration <em>Directed Subgraph Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.kcl.inf.dotLanguage.DirectedSubgraphDeclaration
-   * @generated
-   */
-  public Adapter createDirectedSubgraphDeclarationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.dotLanguage.UndirectedSubgraphDeclaration <em>Undirected Subgraph Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.kcl.inf.dotLanguage.UndirectedSubgraphDeclaration
-   * @generated
-   */
-  public Adapter createUndirectedSubgraphDeclarationAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.dotLanguage.NodeDeclaration <em>Node Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -353,6 +323,36 @@ public class DotLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createUndirectedEdgeDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.dotLanguage.RightEdgeDeclaration <em>Right Edge Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.dotLanguage.RightEdgeDeclaration
+   * @generated
+   */
+  public Adapter createRightEdgeDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.dotLanguage.NodeList <em>Node List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.dotLanguage.NodeList
+   * @generated
+   */
+  public Adapter createNodeListAdapter()
   {
     return null;
   }

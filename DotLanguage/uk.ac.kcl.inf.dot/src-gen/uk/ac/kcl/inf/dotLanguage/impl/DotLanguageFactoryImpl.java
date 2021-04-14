@@ -71,14 +71,14 @@ public class DotLanguageFactoryImpl extends EFactoryImpl implements DotLanguageF
       case DotLanguagePackage.DIGRAPH: return createDigraph();
       case DotLanguagePackage.DIRECTED_STATEMENT: return createDirectedStatement();
       case DotLanguagePackage.UNDIRECTED_STATEMENT: return createUndirectedStatement();
-      case DotLanguagePackage.DIRECTED_SUBGRAPH_DECLARATION: return createDirectedSubgraphDeclaration();
-      case DotLanguagePackage.UNDIRECTED_SUBGRAPH_DECLARATION: return createUndirectedSubgraphDeclaration();
       case DotLanguagePackage.NODE_DECLARATION: return createNodeDeclaration();
       case DotLanguagePackage.NODE_ID: return createNodeId();
       case DotLanguagePackage.ATTRIBUTE_LIST: return createAttributeList();
       case DotLanguagePackage.ATTRIBUTE: return createAttribute();
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION: return createDirectedEdgeDeclaration();
       case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION: return createUndirectedEdgeDeclaration();
+      case DotLanguagePackage.RIGHT_EDGE_DECLARATION: return createRightEdgeDeclaration();
+      case DotLanguagePackage.NODE_LIST: return createNodeList();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -184,30 +184,6 @@ public class DotLanguageFactoryImpl extends EFactoryImpl implements DotLanguageF
    * @generated
    */
   @Override
-  public DirectedSubgraphDeclaration createDirectedSubgraphDeclaration()
-  {
-    DirectedSubgraphDeclarationImpl directedSubgraphDeclaration = new DirectedSubgraphDeclarationImpl();
-    return directedSubgraphDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public UndirectedSubgraphDeclaration createUndirectedSubgraphDeclaration()
-  {
-    UndirectedSubgraphDeclarationImpl undirectedSubgraphDeclaration = new UndirectedSubgraphDeclarationImpl();
-    return undirectedSubgraphDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NodeDeclaration createNodeDeclaration()
   {
     NodeDeclarationImpl nodeDeclaration = new NodeDeclarationImpl();
@@ -272,6 +248,30 @@ public class DotLanguageFactoryImpl extends EFactoryImpl implements DotLanguageF
   {
     UndirectedEdgeDeclarationImpl undirectedEdgeDeclaration = new UndirectedEdgeDeclarationImpl();
     return undirectedEdgeDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RightEdgeDeclaration createRightEdgeDeclaration()
+  {
+    RightEdgeDeclarationImpl rightEdgeDeclaration = new RightEdgeDeclarationImpl();
+    return rightEdgeDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NodeList createNodeList()
+  {
+    NodeListImpl nodeList = new NodeListImpl();
+    return nodeList;
   }
 
   /**

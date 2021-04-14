@@ -69,24 +69,6 @@ public interface DotLanguageFactory extends EFactory
   UndirectedStatement createUndirectedStatement();
 
   /**
-   * Returns a new object of class '<em>Directed Subgraph Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Directed Subgraph Declaration</em>'.
-   * @generated
-   */
-  DirectedSubgraphDeclaration createDirectedSubgraphDeclaration();
-
-  /**
-   * Returns a new object of class '<em>Undirected Subgraph Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Undirected Subgraph Declaration</em>'.
-   * @generated
-   */
-  UndirectedSubgraphDeclaration createUndirectedSubgraphDeclaration();
-
-  /**
    * Returns a new object of class '<em>Node Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -139,6 +121,24 @@ public interface DotLanguageFactory extends EFactory
    * @generated
    */
   UndirectedEdgeDeclaration createUndirectedEdgeDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Right Edge Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Right Edge Declaration</em>'.
+   * @generated
+   */
+  RightEdgeDeclaration createRightEdgeDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Node List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Node List</em>'.
+   * @generated
+   */
+  NodeList createNodeList();
 
   /**
    * Returns the package supported by this factory.

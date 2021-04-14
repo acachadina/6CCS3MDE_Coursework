@@ -1,6 +1,8 @@
 
 import dot.library.*;
 import java.util.HashMap;
+import java.util.ArrayList;
+
 
 public class TestDot {
 	public static void main (String args[]){
@@ -23,13 +25,10 @@ public class TestDot {
 			
 			addNode("anna", "node3", null, false);
 			
-			addNode("anna", "node4", null, false);
-			
-			addNode("anna", "node5", null, false);
-			
-			addEdge("anna", "node1", "node2"); 
-			
-			addEdge("anna", "node1", "node3"); 
+			ArrayList<String> secondNodes = new ArrayList<>();
+			secondNodes.add("node2");		
+			secondNodes.add("node3");		
+			addEdge("anna", "node1", secondNodes); 
 			addGraphs();
 			}
 			

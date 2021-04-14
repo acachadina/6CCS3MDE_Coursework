@@ -1,5 +1,6 @@
 package dot.library;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public abstract class Dot
@@ -17,11 +18,6 @@ public abstract class Dot
                 addNode("anna", "node4", null, false);
                 addNode("anna", "node5", null, false);
 
-
-                addEdge("anna", "node1", "node2");
-                addEdge("anna", "node2", "node3");
-                addEdge("anna", "node1", "node4");
-                addEdge("anna", "node3", "node5");
 
                 addGraphs();
             }
@@ -66,7 +62,7 @@ public abstract class Dot
 
     }
 
-    protected void addEdge(String graphID, String firstNode, String secondNode){
+    protected void addEdge(String graphID, String firstNode, ArrayList<String> secondNodes){
         // DirectedEdgeDeclaration.firstNode // .secondNode
         DotGraph graph = graphs.get(graphID);
         DotNode node1, node2;
@@ -77,15 +73,18 @@ public abstract class Dot
         } else{
             node1 = new DotNode(firstNode, new Attributes());
         }
-
-        if(graph.containsNode(secondNode)) {
-            node2 = graph.getNode(secondNode);
-            node2.setConnected();
-        } else{
-            node2 = new DotNode(secondNode, new Attributes());
+        
+        for(String secondNode : secondNodes) {
+        	if(graph.containsNode(secondNode)) {
+                node2 = graph.getNode(secondNode);
+                node2.setConnected();
+            } else{
+                node2 = new DotNode(secondNode, new Attributes());
+            }
+        	
+        	graph.addEdge(node1, node2);	
         }
-
-        graph.addEdge(node1, node2);
+        
 
     }
 

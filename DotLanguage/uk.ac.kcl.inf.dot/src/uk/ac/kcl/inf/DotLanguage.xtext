@@ -23,8 +23,7 @@ Digraph:
 DirectedStatement: 
 	( 
 		NodeDeclaration | 
-		DirectedEdgeDeclaration |
-		DirectedSubgraphDeclaration
+		DirectedEdgeDeclaration
 	)
 	("," | ";")?
 	
@@ -33,19 +32,11 @@ DirectedStatement:
 UndirectedStatement: 
 	(
 		NodeDeclaration | 
-		UndirectedEdgeDeclaration |
-		UndirectedSubgraphDeclaration	
+		UndirectedEdgeDeclaration 
 	)
 	("," | ";")?
 ;
 
-DirectedSubgraphDeclaration:
-	"subgraph" name=ID "{" statements += DirectedStatement* "}"
-;
-
-UndirectedSubgraphDeclaration:
-	"subgraph" name=ID "{" statements += UndirectedStatement* "}"
-;
 
 NodeDeclaration:
 	nodeName = NodeId (optionalAttributes = AttributeList)?
@@ -59,7 +50,7 @@ NodeId:
 // will be 'color' and 'label'
 // color defaults to black and the label to the node's ID
 AttributeList:
-	"[" attr += Attribute* "]"
+	"[" attr += Attribute+ "]"
 ;
 
 Attribute:
@@ -73,11 +64,20 @@ enum Color:
 
 // a node can be a reference to a declared node for now
 DirectedEdgeDeclaration:
-	firstNode = [NodeId] directedEdge = DirectedEdge secondNode = [NodeId]
+	firstNode = [NodeId] directedEdge = DirectedEdge secondNode = RightEdgeDeclaration
 ;
 
 UndirectedEdgeDeclaration:
-	firstNode = [NodeId] undirectedEdge = UndirectedEdge secondNode = [NodeId]
+	firstNode = [NodeId] undirectedEdge = UndirectedEdge secondNode = RightEdgeDeclaration
+;
+
+RightEdgeDeclaration:
+	secondNode = [NodeId] |
+	NodeList
+;
+
+NodeList:
+	'{' nodes += [NodeId]+ '}'
 ;
 
 DirectedEdge:

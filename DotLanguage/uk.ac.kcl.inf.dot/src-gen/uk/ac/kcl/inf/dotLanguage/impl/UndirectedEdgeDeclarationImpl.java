@@ -4,6 +4,7 @@
 package uk.ac.kcl.inf.dotLanguage.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -12,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.kcl.inf.dotLanguage.DotLanguagePackage;
 import uk.ac.kcl.inf.dotLanguage.NodeId;
+import uk.ac.kcl.inf.dotLanguage.RightEdgeDeclaration;
 import uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration;
 
 /**
@@ -62,14 +64,14 @@ public class UndirectedEdgeDeclarationImpl extends UndirectedStatementImpl imple
   protected String undirectedEdge = UNDIRECTED_EDGE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getSecondNode() <em>Second Node</em>}' reference.
+   * The cached value of the '{@link #getSecondNode() <em>Second Node</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSecondNode()
    * @generated
    * @ordered
    */
-  protected NodeId secondNode;
+  protected RightEdgeDeclaration secondNode;
 
   /**
    * <!-- begin-user-doc -->
@@ -168,18 +170,8 @@ public class UndirectedEdgeDeclarationImpl extends UndirectedStatementImpl imple
    * @generated
    */
   @Override
-  public NodeId getSecondNode()
+  public RightEdgeDeclaration getSecondNode()
   {
-    if (secondNode != null && secondNode.eIsProxy())
-    {
-      InternalEObject oldSecondNode = (InternalEObject)secondNode;
-      secondNode = (NodeId)eResolveProxy(oldSecondNode);
-      if (secondNode != oldSecondNode)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__SECOND_NODE, oldSecondNode, secondNode));
-      }
-    }
     return secondNode;
   }
 
@@ -188,9 +180,16 @@ public class UndirectedEdgeDeclarationImpl extends UndirectedStatementImpl imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public NodeId basicGetSecondNode()
+  public NotificationChain basicSetSecondNode(RightEdgeDeclaration newSecondNode, NotificationChain msgs)
   {
-    return secondNode;
+    RightEdgeDeclaration oldSecondNode = secondNode;
+    secondNode = newSecondNode;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__SECOND_NODE, oldSecondNode, newSecondNode);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -199,12 +198,36 @@ public class UndirectedEdgeDeclarationImpl extends UndirectedStatementImpl imple
    * @generated
    */
   @Override
-  public void setSecondNode(NodeId newSecondNode)
+  public void setSecondNode(RightEdgeDeclaration newSecondNode)
   {
-    NodeId oldSecondNode = secondNode;
-    secondNode = newSecondNode;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__SECOND_NODE, oldSecondNode, secondNode));
+    if (newSecondNode != secondNode)
+    {
+      NotificationChain msgs = null;
+      if (secondNode != null)
+        msgs = ((InternalEObject)secondNode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__SECOND_NODE, null, msgs);
+      if (newSecondNode != null)
+        msgs = ((InternalEObject)newSecondNode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__SECOND_NODE, null, msgs);
+      msgs = basicSetSecondNode(newSecondNode, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__SECOND_NODE, newSecondNode, newSecondNode));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__SECOND_NODE:
+        return basicSetSecondNode(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -223,8 +246,7 @@ public class UndirectedEdgeDeclarationImpl extends UndirectedStatementImpl imple
       case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__UNDIRECTED_EDGE:
         return getUndirectedEdge();
       case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__SECOND_NODE:
-        if (resolve) return getSecondNode();
-        return basicGetSecondNode();
+        return getSecondNode();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -246,7 +268,7 @@ public class UndirectedEdgeDeclarationImpl extends UndirectedStatementImpl imple
         setUndirectedEdge((String)newValue);
         return;
       case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__SECOND_NODE:
-        setSecondNode((NodeId)newValue);
+        setSecondNode((RightEdgeDeclaration)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -269,7 +291,7 @@ public class UndirectedEdgeDeclarationImpl extends UndirectedStatementImpl imple
         setUndirectedEdge(UNDIRECTED_EDGE_EDEFAULT);
         return;
       case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__SECOND_NODE:
-        setSecondNode((NodeId)null);
+        setSecondNode((RightEdgeDeclaration)null);
         return;
     }
     super.eUnset(featureID);

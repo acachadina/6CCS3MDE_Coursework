@@ -12,9 +12,9 @@ import uk.ac.kcl.inf.dotLanguage.Graph
 import uk.ac.kcl.inf.dotLanguage.Digraph
 import uk.ac.kcl.inf.dotLanguage.NodeDeclaration
 import uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration
-import uk.ac.kcl.inf.dotLanguage.UndirectedSubgraphDeclaration
 import uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration
-import uk.ac.kcl.inf.dotLanguage.DirectedSubgraphDeclaration
+import uk.ac.kcl.inf.dotLanguage.NodeId
+import uk.ac.kcl.inf.dotLanguage.NodeList
 
 /**
  * Generates code from your model files on save.
@@ -45,6 +45,8 @@ class DotLanguageGenerator extends AbstractGenerator {
 		
 		import dot.library.*;
 		import java.util.HashMap;
+		import java.util.ArrayList;
+		
 		
 		public class «className» {
 			public static void main (String args[]){
@@ -87,9 +89,19 @@ class DotLanguageGenerator extends AbstractGenerator {
 		«ENDIF»
 	'''
 	dispatch def generateGraphCreationStatements(UndirectedEdgeDeclaration edge, Graph graph)'''
-		addEdge("«graph.name»", "«edge.firstNode.name»", "«edge.secondNode.name»"); 
+		ArrayList<String> secondNodes = new ArrayList<>();
+		«edge.secondNode.rightSideEdgeDeclaration»
+		addEdge("«graph.name»", "«edge.firstNode.name»", secondNodes); 
 	'''
-	dispatch def generateGraphCreationStatements(UndirectedSubgraphDeclaration edge, Graph graph)'''
+	
+	dispatch def getRightSideEdgeDeclaration(NodeId node)'''
+		secondNodes.add("«node.name»");		
+	'''
+	
+	dispatch def getRightSideEdgeDeclaration(NodeList nodeList)'''
+		«FOR node : nodeList.nodes»
+		 	secondNodes.add("«node.name»");		
+		 «ENDFOR »
 	'''
 	
 	//DIGRAPHS
@@ -106,21 +118,10 @@ class DotLanguageGenerator extends AbstractGenerator {
 	'''
 	
 	dispatch def generateGraphCreationStatements(DirectedEdgeDeclaration edge, Digraph digraph)'''
-		addEdge("«digraph.name»", "«edge.firstNode.name»", "«edge.secondNode.name»"); 
+		ArrayList<String> secondNodes = new ArrayList<>();
+		«edge.secondNode.rightSideEdgeDeclaration»
+		addEdge("«digraph.name»", "«edge.firstNode.name»", secondNames); 
 	'''
-	dispatch def generateGraphCreationStatements(DirectedSubgraphDeclaration edge, Digraph digraph)'''
-	'''
-	
-	//ATTRIBUTES:
-	
-	def handleAttributes(NodeDeclaration node){
-		if(node.optionalAttributes === null){
-			return null
-		}
-		else{
-			
-		}
-	}
 
 		
 }

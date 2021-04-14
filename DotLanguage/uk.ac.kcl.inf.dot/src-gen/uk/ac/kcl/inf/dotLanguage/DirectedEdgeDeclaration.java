@@ -69,25 +69,25 @@ public interface DirectedEdgeDeclaration extends DirectedStatement
   void setDirectedEdge(String value);
 
   /**
-   * Returns the value of the '<em><b>Second Node</b></em>' reference.
+   * Returns the value of the '<em><b>Second Node</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Second Node</em>' reference.
-   * @see #setSecondNode(NodeId)
+   * @return the value of the '<em>Second Node</em>' containment reference.
+   * @see #setSecondNode(RightEdgeDeclaration)
    * @see uk.ac.kcl.inf.dotLanguage.DotLanguagePackage#getDirectedEdgeDeclaration_SecondNode()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  NodeId getSecondNode();
+  RightEdgeDeclaration getSecondNode();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration#getSecondNode <em>Second Node</em>}' reference.
+   * Sets the value of the '{@link uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration#getSecondNode <em>Second Node</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Second Node</em>' reference.
+   * @param value the new value of the '<em>Second Node</em>' containment reference.
    * @see #getSecondNode()
    * @generated
    */
-  void setSecondNode(NodeId value);
+  void setSecondNode(RightEdgeDeclaration value);
 
 } // DirectedEdgeDeclaration
