@@ -8,6 +8,13 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import uk.ac.kcl.inf.dotLanguage.DotLanguage
+import uk.ac.kcl.inf.dotLanguage.Graph
+import uk.ac.kcl.inf.dotLanguage.Digraph
+import uk.ac.kcl.inf.dotLanguage.NodeDeclaration
+import uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration
+import uk.ac.kcl.inf.dotLanguage.UndirectedSubgraphDeclaration
+import uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration
+import uk.ac.kcl.inf.dotLanguage.DirectedSubgraphDeclaration
 
 /**
  * Generates code from your model files on save.
@@ -46,20 +53,8 @@ class DotLanguageGenerator extends AbstractGenerator {
 					@Override
 					
 					public void run() {
-						addNode("anna", "node1", null, false);
-		                addNode("anna", "node2", null, false);
-		                addNode("anna", "node3", null, false);
-		                addNode("anna", "node4", null, false);
-		                addNode("anna", "node5", null, false);
-		
-		
-		                addEdge("anna", "node1", "node2");
-		                addEdge("anna", "node2", "node3");
-		                addEdge("anna", "node1", "node4");
-		                addEdge("anna", "node3", "node5");
-		                
-		                addGraphs();
-						
+					« program.graphs.map[generateGraphStatements].join("\n")»	
+					addGraphs();
 					}
 					
 				};
@@ -69,6 +64,36 @@ class DotLanguageGenerator extends AbstractGenerator {
 		}
 		
 	'''
+		
+	dispatch def generateGraphStatements(Graph graph) '''
+		« graph.statements.map[generateGraphCreationStatements(graph)].join("\n")»
+	'''
+	
+	dispatch def generateGraphStatements(Digraph digraph)'''
+		« digraph.statements.map[generateGraphCreationStatements(digraph)].join("\n")»
+	'''
+	
+	// GRAPHS: 
+	dispatch def generateGraphCreationStatements(NodeDeclaration node, Graph graph)'''
+		addNode("«graph.name»", "«node.nodeName.name»", null, false);
+	'''
+	dispatch def generateGraphCreationStatements(UndirectedEdgeDeclaration edge, Graph graph)'''
+		addEdge("«graph.name»", "«edge.firstNode.name»", "«edge.secondNode.name»"); 
+	'''
+	dispatch def generateGraphCreationStatements(UndirectedSubgraphDeclaration edge, Graph graph)'''
+	'''
+	
+	//DIGRAPHS
+	dispatch def generateGraphCreationStatements(NodeDeclaration node, Digraph digraph)'''
+		addNode("«digraph.name»", "«node.nodeName.name»", null, true);
+	'''
+	
+	dispatch def generateGraphCreationStatements(DirectedEdgeDeclaration edge, Digraph digraph)'''
+		addEdge("«digraph.name»", "«edge.firstNode.name»", "«edge.secondNode.name»"); 
+	'''
+	dispatch def generateGraphCreationStatements(DirectedSubgraphDeclaration edge, Digraph digraph)'''
+	'''
+	
 
 		
 }
