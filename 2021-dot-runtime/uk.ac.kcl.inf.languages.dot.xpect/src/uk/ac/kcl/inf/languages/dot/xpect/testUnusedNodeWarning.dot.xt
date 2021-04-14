@@ -1,0 +1,19 @@
+/* XPECT_SETUP uk.ac.kcl.inf.languages.dot.xpect.XPectTests END_SETUP*/
+
+// XPECT warnings --> "This node is declared but not used" at "node3"
+graph undirected {
+	node1
+	node2
+	node3
+	
+	node1--node2
+}
+
+// XPECT warnings --> "This node is declared but not used" at "node3"
+digraph directed {
+	node1
+	node2
+	node3
+	
+	node1->node2
+}
