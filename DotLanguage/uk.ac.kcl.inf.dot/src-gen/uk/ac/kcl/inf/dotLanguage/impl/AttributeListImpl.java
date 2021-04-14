@@ -3,14 +3,19 @@
  */
 package uk.ac.kcl.inf.dotLanguage.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.kcl.inf.dotLanguage.Attribute;
 import uk.ac.kcl.inf.dotLanguage.AttributeList;
@@ -24,7 +29,7 @@ import uk.ac.kcl.inf.dotLanguage.DotLanguagePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.dotLanguage.impl.AttributeListImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.dotLanguage.impl.AttributeListImpl#getAttr <em>Attr</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +37,14 @@ import uk.ac.kcl.inf.dotLanguage.DotLanguagePackage;
 public class AttributeListImpl extends MinimalEObjectImpl.Container implements AttributeList
 {
   /**
-   * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference.
+   * The cached value of the '{@link #getAttr() <em>Attr</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAttributes()
+   * @see #getAttr()
    * @generated
    * @ordered
    */
-  protected Attribute attributes;
+  protected EList<Attribute> attr;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,48 +73,13 @@ public class AttributeListImpl extends MinimalEObjectImpl.Container implements A
    * @generated
    */
   @Override
-  public Attribute getAttributes()
+  public EList<Attribute> getAttr()
   {
-    return attributes;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAttributes(Attribute newAttributes, NotificationChain msgs)
-  {
-    Attribute oldAttributes = attributes;
-    attributes = newAttributes;
-    if (eNotificationRequired())
+    if (attr == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DotLanguagePackage.ATTRIBUTE_LIST__ATTRIBUTES, oldAttributes, newAttributes);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      attr = new EObjectContainmentEList<Attribute>(Attribute.class, this, DotLanguagePackage.ATTRIBUTE_LIST__ATTR);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setAttributes(Attribute newAttributes)
-  {
-    if (newAttributes != attributes)
-    {
-      NotificationChain msgs = null;
-      if (attributes != null)
-        msgs = ((InternalEObject)attributes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DotLanguagePackage.ATTRIBUTE_LIST__ATTRIBUTES, null, msgs);
-      if (newAttributes != null)
-        msgs = ((InternalEObject)newAttributes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DotLanguagePackage.ATTRIBUTE_LIST__ATTRIBUTES, null, msgs);
-      msgs = basicSetAttributes(newAttributes, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DotLanguagePackage.ATTRIBUTE_LIST__ATTRIBUTES, newAttributes, newAttributes));
+    return attr;
   }
 
   /**
@@ -122,8 +92,8 @@ public class AttributeListImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
-      case DotLanguagePackage.ATTRIBUTE_LIST__ATTRIBUTES:
-        return basicSetAttributes(null, msgs);
+      case DotLanguagePackage.ATTRIBUTE_LIST__ATTR:
+        return ((InternalEList<?>)getAttr()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -138,8 +108,8 @@ public class AttributeListImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
-      case DotLanguagePackage.ATTRIBUTE_LIST__ATTRIBUTES:
-        return getAttributes();
+      case DotLanguagePackage.ATTRIBUTE_LIST__ATTR:
+        return getAttr();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -149,13 +119,15 @@ public class AttributeListImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case DotLanguagePackage.ATTRIBUTE_LIST__ATTRIBUTES:
-        setAttributes((Attribute)newValue);
+      case DotLanguagePackage.ATTRIBUTE_LIST__ATTR:
+        getAttr().clear();
+        getAttr().addAll((Collection<? extends Attribute>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,8 +143,8 @@ public class AttributeListImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
-      case DotLanguagePackage.ATTRIBUTE_LIST__ATTRIBUTES:
-        setAttributes((Attribute)null);
+      case DotLanguagePackage.ATTRIBUTE_LIST__ATTR:
+        getAttr().clear();
         return;
     }
     super.eUnset(featureID);
@@ -188,8 +160,8 @@ public class AttributeListImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
-      case DotLanguagePackage.ATTRIBUTE_LIST__ATTRIBUTES:
-        return attributes != null;
+      case DotLanguagePackage.ATTRIBUTE_LIST__ATTR:
+        return attr != null && !attr.isEmpty();
     }
     return super.eIsSet(featureID);
   }

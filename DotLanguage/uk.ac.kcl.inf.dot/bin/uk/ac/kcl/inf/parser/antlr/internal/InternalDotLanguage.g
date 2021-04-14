@@ -276,40 +276,36 @@ ruleDirectedStatement returns [EObject current=null]
 				$current = $this_NodeDeclaration_0.current;
 				afterParserOrEnumRuleCall();
 			}
-			(
-				otherlv_1=','
-				{
-					newLeafNode(otherlv_1, grammarAccess.getDirectedStatementAccess().getCommaKeyword_0_1_0());
-				}
-				    |
-				otherlv_2=';'
-				{
-					newLeafNode(otherlv_2, grammarAccess.getDirectedStatementAccess().getSemicolonKeyword_0_1_1());
-				}
-			)?
-		)
-		    |
-		(
+			    |
 			{
-				newCompositeNode(grammarAccess.getDirectedStatementAccess().getDirectedEdgeDeclarationParserRuleCall_1_0());
+				newCompositeNode(grammarAccess.getDirectedStatementAccess().getDirectedEdgeDeclarationParserRuleCall_0_1());
 			}
-			this_DirectedEdgeDeclaration_3=ruleDirectedEdgeDeclaration
+			this_DirectedEdgeDeclaration_1=ruleDirectedEdgeDeclaration
 			{
-				$current = $this_DirectedEdgeDeclaration_3.current;
+				$current = $this_DirectedEdgeDeclaration_1.current;
 				afterParserOrEnumRuleCall();
 			}
-			(
-				otherlv_4=','
-				{
-					newLeafNode(otherlv_4, grammarAccess.getDirectedStatementAccess().getCommaKeyword_1_1_0());
-				}
-				    |
-				otherlv_5=';'
-				{
-					newLeafNode(otherlv_5, grammarAccess.getDirectedStatementAccess().getSemicolonKeyword_1_1_1());
-				}
-			)?
+			    |
+			{
+				newCompositeNode(grammarAccess.getDirectedStatementAccess().getDirectedSubgraphDeclarationParserRuleCall_0_2());
+			}
+			this_DirectedSubgraphDeclaration_2=ruleDirectedSubgraphDeclaration
+			{
+				$current = $this_DirectedSubgraphDeclaration_2.current;
+				afterParserOrEnumRuleCall();
+			}
 		)
+		(
+			otherlv_3=','
+			{
+				newLeafNode(otherlv_3, grammarAccess.getDirectedStatementAccess().getCommaKeyword_1_0());
+			}
+			    |
+			otherlv_4=';'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getDirectedStatementAccess().getSemicolonKeyword_1_1());
+			}
+		)?
 	)
 ;
 
@@ -338,40 +334,172 @@ ruleUndirectedStatement returns [EObject current=null]
 				$current = $this_NodeDeclaration_0.current;
 				afterParserOrEnumRuleCall();
 			}
-			(
-				otherlv_1=','
-				{
-					newLeafNode(otherlv_1, grammarAccess.getUndirectedStatementAccess().getCommaKeyword_0_1_0());
-				}
-				    |
-				otherlv_2=';'
-				{
-					newLeafNode(otherlv_2, grammarAccess.getUndirectedStatementAccess().getSemicolonKeyword_0_1_1());
-				}
-			)?
-		)
-		    |
-		(
+			    |
 			{
-				newCompositeNode(grammarAccess.getUndirectedStatementAccess().getUndirectedEdgeDeclarationParserRuleCall_1_0());
+				newCompositeNode(grammarAccess.getUndirectedStatementAccess().getUndirectedEdgeDeclarationParserRuleCall_0_1());
 			}
-			this_UndirectedEdgeDeclaration_3=ruleUndirectedEdgeDeclaration
+			this_UndirectedEdgeDeclaration_1=ruleUndirectedEdgeDeclaration
 			{
-				$current = $this_UndirectedEdgeDeclaration_3.current;
+				$current = $this_UndirectedEdgeDeclaration_1.current;
 				afterParserOrEnumRuleCall();
 			}
-			(
-				otherlv_4=','
-				{
-					newLeafNode(otherlv_4, grammarAccess.getUndirectedStatementAccess().getCommaKeyword_1_1_0());
-				}
-				    |
-				otherlv_5=';'
-				{
-					newLeafNode(otherlv_5, grammarAccess.getUndirectedStatementAccess().getSemicolonKeyword_1_1_1());
-				}
-			)?
+			    |
+			{
+				newCompositeNode(grammarAccess.getUndirectedStatementAccess().getUndirectedSubgraphDeclarationParserRuleCall_0_2());
+			}
+			this_UndirectedSubgraphDeclaration_2=ruleUndirectedSubgraphDeclaration
+			{
+				$current = $this_UndirectedSubgraphDeclaration_2.current;
+				afterParserOrEnumRuleCall();
+			}
 		)
+		(
+			otherlv_3=','
+			{
+				newLeafNode(otherlv_3, grammarAccess.getUndirectedStatementAccess().getCommaKeyword_1_0());
+			}
+			    |
+			otherlv_4=';'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getUndirectedStatementAccess().getSemicolonKeyword_1_1());
+			}
+		)?
+	)
+;
+
+// Entry rule entryRuleDirectedSubgraphDeclaration
+entryRuleDirectedSubgraphDeclaration returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDirectedSubgraphDeclarationRule()); }
+	iv_ruleDirectedSubgraphDeclaration=ruleDirectedSubgraphDeclaration
+	{ $current=$iv_ruleDirectedSubgraphDeclaration.current; }
+	EOF;
+
+// Rule DirectedSubgraphDeclaration
+ruleDirectedSubgraphDeclaration returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='subgraph'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getDirectedSubgraphDeclarationAccess().getSubgraphKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getDirectedSubgraphDeclarationAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDirectedSubgraphDeclarationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getDirectedSubgraphDeclarationAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDirectedSubgraphDeclarationAccess().getStatementsDirectedStatementParserRuleCall_3_0());
+				}
+				lv_statements_3_0=ruleDirectedStatement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDirectedSubgraphDeclarationRule());
+					}
+					add(
+						$current,
+						"statements",
+						lv_statements_3_0,
+						"uk.ac.kcl.inf.DotLanguage.DirectedStatement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_4='}'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getDirectedSubgraphDeclarationAccess().getRightCurlyBracketKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleUndirectedSubgraphDeclaration
+entryRuleUndirectedSubgraphDeclaration returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getUndirectedSubgraphDeclarationRule()); }
+	iv_ruleUndirectedSubgraphDeclaration=ruleUndirectedSubgraphDeclaration
+	{ $current=$iv_ruleUndirectedSubgraphDeclaration.current; }
+	EOF;
+
+// Rule UndirectedSubgraphDeclaration
+ruleUndirectedSubgraphDeclaration returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='subgraph'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getUndirectedSubgraphDeclarationAccess().getSubgraphKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getUndirectedSubgraphDeclarationAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getUndirectedSubgraphDeclarationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getUndirectedSubgraphDeclarationAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getUndirectedSubgraphDeclarationAccess().getStatementsUndirectedStatementParserRuleCall_3_0());
+				}
+				lv_statements_3_0=ruleUndirectedStatement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getUndirectedSubgraphDeclarationRule());
+					}
+					add(
+						$current,
+						"statements",
+						lv_statements_3_0,
+						"uk.ac.kcl.inf.DotLanguage.UndirectedStatement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_4='}'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getUndirectedSubgraphDeclarationAccess().getRightCurlyBracketKeyword_4());
+		}
 	)
 ;
 
@@ -490,50 +618,25 @@ ruleAttributeList returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAttributeListAccess().getAttributesAttributeParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getAttributeListAccess().getAttrAttributeParserRuleCall_1_0());
 				}
-				lv_attributes_1_0=ruleAttribute
+				lv_attr_1_0=ruleAttribute
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAttributeListRule());
 					}
-					set(
+					add(
 						$current,
-						"attributes",
-						lv_attributes_1_0,
+						"attr",
+						lv_attr_1_0,
 						"uk.ac.kcl.inf.DotLanguage.Attribute");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
-		(
-			otherlv_2=','
-			{
-				newLeafNode(otherlv_2, grammarAccess.getAttributeListAccess().getCommaKeyword_2_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAttributeListAccess().getAttributesAttributeParserRuleCall_2_1_0());
-					}
-					lv_attributes_3_0=ruleAttribute
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAttributeListRule());
-						}
-						set(
-							$current,
-							"attributes",
-							lv_attributes_3_0,
-							"uk.ac.kcl.inf.DotLanguage.Attribute");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		otherlv_4=']'
+		)*
+		otherlv_2=']'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getAttributeListAccess().getRightSquareBracketKeyword_3());
+			newLeafNode(otherlv_2, grammarAccess.getAttributeListAccess().getRightSquareBracketKeyword_2());
 		}
 	)
 ;
@@ -554,106 +657,52 @@ ruleAttribute returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		{
-			newCompositeNode(grammarAccess.getAttributeAccess().getLabelAttributeParserRuleCall_0());
-		}
-		this_LabelAttribute_0=ruleLabelAttribute
-		{
-			$current = $this_LabelAttribute_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getAttributeAccess().getColorAttributeParserRuleCall_1());
-		}
-		this_ColorAttribute_1=ruleColorAttribute
-		{
-			$current = $this_ColorAttribute_1.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
-// Entry rule entryRuleLabelAttribute
-entryRuleLabelAttribute returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getLabelAttributeRule()); }
-	iv_ruleLabelAttribute=ruleLabelAttribute
-	{ $current=$iv_ruleLabelAttribute.current; }
-	EOF;
-
-// Rule LabelAttribute
-ruleLabelAttribute returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='label='
-		{
-			newLeafNode(otherlv_0, grammarAccess.getLabelAttributeAccess().getLabelKeyword_0());
-		}
 		(
 			(
-				lv_label_1_0=RULE_ID
+				lv_attributeName_0_0=RULE_ID
 				{
-					newLeafNode(lv_label_1_0, grammarAccess.getLabelAttributeAccess().getLabelIDTerminalRuleCall_1_0());
+					newLeafNode(lv_attributeName_0_0, grammarAccess.getAttributeAccess().getAttributeNameIDTerminalRuleCall_0_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLabelAttributeRule());
+						$current = createModelElement(grammarAccess.getAttributeRule());
 					}
 					setWithLastConsumed(
 						$current,
-						"label",
-						lv_label_1_0,
+						"attributeName",
+						lv_attributeName_0_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
-	)
-;
-
-// Entry rule entryRuleColorAttribute
-entryRuleColorAttribute returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getColorAttributeRule()); }
-	iv_ruleColorAttribute=ruleColorAttribute
-	{ $current=$iv_ruleColorAttribute.current; }
-	EOF;
-
-// Rule ColorAttribute
-ruleColorAttribute returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='color='
+		otherlv_1='='
 		{
-			newLeafNode(otherlv_0, grammarAccess.getColorAttributeAccess().getColorKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getAttributeAccess().getEqualsSignKeyword_1());
 		}
 		(
 			(
+				lv_attributeValue_2_0=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getColorAttributeAccess().getColorColorEnumRuleCall_1_0());
+					newLeafNode(lv_attributeValue_2_0, grammarAccess.getAttributeAccess().getAttributeValueIDTerminalRuleCall_2_0());
 				}
-				lv_color_1_0=ruleColor
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getColorAttributeRule());
+						$current = createModelElement(grammarAccess.getAttributeRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
-						"color",
-						lv_color_1_0,
-						"uk.ac.kcl.inf.DotLanguage.Color");
-					afterParserOrEnumRuleCall();
+						"attributeValue",
+						lv_attributeValue_2_0,
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
+		(
+			otherlv_3=','
+			{
+				newLeafNode(otherlv_3, grammarAccess.getAttributeAccess().getCommaKeyword_3());
+			}
+		)?
 	)
 ;
 
@@ -686,10 +735,25 @@ ruleDirectedEdgeDeclaration returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_1='->'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getDirectedEdgeDeclarationAccess().getHyphenMinusGreaterThanSignKeyword_1());
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDirectedEdgeDeclarationAccess().getEdgeDirectedEdgeParserRuleCall_1_0());
+				}
+				lv_edge_1_0=ruleDirectedEdge
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDirectedEdgeDeclarationRule());
+					}
+					set(
+						$current,
+						"edge",
+						lv_edge_1_0,
+						"uk.ac.kcl.inf.DotLanguage.DirectedEdge");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		(
 			(
 				{
@@ -735,10 +799,25 @@ ruleUndirectedEdgeDeclaration returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_1='--'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getUndirectedEdgeDeclarationAccess().getHyphenMinusHyphenMinusKeyword_1());
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getUndirectedEdgeDeclarationAccess().getEdgeUndirectedEdgeParserRuleCall_1_0());
+				}
+				lv_edge_1_0=ruleUndirectedEdge
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getUndirectedEdgeDeclarationRule());
+					}
+					set(
+						$current,
+						"edge",
+						lv_edge_1_0,
+						"uk.ac.kcl.inf.DotLanguage.UndirectedEdge");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		(
 			(
 				{
@@ -755,47 +834,48 @@ ruleUndirectedEdgeDeclaration returns [EObject current=null]
 	)
 ;
 
-// Rule Color
-ruleColor returns [Enumerator current=null]
+// Entry rule entryRuleDirectedEdge
+entryRuleDirectedEdge returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getDirectedEdgeRule()); }
+	iv_ruleDirectedEdge=ruleDirectedEdge
+	{ $current=$iv_ruleDirectedEdge.current.getText(); }
+	EOF;
+
+// Rule DirectedEdge
+ruleDirectedEdge returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 @init {
 	enterRule();
 }
 @after {
 	leaveRule();
 }:
-	(
-		(
-			enumLiteral_0='red'
-			{
-				$current = grammarAccess.getColorAccess().getRedEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getColorAccess().getRedEnumLiteralDeclaration_0());
-			}
-		)
-		    |
-		(
-			enumLiteral_1='blue'
-			{
-				$current = grammarAccess.getColorAccess().getBlueEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getColorAccess().getBlueEnumLiteralDeclaration_1());
-			}
-		)
-		    |
-		(
-			enumLiteral_2='green'
-			{
-				$current = grammarAccess.getColorAccess().getGreenEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_2, grammarAccess.getColorAccess().getGreenEnumLiteralDeclaration_2());
-			}
-		)
-		    |
-		(
-			enumLiteral_3='black'
-			{
-				$current = grammarAccess.getColorAccess().getBlackEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_3, grammarAccess.getColorAccess().getBlackEnumLiteralDeclaration_3());
-			}
-		)
-	)
+	kw='->'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getDirectedEdgeAccess().getHyphenMinusGreaterThanSignKeyword());
+	}
+;
+
+// Entry rule entryRuleUndirectedEdge
+entryRuleUndirectedEdge returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getUndirectedEdgeRule()); }
+	iv_ruleUndirectedEdge=ruleUndirectedEdge
+	{ $current=$iv_ruleUndirectedEdge.current.getText(); }
+	EOF;
+
+// Rule UndirectedEdge
+ruleUndirectedEdge returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	kw='--'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getUndirectedEdgeAccess().getHyphenMinusHyphenMinusKeyword());
+	}
 ;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

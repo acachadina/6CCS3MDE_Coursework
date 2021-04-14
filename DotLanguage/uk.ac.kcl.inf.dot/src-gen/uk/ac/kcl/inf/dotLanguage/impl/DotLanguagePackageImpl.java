@@ -14,19 +14,19 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import uk.ac.kcl.inf.dotLanguage.Attribute;
 import uk.ac.kcl.inf.dotLanguage.AttributeList;
 import uk.ac.kcl.inf.dotLanguage.Color;
-import uk.ac.kcl.inf.dotLanguage.ColorAttribute;
 import uk.ac.kcl.inf.dotLanguage.Digraph;
 import uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration;
 import uk.ac.kcl.inf.dotLanguage.DirectedStatement;
+import uk.ac.kcl.inf.dotLanguage.DirectedSubgraphDeclaration;
 import uk.ac.kcl.inf.dotLanguage.DotLanguage;
 import uk.ac.kcl.inf.dotLanguage.DotLanguageFactory;
 import uk.ac.kcl.inf.dotLanguage.DotLanguagePackage;
 import uk.ac.kcl.inf.dotLanguage.Graph;
-import uk.ac.kcl.inf.dotLanguage.LabelAttribute;
 import uk.ac.kcl.inf.dotLanguage.NodeDeclaration;
 import uk.ac.kcl.inf.dotLanguage.NodeId;
 import uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration;
 import uk.ac.kcl.inf.dotLanguage.UndirectedStatement;
+import uk.ac.kcl.inf.dotLanguage.UndirectedSubgraphDeclaration;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,6 +76,20 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass directedSubgraphDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass undirectedSubgraphDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass nodeDeclarationEClass = null;
 
   /**
@@ -98,20 +112,6 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
    * @generated
    */
   private EClass attributeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass labelAttributeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass colorAttributeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -313,6 +313,72 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
    * @generated
    */
   @Override
+  public EClass getDirectedSubgraphDeclaration()
+  {
+    return directedSubgraphDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDirectedSubgraphDeclaration_Name()
+  {
+    return (EAttribute)directedSubgraphDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirectedSubgraphDeclaration_Statements()
+  {
+    return (EReference)directedSubgraphDeclarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getUndirectedSubgraphDeclaration()
+  {
+    return undirectedSubgraphDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getUndirectedSubgraphDeclaration_Name()
+  {
+    return (EAttribute)undirectedSubgraphDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getUndirectedSubgraphDeclaration_Statements()
+  {
+    return (EReference)undirectedSubgraphDeclarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getNodeDeclaration()
   {
     return nodeDeclarationEClass;
@@ -379,7 +445,7 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
    * @generated
    */
   @Override
-  public EReference getAttributeList_Attributes()
+  public EReference getAttributeList_Attr()
   {
     return (EReference)attributeListEClass.getEStructuralFeatures().get(0);
   }
@@ -401,9 +467,9 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
    * @generated
    */
   @Override
-  public EClass getLabelAttribute()
+  public EAttribute getAttribute_AttributeName()
   {
-    return labelAttributeEClass;
+    return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -412,31 +478,9 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
    * @generated
    */
   @Override
-  public EAttribute getLabelAttribute_Label()
+  public EAttribute getAttribute_AttributeValue()
   {
-    return (EAttribute)labelAttributeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getColorAttribute()
-  {
-    return colorAttributeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getColorAttribute_Color()
-  {
-    return (EAttribute)colorAttributeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -467,9 +511,20 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
    * @generated
    */
   @Override
+  public EAttribute getDirectedEdgeDeclaration_Edge()
+  {
+    return (EAttribute)directedEdgeDeclarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getDirectedEdgeDeclaration_SecondNode()
   {
-    return (EReference)directedEdgeDeclarationEClass.getEStructuralFeatures().get(1);
+    return (EReference)directedEdgeDeclarationEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -500,9 +555,20 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
    * @generated
    */
   @Override
+  public EAttribute getUndirectedEdgeDeclaration_Edge()
+  {
+    return (EAttribute)undirectedEdgeDeclarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getUndirectedEdgeDeclaration_SecondNode()
   {
-    return (EReference)undirectedEdgeDeclarationEClass.getEStructuralFeatures().get(1);
+    return (EReference)undirectedEdgeDeclarationEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -562,6 +628,14 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
 
     undirectedStatementEClass = createEClass(UNDIRECTED_STATEMENT);
 
+    directedSubgraphDeclarationEClass = createEClass(DIRECTED_SUBGRAPH_DECLARATION);
+    createEAttribute(directedSubgraphDeclarationEClass, DIRECTED_SUBGRAPH_DECLARATION__NAME);
+    createEReference(directedSubgraphDeclarationEClass, DIRECTED_SUBGRAPH_DECLARATION__STATEMENTS);
+
+    undirectedSubgraphDeclarationEClass = createEClass(UNDIRECTED_SUBGRAPH_DECLARATION);
+    createEAttribute(undirectedSubgraphDeclarationEClass, UNDIRECTED_SUBGRAPH_DECLARATION__NAME);
+    createEReference(undirectedSubgraphDeclarationEClass, UNDIRECTED_SUBGRAPH_DECLARATION__STATEMENTS);
+
     nodeDeclarationEClass = createEClass(NODE_DECLARATION);
     createEReference(nodeDeclarationEClass, NODE_DECLARATION__NODE_NAME);
     createEReference(nodeDeclarationEClass, NODE_DECLARATION__OPTIONAL_ATTRIBUTES);
@@ -570,22 +644,20 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
     createEAttribute(nodeIdEClass, NODE_ID__NAME);
 
     attributeListEClass = createEClass(ATTRIBUTE_LIST);
-    createEReference(attributeListEClass, ATTRIBUTE_LIST__ATTRIBUTES);
+    createEReference(attributeListEClass, ATTRIBUTE_LIST__ATTR);
 
     attributeEClass = createEClass(ATTRIBUTE);
-
-    labelAttributeEClass = createEClass(LABEL_ATTRIBUTE);
-    createEAttribute(labelAttributeEClass, LABEL_ATTRIBUTE__LABEL);
-
-    colorAttributeEClass = createEClass(COLOR_ATTRIBUTE);
-    createEAttribute(colorAttributeEClass, COLOR_ATTRIBUTE__COLOR);
+    createEAttribute(attributeEClass, ATTRIBUTE__ATTRIBUTE_NAME);
+    createEAttribute(attributeEClass, ATTRIBUTE__ATTRIBUTE_VALUE);
 
     directedEdgeDeclarationEClass = createEClass(DIRECTED_EDGE_DECLARATION);
     createEReference(directedEdgeDeclarationEClass, DIRECTED_EDGE_DECLARATION__FIRST_NODE);
+    createEAttribute(directedEdgeDeclarationEClass, DIRECTED_EDGE_DECLARATION__EDGE);
     createEReference(directedEdgeDeclarationEClass, DIRECTED_EDGE_DECLARATION__SECOND_NODE);
 
     undirectedEdgeDeclarationEClass = createEClass(UNDIRECTED_EDGE_DECLARATION);
     createEReference(undirectedEdgeDeclarationEClass, UNDIRECTED_EDGE_DECLARATION__FIRST_NODE);
+    createEAttribute(undirectedEdgeDeclarationEClass, UNDIRECTED_EDGE_DECLARATION__EDGE);
     createEReference(undirectedEdgeDeclarationEClass, UNDIRECTED_EDGE_DECLARATION__SECOND_NODE);
 
     // Create enums
@@ -621,10 +693,10 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    directedSubgraphDeclarationEClass.getESuperTypes().add(this.getDirectedStatement());
+    undirectedSubgraphDeclarationEClass.getESuperTypes().add(this.getUndirectedStatement());
     nodeDeclarationEClass.getESuperTypes().add(this.getDirectedStatement());
     nodeDeclarationEClass.getESuperTypes().add(this.getUndirectedStatement());
-    labelAttributeEClass.getESuperTypes().add(this.getAttribute());
-    colorAttributeEClass.getESuperTypes().add(this.getAttribute());
     directedEdgeDeclarationEClass.getESuperTypes().add(this.getDirectedStatement());
     undirectedEdgeDeclarationEClass.getESuperTypes().add(this.getUndirectedStatement());
 
@@ -644,6 +716,14 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
 
     initEClass(undirectedStatementEClass, UndirectedStatement.class, "UndirectedStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(directedSubgraphDeclarationEClass, DirectedSubgraphDeclaration.class, "DirectedSubgraphDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDirectedSubgraphDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, DirectedSubgraphDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirectedSubgraphDeclaration_Statements(), this.getDirectedStatement(), null, "statements", null, 0, -1, DirectedSubgraphDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(undirectedSubgraphDeclarationEClass, UndirectedSubgraphDeclaration.class, "UndirectedSubgraphDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getUndirectedSubgraphDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, UndirectedSubgraphDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUndirectedSubgraphDeclaration_Statements(), this.getUndirectedStatement(), null, "statements", null, 0, -1, UndirectedSubgraphDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(nodeDeclarationEClass, NodeDeclaration.class, "NodeDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getNodeDeclaration_NodeName(), this.getNodeId(), null, "nodeName", null, 0, 1, NodeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNodeDeclaration_OptionalAttributes(), this.getAttributeList(), null, "optionalAttributes", null, 0, 1, NodeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -652,22 +732,20 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
     initEAttribute(getNodeId_Name(), ecorePackage.getEString(), "name", null, 0, 1, NodeId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeListEClass, AttributeList.class, "AttributeList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAttributeList_Attributes(), this.getAttribute(), null, "attributes", null, 0, 1, AttributeList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttributeList_Attr(), this.getAttribute(), null, "attr", null, 0, -1, AttributeList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(labelAttributeEClass, LabelAttribute.class, "LabelAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLabelAttribute_Label(), ecorePackage.getEString(), "label", null, 0, 1, LabelAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(colorAttributeEClass, ColorAttribute.class, "ColorAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getColorAttribute_Color(), this.getColor(), "color", null, 0, 1, ColorAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttribute_AttributeName(), ecorePackage.getEString(), "attributeName", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttribute_AttributeValue(), ecorePackage.getEString(), "attributeValue", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(directedEdgeDeclarationEClass, DirectedEdgeDeclaration.class, "DirectedEdgeDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDirectedEdgeDeclaration_FirstNode(), this.getNodeId(), null, "firstNode", null, 0, 1, DirectedEdgeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDirectedEdgeDeclaration_Edge(), ecorePackage.getEString(), "edge", null, 0, 1, DirectedEdgeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDirectedEdgeDeclaration_SecondNode(), this.getNodeId(), null, "secondNode", null, 0, 1, DirectedEdgeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(undirectedEdgeDeclarationEClass, UndirectedEdgeDeclaration.class, "UndirectedEdgeDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getUndirectedEdgeDeclaration_FirstNode(), this.getNodeId(), null, "firstNode", null, 0, 1, UndirectedEdgeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getUndirectedEdgeDeclaration_Edge(), ecorePackage.getEString(), "edge", null, 0, 1, UndirectedEdgeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUndirectedEdgeDeclaration_SecondNode(), this.getNodeId(), null, "secondNode", null, 0, 1, UndirectedEdgeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals

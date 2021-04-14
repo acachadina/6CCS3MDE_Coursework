@@ -4,10 +4,13 @@
 package uk.ac.kcl.inf.validation;
 
 import com.google.common.base.Objects;
+import com.google.common.collect.Iterables;
+import java.util.ArrayList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
-import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import uk.ac.kcl.inf.dotLanguage.Attribute;
 import uk.ac.kcl.inf.dotLanguage.Digraph;
 import uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration;
 import uk.ac.kcl.inf.dotLanguage.DirectedStatement;
@@ -17,7 +20,6 @@ import uk.ac.kcl.inf.dotLanguage.NodeDeclaration;
 import uk.ac.kcl.inf.dotLanguage.NodeId;
 import uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration;
 import uk.ac.kcl.inf.dotLanguage.UndirectedStatement;
-import uk.ac.kcl.inf.dotLanguage.impl.DirectedEdgeDeclarationImpl;
 
 /**
  * This class contains custom validation rules.
@@ -25,83 +27,180 @@ import uk.ac.kcl.inf.dotLanguage.impl.DirectedEdgeDeclarationImpl;
  */
 @SuppressWarnings("all")
 public class DotLanguageValidator extends AbstractDotLanguageValidator {
+  public static final String MULTIPLE_NODE_DECLARATION_GRAPH = "uk.ac.kcl.inf.dotLanguage.MULTIPLE_NODE_DECLARATION_GRAPH";
+  
+  public static final String MULTIPLE_NODE_DECLARATION_DIGRAPH = "uk.ac.kcl.inf.dotLanguage.MULTIPLE_NODE_DECLARATION_DIGRAPH";
+  
+  public static final String ISOLATED_GRAPH_NODE = "uk.ac.kcl.inf.dotLanguage.DECLARED_UNUSED_GRAPH_NODE";
+  
+  public static final String ISOLATED_DIGRAPH_NODE = "uk.ac.kcl.inf.dotLanguage.DECLARED_UNUSED_DIGRAPH_NODE";
+  
+  public static final String INVALID_ATTRIBUTE_NAME = "uk.ac.kcl.inf.dotLanguage.INVALID_ATTRIBUTE_NAME";
+  
+  public static final String MULTIPLE_DIGRAPH_EDGE_DECLARATION = "uk.ac.kcl.inf.dotLanguage.MULTIPLE_DIGRAPH_EDGE_DECLARATION";
+  
+  public static final String MULTIPLE_GRAPH_EDGE_DECLARATION = "uk.ac.kcl.inf.dotLanguage.MULTIPLE_GRAPH_EDGE_DECLARATION";
+  
   /**
-   * Check whether there is a declared unused node in directed and undirected graphs.
+   * Check whether there are several declarations of the same node in directed and undirected graphs.
    */
-  public static final String DECLARED_UNUSED_GRAPH_NODE = "uk.ac.kcl.inf.dotLanguage.DECLARED_UNUSED_GRAPH_NODE";
-  
-  public static final String DECLARED_UNUSED_DIGRAPH_NODE = "uk.ac.kcl.inf.dotLanguage.DECLARED_UNUSED_DIGRAPH_NODE";
-  
   @Check
-  public void declaredUnusedGraphNode(final NodeDeclaration nodeDeclaration) {
+  public void multipleNodeDeclarations(final NodeDeclaration nodeDeclaration) {
     final EObject graph = nodeDeclaration.eContainer();
     final NodeId nodeId = nodeDeclaration.getNodeName();
     String _name = graph.eClass().getName();
     boolean _equals = Objects.equal(_name, "Graph");
     if (_equals) {
-      boolean _usedGraphNode = this.usedGraphNode(((Graph) graph), nodeId);
-      boolean _not = (!_usedGraphNode);
-      if (_not) {
-        this.warning("This node is declared but not used", nodeDeclaration, 
+      boolean _multipleNodeDeclarationGraph = this.multipleNodeDeclarationGraph(((Graph) graph), nodeId);
+      if (_multipleNodeDeclarationGraph) {
+        this.error("This node has already been declared.", nodeDeclaration, 
           DotLanguagePackage.Literals.NODE_DECLARATION__NODE_NAME, 
-          DotLanguageValidator.DECLARED_UNUSED_GRAPH_NODE);
+          DotLanguageValidator.MULTIPLE_NODE_DECLARATION_GRAPH);
       }
     } else {
-      boolean _usedDigraphNode = this.usedDigraphNode(((Digraph) graph), nodeId);
-      boolean _not_1 = (!_usedDigraphNode);
-      if (_not_1) {
-        this.warning("This node is declared but not used", nodeDeclaration, 
+      boolean _multipleNodeDeclarationDigraph = this.multipleNodeDeclarationDigraph(((Digraph) graph), nodeId);
+      if (_multipleNodeDeclarationDigraph) {
+        this.error("This node has already been declared.", nodeDeclaration, 
           DotLanguagePackage.Literals.NODE_DECLARATION__NODE_NAME, 
-          DotLanguageValidator.DECLARED_UNUSED_DIGRAPH_NODE);
+          DotLanguageValidator.MULTIPLE_NODE_DECLARATION_DIGRAPH);
       }
     }
   }
   
   /**
-   * Check whether there are several declarations of the same edge.
+   * Check whether there are isolated nodes in directed and undirected graphs.
    */
   @Check
-  public void multipleEdgeDeclarations(final DirectedEdgeDeclaration edgeDeclaration) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nno viable alternative at input \'}\'");
+  public void isolatedGraphNode(final NodeDeclaration nodeDeclaration) {
+    final EObject graph = nodeDeclaration.eContainer();
+    final NodeId nodeId = nodeDeclaration.getNodeName();
+    String _name = graph.eClass().getName();
+    boolean _equals = Objects.equal(_name, "Graph");
+    if (_equals) {
+      boolean _isolatedGraphNode = this.isolatedGraphNode(((Graph) graph), nodeId);
+      if (_isolatedGraphNode) {
+        this.warning("This node is isolated. It is not connected to any other node via an edge.", nodeDeclaration, 
+          DotLanguagePackage.Literals.NODE_DECLARATION__NODE_NAME, 
+          DotLanguageValidator.ISOLATED_GRAPH_NODE);
+      }
+    } else {
+      boolean _isolatedDigraphNode = this.isolatedDigraphNode(((Digraph) graph), nodeId);
+      if (_isolatedDigraphNode) {
+        this.warning("This node is isolated. It is not connected to any other node via an edge.", nodeDeclaration, 
+          DotLanguagePackage.Literals.NODE_DECLARATION__NODE_NAME, 
+          DotLanguageValidator.ISOLATED_DIGRAPH_NODE);
+      }
+    }
+  }
+  
+  /**
+   * Check the correct naming of attributes.
+   */
+  @Check
+  public void validAttribute(final Attribute attribute) {
+    final String attributeName = attribute.getAttributeName();
+    if ((((!Objects.equal(attributeName, "fillColor")) || (!Objects.equal(attributeName, "label"))) || (!Objects.equal(attributeName, "lineColor")))) {
+      this.warning("This is not a valid attribute. This attribute will be ignored when the program is run.", attribute, DotLanguagePackage.Literals.ATTRIBUTE__ATTRIBUTE_NAME, 
+        DotLanguageValidator.INVALID_ATTRIBUTE_NAME);
+    }
   }
   
   /**
    * HELPER FUNCTIONS
    */
-  public boolean usedGraphNode(final Graph graph, final NodeId node) {
-    boolean used = false;
-    final EList<UndirectedStatement> graphStatements = graph.getStatements();
-    for (int i = 0; (i < ((Object[])Conversions.unwrapArray(graph.getStatements(), Object.class)).length); i++) {
-      String _name = graphStatements.get(i).eClass().getName();
-      boolean _equals = Objects.equal(_name, "UndirectedEdgeDeclaration");
-      if (_equals) {
-        final UndirectedStatement edgeDeclaration = graphStatements.get(i);
-        final NodeId firstNode = ((UndirectedEdgeDeclaration) edgeDeclaration).getFirstNode();
-        final NodeId secondNode = ((UndirectedEdgeDeclaration) edgeDeclaration).getSecondNode();
+  public boolean isolatedGraphNode(final Graph graph, final NodeId node) {
+    final Iterable<UndirectedEdgeDeclaration> edgeDeclarations = Iterables.<UndirectedEdgeDeclaration>filter(graph.getStatements(), UndirectedEdgeDeclaration.class);
+    for (final UndirectedEdgeDeclaration edgeDecl : edgeDeclarations) {
+      {
+        final NodeId firstNode = ((UndirectedEdgeDeclaration) edgeDecl).getFirstNode();
+        final NodeId secondNode = ((UndirectedEdgeDeclaration) edgeDecl).getSecondNode();
         if ((Objects.equal(node, firstNode) || Objects.equal(node, secondNode))) {
-          used = true;
+          return false;
         }
       }
     }
-    return used;
+    return true;
   }
   
-  public boolean usedDigraphNode(final Digraph graph, final NodeId node) {
-    boolean used = false;
-    final EList<DirectedStatement> graphStatements = graph.getStatements();
-    for (int i = 0; (i < ((Object[])Conversions.unwrapArray(graph.getStatements(), Object.class)).length); i++) {
-      String _name = graphStatements.get(i).eClass().getName();
-      boolean _equals = Objects.equal(_name, "DirectedEdgeDeclaration");
-      if (_equals) {
-        final DirectedStatement edgeDeclaration = graphStatements.get(i);
-        final NodeId firstNode = ((DirectedEdgeDeclarationImpl) edgeDeclaration).getFirstNode();
-        final NodeId secondNode = ((DirectedEdgeDeclarationImpl) edgeDeclaration).getSecondNode();
+  public boolean isolatedDigraphNode(final Digraph graph, final NodeId node) {
+    final Iterable<DirectedEdgeDeclaration> edgeDeclarations = Iterables.<DirectedEdgeDeclaration>filter(graph.getStatements(), DirectedEdgeDeclaration.class);
+    for (final DirectedEdgeDeclaration edgeDecl : edgeDeclarations) {
+      {
+        final NodeId firstNode = ((DirectedEdgeDeclaration) edgeDecl).getFirstNode();
+        final NodeId secondNode = ((DirectedEdgeDeclaration) edgeDecl).getSecondNode();
         if ((Objects.equal(node, firstNode) || Objects.equal(node, secondNode))) {
-          used = true;
+          return false;
         }
       }
     }
-    return used;
+    return true;
+  }
+  
+  public boolean multipleNodeDeclarationGraph(final Graph graph, final NodeId node) {
+    int counter = 0;
+    final Iterable<NodeDeclaration> nodeDeclarations = Iterables.<NodeDeclaration>filter(graph.getStatements(), NodeDeclaration.class);
+    for (final NodeDeclaration nodeDecl : nodeDeclarations) {
+      boolean _equals = nodeDecl.getNodeName().getName().equals(node.getName());
+      if (_equals) {
+        if ((counter >= 1)) {
+          return true;
+        } else {
+          counter++;
+        }
+      }
+    }
+    return false;
+  }
+  
+  public boolean multipleNodeDeclarationDigraph(final Digraph graph, final NodeId node) {
+    int counter = 0;
+    final Iterable<NodeDeclaration> nodeDeclarations = Iterables.<NodeDeclaration>filter(graph.getStatements(), NodeDeclaration.class);
+    for (final NodeDeclaration nodeDecl : nodeDeclarations) {
+      boolean _equals = nodeDecl.getNodeName().getName().equals(node.getName());
+      if (_equals) {
+        if ((counter >= 1)) {
+          return true;
+        } else {
+          counter++;
+        }
+      }
+    }
+    return false;
+  }
+  
+  public boolean multipleEdgeDeclarationDigraph(final Digraph graph, final ArrayList<NodeId> edge) {
+    final EList<DirectedStatement> statements = graph.getStatements();
+    for (final DirectedStatement statement : statements) {
+      String _name = statement.eClass().getName();
+      boolean _equals = Objects.equal(_name, "DirectedEdgeDeclaration");
+      if (_equals) {
+        final NodeId firstNode = ((DirectedEdgeDeclaration) statement).getFirstNode();
+        final NodeId secondNode = ((DirectedEdgeDeclaration) statement).getSecondNode();
+        final ArrayList<NodeId> pair = CollectionLiterals.<NodeId>newArrayList(firstNode, secondNode);
+        boolean _equals_1 = Objects.equal(pair, edge);
+        if (_equals_1) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+  
+  public boolean multipleEdgeDeclarationGraph(final Graph graph, final ArrayList<NodeId> edge) {
+    final EList<UndirectedStatement> statements = graph.getStatements();
+    for (final UndirectedStatement statement : statements) {
+      String _name = statement.eClass().getName();
+      boolean _equals = Objects.equal(_name, "UndirectedEdgeDeclaration");
+      if (_equals) {
+        final NodeId firstNode = ((UndirectedEdgeDeclaration) statement).getFirstNode();
+        final NodeId secondNode = ((UndirectedEdgeDeclaration) statement).getSecondNode();
+        final ArrayList<NodeId> pair = CollectionLiterals.<NodeId>newArrayList(firstNode, secondNode);
+        boolean _equals_1 = Objects.equal(pair, edge);
+        if (_equals_1) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 }

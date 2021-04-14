@@ -59,11 +59,11 @@ NodeId:
 // will be 'color' and 'label'
 // color defaults to black and the label to the node's ID
 AttributeList:
-	"[" attr += Attribute (',' attr += Attribute)? "]"
+	"[" attr += Attribute* "]"
 ;
 
 Attribute:
-	attributeName = ID "=" attributeValue = ID
+	attributeName = ID "=" attributeValue = ID (',')?
 ;
 
 
@@ -73,11 +73,11 @@ enum Color:
 
 // a node can be a reference to a declared node for now
 DirectedEdgeDeclaration:
-	firstNode = [NodeId] directedEdge = DirectedEdge secondNode = [NodeId]
+	firstNode = [NodeId] edge = DirectedEdge secondNode = [NodeId]
 ;
 
 UndirectedEdgeDeclaration:
-	firstNode = [NodeId] undirectedEdge = UndirectedEdge secondNode = [NodeId]
+	firstNode = [NodeId] edge = UndirectedEdge secondNode = [NodeId]
 ;
 
 DirectedEdge:

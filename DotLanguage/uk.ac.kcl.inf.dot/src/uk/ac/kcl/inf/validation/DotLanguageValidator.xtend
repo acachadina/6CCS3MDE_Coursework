@@ -9,11 +9,15 @@ import uk.ac.kcl.inf.dotLanguage.Graph
 import uk.ac.kcl.inf.dotLanguage.NodeId
 import uk.ac.kcl.inf.dotLanguage.NodeDeclaration
 import uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration
-import uk.ac.kcl.inf.dotLanguage.impl.UndirectedEdgeDeclarationImpl
-import uk.ac.kcl.inf.dotLanguage.impl.GraphImpl
 import uk.ac.kcl.inf.dotLanguage.Digraph
 import uk.ac.kcl.inf.dotLanguage.impl.DirectedEdgeDeclarationImpl
 import uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration
+import uk.ac.kcl.inf.dotLanguage.DirectedStatement
+import java.util.ArrayList
+import java.util.List
+import uk.ac.kcl.inf.dotLanguage.UndirectedStatement
+import uk.ac.kcl.inf.dotLanguage.AttributeList
+import uk.ac.kcl.inf.dotLanguage.Attribute
 
 /** 
  * This class contains custom validation rules. 
@@ -21,81 +25,201 @@ import uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration
  */
 class DotLanguageValidator extends AbstractDotLanguageValidator { 
 
-	/**
-	 * Check whether there is a declared unused node in directed and undirected graphs.
-	 */
+	public static val MULTIPLE_NODE_DECLARATION_GRAPH = 'uk.ac.kcl.inf.dotLanguage.MULTIPLE_NODE_DECLARATION_GRAPH'
+	public static val MULTIPLE_NODE_DECLARATION_DIGRAPH = 'uk.ac.kcl.inf.dotLanguage.MULTIPLE_NODE_DECLARATION_DIGRAPH'
 	 
-	public static val DECLARED_UNUSED_GRAPH_NODE = 'uk.ac.kcl.inf.dotLanguage.DECLARED_UNUSED_GRAPH_NODE'
-	public static val DECLARED_UNUSED_DIGRAPH_NODE = 'uk.ac.kcl.inf.dotLanguage.DECLARED_UNUSED_DIGRAPH_NODE'
+	public static val ISOLATED_GRAPH_NODE = 'uk.ac.kcl.inf.dotLanguage.DECLARED_UNUSED_GRAPH_NODE'
+	public static val ISOLATED_DIGRAPH_NODE = 'uk.ac.kcl.inf.dotLanguage.DECLARED_UNUSED_DIGRAPH_NODE'
 	
+	public static val INVALID_ATTRIBUTE_NAME = 'uk.ac.kcl.inf.dotLanguage.INVALID_ATTRIBUTE_NAME'
+
+	public static val MULTIPLE_DIGRAPH_EDGE_DECLARATION = 'uk.ac.kcl.inf.dotLanguage.MULTIPLE_DIGRAPH_EDGE_DECLARATION'
+	public static val MULTIPLE_GRAPH_EDGE_DECLARATION = 'uk.ac.kcl.inf.dotLanguage.MULTIPLE_GRAPH_EDGE_DECLARATION'
 	
-	@Check
-	def declaredUnusedGraphNode(NodeDeclaration nodeDeclaration){
+	/**
+	 * Check whether there are several declarations of the same node in directed and undirected graphs.
+	 */
+	 @Check
+	 def multipleNodeDeclarations(NodeDeclaration nodeDeclaration){
 		val graph = nodeDeclaration.eContainer
 		val nodeId = nodeDeclaration.nodeName
 		
 		if (graph.eClass.name == "Graph"){
-			if (!(graph as Graph).usedGraphNode(nodeId)){
-			warning('This node is declared but not used', nodeDeclaration, 
+			if ((graph as Graph).multipleNodeDeclarationGraph(nodeId)){
+			error('This node has already been declared.', nodeDeclaration, 
 					DotLanguagePackage.Literals.NODE_DECLARATION__NODE_NAME,
-					DECLARED_UNUSED_GRAPH_NODE)
+					MULTIPLE_NODE_DECLARATION_GRAPH)
 			}
 		} else {
-			if (!(graph as Digraph).usedDigraphNode(nodeId)){
-			warning('This node is declared but not used', nodeDeclaration, 
+			if ((graph as Digraph).multipleNodeDeclarationDigraph(nodeId)){
+			error('This node has already been declared.', nodeDeclaration, 
 					DotLanguagePackage.Literals.NODE_DECLARATION__NODE_NAME,
-					DECLARED_UNUSED_DIGRAPH_NODE)
+					MULTIPLE_NODE_DECLARATION_DIGRAPH)
 			}
 		}
 	}
 	
+	
 	/**
-	 * Check whether there are several declarations of the same edge.
+	 * Check whether there are isolated nodes in directed and undirected graphs.
 	 */
-	
 	@Check
-	def multipleEdgeDeclarations(DirectedEdgeDeclaration edgeDeclaration){
-		val Graph graph = edgeDeclaration.
+	def isolatedGraphNode(NodeDeclaration nodeDeclaration){
+		val graph = nodeDeclaration.eContainer
+		val nodeId = nodeDeclaration.nodeName
+		
+		if (graph.eClass.name == "Graph"){
+			if ((graph as Graph).isolatedGraphNode(nodeId)){
+			warning('This node is isolated. It is not connected to any other node via an edge.',
+				 nodeDeclaration, 
+				DotLanguagePackage.Literals.NODE_DECLARATION__NODE_NAME,
+				ISOLATED_GRAPH_NODE)
+			}
+		} else {
+			if ((graph as Digraph).isolatedDigraphNode(nodeId)){
+			warning('This node is isolated. It is not connected to any other node via an edge.', 
+				nodeDeclaration, 
+				DotLanguagePackage.Literals.NODE_DECLARATION__NODE_NAME,
+				ISOLATED_DIGRAPH_NODE)
+			}
+		}
 	}
-	
-	
+	/**
+	 * Check the correct naming of attributes.
+	 */
+	@Check
+	def validAttribute(Attribute attribute){
+		val attributeName = attribute.attributeName
+		if(attributeName != "fillColor" || attributeName != "label" || attributeName != "lineColor"){
+			warning('This is not a valid attribute. This attribute will be ignored when the program is run.', 
+				attribute, DotLanguagePackage.Literals.ATTRIBUTE__ATTRIBUTE_NAME, 
+				INVALID_ATTRIBUTE_NAME
+			)
+		}
+		
+	}
+	 
+	 
+	/**
+	 * Check whether there are several declarations of the same edge in directed and undirected graphs.
+	 */
+//	@Check
+//	def multipleEdgeDeclarationsDigraph(DirectedEdgeDeclaration edgeDeclaration){
+//		val graph = edgeDeclaration.eContainer
+//		var edge = newArrayList(edgeDeclaration.firstNode, edgeDeclaration.secondNode)
+//		
+//		if((graph as Digraph).multipleEdgeDeclarationDigraph(edge)){
+//			warning('This edge has already been declared.', edgeDeclaration, 
+//			DotLanguagePackage.Literals.DIRECTED_EDGE_DECLARATION__FIRST_NODE,
+//			MULTIPLE_DIGRAPH_EDGE_DECLARATION
+//			)
+//		}
+//	}		
+//	
+//	@Check
+//	def multipleEdgeDeclarationsGraph(UndirectedEdgeDeclaration edgeDeclaration){
+//		val graph = edgeDeclaration.eContainer
+//		var edge = newArrayList(edgeDeclaration.firstNode, edgeDeclaration.secondNode)
+//		
+//		if((graph as Graph).multipleEdgeDeclarationGraph(edge)){
+//			warning('This edge has already been declared.', edgeDeclaration, 
+//			DotLanguagePackage.Literals.UNDIRECTED_EDGE_DECLARATION__FIRST_NODE,
+//			MULTIPLE_GRAPH_EDGE_DECLARATION
+//			)
+//		}		
+//	}
+		
+		
 	/**
 	 * HELPER FUNCTIONS
 	 */
 	
-	def boolean usedGraphNode(Graph graph, NodeId node){
-		var used = false
-		val graphStatements = graph.statements
+	def boolean isolatedGraphNode(Graph graph, NodeId node){
+		val edgeDeclarations = graph.statements.filter(UndirectedEdgeDeclaration)
 		
-		for(var i=0; i < graph.statements.length; i++){
-			if(graphStatements.get(i).eClass.name == "UndirectedEdgeDeclaration"){
-				val edgeDeclaration = graphStatements.get(i)
-				val firstNode = (edgeDeclaration as UndirectedEdgeDeclaration).firstNode
-				val secondNode = (edgeDeclaration as UndirectedEdgeDeclaration).secondNode
-				if (node == firstNode || node == secondNode){
-					used = true
-				}
+		for(UndirectedEdgeDeclaration edgeDecl : edgeDeclarations){
+			val firstNode = (edgeDecl as UndirectedEdgeDeclaration).firstNode
+			val secondNode = (edgeDecl as UndirectedEdgeDeclaration).secondNode
+			if (node == firstNode || node == secondNode){
+				return false
 			}
 		}
-		return used	
+		return true
 	}
 	
-	def boolean usedDigraphNode(Digraph graph, NodeId node){
-		var used = false
-		val graphStatements = graph.statements
+	def boolean isolatedDigraphNode(Digraph graph, NodeId node){
+		val edgeDeclarations = graph.statements.filter(DirectedEdgeDeclaration)
 		
-		for(var i=0; i < graph.statements.length; i++){
-			if(graphStatements.get(i).eClass.name == "DirectedEdgeDeclaration"){
-				val edgeDeclaration = graphStatements.get(i)
-				val firstNode = (edgeDeclaration as DirectedEdgeDeclarationImpl).firstNode
-				val secondNode = (edgeDeclaration as DirectedEdgeDeclarationImpl).secondNode
-				if (node == firstNode || node == secondNode){
-					used = true
+		for(DirectedEdgeDeclaration edgeDecl : edgeDeclarations){
+			val firstNode = (edgeDecl as DirectedEdgeDeclaration).firstNode
+			val secondNode = (edgeDecl as DirectedEdgeDeclaration).secondNode
+			if (node == firstNode || node == secondNode){
+				return false
+			}
+		}
+		return true
+	}
+	
+	def multipleNodeDeclarationGraph(Graph graph, NodeId node){
+		var counter = 0
+		val nodeDeclarations = graph.statements.filter(NodeDeclaration)
+		
+		for(NodeDeclaration nodeDecl: nodeDeclarations){
+			if (nodeDecl.nodeName.name.equals(node.name)){
+				if(counter >= 1) return true
+				else counter++
+			}
+		}
+		return false	
+	}
+	
+	def multipleNodeDeclarationDigraph(Digraph graph, NodeId node){
+		var counter = 0
+		val nodeDeclarations = graph.statements.filter(NodeDeclaration)
+		
+		for(NodeDeclaration nodeDecl: nodeDeclarations){
+			if (nodeDecl.nodeName.name.equals(node.name)){
+				if(counter >= 1) return true
+				else counter++
+			}
+		}
+		return false	
+	}
+	
+	
+	def boolean multipleEdgeDeclarationDigraph(Digraph graph, ArrayList<NodeId> edge){
+		val statements = graph.statements
+		
+		for(DirectedStatement statement : statements){
+			if(statement.eClass.name == "DirectedEdgeDeclaration"){
+				val firstNode = (statement as DirectedEdgeDeclaration).firstNode
+				val secondNode = (statement as DirectedEdgeDeclaration).secondNode
+				val pair = newArrayList(firstNode, secondNode)
+				if (pair == edge){
+					return true
 				}
 			}
 		}
-		return used	
+		return false 
 	}
+	
+	def boolean multipleEdgeDeclarationGraph(Graph graph, ArrayList<NodeId> edge){
+		val statements = graph.statements
+		
+		for(UndirectedStatement statement : statements){
+			if(statement.eClass.name == "UndirectedEdgeDeclaration"){
+				val firstNode = (statement as UndirectedEdgeDeclaration).firstNode
+				val secondNode = (statement as UndirectedEdgeDeclaration).secondNode
+				val pair = newArrayList(firstNode, secondNode)
+				if (pair == edge){
+					return true
+				}
+			}
+		}
+		return false 
+	}
+	
+	
 	
 	
 	
