@@ -36,23 +36,38 @@ class DotLanguageGenerator extends AbstractGenerator {
 	
 	def doGenerateClass(DotLanguage program, String className) '''
 		
-		import uk.ac.kcl.inf.dotLanguage.library.*;
+		import dot.library.*;
 		
 		public class «className» {
 			public static void main (String args[]){
 				DotFrame tf = new DotFrame();
 				
-				Dot d = new Dot(tf){
+				Dot dot = new Dot(tf){
 					@Override
 					
 					public void run() {
+						addNode("anna", "node1", null, false);
+		                addNode("anna", "node2", null, false);
+		                addNode("anna", "node3", null, false);
+		                addNode("anna", "node4", null, false);
+		                addNode("anna", "node5", null, false);
+		
+		
+		                addEdge("anna", "node1", "node2");
+		                addEdge("anna", "node2", "node3");
+		                addEdge("anna", "node1", "node4");
+		                addEdge("anna", "node3", "node5");
+		                
+		                addGraphs();
 						
 					}
 					
-				}
+				};
+				
+				dot.run();
 			}
 		}
-	
+		
 	'''
 
 		
