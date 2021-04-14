@@ -10,10 +10,6 @@ public class DotNode
     private int x,y = 0;
     private Attributes attributes = new Attributes();
 
-    public DotNode(String name){
-        this.name = name;
-    }
-
     public DotNode(String name, Attributes attributes){
         this.name = name;
         this.attributes = attributes;
@@ -38,5 +34,9 @@ public class DotNode
 
     public String getLabel(){
         return attributes.getLabel();
+    }
+    
+    public String getName(){
+        return name;
     }
 }

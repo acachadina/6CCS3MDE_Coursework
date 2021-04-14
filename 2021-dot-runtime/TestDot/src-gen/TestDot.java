@@ -1,5 +1,6 @@
 
 import dot.library.*;
+import java.util.HashMap;
 
 public class TestDot {
 	public static void main (String args[]){
@@ -9,17 +10,17 @@ public class TestDot {
 			@Override
 			
 			public void run() {
-			addNode("anna", "node1", null, false);
+			HashMap<String, String> attrnode1 = new HashMap<>();
+			attrnode1.put("color","red");
+			attrnode1.put("label","node1");
+			addNode("anna", "node1", attrnode1, false);
 			
-			addNode("anna", "node2", null, false);
+			HashMap<String, String> attrnode2 = new HashMap<>();
+			attrnode2.put("color","blue");
+			attrnode2.put("label","node2");
+			addNode("anna", "node2", attrnode2, false);
 			
 			addNode("anna", "node3", null, false);
-			
-			addNode("anna", "node4", null, false);
-			
-			addNode("anna", "node5", null, false);
-			
-			addNode("anna", "node6", null, false);
 			
 			addEdge("anna", "node1", "node2"); 
 			

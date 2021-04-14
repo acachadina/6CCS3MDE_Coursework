@@ -44,6 +44,7 @@ class DotLanguageGenerator extends AbstractGenerator {
 	def doGenerateClass(DotLanguage program, String className) '''
 		
 		import dot.library.*;
+		import java.util.HashMap;
 		
 		public class «className» {
 			public static void main (String args[]){
@@ -74,8 +75,16 @@ class DotLanguageGenerator extends AbstractGenerator {
 	'''
 	
 	// GRAPHS: 
-	dispatch def generateGraphCreationStatements(NodeDeclaration node, Graph graph)'''
-		addNode("«graph.name»", "«node.nodeName.name»", null, false);
+	dispatch def generateGraphCreationStatements(NodeDeclaration node, Graph graph)'''		
+		«IF node.optionalAttributes === null»
+			addNode("«graph.name»", "«node.nodeName.name»", null, false);
+		«ELSE»
+			HashMap<String, String> attr«node.nodeName.name» = new HashMap<>();
+			«FOR attr : node.optionalAttributes.attr»
+				attr«node.nodeName.name».put("«attr.attributeName»","«attr.attributeValue»");
+			«ENDFOR »
+			addNode("«graph.name»", "«node.nodeName.name»", attr«node.nodeName.name», false);
+		«ENDIF»
 	'''
 	dispatch def generateGraphCreationStatements(UndirectedEdgeDeclaration edge, Graph graph)'''
 		addEdge("«graph.name»", "«edge.firstNode.name»", "«edge.secondNode.name»"); 
@@ -85,7 +94,15 @@ class DotLanguageGenerator extends AbstractGenerator {
 	
 	//DIGRAPHS
 	dispatch def generateGraphCreationStatements(NodeDeclaration node, Digraph digraph)'''
-		addNode("«digraph.name»", "«node.nodeName.name»", null, true);
+		«IF node.optionalAttributes === null»
+			addNode("«digraph.name»", "«node.nodeName.name»", null, true);
+		«ELSE»
+			HashMap<String, String> attr«node.nodeName.name» = new HashMap<>();
+			«FOR attr : node.optionalAttributes.attr»
+				attr«node.nodeName.name».put("«attr.attributeName»","«attr.attributeValue»");
+			«ENDFOR »
+			addNode("«digraph.name»", "«node.nodeName.name»", attr«node.nodeName.name», true);
+		«ENDIF»		
 	'''
 	
 	dispatch def generateGraphCreationStatements(DirectedEdgeDeclaration edge, Digraph digraph)'''
@@ -94,6 +111,16 @@ class DotLanguageGenerator extends AbstractGenerator {
 	dispatch def generateGraphCreationStatements(DirectedSubgraphDeclaration edge, Digraph digraph)'''
 	'''
 	
+	//ATTRIBUTES:
+	
+	def handleAttributes(NodeDeclaration node){
+		if(node.optionalAttributes === null){
+			return null
+		}
+		else{
+			
+		}
+	}
 
 		
 }

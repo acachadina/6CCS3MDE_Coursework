@@ -1,12 +1,8 @@
 graph anna {
-	node1
-	node2
+	node1 [color=red, label=node1]
+	node2 [color=blue, label=node2]
 	node3
-	node4
-	node5
-	node6
 	
 	node1--node2
 	node1--node3
-	
 }

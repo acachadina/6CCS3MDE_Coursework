@@ -1,8 +1,6 @@
 package dot.library;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public abstract class Dot
 {
@@ -40,7 +38,7 @@ public abstract class Dot
         this.df = df;
     }
 
-    protected void addNode(String graphID, String nodeName, List<String> attributes, boolean directed) {
+    protected void addNode(String graphID, String nodeName, HashMap<String, String> attributes, boolean directed) {
         System.out.println("Adding node: " + nodeName);
         // get attributes in code generation:
         // graph.optionalAttributes.attributes
@@ -51,11 +49,16 @@ public abstract class Dot
         }
 
         DotGraph graph = graphs.get(graphID);
-
-        Attributes attr = new Attributes(attributes);
-
-        //TODO: How do I decide what coordinates to use?? dibuixar i intentar pensar-ho
-        DotNode node = new DotNode(nodeName);
+        
+        Attributes attr;
+        
+        if(attributes != null) {
+        	attr = new Attributes(attributes);
+        } else {
+        	attr = new Attributes();
+        }
+        
+        DotNode node = new DotNode(nodeName, attr);
 
         System.out.println("Node object created!! Adding node to graph:");
         System.out.println(node);
@@ -71,13 +74,13 @@ public abstract class Dot
         if(graph.containsNode(firstNode)) {
             node1 = graph.getNode(firstNode);
         } else{
-            node1 = new DotNode(firstNode);
+            node1 = new DotNode(firstNode, new Attributes());
         }
 
         if(graph.containsNode(secondNode)) {
             node2 = graph.getNode(secondNode);
         } else{
-            node2 = new DotNode(secondNode);
+            node2 = new DotNode(secondNode, new Attributes());
         }
 
         graph.addEdge(node1, node2);

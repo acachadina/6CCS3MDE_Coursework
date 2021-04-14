@@ -51,7 +51,7 @@ public class DotGraph
     }
 
     public Color getColor(DotNode node){
-        // chekc if node has defined attributes, otherwise take the ones
+        // check if node has defined attributes, otherwise take the ones
         // for the graph
         Color nodeColor = node.getColor();
 
@@ -60,6 +60,13 @@ public class DotGraph
         }
 
         return node.getColor();
+    }
+    
+    public String getLabel(DotNode node) {
+    	if(node.getLabel() == null) {
+    		return node.getName();
+    	}
+    	return node.getLabel();
     }
 
     public void drawEdge(Graphics g, DotNode node1, DotNode node2) {
@@ -117,8 +124,12 @@ public class DotGraph
         if(node.getX() != 0 && node.getY() != 0) {
             g.setColor(getColor(node));
             g.fillOval(upperLeftX, upperLeftY, width, height);
-            g.drawOval(upperLeftX, upperLeftY, 50, 50);
-            g.drawString(node.getLabel(), node.getX(), node.getY());
+            g.drawOval(upperLeftX, upperLeftY, width, height);
+            g.setColor(new Color(0,0,0));
+            
+            int labelX = node.getX() - (width/3);
+            int labelY = node.getY();
+            g.drawString(getLabel(node), labelX, labelY);
         }
     }
 
@@ -161,8 +172,9 @@ public class DotGraph
         for(DotNode node : nodes.values()) {
             // int nodeHeight = Math.max(height, f.getHeight());
             // int nodeWidth = Math.max(width, f.stringWidint nodeHeight = Math.max(height, f.getHeight());
-            int nodeHeight = 50;
-            int nodeWidth = 50;
+        	
+        	int nodeHeight = Math.max(50, f.getHeight());
+            int nodeWidth = Math.max(50, f.stringWidth(getLabel(node))+50/2);
 
             drawNode(g, node, nodeHeight, nodeWidth);
         }
