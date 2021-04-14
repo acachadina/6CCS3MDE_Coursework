@@ -12,24 +12,30 @@ public class TestDot {
 			@Override
 			
 			public void run() {
-			HashMap<String, String> attrnode1 = new HashMap<>();
-			attrnode1.put("color","red");
-			attrnode1.put("label","node1");
-			addNode("anna", "node1", attrnode1, false);
-			
-			HashMap<String, String> attrnode2 = new HashMap<>();
-			attrnode2.put("color","blue");
-			attrnode2.put("marta","hola");
-			attrnode2.put("label","hello");
-			addNode("anna", "node2", attrnode2, false);
-			
-			addNode("anna", "node3", null, false);
-			
-			ArrayList<String> secondNodes = new ArrayList<>();
-			secondNodes.add("node2");		
-			secondNodes.add("node3");		
-			addEdge("anna", "node1", secondNodes); 
-			addGraphs();
+				HashMap<String, String> attributes = new HashMap<>();
+				ArrayList<String> secondNodes = new ArrayList<>();
+				attributes.put("color","red");
+				attributes.put("label","node1");
+				addNode("anna", "node1", attributes, false);
+				attributes.clear();
+				
+				attributes.put("color","blue");
+				attributes.put("marta","hola");
+				attributes.put("label","123");
+				addNode("anna", "node2", attributes, false);
+				attributes.clear();
+				
+				addNode("anna", "node3", null, false);
+				attributes.clear();
+				
+				addNode("anna", "node4", null, false);
+				attributes.clear();
+				
+				secondNodes.add("node2");		
+				secondNodes.add("node3");		
+				addEdge("anna", "node1", secondNodes); 
+				secondNodes.clear();
+				addGraphs();
 			}
 			
 		};

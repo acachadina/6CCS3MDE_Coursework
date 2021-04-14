@@ -274,10 +274,10 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDotLanguage.g:1732:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalDotLanguage.g:1732:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalDotLanguage.g:1778:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalDotLanguage.g:1778:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalDotLanguage.g:1732:11: ( '^' )?
+            // InternalDotLanguage.g:1778:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -286,7 +286,7 @@ public class InternalDotLanguageLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalDotLanguage.g:1732:11: '^'
+                    // InternalDotLanguage.g:1778:11: '^'
                     {
                     match('^'); 
 
@@ -304,7 +304,7 @@ public class InternalDotLanguageLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalDotLanguage.g:1732:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalDotLanguage.g:1778:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -353,10 +353,10 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDotLanguage.g:1734:10: ( ( '0' .. '9' )+ )
-            // InternalDotLanguage.g:1734:12: ( '0' .. '9' )+
+            // InternalDotLanguage.g:1780:10: ( ( '0' .. '9' )+ )
+            // InternalDotLanguage.g:1780:12: ( '0' .. '9' )+
             {
-            // InternalDotLanguage.g:1734:12: ( '0' .. '9' )+
+            // InternalDotLanguage.g:1780:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -370,7 +370,7 @@ public class InternalDotLanguageLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalDotLanguage.g:1734:13: '0' .. '9'
+            	    // InternalDotLanguage.g:1780:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -402,10 +402,10 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDotLanguage.g:1736:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalDotLanguage.g:1736:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalDotLanguage.g:1782:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalDotLanguage.g:1782:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalDotLanguage.g:1736:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalDotLanguage.g:1782:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -423,10 +423,10 @@ public class InternalDotLanguageLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalDotLanguage.g:1736:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalDotLanguage.g:1782:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalDotLanguage.g:1736:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalDotLanguage.g:1782:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -442,7 +442,7 @@ public class InternalDotLanguageLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalDotLanguage.g:1736:21: '\\\\' .
+                    	    // InternalDotLanguage.g:1782:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -450,7 +450,7 @@ public class InternalDotLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalDotLanguage.g:1736:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalDotLanguage.g:1782:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -475,10 +475,10 @@ public class InternalDotLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalDotLanguage.g:1736:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalDotLanguage.g:1782:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalDotLanguage.g:1736:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalDotLanguage.g:1782:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -494,7 +494,7 @@ public class InternalDotLanguageLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalDotLanguage.g:1736:54: '\\\\' .
+                    	    // InternalDotLanguage.g:1782:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -502,7 +502,7 @@ public class InternalDotLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalDotLanguage.g:1736:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalDotLanguage.g:1782:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -545,12 +545,12 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDotLanguage.g:1738:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalDotLanguage.g:1738:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalDotLanguage.g:1784:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalDotLanguage.g:1784:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalDotLanguage.g:1738:24: ( options {greedy=false; } : . )*
+            // InternalDotLanguage.g:1784:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -575,7 +575,7 @@ public class InternalDotLanguageLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalDotLanguage.g:1738:52: .
+            	    // InternalDotLanguage.g:1784:52: .
             	    {
             	    matchAny(); 
 
@@ -605,12 +605,12 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDotLanguage.g:1740:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalDotLanguage.g:1740:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalDotLanguage.g:1786:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalDotLanguage.g:1786:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalDotLanguage.g:1740:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalDotLanguage.g:1786:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -623,7 +623,7 @@ public class InternalDotLanguageLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalDotLanguage.g:1740:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalDotLanguage.g:1786:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -643,7 +643,7 @@ public class InternalDotLanguageLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalDotLanguage.g:1740:40: ( ( '\\r' )? '\\n' )?
+            // InternalDotLanguage.g:1786:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -652,9 +652,9 @@ public class InternalDotLanguageLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalDotLanguage.g:1740:41: ( '\\r' )? '\\n'
+                    // InternalDotLanguage.g:1786:41: ( '\\r' )? '\\n'
                     {
-                    // InternalDotLanguage.g:1740:41: ( '\\r' )?
+                    // InternalDotLanguage.g:1786:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -663,7 +663,7 @@ public class InternalDotLanguageLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalDotLanguage.g:1740:41: '\\r'
+                            // InternalDotLanguage.g:1786:41: '\\r'
                             {
                             match('\r'); 
 
@@ -695,10 +695,10 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDotLanguage.g:1742:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalDotLanguage.g:1742:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalDotLanguage.g:1788:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalDotLanguage.g:1788:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalDotLanguage.g:1742:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalDotLanguage.g:1788:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -752,8 +752,8 @@ public class InternalDotLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDotLanguage.g:1744:16: ( . )
-            // InternalDotLanguage.g:1744:18: .
+            // InternalDotLanguage.g:1790:16: ( . )
+            // InternalDotLanguage.g:1790:18: .
             {
             matchAny(); 
 

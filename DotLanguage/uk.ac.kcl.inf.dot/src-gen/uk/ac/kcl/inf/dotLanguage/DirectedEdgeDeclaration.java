@@ -14,7 +14,7 @@ package uk.ac.kcl.inf.dotLanguage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration#getFirstNode <em>First Node</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration#getDirectedEdge <em>Directed Edge</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration#getEdge <em>Edge</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration#getSecondNode <em>Second Node</em>}</li>
  * </ul>
  *
@@ -47,26 +47,26 @@ public interface DirectedEdgeDeclaration extends DirectedStatement
   void setFirstNode(NodeId value);
 
   /**
-   * Returns the value of the '<em><b>Directed Edge</b></em>' attribute.
+   * Returns the value of the '<em><b>Edge</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Directed Edge</em>' attribute.
-   * @see #setDirectedEdge(String)
-   * @see uk.ac.kcl.inf.dotLanguage.DotLanguagePackage#getDirectedEdgeDeclaration_DirectedEdge()
+   * @return the value of the '<em>Edge</em>' attribute.
+   * @see #setEdge(String)
+   * @see uk.ac.kcl.inf.dotLanguage.DotLanguagePackage#getDirectedEdgeDeclaration_Edge()
    * @model
    * @generated
    */
-  String getDirectedEdge();
+  String getEdge();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration#getDirectedEdge <em>Directed Edge</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration#getEdge <em>Edge</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Directed Edge</em>' attribute.
-   * @see #getDirectedEdge()
+   * @param value the new value of the '<em>Edge</em>' attribute.
+   * @see #getEdge()
    * @generated
    */
-  void setDirectedEdge(String value);
+  void setEdge(String value);
 
   /**
    * Returns the value of the '<em><b>Second Node</b></em>' containment reference.

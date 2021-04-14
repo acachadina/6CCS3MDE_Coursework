@@ -97,7 +97,7 @@ public class DotLanguageSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Attribute returns Attribute
 	 *
 	 * Constraint:
-	 *     (attributeName=ID attributeValue=ID)
+	 *     (attributeName=ID attributeValue=IDORINT)
 	 */
 	protected void sequence_Attribute(ISerializationContext context, Attribute semanticObject) {
 		if (errorAcceptor != null) {
@@ -108,7 +108,7 @@ public class DotLanguageSemanticSequencer extends AbstractDelegatingSemanticSequ
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAttributeAccess().getAttributeNameIDTerminalRuleCall_0_0(), semanticObject.getAttributeName());
-		feeder.accept(grammarAccess.getAttributeAccess().getAttributeValueIDTerminalRuleCall_2_0(), semanticObject.getAttributeValue());
+		feeder.accept(grammarAccess.getAttributeAccess().getAttributeValueIDORINTParserRuleCall_2_0(), semanticObject.getAttributeValue());
 		feeder.finish();
 	}
 	
@@ -131,20 +131,20 @@ public class DotLanguageSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     DirectedEdgeDeclaration returns DirectedEdgeDeclaration
 	 *
 	 * Constraint:
-	 *     (firstNode=[NodeId|ID] directedEdge=DirectedEdge secondNode=RightEdgeDeclaration)
+	 *     (firstNode=[NodeId|ID] edge=DirectedEdge secondNode=RightEdgeDeclaration)
 	 */
 	protected void sequence_DirectedEdgeDeclaration(ISerializationContext context, DirectedEdgeDeclaration semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, DotLanguagePackage.Literals.DIRECTED_EDGE_DECLARATION__FIRST_NODE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DotLanguagePackage.Literals.DIRECTED_EDGE_DECLARATION__FIRST_NODE));
-			if (transientValues.isValueTransient(semanticObject, DotLanguagePackage.Literals.DIRECTED_EDGE_DECLARATION__DIRECTED_EDGE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DotLanguagePackage.Literals.DIRECTED_EDGE_DECLARATION__DIRECTED_EDGE));
+			if (transientValues.isValueTransient(semanticObject, DotLanguagePackage.Literals.DIRECTED_EDGE_DECLARATION__EDGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DotLanguagePackage.Literals.DIRECTED_EDGE_DECLARATION__EDGE));
 			if (transientValues.isValueTransient(semanticObject, DotLanguagePackage.Literals.DIRECTED_EDGE_DECLARATION__SECOND_NODE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DotLanguagePackage.Literals.DIRECTED_EDGE_DECLARATION__SECOND_NODE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getDirectedEdgeDeclarationAccess().getFirstNodeNodeIdIDTerminalRuleCall_0_0_1(), semanticObject.eGet(DotLanguagePackage.Literals.DIRECTED_EDGE_DECLARATION__FIRST_NODE, false));
-		feeder.accept(grammarAccess.getDirectedEdgeDeclarationAccess().getDirectedEdgeDirectedEdgeParserRuleCall_1_0(), semanticObject.getDirectedEdge());
+		feeder.accept(grammarAccess.getDirectedEdgeDeclarationAccess().getEdgeDirectedEdgeParserRuleCall_1_0(), semanticObject.getEdge());
 		feeder.accept(grammarAccess.getDirectedEdgeDeclarationAccess().getSecondNodeRightEdgeDeclarationParserRuleCall_2_0(), semanticObject.getSecondNode());
 		feeder.finish();
 	}
@@ -243,20 +243,20 @@ public class DotLanguageSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     UndirectedEdgeDeclaration returns UndirectedEdgeDeclaration
 	 *
 	 * Constraint:
-	 *     (firstNode=[NodeId|ID] undirectedEdge=UndirectedEdge secondNode=RightEdgeDeclaration)
+	 *     (firstNode=[NodeId|ID] edge=UndirectedEdge secondNode=RightEdgeDeclaration)
 	 */
 	protected void sequence_UndirectedEdgeDeclaration(ISerializationContext context, UndirectedEdgeDeclaration semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, DotLanguagePackage.Literals.UNDIRECTED_EDGE_DECLARATION__FIRST_NODE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DotLanguagePackage.Literals.UNDIRECTED_EDGE_DECLARATION__FIRST_NODE));
-			if (transientValues.isValueTransient(semanticObject, DotLanguagePackage.Literals.UNDIRECTED_EDGE_DECLARATION__UNDIRECTED_EDGE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DotLanguagePackage.Literals.UNDIRECTED_EDGE_DECLARATION__UNDIRECTED_EDGE));
+			if (transientValues.isValueTransient(semanticObject, DotLanguagePackage.Literals.UNDIRECTED_EDGE_DECLARATION__EDGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DotLanguagePackage.Literals.UNDIRECTED_EDGE_DECLARATION__EDGE));
 			if (transientValues.isValueTransient(semanticObject, DotLanguagePackage.Literals.UNDIRECTED_EDGE_DECLARATION__SECOND_NODE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DotLanguagePackage.Literals.UNDIRECTED_EDGE_DECLARATION__SECOND_NODE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getUndirectedEdgeDeclarationAccess().getFirstNodeNodeIdIDTerminalRuleCall_0_0_1(), semanticObject.eGet(DotLanguagePackage.Literals.UNDIRECTED_EDGE_DECLARATION__FIRST_NODE, false));
-		feeder.accept(grammarAccess.getUndirectedEdgeDeclarationAccess().getUndirectedEdgeUndirectedEdgeParserRuleCall_1_0(), semanticObject.getUndirectedEdge());
+		feeder.accept(grammarAccess.getUndirectedEdgeDeclarationAccess().getEdgeUndirectedEdgeParserRuleCall_1_0(), semanticObject.getEdge());
 		feeder.accept(grammarAccess.getUndirectedEdgeDeclarationAccess().getSecondNodeRightEdgeDeclarationParserRuleCall_2_0(), semanticObject.getSecondNode());
 		feeder.finish();
 	}

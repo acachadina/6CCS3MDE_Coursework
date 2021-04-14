@@ -274,6 +274,31 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleIDORINT
+entryRuleIDORINT
+:
+{ before(grammarAccess.getIDORINTRule()); }
+	 ruleIDORINT
+{ after(grammarAccess.getIDORINTRule()); } 
+	 EOF 
+;
+
+// Rule IDORINT
+ruleIDORINT 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getIDORINTAccess().getAlternatives()); }
+		(rule__IDORINT__Alternatives)
+		{ after(grammarAccess.getIDORINTAccess().getAlternatives()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 // Entry rule entryRuleDirectedEdgeDeclaration
 entryRuleDirectedEdgeDeclaration
 :
@@ -523,6 +548,27 @@ rule__UndirectedStatement__Alternatives_1
 		{ before(grammarAccess.getUndirectedStatementAccess().getSemicolonKeyword_1_1()); }
 		';'
 		{ after(grammarAccess.getUndirectedStatementAccess().getSemicolonKeyword_1_1()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__IDORINT__Alternatives
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getIDORINTAccess().getIDTerminalRuleCall_0()); }
+		RULE_ID
+		{ after(grammarAccess.getIDORINTAccess().getIDTerminalRuleCall_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getIDORINTAccess().getINTTerminalRuleCall_1()); }
+		RULE_INT
+		{ after(grammarAccess.getIDORINTAccess().getINTTerminalRuleCall_1()); }
 	)
 ;
 finally {
@@ -1223,9 +1269,9 @@ rule__DirectedEdgeDeclaration__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getDirectedEdgeDeclarationAccess().getDirectedEdgeAssignment_1()); }
-	(rule__DirectedEdgeDeclaration__DirectedEdgeAssignment_1)
-	{ after(grammarAccess.getDirectedEdgeDeclarationAccess().getDirectedEdgeAssignment_1()); }
+	{ before(grammarAccess.getDirectedEdgeDeclarationAccess().getEdgeAssignment_1()); }
+	(rule__DirectedEdgeDeclaration__EdgeAssignment_1)
+	{ after(grammarAccess.getDirectedEdgeDeclarationAccess().getEdgeAssignment_1()); }
 )
 ;
 finally {
@@ -1304,9 +1350,9 @@ rule__UndirectedEdgeDeclaration__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getUndirectedEdgeDeclarationAccess().getUndirectedEdgeAssignment_1()); }
-	(rule__UndirectedEdgeDeclaration__UndirectedEdgeAssignment_1)
-	{ after(grammarAccess.getUndirectedEdgeDeclarationAccess().getUndirectedEdgeAssignment_1()); }
+	{ before(grammarAccess.getUndirectedEdgeDeclarationAccess().getEdgeAssignment_1()); }
+	(rule__UndirectedEdgeDeclaration__EdgeAssignment_1)
+	{ after(grammarAccess.getUndirectedEdgeDeclarationAccess().getEdgeAssignment_1()); }
 )
 ;
 finally {
@@ -1584,9 +1630,9 @@ rule__Attribute__AttributeValueAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getAttributeAccess().getAttributeValueIDTerminalRuleCall_2_0()); }
-		RULE_ID
-		{ after(grammarAccess.getAttributeAccess().getAttributeValueIDTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getAttributeAccess().getAttributeValueIDORINTParserRuleCall_2_0()); }
+		ruleIDORINT
+		{ after(grammarAccess.getAttributeAccess().getAttributeValueIDORINTParserRuleCall_2_0()); }
 	)
 ;
 finally {
@@ -1612,15 +1658,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__DirectedEdgeDeclaration__DirectedEdgeAssignment_1
+rule__DirectedEdgeDeclaration__EdgeAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getDirectedEdgeDeclarationAccess().getDirectedEdgeDirectedEdgeParserRuleCall_1_0()); }
+		{ before(grammarAccess.getDirectedEdgeDeclarationAccess().getEdgeDirectedEdgeParserRuleCall_1_0()); }
 		ruleDirectedEdge
-		{ after(grammarAccess.getDirectedEdgeDeclarationAccess().getDirectedEdgeDirectedEdgeParserRuleCall_1_0()); }
+		{ after(grammarAccess.getDirectedEdgeDeclarationAccess().getEdgeDirectedEdgeParserRuleCall_1_0()); }
 	)
 ;
 finally {
@@ -1661,15 +1707,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__UndirectedEdgeDeclaration__UndirectedEdgeAssignment_1
+rule__UndirectedEdgeDeclaration__EdgeAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getUndirectedEdgeDeclarationAccess().getUndirectedEdgeUndirectedEdgeParserRuleCall_1_0()); }
+		{ before(grammarAccess.getUndirectedEdgeDeclarationAccess().getEdgeUndirectedEdgeParserRuleCall_1_0()); }
 		ruleUndirectedEdge
-		{ after(grammarAccess.getUndirectedEdgeDeclarationAccess().getUndirectedEdgeUndirectedEdgeParserRuleCall_1_0()); }
+		{ after(grammarAccess.getUndirectedEdgeDeclarationAccess().getEdgeUndirectedEdgeParserRuleCall_1_0()); }
 	)
 ;
 finally {

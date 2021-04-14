@@ -1,7 +1,9 @@
 graph anna {
 	node1 [color = red, label=node1]
-	node2 [color=blue, marta=hola, label=hello]
+	node2 [color=blue, marta=hola, label=123]
 	node3 
+	node4
 	
 	node1 -- {node2 node3}
+	
 }

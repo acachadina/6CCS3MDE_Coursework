@@ -25,7 +25,7 @@ import uk.ac.kcl.inf.dotLanguage.RightEdgeDeclaration;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.dotLanguage.impl.DirectedEdgeDeclarationImpl#getFirstNode <em>First Node</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.dotLanguage.impl.DirectedEdgeDeclarationImpl#getDirectedEdge <em>Directed Edge</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.dotLanguage.impl.DirectedEdgeDeclarationImpl#getEdge <em>Edge</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.dotLanguage.impl.DirectedEdgeDeclarationImpl#getSecondNode <em>Second Node</em>}</li>
  * </ul>
  *
@@ -44,24 +44,24 @@ public class DirectedEdgeDeclarationImpl extends DirectedStatementImpl implement
   protected NodeId firstNode;
 
   /**
-   * The default value of the '{@link #getDirectedEdge() <em>Directed Edge</em>}' attribute.
+   * The default value of the '{@link #getEdge() <em>Edge</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDirectedEdge()
+   * @see #getEdge()
    * @generated
    * @ordered
    */
-  protected static final String DIRECTED_EDGE_EDEFAULT = null;
+  protected static final String EDGE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getDirectedEdge() <em>Directed Edge</em>}' attribute.
+   * The cached value of the '{@link #getEdge() <em>Edge</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDirectedEdge()
+   * @see #getEdge()
    * @generated
    * @ordered
    */
-  protected String directedEdge = DIRECTED_EDGE_EDEFAULT;
+  protected String edge = EDGE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getSecondNode() <em>Second Node</em>}' containment reference.
@@ -145,9 +145,9 @@ public class DirectedEdgeDeclarationImpl extends DirectedStatementImpl implement
    * @generated
    */
   @Override
-  public String getDirectedEdge()
+  public String getEdge()
   {
-    return directedEdge;
+    return edge;
   }
 
   /**
@@ -156,12 +156,12 @@ public class DirectedEdgeDeclarationImpl extends DirectedStatementImpl implement
    * @generated
    */
   @Override
-  public void setDirectedEdge(String newDirectedEdge)
+  public void setEdge(String newEdge)
   {
-    String oldDirectedEdge = directedEdge;
-    directedEdge = newDirectedEdge;
+    String oldEdge = edge;
+    edge = newEdge;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DotLanguagePackage.DIRECTED_EDGE_DECLARATION__DIRECTED_EDGE, oldDirectedEdge, directedEdge));
+      eNotify(new ENotificationImpl(this, Notification.SET, DotLanguagePackage.DIRECTED_EDGE_DECLARATION__EDGE, oldEdge, edge));
   }
 
   /**
@@ -243,8 +243,8 @@ public class DirectedEdgeDeclarationImpl extends DirectedStatementImpl implement
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__FIRST_NODE:
         if (resolve) return getFirstNode();
         return basicGetFirstNode();
-      case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__DIRECTED_EDGE:
-        return getDirectedEdge();
+      case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__EDGE:
+        return getEdge();
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__SECOND_NODE:
         return getSecondNode();
     }
@@ -264,8 +264,8 @@ public class DirectedEdgeDeclarationImpl extends DirectedStatementImpl implement
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__FIRST_NODE:
         setFirstNode((NodeId)newValue);
         return;
-      case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__DIRECTED_EDGE:
-        setDirectedEdge((String)newValue);
+      case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__EDGE:
+        setEdge((String)newValue);
         return;
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__SECOND_NODE:
         setSecondNode((RightEdgeDeclaration)newValue);
@@ -287,8 +287,8 @@ public class DirectedEdgeDeclarationImpl extends DirectedStatementImpl implement
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__FIRST_NODE:
         setFirstNode((NodeId)null);
         return;
-      case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__DIRECTED_EDGE:
-        setDirectedEdge(DIRECTED_EDGE_EDEFAULT);
+      case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__EDGE:
+        setEdge(EDGE_EDEFAULT);
         return;
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__SECOND_NODE:
         setSecondNode((RightEdgeDeclaration)null);
@@ -309,8 +309,8 @@ public class DirectedEdgeDeclarationImpl extends DirectedStatementImpl implement
     {
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__FIRST_NODE:
         return firstNode != null;
-      case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__DIRECTED_EDGE:
-        return DIRECTED_EDGE_EDEFAULT == null ? directedEdge != null : !DIRECTED_EDGE_EDEFAULT.equals(directedEdge);
+      case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__EDGE:
+        return EDGE_EDEFAULT == null ? edge != null : !EDGE_EDEFAULT.equals(edge);
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION__SECOND_NODE:
         return secondNode != null;
     }
@@ -328,8 +328,8 @@ public class DirectedEdgeDeclarationImpl extends DirectedStatementImpl implement
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (directedEdge: ");
-    result.append(directedEdge);
+    result.append(" (edge: ");
+    result.append(edge);
     result.append(')');
     return result.toString();
   }

@@ -60,7 +60,7 @@ public class DotLanguageSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     attributeValue=ID (ambiguity) (rule end)
+	 *     attributeValue=IDORINT (ambiguity) (rule end)
 	 */
 	protected void emit_Attribute_CommaKeyword_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

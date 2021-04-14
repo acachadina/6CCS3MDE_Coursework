@@ -36,8 +36,8 @@ public class DotLanguageParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDirectedStatementAccess().getAlternatives_1(), "rule__DirectedStatement__Alternatives_1");
 			builder.put(grammarAccess.getUndirectedStatementAccess().getAlternatives_0(), "rule__UndirectedStatement__Alternatives_0");
 			builder.put(grammarAccess.getUndirectedStatementAccess().getAlternatives_1(), "rule__UndirectedStatement__Alternatives_1");
+			builder.put(grammarAccess.getIDORINTAccess().getAlternatives(), "rule__IDORINT__Alternatives");
 			builder.put(grammarAccess.getRightEdgeDeclarationAccess().getAlternatives(), "rule__RightEdgeDeclaration__Alternatives");
-			builder.put(grammarAccess.getColorAccess().getAlternatives(), "rule__Color__Alternatives");
 			builder.put(grammarAccess.getGraphAccess().getGroup(), "rule__Graph__Group__0");
 			builder.put(grammarAccess.getDigraphAccess().getGroup(), "rule__Digraph__Group__0");
 			builder.put(grammarAccess.getDirectedStatementAccess().getGroup(), "rule__DirectedStatement__Group__0");
@@ -60,10 +60,10 @@ public class DotLanguageParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAttributeAccess().getAttributeNameAssignment_0(), "rule__Attribute__AttributeNameAssignment_0");
 			builder.put(grammarAccess.getAttributeAccess().getAttributeValueAssignment_2(), "rule__Attribute__AttributeValueAssignment_2");
 			builder.put(grammarAccess.getDirectedEdgeDeclarationAccess().getFirstNodeAssignment_0(), "rule__DirectedEdgeDeclaration__FirstNodeAssignment_0");
-			builder.put(grammarAccess.getDirectedEdgeDeclarationAccess().getDirectedEdgeAssignment_1(), "rule__DirectedEdgeDeclaration__DirectedEdgeAssignment_1");
+			builder.put(grammarAccess.getDirectedEdgeDeclarationAccess().getEdgeAssignment_1(), "rule__DirectedEdgeDeclaration__EdgeAssignment_1");
 			builder.put(grammarAccess.getDirectedEdgeDeclarationAccess().getSecondNodeAssignment_2(), "rule__DirectedEdgeDeclaration__SecondNodeAssignment_2");
 			builder.put(grammarAccess.getUndirectedEdgeDeclarationAccess().getFirstNodeAssignment_0(), "rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0");
-			builder.put(grammarAccess.getUndirectedEdgeDeclarationAccess().getUndirectedEdgeAssignment_1(), "rule__UndirectedEdgeDeclaration__UndirectedEdgeAssignment_1");
+			builder.put(grammarAccess.getUndirectedEdgeDeclarationAccess().getEdgeAssignment_1(), "rule__UndirectedEdgeDeclaration__EdgeAssignment_1");
 			builder.put(grammarAccess.getUndirectedEdgeDeclarationAccess().getSecondNodeAssignment_2(), "rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2");
 			builder.put(grammarAccess.getRightEdgeDeclarationAccess().getSecondNodeAssignment_0(), "rule__RightEdgeDeclaration__SecondNodeAssignment_0");
 			builder.put(grammarAccess.getNodeListAccess().getNodesAssignment_1(), "rule__NodeList__NodesAssignment_1");

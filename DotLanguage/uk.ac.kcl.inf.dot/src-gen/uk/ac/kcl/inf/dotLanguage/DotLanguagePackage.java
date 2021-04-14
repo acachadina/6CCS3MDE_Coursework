@@ -5,7 +5,6 @@ package uk.ac.kcl.inf.dotLanguage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -348,13 +347,13 @@ public interface DotLanguagePackage extends EPackage
   int DIRECTED_EDGE_DECLARATION__FIRST_NODE = DIRECTED_STATEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Directed Edge</b></em>' attribute.
+   * The feature id for the '<em><b>Edge</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DIRECTED_EDGE_DECLARATION__DIRECTED_EDGE = DIRECTED_STATEMENT_FEATURE_COUNT + 1;
+  int DIRECTED_EDGE_DECLARATION__EDGE = DIRECTED_STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Second Node</b></em>' containment reference.
@@ -394,13 +393,13 @@ public interface DotLanguagePackage extends EPackage
   int UNDIRECTED_EDGE_DECLARATION__FIRST_NODE = UNDIRECTED_STATEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Undirected Edge</b></em>' attribute.
+   * The feature id for the '<em><b>Edge</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNDIRECTED_EDGE_DECLARATION__UNDIRECTED_EDGE = UNDIRECTED_STATEMENT_FEATURE_COUNT + 1;
+  int UNDIRECTED_EDGE_DECLARATION__EDGE = UNDIRECTED_STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Second Node</b></em>' containment reference.
@@ -484,16 +483,6 @@ public interface DotLanguagePackage extends EPackage
    * @ordered
    */
   int NODE_LIST_FEATURE_COUNT = RIGHT_EDGE_DECLARATION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.dotLanguage.Color <em>Color</em>}' enum.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.dotLanguage.Color
-   * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getColor()
-   * @generated
-   */
-  int COLOR = 13;
 
 
   /**
@@ -729,15 +718,15 @@ public interface DotLanguagePackage extends EPackage
   EReference getDirectedEdgeDeclaration_FirstNode();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration#getDirectedEdge <em>Directed Edge</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration#getEdge <em>Edge</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Directed Edge</em>'.
-   * @see uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration#getDirectedEdge()
+   * @return the meta object for the attribute '<em>Edge</em>'.
+   * @see uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration#getEdge()
    * @see #getDirectedEdgeDeclaration()
    * @generated
    */
-  EAttribute getDirectedEdgeDeclaration_DirectedEdge();
+  EAttribute getDirectedEdgeDeclaration_Edge();
 
   /**
    * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration#getSecondNode <em>Second Node</em>}'.
@@ -772,15 +761,15 @@ public interface DotLanguagePackage extends EPackage
   EReference getUndirectedEdgeDeclaration_FirstNode();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration#getUndirectedEdge <em>Undirected Edge</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration#getEdge <em>Edge</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Undirected Edge</em>'.
-   * @see uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration#getUndirectedEdge()
+   * @return the meta object for the attribute '<em>Edge</em>'.
+   * @see uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration#getEdge()
    * @see #getUndirectedEdgeDeclaration()
    * @generated
    */
-  EAttribute getUndirectedEdgeDeclaration_UndirectedEdge();
+  EAttribute getUndirectedEdgeDeclaration_Edge();
 
   /**
    * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration#getSecondNode <em>Second Node</em>}'.
@@ -834,16 +823,6 @@ public interface DotLanguagePackage extends EPackage
    * @generated
    */
   EReference getNodeList_Nodes();
-
-  /**
-   * Returns the meta object for enum '{@link uk.ac.kcl.inf.dotLanguage.Color <em>Color</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Color</em>'.
-   * @see uk.ac.kcl.inf.dotLanguage.Color
-   * @generated
-   */
-  EEnum getColor();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1065,12 +1044,12 @@ public interface DotLanguagePackage extends EPackage
     EReference DIRECTED_EDGE_DECLARATION__FIRST_NODE = eINSTANCE.getDirectedEdgeDeclaration_FirstNode();
 
     /**
-     * The meta object literal for the '<em><b>Directed Edge</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Edge</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DIRECTED_EDGE_DECLARATION__DIRECTED_EDGE = eINSTANCE.getDirectedEdgeDeclaration_DirectedEdge();
+    EAttribute DIRECTED_EDGE_DECLARATION__EDGE = eINSTANCE.getDirectedEdgeDeclaration_Edge();
 
     /**
      * The meta object literal for the '<em><b>Second Node</b></em>' containment reference feature.
@@ -1099,12 +1078,12 @@ public interface DotLanguagePackage extends EPackage
     EReference UNDIRECTED_EDGE_DECLARATION__FIRST_NODE = eINSTANCE.getUndirectedEdgeDeclaration_FirstNode();
 
     /**
-     * The meta object literal for the '<em><b>Undirected Edge</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Edge</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute UNDIRECTED_EDGE_DECLARATION__UNDIRECTED_EDGE = eINSTANCE.getUndirectedEdgeDeclaration_UndirectedEdge();
+    EAttribute UNDIRECTED_EDGE_DECLARATION__EDGE = eINSTANCE.getUndirectedEdgeDeclaration_Edge();
 
     /**
      * The meta object literal for the '<em><b>Second Node</b></em>' containment reference feature.
@@ -1149,16 +1128,6 @@ public interface DotLanguagePackage extends EPackage
      * @generated
      */
     EReference NODE_LIST__NODES = eINSTANCE.getNodeList_Nodes();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.dotLanguage.Color <em>Color</em>}' enum.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.dotLanguage.Color
-     * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getColor()
-     * @generated
-     */
-    EEnum COLOR = eINSTANCE.getColor();
 
   }
 

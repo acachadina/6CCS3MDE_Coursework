@@ -1,16 +1,16 @@
 package dot.library;
 
-import org.w3c.dom.Attr;
 
 import java.awt.*;
 import java.awt.geom.Line2D;
+import java.awt.geom.Path2D;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
-import java.awt.geom.Line2D.Float;
+import java.awt.geom.Path2D.Double;
 
 public class DotGraph
 {
@@ -58,18 +58,28 @@ public class DotGraph
     	return node.getLabel();
     }
 
-    public void drawEdge(Graphics g, DotNode node1, DotNode node2) {
+    public void drawEdge(Graphics g, DotNode node1, DotNode node2) {    	
         //TODO; if directed, add arrowz
+    	
+    	Graphics2D g2 = (Graphics2D) g;
 
         int x1 = node1.getX();
         int y1 = node1.getY();
         int x2 = node2.getX();
         int y2 = node2.getY();
+        
+        if(node1.equals(node2)){
+        	Path2D path = new Path2D.Double();
+        	path.curveTo(x1, y1, x2, y2, x1 + 30, y2+30);
+        	g2.draw(path);
+    	}
+        else {
+        
         g.drawLine(x1, y1, x2, y2);
-
-        Graphics2D g2 = (Graphics2D) g;
+        
         g2.setStroke(new BasicStroke(3));
         g2.draw(new Line2D.Float(x1, y1, x2, y2));
+        }
     }
 
     public void drawMultipleChildren(Graphics g, List<DotNode> nodes, DotNode source, int currY){

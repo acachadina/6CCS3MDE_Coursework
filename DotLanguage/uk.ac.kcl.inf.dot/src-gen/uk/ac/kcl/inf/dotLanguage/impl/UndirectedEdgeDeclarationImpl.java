@@ -25,7 +25,7 @@ import uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.dotLanguage.impl.UndirectedEdgeDeclarationImpl#getFirstNode <em>First Node</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.dotLanguage.impl.UndirectedEdgeDeclarationImpl#getUndirectedEdge <em>Undirected Edge</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.dotLanguage.impl.UndirectedEdgeDeclarationImpl#getEdge <em>Edge</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.dotLanguage.impl.UndirectedEdgeDeclarationImpl#getSecondNode <em>Second Node</em>}</li>
  * </ul>
  *
@@ -44,24 +44,24 @@ public class UndirectedEdgeDeclarationImpl extends UndirectedStatementImpl imple
   protected NodeId firstNode;
 
   /**
-   * The default value of the '{@link #getUndirectedEdge() <em>Undirected Edge</em>}' attribute.
+   * The default value of the '{@link #getEdge() <em>Edge</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUndirectedEdge()
+   * @see #getEdge()
    * @generated
    * @ordered
    */
-  protected static final String UNDIRECTED_EDGE_EDEFAULT = null;
+  protected static final String EDGE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getUndirectedEdge() <em>Undirected Edge</em>}' attribute.
+   * The cached value of the '{@link #getEdge() <em>Edge</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUndirectedEdge()
+   * @see #getEdge()
    * @generated
    * @ordered
    */
-  protected String undirectedEdge = UNDIRECTED_EDGE_EDEFAULT;
+  protected String edge = EDGE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getSecondNode() <em>Second Node</em>}' containment reference.
@@ -145,9 +145,9 @@ public class UndirectedEdgeDeclarationImpl extends UndirectedStatementImpl imple
    * @generated
    */
   @Override
-  public String getUndirectedEdge()
+  public String getEdge()
   {
-    return undirectedEdge;
+    return edge;
   }
 
   /**
@@ -156,12 +156,12 @@ public class UndirectedEdgeDeclarationImpl extends UndirectedStatementImpl imple
    * @generated
    */
   @Override
-  public void setUndirectedEdge(String newUndirectedEdge)
+  public void setEdge(String newEdge)
   {
-    String oldUndirectedEdge = undirectedEdge;
-    undirectedEdge = newUndirectedEdge;
+    String oldEdge = edge;
+    edge = newEdge;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__UNDIRECTED_EDGE, oldUndirectedEdge, undirectedEdge));
+      eNotify(new ENotificationImpl(this, Notification.SET, DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__EDGE, oldEdge, edge));
   }
 
   /**
@@ -243,8 +243,8 @@ public class UndirectedEdgeDeclarationImpl extends UndirectedStatementImpl imple
       case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__FIRST_NODE:
         if (resolve) return getFirstNode();
         return basicGetFirstNode();
-      case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__UNDIRECTED_EDGE:
-        return getUndirectedEdge();
+      case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__EDGE:
+        return getEdge();
       case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__SECOND_NODE:
         return getSecondNode();
     }
@@ -264,8 +264,8 @@ public class UndirectedEdgeDeclarationImpl extends UndirectedStatementImpl imple
       case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__FIRST_NODE:
         setFirstNode((NodeId)newValue);
         return;
-      case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__UNDIRECTED_EDGE:
-        setUndirectedEdge((String)newValue);
+      case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__EDGE:
+        setEdge((String)newValue);
         return;
       case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__SECOND_NODE:
         setSecondNode((RightEdgeDeclaration)newValue);
@@ -287,8 +287,8 @@ public class UndirectedEdgeDeclarationImpl extends UndirectedStatementImpl imple
       case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__FIRST_NODE:
         setFirstNode((NodeId)null);
         return;
-      case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__UNDIRECTED_EDGE:
-        setUndirectedEdge(UNDIRECTED_EDGE_EDEFAULT);
+      case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__EDGE:
+        setEdge(EDGE_EDEFAULT);
         return;
       case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__SECOND_NODE:
         setSecondNode((RightEdgeDeclaration)null);
@@ -309,8 +309,8 @@ public class UndirectedEdgeDeclarationImpl extends UndirectedStatementImpl imple
     {
       case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__FIRST_NODE:
         return firstNode != null;
-      case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__UNDIRECTED_EDGE:
-        return UNDIRECTED_EDGE_EDEFAULT == null ? undirectedEdge != null : !UNDIRECTED_EDGE_EDEFAULT.equals(undirectedEdge);
+      case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__EDGE:
+        return EDGE_EDEFAULT == null ? edge != null : !EDGE_EDEFAULT.equals(edge);
       case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION__SECOND_NODE:
         return secondNode != null;
     }
@@ -328,8 +328,8 @@ public class UndirectedEdgeDeclarationImpl extends UndirectedStatementImpl imple
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (undirectedEdge: ");
-    result.append(undirectedEdge);
+    result.append(" (edge: ");
+    result.append(edge);
     result.append(')');
     return result.toString();
   }

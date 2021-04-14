@@ -5,7 +5,6 @@ package uk.ac.kcl.inf.dotLanguage.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -13,7 +12,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import uk.ac.kcl.inf.dotLanguage.Attribute;
 import uk.ac.kcl.inf.dotLanguage.AttributeList;
-import uk.ac.kcl.inf.dotLanguage.Color;
 import uk.ac.kcl.inf.dotLanguage.Digraph;
 import uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration;
 import uk.ac.kcl.inf.dotLanguage.DirectedStatement;
@@ -126,13 +124,6 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
    * @generated
    */
   private EClass nodeListEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EEnum colorEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -445,7 +436,7 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
    * @generated
    */
   @Override
-  public EAttribute getDirectedEdgeDeclaration_DirectedEdge()
+  public EAttribute getDirectedEdgeDeclaration_Edge()
   {
     return (EAttribute)directedEdgeDeclarationEClass.getEStructuralFeatures().get(1);
   }
@@ -489,7 +480,7 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
    * @generated
    */
   @Override
-  public EAttribute getUndirectedEdgeDeclaration_UndirectedEdge()
+  public EAttribute getUndirectedEdgeDeclaration_Edge()
   {
     return (EAttribute)undirectedEdgeDeclarationEClass.getEStructuralFeatures().get(1);
   }
@@ -555,17 +546,6 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
    * @generated
    */
   @Override
-  public EEnum getColor()
-  {
-    return colorEEnum;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public DotLanguageFactory getDotLanguageFactory()
   {
     return (DotLanguageFactory)getEFactoryInstance();
@@ -622,12 +602,12 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
 
     directedEdgeDeclarationEClass = createEClass(DIRECTED_EDGE_DECLARATION);
     createEReference(directedEdgeDeclarationEClass, DIRECTED_EDGE_DECLARATION__FIRST_NODE);
-    createEAttribute(directedEdgeDeclarationEClass, DIRECTED_EDGE_DECLARATION__DIRECTED_EDGE);
+    createEAttribute(directedEdgeDeclarationEClass, DIRECTED_EDGE_DECLARATION__EDGE);
     createEReference(directedEdgeDeclarationEClass, DIRECTED_EDGE_DECLARATION__SECOND_NODE);
 
     undirectedEdgeDeclarationEClass = createEClass(UNDIRECTED_EDGE_DECLARATION);
     createEReference(undirectedEdgeDeclarationEClass, UNDIRECTED_EDGE_DECLARATION__FIRST_NODE);
-    createEAttribute(undirectedEdgeDeclarationEClass, UNDIRECTED_EDGE_DECLARATION__UNDIRECTED_EDGE);
+    createEAttribute(undirectedEdgeDeclarationEClass, UNDIRECTED_EDGE_DECLARATION__EDGE);
     createEReference(undirectedEdgeDeclarationEClass, UNDIRECTED_EDGE_DECLARATION__SECOND_NODE);
 
     rightEdgeDeclarationEClass = createEClass(RIGHT_EDGE_DECLARATION);
@@ -635,9 +615,6 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
 
     nodeListEClass = createEClass(NODE_LIST);
     createEReference(nodeListEClass, NODE_LIST__NODES);
-
-    // Create enums
-    colorEEnum = createEEnum(COLOR);
   }
 
   /**
@@ -707,12 +684,12 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
 
     initEClass(directedEdgeDeclarationEClass, DirectedEdgeDeclaration.class, "DirectedEdgeDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDirectedEdgeDeclaration_FirstNode(), this.getNodeId(), null, "firstNode", null, 0, 1, DirectedEdgeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDirectedEdgeDeclaration_DirectedEdge(), ecorePackage.getEString(), "directedEdge", null, 0, 1, DirectedEdgeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDirectedEdgeDeclaration_Edge(), ecorePackage.getEString(), "edge", null, 0, 1, DirectedEdgeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDirectedEdgeDeclaration_SecondNode(), this.getRightEdgeDeclaration(), null, "secondNode", null, 0, 1, DirectedEdgeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(undirectedEdgeDeclarationEClass, UndirectedEdgeDeclaration.class, "UndirectedEdgeDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getUndirectedEdgeDeclaration_FirstNode(), this.getNodeId(), null, "firstNode", null, 0, 1, UndirectedEdgeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getUndirectedEdgeDeclaration_UndirectedEdge(), ecorePackage.getEString(), "undirectedEdge", null, 0, 1, UndirectedEdgeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getUndirectedEdgeDeclaration_Edge(), ecorePackage.getEString(), "edge", null, 0, 1, UndirectedEdgeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUndirectedEdgeDeclaration_SecondNode(), this.getRightEdgeDeclaration(), null, "secondNode", null, 0, 1, UndirectedEdgeDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(rightEdgeDeclarationEClass, RightEdgeDeclaration.class, "RightEdgeDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -720,13 +697,6 @@ public class DotLanguagePackageImpl extends EPackageImpl implements DotLanguageP
 
     initEClass(nodeListEClass, NodeList.class, "NodeList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getNodeList_Nodes(), this.getNodeId(), null, "nodes", null, 0, -1, NodeList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    // Initialize enums and add enum literals
-    initEEnum(colorEEnum, Color.class, "Color");
-    addEEnumLiteral(colorEEnum, Color.RED);
-    addEEnumLiteral(colorEEnum, Color.BLUE);
-    addEEnumLiteral(colorEEnum, Color.GREEN);
-    addEEnumLiteral(colorEEnum, Color.BLACK);
 
     // Create resource
     createResource(eNS_URI);
