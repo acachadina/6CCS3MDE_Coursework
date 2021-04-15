@@ -91,7 +91,9 @@ class DotLanguageValidator extends AbstractDotLanguageValidator {
 	@Check
 	def validAttribute(Attribute attribute){
 		val attributeName = attribute.attributeName
-		if(attributeName != "fillColor" || attributeName != "label" || attributeName != "lineColor"){
+		val validAttributeList = newArrayList("fillColor", "label", "lineColor")
+		
+		if(!validAttributeList.contains(attributeName)){
 			warning('This is not a valid attribute. This attribute will be ignored when the program is run.', 
 				attribute, DotLanguagePackage.Literals.ATTRIBUTE__ATTRIBUTE_NAME, 
 				INVALID_ATTRIBUTE_NAME

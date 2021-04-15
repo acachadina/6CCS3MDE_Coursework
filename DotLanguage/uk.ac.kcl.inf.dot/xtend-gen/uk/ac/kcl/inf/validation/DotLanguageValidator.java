@@ -98,7 +98,10 @@ public class DotLanguageValidator extends AbstractDotLanguageValidator {
   @Check
   public void validAttribute(final Attribute attribute) {
     final String attributeName = attribute.getAttributeName();
-    if ((((!Objects.equal(attributeName, "fillColor")) || (!Objects.equal(attributeName, "label"))) || (!Objects.equal(attributeName, "lineColor")))) {
+    final ArrayList<String> validAttributeList = CollectionLiterals.<String>newArrayList("fillColor", "label", "lineColor");
+    boolean _contains = validAttributeList.contains(attributeName);
+    boolean _not = (!_contains);
+    if (_not) {
       this.warning("This is not a valid attribute. This attribute will be ignored when the program is run.", attribute, DotLanguagePackage.Literals.ATTRIBUTE__ATTRIBUTE_NAME, 
         DotLanguageValidator.INVALID_ATTRIBUTE_NAME);
     }
