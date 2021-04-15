@@ -19,7 +19,6 @@ import uk.ac.kcl.inf.dotLanguage.Graph;
 import uk.ac.kcl.inf.dotLanguage.NodeDeclaration;
 import uk.ac.kcl.inf.dotLanguage.NodeId;
 import uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration;
-import uk.ac.kcl.inf.dotLanguage.UndirectedStatement;
 
 /**
  * This class contains custom validation rules.
@@ -77,15 +76,13 @@ public class DotLanguageValidator extends AbstractDotLanguageValidator {
     String _name = graph.eClass().getName();
     boolean _equals = Objects.equal(_name, "Graph");
     if (_equals) {
-      boolean _isolatedGraphNode = this.isolatedGraphNode(((Graph) graph), nodeId);
-      if (_isolatedGraphNode) {
+      if ((this.isolatedGraphNode(((Graph) graph), nodeId) && (!this.multipleNodeDeclarationGraph(((Graph) graph), nodeId)))) {
         this.warning("This node is isolated. It is not connected to any other node via an edge.", nodeDeclaration, 
           DotLanguagePackage.Literals.NODE_DECLARATION__NODE_NAME, 
           DotLanguageValidator.ISOLATED_GRAPH_NODE);
       }
     } else {
-      boolean _isolatedDigraphNode = this.isolatedDigraphNode(((Digraph) graph), nodeId);
-      if (_isolatedDigraphNode) {
+      if ((this.isolatedDigraphNode(((Digraph) graph), nodeId) && (!this.multipleNodeDeclarationDigraph(((Digraph) graph), nodeId)))) {
         this.warning("This node is isolated. It is not connected to any other node via an edge.", nodeDeclaration, 
           DotLanguagePackage.Literals.NODE_DECLARATION__NODE_NAME, 
           DotLanguageValidator.ISOLATED_DIGRAPH_NODE);
@@ -113,7 +110,7 @@ public class DotLanguageValidator extends AbstractDotLanguageValidator {
     for (final UndirectedEdgeDeclaration edgeDecl : edgeDeclarations) {
       {
         final NodeId firstNode = ((UndirectedEdgeDeclaration) edgeDecl).getFirstNode();
-        final NodeId secondNode = ((UndirectedEdgeDeclaration) edgeDecl).getSecondNode();
+        NodeId secondNode = ((UndirectedEdgeDeclaration) edgeDecl).getSecondNode();
         if ((Objects.equal(node, firstNode) || Objects.equal(node, secondNode))) {
           return false;
         }
@@ -187,20 +184,7 @@ public class DotLanguageValidator extends AbstractDotLanguageValidator {
   }
   
   public boolean multipleEdgeDeclarationGraph(final Graph graph, final ArrayList<NodeId> edge) {
-    final EList<UndirectedStatement> statements = graph.getStatements();
-    for (final UndirectedStatement statement : statements) {
-      String _name = statement.eClass().getName();
-      boolean _equals = Objects.equal(_name, "UndirectedEdgeDeclaration");
-      if (_equals) {
-        final NodeId firstNode = ((UndirectedEdgeDeclaration) statement).getFirstNode();
-        final NodeId secondNode = ((UndirectedEdgeDeclaration) statement).getSecondNode();
-        final ArrayList<NodeId> pair = CollectionLiterals.<NodeId>newArrayList(firstNode, secondNode);
-        boolean _equals_1 = Objects.equal(pair, edge);
-        if (_equals_1) {
-          return true;
-        }
-      }
-    }
-    return false;
+    throw new Error("Unresolved compilation problems:"
+      + "\nno viable alternative at input \'val\'");
   }
 }

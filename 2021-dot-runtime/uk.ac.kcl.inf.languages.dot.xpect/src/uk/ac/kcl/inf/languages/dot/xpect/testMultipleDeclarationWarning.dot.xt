@@ -4,8 +4,6 @@ graph undirected {
 	// XPECT errors --> "This node has already been declared." at "node1"
 	node1
 	// XPECT errors --> "This node has already been declared." at "node1"
-	// XPECT warnings --> "This node is isolated. It is not connected to any other node via an edge." at "node1"
-
 	node1
 	node2
 	
@@ -16,7 +14,6 @@ digraph directed {
 	// XPECT errors --> "This node has already been declared." at "node1"
 	node1
 	// XPECT errors --> "This node has already been declared." at "node1"
-	// XPECT warnings --> "This node is isolated. It is not connected to any other node via an edge." at "node1"
 	node1
 	node2
 	

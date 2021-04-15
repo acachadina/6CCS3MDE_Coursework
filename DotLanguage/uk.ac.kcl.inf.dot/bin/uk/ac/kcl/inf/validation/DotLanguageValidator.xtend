@@ -69,14 +69,14 @@ class DotLanguageValidator extends AbstractDotLanguageValidator {
 		val nodeId = nodeDeclaration.nodeName
 		
 		if (graph.eClass.name == "Graph"){
-			if ((graph as Graph).isolatedGraphNode(nodeId)){
+			if ((graph as Graph).isolatedGraphNode(nodeId) && !(graph as Graph).multipleNodeDeclarationGraph(nodeId)){
 			warning('This node is isolated. It is not connected to any other node via an edge.',
 				 nodeDeclaration, 
 				DotLanguagePackage.Literals.NODE_DECLARATION__NODE_NAME,
 				ISOLATED_GRAPH_NODE)
 			}
 		} else {
-			if ((graph as Digraph).isolatedDigraphNode(nodeId)){
+			if ((graph as Digraph).isolatedDigraphNode(nodeId) && !(graph as Digraph).multipleNodeDeclarationDigraph(nodeId)){
 			warning('This node is isolated. It is not connected to any other node via an edge.', 
 				nodeDeclaration, 
 				DotLanguagePackage.Literals.NODE_DECLARATION__NODE_NAME,
@@ -139,7 +139,8 @@ class DotLanguageValidator extends AbstractDotLanguageValidator {
 		
 		for(UndirectedEdgeDeclaration edgeDecl : edgeDeclarations){
 			val firstNode = (edgeDecl as UndirectedEdgeDeclaration).firstNode
-			val secondNode = (edgeDecl as UndirectedEdgeDeclaration).secondNode
+			var secondNode = (edgeDecl as UndirectedEdgeDeclaration).secondNode	
+			
 			if (node == firstNode || node == secondNode){
 				return false
 			}
@@ -208,6 +209,7 @@ class DotLanguageValidator extends AbstractDotLanguageValidator {
 		
 		for(UndirectedStatement statement : statements){
 			if(statement.eClass.name == "UndirectedEdgeDeclaration"){
+				(statement as UndirectedEdgeDeclaration).
 				val firstNode = (statement as UndirectedEdgeDeclaration).firstNode
 				val secondNode = (statement as UndirectedEdgeDeclaration).secondNode
 				val pair = newArrayList(firstNode, secondNode)

@@ -1,9 +1,10 @@
 graph undirected {
-	node1 [marta = yellow]
-	node2 
+	node1 [marta = yellow] 
 	node2
+	node3
 	
-	node1 -- node2
+	
+	node1 -- {node2 node3}
 }
 
 digraph directed {
