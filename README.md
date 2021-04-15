@@ -20,7 +20,7 @@ In the pop-up, search for the run cofiguration for *Launch Runtime Eclipse*.
 
 Under *Workspace Data* in the field *Location*, set the location where you would like to run the Runtime Eclipse. 
 
-After this, click *__Run__* on the bottom right corner of the screen.
+After this, click *__Apply__* and *__Run__* on the bottom right corner of the screen.
 
 ### 3. Open Runtime Project Folder
 
