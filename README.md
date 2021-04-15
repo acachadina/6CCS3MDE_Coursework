@@ -9,6 +9,8 @@ found in the folder ```MDE/DotLanguage/uk.ac.kcl.inf.dot/src/uk/ac/kcl/inf```.
 
 Left-click on the body of the file and select *__Run As > Generate Xtext Artifacts__*.
 
+When generating the artifacts, automatic Java files will occasionally be generated in the folders ```MDE/DotLanguage/uk.ac.kcl.inf.dot/src/uk/ac/kcl/inf/validation``` and ```MDE/DotLanguage/uk.ac.kcl.inf.dot.ui/src/uk/ac/kcl/inf/ui/quickfix```. Please delete the ```*.java``` files to ensure the correct functionality of validations in the runtime environment.
+
 ### 2. Run as Eclipse Application
 
 In the Eclipse Project Explorer, left-click on the folder ```uk.ac.kcl.inf.dot``` and select *__Run As > Run Configurations__*.
