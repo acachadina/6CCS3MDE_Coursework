@@ -10,6 +10,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import uk.ac.kcl.inf.dotLanguage.Attribute;
 import uk.ac.kcl.inf.dotLanguage.Digraph;
 import uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration;
 import uk.ac.kcl.inf.dotLanguage.DirectedStatement;
@@ -88,6 +89,18 @@ public class DotLanguageValidator extends AbstractDotLanguageValidator {
           DotLanguagePackage.Literals.NODE_DECLARATION__NODE_NAME, 
           DotLanguageValidator.ISOLATED_DIGRAPH_NODE);
       }
+    }
+  }
+  
+  /**
+   * Check the correct naming of attributes.
+   */
+  @Check
+  public void validAttribute(final Attribute attribute) {
+    final String attributeName = attribute.getAttributeName();
+    if ((((!Objects.equal(attributeName, "fillColor")) || (!Objects.equal(attributeName, "label"))) || (!Objects.equal(attributeName, "lineColor")))) {
+      this.warning("This is not a valid attribute. This attribute will be ignored when the program is run.", attribute, DotLanguagePackage.Literals.ATTRIBUTE__ATTRIBUTE_NAME, 
+        DotLanguageValidator.INVALID_ATTRIBUTE_NAME);
     }
   }
   

@@ -85,52 +85,21 @@ class DotLanguageValidator extends AbstractDotLanguageValidator {
 		}
 	}
 	
-//	/**
-//	 * Check the correct naming of attributes.
-//	 */
-//	@Check
-//	def validAttribute(Attribute attribute){
-//		val attributeName = attribute.attributeName
-//		if(attributeName != "fillColor" || attributeName != "label" || attributeName != "lineColor"){
-//			warning('This is not a valid attribute. This attribute will be ignored when the program is run.', 
-//				attribute, DotLanguagePackage.Literals.ATTRIBUTE__ATTRIBUTE_NAME, 
-//				INVALID_ATTRIBUTE_NAME
-//			)
-//		}
-//		
-//	}
-//	 
-//	 
-//	/**
-//	 * Check whether there are several declarations of the same edge in directed and undirected graphs.
-//	 */
-////	@Check
-////	def multipleEdgeDeclarationsDigraph(DirectedEdgeDeclaration edgeDeclaration){
-////		val graph = edgeDeclaration.eContainer
-////		var edge = newArrayList(edgeDeclaration.firstNode, edgeDeclaration.secondNode)
-////		
-////		if((graph as Digraph).multipleEdgeDeclarationDigraph(edge)){
-////			warning('This edge has already been declared.', edgeDeclaration, 
-////			DotLanguagePackage.Literals.DIRECTED_EDGE_DECLARATION__FIRST_NODE,
-////			MULTIPLE_DIGRAPH_EDGE_DECLARATION
-////			)
-////		}
-////	}		
-////	
-////	@Check
-////	def multipleEdgeDeclarationsGraph(UndirectedEdgeDeclaration edgeDeclaration){
-////		val graph = edgeDeclaration.eContainer
-////		var edge = newArrayList(edgeDeclaration.firstNode, edgeDeclaration.secondNode)
-////		
-////		if((graph as Graph).multipleEdgeDeclarationGraph(edge)){
-////			warning('This edge has already been declared.', edgeDeclaration, 
-////			DotLanguagePackage.Literals.UNDIRECTED_EDGE_DECLARATION__FIRST_NODE,
-////			MULTIPLE_GRAPH_EDGE_DECLARATION
-////			)
-////		}		
-////	}
-//		
-//		
+	/**
+	 * Check the correct naming of attributes.
+	 */
+	@Check
+	def validAttribute(Attribute attribute){
+		val attributeName = attribute.attributeName
+		if(attributeName != "fillColor" || attributeName != "label" || attributeName != "lineColor"){
+			warning('This is not a valid attribute. This attribute will be ignored when the program is run.', 
+				attribute, DotLanguagePackage.Literals.ATTRIBUTE__ATTRIBUTE_NAME, 
+				INVALID_ATTRIBUTE_NAME
+			)
+		}
+		
+	}
+	
 	/**
 	 * HELPER FUNCTIONS
 	 */
