@@ -1,0 +1,19 @@
+/* XPECT_SETUP uk.ac.kcl.inf.languages.dot.xpect.XPectTests END_SETUP*/
+
+graph undirected {
+	node1
+	node2
+	// XPECT warnings --> "This node is isolated. It is not connected to any other node via an edge." at "node3"
+	node3
+	
+	node1--node2
+}
+
+digraph directed {
+	node1
+	node2
+	// XPECT warnings --> "This node is isolated. It is not connected to any other node via an edge." at "node3"
+	node3
+	
+	node1->node2
+}

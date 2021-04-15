@@ -1,0 +1,17 @@
+/* XPECT_SETUP uk.ac.kcl.inf.languages.dot.xpect.XPectTests END_SETUP*/
+
+graph undirected {
+	// XPECT warnings --> "This is not a valid attribute. This attribute will be ignored when the program is run." at "invalid"
+	node1 [invalid = blue]
+	node2
+	
+	node1 -- node2
+}
+
+digraph directed {
+	// XPECT warnings --> "This is not a valid attribute. This attribute will be ignored when the program is run." at "invalid"
+	node1 [invalid = blue]
+	node2
+	
+	node1->node2
+}

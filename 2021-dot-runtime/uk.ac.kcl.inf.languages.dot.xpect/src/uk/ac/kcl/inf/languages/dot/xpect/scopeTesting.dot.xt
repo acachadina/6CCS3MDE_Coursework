@@ -1,0 +1,18 @@
+/* XPECT_SETUP uk.ac.kcl.inf.languages.dot.xpect.XPectTests END_SETUP*/
+
+
+graph undirected {
+	// XPECT scope  --> node1, node2, !node3, !node4, ...
+	node1 
+	node2
+	
+	node1 -- node2
+}
+
+digraph directed {
+	// XPECT scope  --> !node1, !node2, node3, node4, ...
+	node3
+	node4
+	
+	node3->node4
+}

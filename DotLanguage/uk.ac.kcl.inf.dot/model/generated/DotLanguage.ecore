@@ -17,6 +17,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DirectedStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="UndirectedStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectedSubgraphDeclaration" eSuperTypes="#//DirectedStatement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//DirectedStatement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UndirectedSubgraphDeclaration" eSuperTypes="#//UndirectedStatement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//UndirectedStatement" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NodeDeclaration" eSuperTypes="#//DirectedStatement #//UndirectedStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="nodeName" eType="#//NodeId"
         containment="true"/>
@@ -27,15 +37,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeList">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" eType="#//Attribute"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attr" upperBound="-1" eType="#//Attribute"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Attribute"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LabelAttribute" eSuperTypes="#//Attribute">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ColorAttribute" eSuperTypes="#//Attribute">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Color"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Color">
     <eLiterals name="red" literal="red"/>
@@ -45,10 +52,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DirectedEdgeDeclaration" eSuperTypes="#//DirectedStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="firstNode" eType="#//NodeId"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="edge" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="secondNode" eType="#//NodeId"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UndirectedEdgeDeclaration" eSuperTypes="#//UndirectedStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="firstNode" eType="#//NodeId"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="edge" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="secondNode" eType="#//NodeId"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -14,6 +14,7 @@ package uk.ac.kcl.inf.dotLanguage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration#getFirstNode <em>First Node</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration#getEdge <em>Edge</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration#getSecondNode <em>Second Node</em>}</li>
  * </ul>
  *
@@ -44,6 +45,28 @@ public interface UndirectedEdgeDeclaration extends UndirectedStatement
    * @generated
    */
   void setFirstNode(NodeId value);
+
+  /**
+   * Returns the value of the '<em><b>Edge</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Edge</em>' attribute.
+   * @see #setEdge(String)
+   * @see uk.ac.kcl.inf.dotLanguage.DotLanguagePackage#getUndirectedEdgeDeclaration_Edge()
+   * @model
+   * @generated
+   */
+  String getEdge();
+
+  /**
+   * Sets the value of the '{@link uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration#getEdge <em>Edge</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Edge</em>' attribute.
+   * @see #getEdge()
+   * @generated
+   */
+  void setEdge(String value);
 
   /**
    * Returns the value of the '<em><b>Second Node</b></em>' reference.
