@@ -18,6 +18,7 @@ import uk.ac.kcl.inf.dotLanguage.DotLanguagePackage;
 import uk.ac.kcl.inf.dotLanguage.Graph;
 import uk.ac.kcl.inf.dotLanguage.NodeDeclaration;
 import uk.ac.kcl.inf.dotLanguage.NodeId;
+import uk.ac.kcl.inf.dotLanguage.RightEdgeDeclaration;
 import uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration;
 import uk.ac.kcl.inf.dotLanguage.UndirectedStatement;
 
@@ -111,9 +112,24 @@ public class DotLanguageValidator extends AbstractDotLanguageValidator {
     for (final UndirectedEdgeDeclaration edgeDecl : edgeDeclarations) {
       {
         final NodeId firstNode = ((UndirectedEdgeDeclaration) edgeDecl).getFirstNode();
-        NodeId secondNode = ((UndirectedEdgeDeclaration) edgeDecl).getSecondNode();
-        if ((Objects.equal(node, firstNode) || Objects.equal(node, secondNode))) {
+        final RightEdgeDeclaration rightNodeDeclaration = ((UndirectedEdgeDeclaration) edgeDecl).getSecondNode();
+        boolean _equals = Objects.equal(node, firstNode);
+        if (_equals) {
           return false;
+        }
+        NodeId _secondNode = rightNodeDeclaration.getSecondNode();
+        boolean _tripleNotEquals = (_secondNode != null);
+        if (_tripleNotEquals) {
+          NodeId _secondNode_1 = rightNodeDeclaration.getSecondNode();
+          boolean _equals_1 = Objects.equal(node, _secondNode_1);
+          if (_equals_1) {
+            return false;
+          }
+        } else {
+          boolean _contains = rightNodeDeclaration.getNodeList().getNodes().contains(node);
+          if (_contains) {
+            return false;
+          }
         }
       }
     }
@@ -125,9 +141,24 @@ public class DotLanguageValidator extends AbstractDotLanguageValidator {
     for (final DirectedEdgeDeclaration edgeDecl : edgeDeclarations) {
       {
         final NodeId firstNode = ((DirectedEdgeDeclaration) edgeDecl).getFirstNode();
-        final NodeId secondNode = ((DirectedEdgeDeclaration) edgeDecl).getSecondNode();
-        if ((Objects.equal(node, firstNode) || Objects.equal(node, secondNode))) {
+        final RightEdgeDeclaration rightNodeDeclaration = ((DirectedEdgeDeclaration) edgeDecl).getSecondNode();
+        boolean _equals = Objects.equal(node, firstNode);
+        if (_equals) {
           return false;
+        }
+        NodeId _secondNode = rightNodeDeclaration.getSecondNode();
+        boolean _tripleNotEquals = (_secondNode != null);
+        if (_tripleNotEquals) {
+          NodeId _secondNode_1 = rightNodeDeclaration.getSecondNode();
+          boolean _equals_1 = Objects.equal(node, _secondNode_1);
+          if (_equals_1) {
+            return false;
+          }
+        } else {
+          boolean _contains = rightNodeDeclaration.getNodeList().getNodes().contains(node);
+          if (_contains) {
+            return false;
+          }
         }
       }
     }
@@ -173,8 +204,8 @@ public class DotLanguageValidator extends AbstractDotLanguageValidator {
       boolean _equals = Objects.equal(_name, "DirectedEdgeDeclaration");
       if (_equals) {
         final NodeId firstNode = ((DirectedEdgeDeclaration) statement).getFirstNode();
-        final NodeId secondNode = ((DirectedEdgeDeclaration) statement).getSecondNode();
-        final ArrayList<NodeId> pair = CollectionLiterals.<NodeId>newArrayList(firstNode, secondNode);
+        final RightEdgeDeclaration secondNode = ((DirectedEdgeDeclaration) statement).getSecondNode();
+        final ArrayList<EObject> pair = CollectionLiterals.<EObject>newArrayList(firstNode, secondNode);
         boolean _equals_1 = Objects.equal(pair, edge);
         if (_equals_1) {
           return true;
@@ -191,8 +222,8 @@ public class DotLanguageValidator extends AbstractDotLanguageValidator {
       boolean _equals = Objects.equal(_name, "UndirectedEdgeDeclaration");
       if (_equals) {
         final NodeId firstNode = ((UndirectedEdgeDeclaration) statement).getFirstNode();
-        final NodeId secondNode = ((UndirectedEdgeDeclaration) statement).getSecondNode();
-        final ArrayList<NodeId> pair = CollectionLiterals.<NodeId>newArrayList(firstNode, secondNode);
+        final RightEdgeDeclaration secondNode = ((UndirectedEdgeDeclaration) statement).getSecondNode();
+        final ArrayList<EObject> pair = CollectionLiterals.<EObject>newArrayList(firstNode, secondNode);
         boolean _equals_1 = Objects.equal(pair, edge);
         if (_equals_1) {
           return true;

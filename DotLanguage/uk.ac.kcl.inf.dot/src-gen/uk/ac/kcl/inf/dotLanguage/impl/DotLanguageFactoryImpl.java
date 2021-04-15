@@ -4,7 +4,6 @@
 package uk.ac.kcl.inf.dotLanguage.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -71,50 +70,16 @@ public class DotLanguageFactoryImpl extends EFactoryImpl implements DotLanguageF
       case DotLanguagePackage.DIGRAPH: return createDigraph();
       case DotLanguagePackage.DIRECTED_STATEMENT: return createDirectedStatement();
       case DotLanguagePackage.UNDIRECTED_STATEMENT: return createUndirectedStatement();
-      case DotLanguagePackage.DIRECTED_SUBGRAPH_DECLARATION: return createDirectedSubgraphDeclaration();
-      case DotLanguagePackage.UNDIRECTED_SUBGRAPH_DECLARATION: return createUndirectedSubgraphDeclaration();
       case DotLanguagePackage.NODE_DECLARATION: return createNodeDeclaration();
       case DotLanguagePackage.NODE_ID: return createNodeId();
       case DotLanguagePackage.ATTRIBUTE_LIST: return createAttributeList();
       case DotLanguagePackage.ATTRIBUTE: return createAttribute();
       case DotLanguagePackage.DIRECTED_EDGE_DECLARATION: return createDirectedEdgeDeclaration();
       case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION: return createUndirectedEdgeDeclaration();
+      case DotLanguagePackage.RIGHT_EDGE_DECLARATION: return createRightEdgeDeclaration();
+      case DotLanguagePackage.NODE_LIST: return createNodeList();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object createFromString(EDataType eDataType, String initialValue)
-  {
-    switch (eDataType.getClassifierID())
-    {
-      case DotLanguagePackage.COLOR:
-        return createColorFromString(eDataType, initialValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String convertToString(EDataType eDataType, Object instanceValue)
-  {
-    switch (eDataType.getClassifierID())
-    {
-      case DotLanguagePackage.COLOR:
-        return convertColorToString(eDataType, instanceValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -176,30 +141,6 @@ public class DotLanguageFactoryImpl extends EFactoryImpl implements DotLanguageF
   {
     UndirectedStatementImpl undirectedStatement = new UndirectedStatementImpl();
     return undirectedStatement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public DirectedSubgraphDeclaration createDirectedSubgraphDeclaration()
-  {
-    DirectedSubgraphDeclarationImpl directedSubgraphDeclaration = new DirectedSubgraphDeclarationImpl();
-    return directedSubgraphDeclaration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public UndirectedSubgraphDeclaration createUndirectedSubgraphDeclaration()
-  {
-    UndirectedSubgraphDeclarationImpl undirectedSubgraphDeclaration = new UndirectedSubgraphDeclarationImpl();
-    return undirectedSubgraphDeclaration;
   }
 
   /**
@@ -279,11 +220,11 @@ public class DotLanguageFactoryImpl extends EFactoryImpl implements DotLanguageF
    * <!-- end-user-doc -->
    * @generated
    */
-  public Color createColorFromString(EDataType eDataType, String initialValue)
+  @Override
+  public RightEdgeDeclaration createRightEdgeDeclaration()
   {
-    Color result = Color.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
+    RightEdgeDeclarationImpl rightEdgeDeclaration = new RightEdgeDeclarationImpl();
+    return rightEdgeDeclaration;
   }
 
   /**
@@ -291,9 +232,11 @@ public class DotLanguageFactoryImpl extends EFactoryImpl implements DotLanguageF
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertColorToString(EDataType eDataType, Object instanceValue)
+  @Override
+  public NodeList createNodeList()
   {
-    return instanceValue == null ? null : instanceValue.toString();
+    NodeListImpl nodeList = new NodeListImpl();
+    return nodeList;
   }
 
   /**

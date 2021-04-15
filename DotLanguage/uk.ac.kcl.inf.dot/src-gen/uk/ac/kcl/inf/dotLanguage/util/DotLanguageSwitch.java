@@ -108,22 +108,6 @@ public class DotLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DotLanguagePackage.DIRECTED_SUBGRAPH_DECLARATION:
-      {
-        DirectedSubgraphDeclaration directedSubgraphDeclaration = (DirectedSubgraphDeclaration)theEObject;
-        T result = caseDirectedSubgraphDeclaration(directedSubgraphDeclaration);
-        if (result == null) result = caseDirectedStatement(directedSubgraphDeclaration);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DotLanguagePackage.UNDIRECTED_SUBGRAPH_DECLARATION:
-      {
-        UndirectedSubgraphDeclaration undirectedSubgraphDeclaration = (UndirectedSubgraphDeclaration)theEObject;
-        T result = caseUndirectedSubgraphDeclaration(undirectedSubgraphDeclaration);
-        if (result == null) result = caseUndirectedStatement(undirectedSubgraphDeclaration);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case DotLanguagePackage.NODE_DECLARATION:
       {
         NodeDeclaration nodeDeclaration = (NodeDeclaration)theEObject;
@@ -167,6 +151,20 @@ public class DotLanguageSwitch<T> extends Switch<T>
         UndirectedEdgeDeclaration undirectedEdgeDeclaration = (UndirectedEdgeDeclaration)theEObject;
         T result = caseUndirectedEdgeDeclaration(undirectedEdgeDeclaration);
         if (result == null) result = caseUndirectedStatement(undirectedEdgeDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DotLanguagePackage.RIGHT_EDGE_DECLARATION:
+      {
+        RightEdgeDeclaration rightEdgeDeclaration = (RightEdgeDeclaration)theEObject;
+        T result = caseRightEdgeDeclaration(rightEdgeDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DotLanguagePackage.NODE_LIST:
+      {
+        NodeList nodeList = (NodeList)theEObject;
+        T result = caseNodeList(nodeList);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -250,38 +248,6 @@ public class DotLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseUndirectedStatement(UndirectedStatement object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Directed Subgraph Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Directed Subgraph Declaration</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDirectedSubgraphDeclaration(DirectedSubgraphDeclaration object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Undirected Subgraph Declaration</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Undirected Subgraph Declaration</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUndirectedSubgraphDeclaration(UndirectedSubgraphDeclaration object)
   {
     return null;
   }
@@ -378,6 +344,38 @@ public class DotLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseUndirectedEdgeDeclaration(UndirectedEdgeDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Right Edge Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Right Edge Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRightEdgeDeclaration(RightEdgeDeclaration object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Node List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Node List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNodeList(NodeList object)
   {
     return null;
   }

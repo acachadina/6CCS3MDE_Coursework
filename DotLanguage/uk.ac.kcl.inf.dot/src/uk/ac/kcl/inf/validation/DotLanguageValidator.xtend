@@ -84,6 +84,7 @@ class DotLanguageValidator extends AbstractDotLanguageValidator {
 			}
 		}
 	}
+	
 	/**
 	 * Check the correct naming of attributes.
 	 */
@@ -98,38 +99,7 @@ class DotLanguageValidator extends AbstractDotLanguageValidator {
 		}
 		
 	}
-	 
-	 
-	/**
-	 * Check whether there are several declarations of the same edge in directed and undirected graphs.
-	 */
-//	@Check
-//	def multipleEdgeDeclarationsDigraph(DirectedEdgeDeclaration edgeDeclaration){
-//		val graph = edgeDeclaration.eContainer
-//		var edge = newArrayList(edgeDeclaration.firstNode, edgeDeclaration.secondNode)
-//		
-//		if((graph as Digraph).multipleEdgeDeclarationDigraph(edge)){
-//			warning('This edge has already been declared.', edgeDeclaration, 
-//			DotLanguagePackage.Literals.DIRECTED_EDGE_DECLARATION__FIRST_NODE,
-//			MULTIPLE_DIGRAPH_EDGE_DECLARATION
-//			)
-//		}
-//	}		
-//	
-//	@Check
-//	def multipleEdgeDeclarationsGraph(UndirectedEdgeDeclaration edgeDeclaration){
-//		val graph = edgeDeclaration.eContainer
-//		var edge = newArrayList(edgeDeclaration.firstNode, edgeDeclaration.secondNode)
-//		
-//		if((graph as Graph).multipleEdgeDeclarationGraph(edge)){
-//			warning('This edge has already been declared.', edgeDeclaration, 
-//			DotLanguagePackage.Literals.UNDIRECTED_EDGE_DECLARATION__FIRST_NODE,
-//			MULTIPLE_GRAPH_EDGE_DECLARATION
-//			)
-//		}		
-//	}
-		
-		
+	
 	/**
 	 * HELPER FUNCTIONS
 	 */
@@ -139,10 +109,20 @@ class DotLanguageValidator extends AbstractDotLanguageValidator {
 		
 		for(UndirectedEdgeDeclaration edgeDecl : edgeDeclarations){
 			val firstNode = (edgeDecl as UndirectedEdgeDeclaration).firstNode
-			var secondNode = (edgeDecl as UndirectedEdgeDeclaration).secondNode	
+			val rightNodeDeclaration = (edgeDecl as UndirectedEdgeDeclaration).secondNode
 			
-			if (node == firstNode || node == secondNode){
+			if(node == firstNode){
 				return false
+			}
+			
+			if(rightNodeDeclaration.secondNode !== null){
+				if (node == rightNodeDeclaration.secondNode){
+					return false
+				}
+			} else {
+				if (rightNodeDeclaration.nodeList.nodes.contains(node)){
+					return false
+				}
 			}
 		}
 		return true
@@ -153,9 +133,20 @@ class DotLanguageValidator extends AbstractDotLanguageValidator {
 		
 		for(DirectedEdgeDeclaration edgeDecl : edgeDeclarations){
 			val firstNode = (edgeDecl as DirectedEdgeDeclaration).firstNode
-			val secondNode = (edgeDecl as DirectedEdgeDeclaration).secondNode
-			if (node == firstNode || node == secondNode){
+			val rightNodeDeclaration = (edgeDecl as DirectedEdgeDeclaration).secondNode
+			
+			if(node == firstNode){
 				return false
+			}
+			
+			if(rightNodeDeclaration.secondNode !== null){
+				if (node == rightNodeDeclaration.secondNode){
+					return false
+				}
+			} else {
+				if (rightNodeDeclaration.nodeList.nodes.contains(node)){
+					return false
+				}
 			}
 		}
 		return true

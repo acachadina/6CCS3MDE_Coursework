@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDotLanguageParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'->'", "'--'", "','", "';'", "'graph'", "'{'", "'}'", "'digraph'", "'subgraph'", "'['", "']'", "'='"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'->'", "'--'", "','", "';'", "'graph'", "'{'", "'}'", "'digraph'", "'['", "']'", "'='"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -40,7 +40,6 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int RULE_INT=5;
-    public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__20=20;
     public static final int T__21=21;
@@ -483,166 +482,12 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
     // $ANTLR end "ruleUndirectedStatement"
 
 
-    // $ANTLR start "entryRuleDirectedSubgraphDeclaration"
-    // InternalDotLanguage.g:178:1: entryRuleDirectedSubgraphDeclaration : ruleDirectedSubgraphDeclaration EOF ;
-    public final void entryRuleDirectedSubgraphDeclaration() throws RecognitionException {
-        try {
-            // InternalDotLanguage.g:179:1: ( ruleDirectedSubgraphDeclaration EOF )
-            // InternalDotLanguage.g:180:1: ruleDirectedSubgraphDeclaration EOF
-            {
-             before(grammarAccess.getDirectedSubgraphDeclarationRule()); 
-            pushFollow(FOLLOW_1);
-            ruleDirectedSubgraphDeclaration();
-
-            state._fsp--;
-
-             after(grammarAccess.getDirectedSubgraphDeclarationRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleDirectedSubgraphDeclaration"
-
-
-    // $ANTLR start "ruleDirectedSubgraphDeclaration"
-    // InternalDotLanguage.g:187:1: ruleDirectedSubgraphDeclaration : ( ( rule__DirectedSubgraphDeclaration__Group__0 ) ) ;
-    public final void ruleDirectedSubgraphDeclaration() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:191:2: ( ( ( rule__DirectedSubgraphDeclaration__Group__0 ) ) )
-            // InternalDotLanguage.g:192:2: ( ( rule__DirectedSubgraphDeclaration__Group__0 ) )
-            {
-            // InternalDotLanguage.g:192:2: ( ( rule__DirectedSubgraphDeclaration__Group__0 ) )
-            // InternalDotLanguage.g:193:3: ( rule__DirectedSubgraphDeclaration__Group__0 )
-            {
-             before(grammarAccess.getDirectedSubgraphDeclarationAccess().getGroup()); 
-            // InternalDotLanguage.g:194:3: ( rule__DirectedSubgraphDeclaration__Group__0 )
-            // InternalDotLanguage.g:194:4: rule__DirectedSubgraphDeclaration__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__DirectedSubgraphDeclaration__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getDirectedSubgraphDeclarationAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleDirectedSubgraphDeclaration"
-
-
-    // $ANTLR start "entryRuleUndirectedSubgraphDeclaration"
-    // InternalDotLanguage.g:203:1: entryRuleUndirectedSubgraphDeclaration : ruleUndirectedSubgraphDeclaration EOF ;
-    public final void entryRuleUndirectedSubgraphDeclaration() throws RecognitionException {
-        try {
-            // InternalDotLanguage.g:204:1: ( ruleUndirectedSubgraphDeclaration EOF )
-            // InternalDotLanguage.g:205:1: ruleUndirectedSubgraphDeclaration EOF
-            {
-             before(grammarAccess.getUndirectedSubgraphDeclarationRule()); 
-            pushFollow(FOLLOW_1);
-            ruleUndirectedSubgraphDeclaration();
-
-            state._fsp--;
-
-             after(grammarAccess.getUndirectedSubgraphDeclarationRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleUndirectedSubgraphDeclaration"
-
-
-    // $ANTLR start "ruleUndirectedSubgraphDeclaration"
-    // InternalDotLanguage.g:212:1: ruleUndirectedSubgraphDeclaration : ( ( rule__UndirectedSubgraphDeclaration__Group__0 ) ) ;
-    public final void ruleUndirectedSubgraphDeclaration() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:216:2: ( ( ( rule__UndirectedSubgraphDeclaration__Group__0 ) ) )
-            // InternalDotLanguage.g:217:2: ( ( rule__UndirectedSubgraphDeclaration__Group__0 ) )
-            {
-            // InternalDotLanguage.g:217:2: ( ( rule__UndirectedSubgraphDeclaration__Group__0 ) )
-            // InternalDotLanguage.g:218:3: ( rule__UndirectedSubgraphDeclaration__Group__0 )
-            {
-             before(grammarAccess.getUndirectedSubgraphDeclarationAccess().getGroup()); 
-            // InternalDotLanguage.g:219:3: ( rule__UndirectedSubgraphDeclaration__Group__0 )
-            // InternalDotLanguage.g:219:4: rule__UndirectedSubgraphDeclaration__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__UndirectedSubgraphDeclaration__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getUndirectedSubgraphDeclarationAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleUndirectedSubgraphDeclaration"
-
-
     // $ANTLR start "entryRuleNodeDeclaration"
-    // InternalDotLanguage.g:228:1: entryRuleNodeDeclaration : ruleNodeDeclaration EOF ;
+    // InternalDotLanguage.g:178:1: entryRuleNodeDeclaration : ruleNodeDeclaration EOF ;
     public final void entryRuleNodeDeclaration() throws RecognitionException {
         try {
-            // InternalDotLanguage.g:229:1: ( ruleNodeDeclaration EOF )
-            // InternalDotLanguage.g:230:1: ruleNodeDeclaration EOF
+            // InternalDotLanguage.g:179:1: ( ruleNodeDeclaration EOF )
+            // InternalDotLanguage.g:180:1: ruleNodeDeclaration EOF
             {
              before(grammarAccess.getNodeDeclarationRule()); 
             pushFollow(FOLLOW_1);
@@ -668,21 +513,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleNodeDeclaration"
-    // InternalDotLanguage.g:237:1: ruleNodeDeclaration : ( ( rule__NodeDeclaration__Group__0 ) ) ;
+    // InternalDotLanguage.g:187:1: ruleNodeDeclaration : ( ( rule__NodeDeclaration__Group__0 ) ) ;
     public final void ruleNodeDeclaration() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:241:2: ( ( ( rule__NodeDeclaration__Group__0 ) ) )
-            // InternalDotLanguage.g:242:2: ( ( rule__NodeDeclaration__Group__0 ) )
+            // InternalDotLanguage.g:191:2: ( ( ( rule__NodeDeclaration__Group__0 ) ) )
+            // InternalDotLanguage.g:192:2: ( ( rule__NodeDeclaration__Group__0 ) )
             {
-            // InternalDotLanguage.g:242:2: ( ( rule__NodeDeclaration__Group__0 ) )
-            // InternalDotLanguage.g:243:3: ( rule__NodeDeclaration__Group__0 )
+            // InternalDotLanguage.g:192:2: ( ( rule__NodeDeclaration__Group__0 ) )
+            // InternalDotLanguage.g:193:3: ( rule__NodeDeclaration__Group__0 )
             {
              before(grammarAccess.getNodeDeclarationAccess().getGroup()); 
-            // InternalDotLanguage.g:244:3: ( rule__NodeDeclaration__Group__0 )
-            // InternalDotLanguage.g:244:4: rule__NodeDeclaration__Group__0
+            // InternalDotLanguage.g:194:3: ( rule__NodeDeclaration__Group__0 )
+            // InternalDotLanguage.g:194:4: rule__NodeDeclaration__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__NodeDeclaration__Group__0();
@@ -715,11 +560,11 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleNodeId"
-    // InternalDotLanguage.g:253:1: entryRuleNodeId : ruleNodeId EOF ;
+    // InternalDotLanguage.g:203:1: entryRuleNodeId : ruleNodeId EOF ;
     public final void entryRuleNodeId() throws RecognitionException {
         try {
-            // InternalDotLanguage.g:254:1: ( ruleNodeId EOF )
-            // InternalDotLanguage.g:255:1: ruleNodeId EOF
+            // InternalDotLanguage.g:204:1: ( ruleNodeId EOF )
+            // InternalDotLanguage.g:205:1: ruleNodeId EOF
             {
              before(grammarAccess.getNodeIdRule()); 
             pushFollow(FOLLOW_1);
@@ -745,21 +590,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleNodeId"
-    // InternalDotLanguage.g:262:1: ruleNodeId : ( ( rule__NodeId__NameAssignment ) ) ;
+    // InternalDotLanguage.g:212:1: ruleNodeId : ( ( rule__NodeId__NameAssignment ) ) ;
     public final void ruleNodeId() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:266:2: ( ( ( rule__NodeId__NameAssignment ) ) )
-            // InternalDotLanguage.g:267:2: ( ( rule__NodeId__NameAssignment ) )
+            // InternalDotLanguage.g:216:2: ( ( ( rule__NodeId__NameAssignment ) ) )
+            // InternalDotLanguage.g:217:2: ( ( rule__NodeId__NameAssignment ) )
             {
-            // InternalDotLanguage.g:267:2: ( ( rule__NodeId__NameAssignment ) )
-            // InternalDotLanguage.g:268:3: ( rule__NodeId__NameAssignment )
+            // InternalDotLanguage.g:217:2: ( ( rule__NodeId__NameAssignment ) )
+            // InternalDotLanguage.g:218:3: ( rule__NodeId__NameAssignment )
             {
              before(grammarAccess.getNodeIdAccess().getNameAssignment()); 
-            // InternalDotLanguage.g:269:3: ( rule__NodeId__NameAssignment )
-            // InternalDotLanguage.g:269:4: rule__NodeId__NameAssignment
+            // InternalDotLanguage.g:219:3: ( rule__NodeId__NameAssignment )
+            // InternalDotLanguage.g:219:4: rule__NodeId__NameAssignment
             {
             pushFollow(FOLLOW_2);
             rule__NodeId__NameAssignment();
@@ -792,11 +637,11 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleAttributeList"
-    // InternalDotLanguage.g:278:1: entryRuleAttributeList : ruleAttributeList EOF ;
+    // InternalDotLanguage.g:228:1: entryRuleAttributeList : ruleAttributeList EOF ;
     public final void entryRuleAttributeList() throws RecognitionException {
         try {
-            // InternalDotLanguage.g:279:1: ( ruleAttributeList EOF )
-            // InternalDotLanguage.g:280:1: ruleAttributeList EOF
+            // InternalDotLanguage.g:229:1: ( ruleAttributeList EOF )
+            // InternalDotLanguage.g:230:1: ruleAttributeList EOF
             {
              before(grammarAccess.getAttributeListRule()); 
             pushFollow(FOLLOW_1);
@@ -822,21 +667,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleAttributeList"
-    // InternalDotLanguage.g:287:1: ruleAttributeList : ( ( rule__AttributeList__Group__0 ) ) ;
+    // InternalDotLanguage.g:237:1: ruleAttributeList : ( ( rule__AttributeList__Group__0 ) ) ;
     public final void ruleAttributeList() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:291:2: ( ( ( rule__AttributeList__Group__0 ) ) )
-            // InternalDotLanguage.g:292:2: ( ( rule__AttributeList__Group__0 ) )
+            // InternalDotLanguage.g:241:2: ( ( ( rule__AttributeList__Group__0 ) ) )
+            // InternalDotLanguage.g:242:2: ( ( rule__AttributeList__Group__0 ) )
             {
-            // InternalDotLanguage.g:292:2: ( ( rule__AttributeList__Group__0 ) )
-            // InternalDotLanguage.g:293:3: ( rule__AttributeList__Group__0 )
+            // InternalDotLanguage.g:242:2: ( ( rule__AttributeList__Group__0 ) )
+            // InternalDotLanguage.g:243:3: ( rule__AttributeList__Group__0 )
             {
              before(grammarAccess.getAttributeListAccess().getGroup()); 
-            // InternalDotLanguage.g:294:3: ( rule__AttributeList__Group__0 )
-            // InternalDotLanguage.g:294:4: rule__AttributeList__Group__0
+            // InternalDotLanguage.g:244:3: ( rule__AttributeList__Group__0 )
+            // InternalDotLanguage.g:244:4: rule__AttributeList__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__AttributeList__Group__0();
@@ -869,11 +714,11 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleAttribute"
-    // InternalDotLanguage.g:303:1: entryRuleAttribute : ruleAttribute EOF ;
+    // InternalDotLanguage.g:253:1: entryRuleAttribute : ruleAttribute EOF ;
     public final void entryRuleAttribute() throws RecognitionException {
         try {
-            // InternalDotLanguage.g:304:1: ( ruleAttribute EOF )
-            // InternalDotLanguage.g:305:1: ruleAttribute EOF
+            // InternalDotLanguage.g:254:1: ( ruleAttribute EOF )
+            // InternalDotLanguage.g:255:1: ruleAttribute EOF
             {
              before(grammarAccess.getAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -899,21 +744,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleAttribute"
-    // InternalDotLanguage.g:312:1: ruleAttribute : ( ( rule__Attribute__Group__0 ) ) ;
+    // InternalDotLanguage.g:262:1: ruleAttribute : ( ( rule__Attribute__Group__0 ) ) ;
     public final void ruleAttribute() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:316:2: ( ( ( rule__Attribute__Group__0 ) ) )
-            // InternalDotLanguage.g:317:2: ( ( rule__Attribute__Group__0 ) )
+            // InternalDotLanguage.g:266:2: ( ( ( rule__Attribute__Group__0 ) ) )
+            // InternalDotLanguage.g:267:2: ( ( rule__Attribute__Group__0 ) )
             {
-            // InternalDotLanguage.g:317:2: ( ( rule__Attribute__Group__0 ) )
-            // InternalDotLanguage.g:318:3: ( rule__Attribute__Group__0 )
+            // InternalDotLanguage.g:267:2: ( ( rule__Attribute__Group__0 ) )
+            // InternalDotLanguage.g:268:3: ( rule__Attribute__Group__0 )
             {
              before(grammarAccess.getAttributeAccess().getGroup()); 
-            // InternalDotLanguage.g:319:3: ( rule__Attribute__Group__0 )
-            // InternalDotLanguage.g:319:4: rule__Attribute__Group__0
+            // InternalDotLanguage.g:269:3: ( rule__Attribute__Group__0 )
+            // InternalDotLanguage.g:269:4: rule__Attribute__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Attribute__Group__0();
@@ -945,12 +790,89 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
     // $ANTLR end "ruleAttribute"
 
 
+    // $ANTLR start "entryRuleIDORINT"
+    // InternalDotLanguage.g:278:1: entryRuleIDORINT : ruleIDORINT EOF ;
+    public final void entryRuleIDORINT() throws RecognitionException {
+        try {
+            // InternalDotLanguage.g:279:1: ( ruleIDORINT EOF )
+            // InternalDotLanguage.g:280:1: ruleIDORINT EOF
+            {
+             before(grammarAccess.getIDORINTRule()); 
+            pushFollow(FOLLOW_1);
+            ruleIDORINT();
+
+            state._fsp--;
+
+             after(grammarAccess.getIDORINTRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleIDORINT"
+
+
+    // $ANTLR start "ruleIDORINT"
+    // InternalDotLanguage.g:287:1: ruleIDORINT : ( ( rule__IDORINT__Alternatives ) ) ;
+    public final void ruleIDORINT() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDotLanguage.g:291:2: ( ( ( rule__IDORINT__Alternatives ) ) )
+            // InternalDotLanguage.g:292:2: ( ( rule__IDORINT__Alternatives ) )
+            {
+            // InternalDotLanguage.g:292:2: ( ( rule__IDORINT__Alternatives ) )
+            // InternalDotLanguage.g:293:3: ( rule__IDORINT__Alternatives )
+            {
+             before(grammarAccess.getIDORINTAccess().getAlternatives()); 
+            // InternalDotLanguage.g:294:3: ( rule__IDORINT__Alternatives )
+            // InternalDotLanguage.g:294:4: rule__IDORINT__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__IDORINT__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getIDORINTAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleIDORINT"
+
+
     // $ANTLR start "entryRuleDirectedEdgeDeclaration"
-    // InternalDotLanguage.g:328:1: entryRuleDirectedEdgeDeclaration : ruleDirectedEdgeDeclaration EOF ;
+    // InternalDotLanguage.g:303:1: entryRuleDirectedEdgeDeclaration : ruleDirectedEdgeDeclaration EOF ;
     public final void entryRuleDirectedEdgeDeclaration() throws RecognitionException {
         try {
-            // InternalDotLanguage.g:329:1: ( ruleDirectedEdgeDeclaration EOF )
-            // InternalDotLanguage.g:330:1: ruleDirectedEdgeDeclaration EOF
+            // InternalDotLanguage.g:304:1: ( ruleDirectedEdgeDeclaration EOF )
+            // InternalDotLanguage.g:305:1: ruleDirectedEdgeDeclaration EOF
             {
              before(grammarAccess.getDirectedEdgeDeclarationRule()); 
             pushFollow(FOLLOW_1);
@@ -976,21 +898,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleDirectedEdgeDeclaration"
-    // InternalDotLanguage.g:337:1: ruleDirectedEdgeDeclaration : ( ( rule__DirectedEdgeDeclaration__Group__0 ) ) ;
+    // InternalDotLanguage.g:312:1: ruleDirectedEdgeDeclaration : ( ( rule__DirectedEdgeDeclaration__Group__0 ) ) ;
     public final void ruleDirectedEdgeDeclaration() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:341:2: ( ( ( rule__DirectedEdgeDeclaration__Group__0 ) ) )
-            // InternalDotLanguage.g:342:2: ( ( rule__DirectedEdgeDeclaration__Group__0 ) )
+            // InternalDotLanguage.g:316:2: ( ( ( rule__DirectedEdgeDeclaration__Group__0 ) ) )
+            // InternalDotLanguage.g:317:2: ( ( rule__DirectedEdgeDeclaration__Group__0 ) )
             {
-            // InternalDotLanguage.g:342:2: ( ( rule__DirectedEdgeDeclaration__Group__0 ) )
-            // InternalDotLanguage.g:343:3: ( rule__DirectedEdgeDeclaration__Group__0 )
+            // InternalDotLanguage.g:317:2: ( ( rule__DirectedEdgeDeclaration__Group__0 ) )
+            // InternalDotLanguage.g:318:3: ( rule__DirectedEdgeDeclaration__Group__0 )
             {
              before(grammarAccess.getDirectedEdgeDeclarationAccess().getGroup()); 
-            // InternalDotLanguage.g:344:3: ( rule__DirectedEdgeDeclaration__Group__0 )
-            // InternalDotLanguage.g:344:4: rule__DirectedEdgeDeclaration__Group__0
+            // InternalDotLanguage.g:319:3: ( rule__DirectedEdgeDeclaration__Group__0 )
+            // InternalDotLanguage.g:319:4: rule__DirectedEdgeDeclaration__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__DirectedEdgeDeclaration__Group__0();
@@ -1023,11 +945,11 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleUndirectedEdgeDeclaration"
-    // InternalDotLanguage.g:353:1: entryRuleUndirectedEdgeDeclaration : ruleUndirectedEdgeDeclaration EOF ;
+    // InternalDotLanguage.g:328:1: entryRuleUndirectedEdgeDeclaration : ruleUndirectedEdgeDeclaration EOF ;
     public final void entryRuleUndirectedEdgeDeclaration() throws RecognitionException {
         try {
-            // InternalDotLanguage.g:354:1: ( ruleUndirectedEdgeDeclaration EOF )
-            // InternalDotLanguage.g:355:1: ruleUndirectedEdgeDeclaration EOF
+            // InternalDotLanguage.g:329:1: ( ruleUndirectedEdgeDeclaration EOF )
+            // InternalDotLanguage.g:330:1: ruleUndirectedEdgeDeclaration EOF
             {
              before(grammarAccess.getUndirectedEdgeDeclarationRule()); 
             pushFollow(FOLLOW_1);
@@ -1053,21 +975,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleUndirectedEdgeDeclaration"
-    // InternalDotLanguage.g:362:1: ruleUndirectedEdgeDeclaration : ( ( rule__UndirectedEdgeDeclaration__Group__0 ) ) ;
+    // InternalDotLanguage.g:337:1: ruleUndirectedEdgeDeclaration : ( ( rule__UndirectedEdgeDeclaration__Group__0 ) ) ;
     public final void ruleUndirectedEdgeDeclaration() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:366:2: ( ( ( rule__UndirectedEdgeDeclaration__Group__0 ) ) )
-            // InternalDotLanguage.g:367:2: ( ( rule__UndirectedEdgeDeclaration__Group__0 ) )
+            // InternalDotLanguage.g:341:2: ( ( ( rule__UndirectedEdgeDeclaration__Group__0 ) ) )
+            // InternalDotLanguage.g:342:2: ( ( rule__UndirectedEdgeDeclaration__Group__0 ) )
             {
-            // InternalDotLanguage.g:367:2: ( ( rule__UndirectedEdgeDeclaration__Group__0 ) )
-            // InternalDotLanguage.g:368:3: ( rule__UndirectedEdgeDeclaration__Group__0 )
+            // InternalDotLanguage.g:342:2: ( ( rule__UndirectedEdgeDeclaration__Group__0 ) )
+            // InternalDotLanguage.g:343:3: ( rule__UndirectedEdgeDeclaration__Group__0 )
             {
              before(grammarAccess.getUndirectedEdgeDeclarationAccess().getGroup()); 
-            // InternalDotLanguage.g:369:3: ( rule__UndirectedEdgeDeclaration__Group__0 )
-            // InternalDotLanguage.g:369:4: rule__UndirectedEdgeDeclaration__Group__0
+            // InternalDotLanguage.g:344:3: ( rule__UndirectedEdgeDeclaration__Group__0 )
+            // InternalDotLanguage.g:344:4: rule__UndirectedEdgeDeclaration__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__UndirectedEdgeDeclaration__Group__0();
@@ -1099,12 +1021,166 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
     // $ANTLR end "ruleUndirectedEdgeDeclaration"
 
 
+    // $ANTLR start "entryRuleRightEdgeDeclaration"
+    // InternalDotLanguage.g:353:1: entryRuleRightEdgeDeclaration : ruleRightEdgeDeclaration EOF ;
+    public final void entryRuleRightEdgeDeclaration() throws RecognitionException {
+        try {
+            // InternalDotLanguage.g:354:1: ( ruleRightEdgeDeclaration EOF )
+            // InternalDotLanguage.g:355:1: ruleRightEdgeDeclaration EOF
+            {
+             before(grammarAccess.getRightEdgeDeclarationRule()); 
+            pushFollow(FOLLOW_1);
+            ruleRightEdgeDeclaration();
+
+            state._fsp--;
+
+             after(grammarAccess.getRightEdgeDeclarationRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleRightEdgeDeclaration"
+
+
+    // $ANTLR start "ruleRightEdgeDeclaration"
+    // InternalDotLanguage.g:362:1: ruleRightEdgeDeclaration : ( ( rule__RightEdgeDeclaration__Alternatives ) ) ;
+    public final void ruleRightEdgeDeclaration() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDotLanguage.g:366:2: ( ( ( rule__RightEdgeDeclaration__Alternatives ) ) )
+            // InternalDotLanguage.g:367:2: ( ( rule__RightEdgeDeclaration__Alternatives ) )
+            {
+            // InternalDotLanguage.g:367:2: ( ( rule__RightEdgeDeclaration__Alternatives ) )
+            // InternalDotLanguage.g:368:3: ( rule__RightEdgeDeclaration__Alternatives )
+            {
+             before(grammarAccess.getRightEdgeDeclarationAccess().getAlternatives()); 
+            // InternalDotLanguage.g:369:3: ( rule__RightEdgeDeclaration__Alternatives )
+            // InternalDotLanguage.g:369:4: rule__RightEdgeDeclaration__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__RightEdgeDeclaration__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRightEdgeDeclarationAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleRightEdgeDeclaration"
+
+
+    // $ANTLR start "entryRuleNodeList"
+    // InternalDotLanguage.g:378:1: entryRuleNodeList : ruleNodeList EOF ;
+    public final void entryRuleNodeList() throws RecognitionException {
+        try {
+            // InternalDotLanguage.g:379:1: ( ruleNodeList EOF )
+            // InternalDotLanguage.g:380:1: ruleNodeList EOF
+            {
+             before(grammarAccess.getNodeListRule()); 
+            pushFollow(FOLLOW_1);
+            ruleNodeList();
+
+            state._fsp--;
+
+             after(grammarAccess.getNodeListRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleNodeList"
+
+
+    // $ANTLR start "ruleNodeList"
+    // InternalDotLanguage.g:387:1: ruleNodeList : ( ( rule__NodeList__Group__0 ) ) ;
+    public final void ruleNodeList() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDotLanguage.g:391:2: ( ( ( rule__NodeList__Group__0 ) ) )
+            // InternalDotLanguage.g:392:2: ( ( rule__NodeList__Group__0 ) )
+            {
+            // InternalDotLanguage.g:392:2: ( ( rule__NodeList__Group__0 ) )
+            // InternalDotLanguage.g:393:3: ( rule__NodeList__Group__0 )
+            {
+             before(grammarAccess.getNodeListAccess().getGroup()); 
+            // InternalDotLanguage.g:394:3: ( rule__NodeList__Group__0 )
+            // InternalDotLanguage.g:394:4: rule__NodeList__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__NodeList__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getNodeListAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleNodeList"
+
+
     // $ANTLR start "entryRuleDirectedEdge"
-    // InternalDotLanguage.g:378:1: entryRuleDirectedEdge : ruleDirectedEdge EOF ;
+    // InternalDotLanguage.g:403:1: entryRuleDirectedEdge : ruleDirectedEdge EOF ;
     public final void entryRuleDirectedEdge() throws RecognitionException {
         try {
-            // InternalDotLanguage.g:379:1: ( ruleDirectedEdge EOF )
-            // InternalDotLanguage.g:380:1: ruleDirectedEdge EOF
+            // InternalDotLanguage.g:404:1: ( ruleDirectedEdge EOF )
+            // InternalDotLanguage.g:405:1: ruleDirectedEdge EOF
             {
              before(grammarAccess.getDirectedEdgeRule()); 
             pushFollow(FOLLOW_1);
@@ -1130,17 +1206,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleDirectedEdge"
-    // InternalDotLanguage.g:387:1: ruleDirectedEdge : ( '->' ) ;
+    // InternalDotLanguage.g:412:1: ruleDirectedEdge : ( '->' ) ;
     public final void ruleDirectedEdge() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:391:2: ( ( '->' ) )
-            // InternalDotLanguage.g:392:2: ( '->' )
+            // InternalDotLanguage.g:416:2: ( ( '->' ) )
+            // InternalDotLanguage.g:417:2: ( '->' )
             {
-            // InternalDotLanguage.g:392:2: ( '->' )
-            // InternalDotLanguage.g:393:3: '->'
+            // InternalDotLanguage.g:417:2: ( '->' )
+            // InternalDotLanguage.g:418:3: '->'
             {
              before(grammarAccess.getDirectedEdgeAccess().getHyphenMinusGreaterThanSignKeyword()); 
             match(input,11,FOLLOW_2); 
@@ -1167,11 +1243,11 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleUndirectedEdge"
-    // InternalDotLanguage.g:403:1: entryRuleUndirectedEdge : ruleUndirectedEdge EOF ;
+    // InternalDotLanguage.g:428:1: entryRuleUndirectedEdge : ruleUndirectedEdge EOF ;
     public final void entryRuleUndirectedEdge() throws RecognitionException {
         try {
-            // InternalDotLanguage.g:404:1: ( ruleUndirectedEdge EOF )
-            // InternalDotLanguage.g:405:1: ruleUndirectedEdge EOF
+            // InternalDotLanguage.g:429:1: ( ruleUndirectedEdge EOF )
+            // InternalDotLanguage.g:430:1: ruleUndirectedEdge EOF
             {
              before(grammarAccess.getUndirectedEdgeRule()); 
             pushFollow(FOLLOW_1);
@@ -1197,17 +1273,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleUndirectedEdge"
-    // InternalDotLanguage.g:412:1: ruleUndirectedEdge : ( '--' ) ;
+    // InternalDotLanguage.g:437:1: ruleUndirectedEdge : ( '--' ) ;
     public final void ruleUndirectedEdge() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:416:2: ( ( '--' ) )
-            // InternalDotLanguage.g:417:2: ( '--' )
+            // InternalDotLanguage.g:441:2: ( ( '--' ) )
+            // InternalDotLanguage.g:442:2: ( '--' )
             {
-            // InternalDotLanguage.g:417:2: ( '--' )
-            // InternalDotLanguage.g:418:3: '--'
+            // InternalDotLanguage.g:442:2: ( '--' )
+            // InternalDotLanguage.g:443:3: '--'
             {
              before(grammarAccess.getUndirectedEdgeAccess().getHyphenMinusHyphenMinusKeyword()); 
             match(input,12,FOLLOW_2); 
@@ -1234,13 +1310,13 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DotLanguage__GraphsAlternatives_0"
-    // InternalDotLanguage.g:427:1: rule__DotLanguage__GraphsAlternatives_0 : ( ( ruleGraph ) | ( ruleDigraph ) );
+    // InternalDotLanguage.g:452:1: rule__DotLanguage__GraphsAlternatives_0 : ( ( ruleGraph ) | ( ruleDigraph ) );
     public final void rule__DotLanguage__GraphsAlternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:431:1: ( ( ruleGraph ) | ( ruleDigraph ) )
+            // InternalDotLanguage.g:456:1: ( ( ruleGraph ) | ( ruleDigraph ) )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -1258,10 +1334,10 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
             }
             switch (alt2) {
                 case 1 :
-                    // InternalDotLanguage.g:432:2: ( ruleGraph )
+                    // InternalDotLanguage.g:457:2: ( ruleGraph )
                     {
-                    // InternalDotLanguage.g:432:2: ( ruleGraph )
-                    // InternalDotLanguage.g:433:3: ruleGraph
+                    // InternalDotLanguage.g:457:2: ( ruleGraph )
+                    // InternalDotLanguage.g:458:3: ruleGraph
                     {
                      before(grammarAccess.getDotLanguageAccess().getGraphsGraphParserRuleCall_0_0()); 
                     pushFollow(FOLLOW_2);
@@ -1277,10 +1353,10 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalDotLanguage.g:438:2: ( ruleDigraph )
+                    // InternalDotLanguage.g:463:2: ( ruleDigraph )
                     {
-                    // InternalDotLanguage.g:438:2: ( ruleDigraph )
-                    // InternalDotLanguage.g:439:3: ruleDigraph
+                    // InternalDotLanguage.g:463:2: ( ruleDigraph )
+                    // InternalDotLanguage.g:464:3: ruleDigraph
                     {
                      before(grammarAccess.getDotLanguageAccess().getGraphsDigraphParserRuleCall_0_1()); 
                     pushFollow(FOLLOW_2);
@@ -1313,24 +1389,24 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirectedStatement__Alternatives_0"
-    // InternalDotLanguage.g:448:1: rule__DirectedStatement__Alternatives_0 : ( ( ruleNodeDeclaration ) | ( ruleDirectedEdgeDeclaration ) | ( ruleDirectedSubgraphDeclaration ) );
+    // InternalDotLanguage.g:473:1: rule__DirectedStatement__Alternatives_0 : ( ( ruleNodeDeclaration ) | ( ruleDirectedEdgeDeclaration ) );
     public final void rule__DirectedStatement__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:452:1: ( ( ruleNodeDeclaration ) | ( ruleDirectedEdgeDeclaration ) | ( ruleDirectedSubgraphDeclaration ) )
-            int alt3=3;
+            // InternalDotLanguage.g:477:1: ( ( ruleNodeDeclaration ) | ( ruleDirectedEdgeDeclaration ) )
+            int alt3=2;
             int LA3_0 = input.LA(1);
 
             if ( (LA3_0==RULE_ID) ) {
                 int LA3_1 = input.LA(2);
 
-                if ( (LA3_1==11) ) {
-                    alt3=2;
-                }
-                else if ( (LA3_1==EOF||LA3_1==RULE_ID||(LA3_1>=13 && LA3_1<=14)||LA3_1==17||(LA3_1>=19 && LA3_1<=20)) ) {
+                if ( (LA3_1==EOF||LA3_1==RULE_ID||(LA3_1>=13 && LA3_1<=14)||LA3_1==17||LA3_1==19) ) {
                     alt3=1;
+                }
+                else if ( (LA3_1==11) ) {
+                    alt3=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -1338,9 +1414,6 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
                     throw nvae;
                 }
-            }
-            else if ( (LA3_0==19) ) {
-                alt3=3;
             }
             else {
                 NoViableAltException nvae =
@@ -1350,10 +1423,10 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
             }
             switch (alt3) {
                 case 1 :
-                    // InternalDotLanguage.g:453:2: ( ruleNodeDeclaration )
+                    // InternalDotLanguage.g:478:2: ( ruleNodeDeclaration )
                     {
-                    // InternalDotLanguage.g:453:2: ( ruleNodeDeclaration )
-                    // InternalDotLanguage.g:454:3: ruleNodeDeclaration
+                    // InternalDotLanguage.g:478:2: ( ruleNodeDeclaration )
+                    // InternalDotLanguage.g:479:3: ruleNodeDeclaration
                     {
                      before(grammarAccess.getDirectedStatementAccess().getNodeDeclarationParserRuleCall_0_0()); 
                     pushFollow(FOLLOW_2);
@@ -1369,10 +1442,10 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalDotLanguage.g:459:2: ( ruleDirectedEdgeDeclaration )
+                    // InternalDotLanguage.g:484:2: ( ruleDirectedEdgeDeclaration )
                     {
-                    // InternalDotLanguage.g:459:2: ( ruleDirectedEdgeDeclaration )
-                    // InternalDotLanguage.g:460:3: ruleDirectedEdgeDeclaration
+                    // InternalDotLanguage.g:484:2: ( ruleDirectedEdgeDeclaration )
+                    // InternalDotLanguage.g:485:3: ruleDirectedEdgeDeclaration
                     {
                      before(grammarAccess.getDirectedStatementAccess().getDirectedEdgeDeclarationParserRuleCall_0_1()); 
                     pushFollow(FOLLOW_2);
@@ -1381,25 +1454,6 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
                     state._fsp--;
 
                      after(grammarAccess.getDirectedStatementAccess().getDirectedEdgeDeclarationParserRuleCall_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalDotLanguage.g:465:2: ( ruleDirectedSubgraphDeclaration )
-                    {
-                    // InternalDotLanguage.g:465:2: ( ruleDirectedSubgraphDeclaration )
-                    // InternalDotLanguage.g:466:3: ruleDirectedSubgraphDeclaration
-                    {
-                     before(grammarAccess.getDirectedStatementAccess().getDirectedSubgraphDeclarationParserRuleCall_0_2()); 
-                    pushFollow(FOLLOW_2);
-                    ruleDirectedSubgraphDeclaration();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getDirectedStatementAccess().getDirectedSubgraphDeclarationParserRuleCall_0_2()); 
 
                     }
 
@@ -1424,13 +1478,13 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirectedStatement__Alternatives_1"
-    // InternalDotLanguage.g:475:1: rule__DirectedStatement__Alternatives_1 : ( ( ',' ) | ( ';' ) );
+    // InternalDotLanguage.g:494:1: rule__DirectedStatement__Alternatives_1 : ( ( ',' ) | ( ';' ) );
     public final void rule__DirectedStatement__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:479:1: ( ( ',' ) | ( ';' ) )
+            // InternalDotLanguage.g:498:1: ( ( ',' ) | ( ';' ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1448,10 +1502,10 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
             }
             switch (alt4) {
                 case 1 :
-                    // InternalDotLanguage.g:480:2: ( ',' )
+                    // InternalDotLanguage.g:499:2: ( ',' )
                     {
-                    // InternalDotLanguage.g:480:2: ( ',' )
-                    // InternalDotLanguage.g:481:3: ','
+                    // InternalDotLanguage.g:499:2: ( ',' )
+                    // InternalDotLanguage.g:500:3: ','
                     {
                      before(grammarAccess.getDirectedStatementAccess().getCommaKeyword_1_0()); 
                     match(input,13,FOLLOW_2); 
@@ -1463,10 +1517,10 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalDotLanguage.g:486:2: ( ';' )
+                    // InternalDotLanguage.g:505:2: ( ';' )
                     {
-                    // InternalDotLanguage.g:486:2: ( ';' )
-                    // InternalDotLanguage.g:487:3: ';'
+                    // InternalDotLanguage.g:505:2: ( ';' )
+                    // InternalDotLanguage.g:506:3: ';'
                     {
                      before(grammarAccess.getDirectedStatementAccess().getSemicolonKeyword_1_1()); 
                     match(input,14,FOLLOW_2); 
@@ -1495,14 +1549,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__UndirectedStatement__Alternatives_0"
-    // InternalDotLanguage.g:496:1: rule__UndirectedStatement__Alternatives_0 : ( ( ruleNodeDeclaration ) | ( ruleUndirectedEdgeDeclaration ) | ( ruleUndirectedSubgraphDeclaration ) );
+    // InternalDotLanguage.g:515:1: rule__UndirectedStatement__Alternatives_0 : ( ( ruleNodeDeclaration ) | ( ruleUndirectedEdgeDeclaration ) );
     public final void rule__UndirectedStatement__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:500:1: ( ( ruleNodeDeclaration ) | ( ruleUndirectedEdgeDeclaration ) | ( ruleUndirectedSubgraphDeclaration ) )
-            int alt5=3;
+            // InternalDotLanguage.g:519:1: ( ( ruleNodeDeclaration ) | ( ruleUndirectedEdgeDeclaration ) )
+            int alt5=2;
             int LA5_0 = input.LA(1);
 
             if ( (LA5_0==RULE_ID) ) {
@@ -1511,7 +1565,7 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
                 if ( (LA5_1==12) ) {
                     alt5=2;
                 }
-                else if ( (LA5_1==EOF||LA5_1==RULE_ID||(LA5_1>=13 && LA5_1<=14)||LA5_1==17||(LA5_1>=19 && LA5_1<=20)) ) {
+                else if ( (LA5_1==EOF||LA5_1==RULE_ID||(LA5_1>=13 && LA5_1<=14)||LA5_1==17||LA5_1==19) ) {
                     alt5=1;
                 }
                 else {
@@ -1521,9 +1575,6 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
                     throw nvae;
                 }
             }
-            else if ( (LA5_0==19) ) {
-                alt5=3;
-            }
             else {
                 NoViableAltException nvae =
                     new NoViableAltException("", 5, 0, input);
@@ -1532,10 +1583,10 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
             }
             switch (alt5) {
                 case 1 :
-                    // InternalDotLanguage.g:501:2: ( ruleNodeDeclaration )
+                    // InternalDotLanguage.g:520:2: ( ruleNodeDeclaration )
                     {
-                    // InternalDotLanguage.g:501:2: ( ruleNodeDeclaration )
-                    // InternalDotLanguage.g:502:3: ruleNodeDeclaration
+                    // InternalDotLanguage.g:520:2: ( ruleNodeDeclaration )
+                    // InternalDotLanguage.g:521:3: ruleNodeDeclaration
                     {
                      before(grammarAccess.getUndirectedStatementAccess().getNodeDeclarationParserRuleCall_0_0()); 
                     pushFollow(FOLLOW_2);
@@ -1551,10 +1602,10 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalDotLanguage.g:507:2: ( ruleUndirectedEdgeDeclaration )
+                    // InternalDotLanguage.g:526:2: ( ruleUndirectedEdgeDeclaration )
                     {
-                    // InternalDotLanguage.g:507:2: ( ruleUndirectedEdgeDeclaration )
-                    // InternalDotLanguage.g:508:3: ruleUndirectedEdgeDeclaration
+                    // InternalDotLanguage.g:526:2: ( ruleUndirectedEdgeDeclaration )
+                    // InternalDotLanguage.g:527:3: ruleUndirectedEdgeDeclaration
                     {
                      before(grammarAccess.getUndirectedStatementAccess().getUndirectedEdgeDeclarationParserRuleCall_0_1()); 
                     pushFollow(FOLLOW_2);
@@ -1563,25 +1614,6 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
                     state._fsp--;
 
                      after(grammarAccess.getUndirectedStatementAccess().getUndirectedEdgeDeclarationParserRuleCall_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalDotLanguage.g:513:2: ( ruleUndirectedSubgraphDeclaration )
-                    {
-                    // InternalDotLanguage.g:513:2: ( ruleUndirectedSubgraphDeclaration )
-                    // InternalDotLanguage.g:514:3: ruleUndirectedSubgraphDeclaration
-                    {
-                     before(grammarAccess.getUndirectedStatementAccess().getUndirectedSubgraphDeclarationParserRuleCall_0_2()); 
-                    pushFollow(FOLLOW_2);
-                    ruleUndirectedSubgraphDeclaration();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getUndirectedStatementAccess().getUndirectedSubgraphDeclarationParserRuleCall_0_2()); 
 
                     }
 
@@ -1606,13 +1638,13 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__UndirectedStatement__Alternatives_1"
-    // InternalDotLanguage.g:523:1: rule__UndirectedStatement__Alternatives_1 : ( ( ',' ) | ( ';' ) );
+    // InternalDotLanguage.g:536:1: rule__UndirectedStatement__Alternatives_1 : ( ( ',' ) | ( ';' ) );
     public final void rule__UndirectedStatement__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:527:1: ( ( ',' ) | ( ';' ) )
+            // InternalDotLanguage.g:540:1: ( ( ',' ) | ( ';' ) )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1630,10 +1662,10 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
             }
             switch (alt6) {
                 case 1 :
-                    // InternalDotLanguage.g:528:2: ( ',' )
+                    // InternalDotLanguage.g:541:2: ( ',' )
                     {
-                    // InternalDotLanguage.g:528:2: ( ',' )
-                    // InternalDotLanguage.g:529:3: ','
+                    // InternalDotLanguage.g:541:2: ( ',' )
+                    // InternalDotLanguage.g:542:3: ','
                     {
                      before(grammarAccess.getUndirectedStatementAccess().getCommaKeyword_1_0()); 
                     match(input,13,FOLLOW_2); 
@@ -1645,10 +1677,10 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalDotLanguage.g:534:2: ( ';' )
+                    // InternalDotLanguage.g:547:2: ( ';' )
                     {
-                    // InternalDotLanguage.g:534:2: ( ';' )
-                    // InternalDotLanguage.g:535:3: ';'
+                    // InternalDotLanguage.g:547:2: ( ';' )
+                    // InternalDotLanguage.g:548:3: ';'
                     {
                      before(grammarAccess.getUndirectedStatementAccess().getSemicolonKeyword_1_1()); 
                     match(input,14,FOLLOW_2); 
@@ -1676,15 +1708,177 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__UndirectedStatement__Alternatives_1"
 
 
+    // $ANTLR start "rule__IDORINT__Alternatives"
+    // InternalDotLanguage.g:557:1: rule__IDORINT__Alternatives : ( ( RULE_ID ) | ( RULE_INT ) );
+    public final void rule__IDORINT__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDotLanguage.g:561:1: ( ( RULE_ID ) | ( RULE_INT ) )
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( (LA7_0==RULE_ID) ) {
+                alt7=1;
+            }
+            else if ( (LA7_0==RULE_INT) ) {
+                alt7=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 7, 0, input);
+
+                throw nvae;
+            }
+            switch (alt7) {
+                case 1 :
+                    // InternalDotLanguage.g:562:2: ( RULE_ID )
+                    {
+                    // InternalDotLanguage.g:562:2: ( RULE_ID )
+                    // InternalDotLanguage.g:563:3: RULE_ID
+                    {
+                     before(grammarAccess.getIDORINTAccess().getIDTerminalRuleCall_0()); 
+                    match(input,RULE_ID,FOLLOW_2); 
+                     after(grammarAccess.getIDORINTAccess().getIDTerminalRuleCall_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalDotLanguage.g:568:2: ( RULE_INT )
+                    {
+                    // InternalDotLanguage.g:568:2: ( RULE_INT )
+                    // InternalDotLanguage.g:569:3: RULE_INT
+                    {
+                     before(grammarAccess.getIDORINTAccess().getINTTerminalRuleCall_1()); 
+                    match(input,RULE_INT,FOLLOW_2); 
+                     after(grammarAccess.getIDORINTAccess().getINTTerminalRuleCall_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IDORINT__Alternatives"
+
+
+    // $ANTLR start "rule__RightEdgeDeclaration__Alternatives"
+    // InternalDotLanguage.g:578:1: rule__RightEdgeDeclaration__Alternatives : ( ( ( rule__RightEdgeDeclaration__SecondNodeAssignment_0 ) ) | ( ( rule__RightEdgeDeclaration__NodeListAssignment_1 ) ) );
+    public final void rule__RightEdgeDeclaration__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDotLanguage.g:582:1: ( ( ( rule__RightEdgeDeclaration__SecondNodeAssignment_0 ) ) | ( ( rule__RightEdgeDeclaration__NodeListAssignment_1 ) ) )
+            int alt8=2;
+            int LA8_0 = input.LA(1);
+
+            if ( (LA8_0==RULE_ID) ) {
+                alt8=1;
+            }
+            else if ( (LA8_0==16) ) {
+                alt8=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 8, 0, input);
+
+                throw nvae;
+            }
+            switch (alt8) {
+                case 1 :
+                    // InternalDotLanguage.g:583:2: ( ( rule__RightEdgeDeclaration__SecondNodeAssignment_0 ) )
+                    {
+                    // InternalDotLanguage.g:583:2: ( ( rule__RightEdgeDeclaration__SecondNodeAssignment_0 ) )
+                    // InternalDotLanguage.g:584:3: ( rule__RightEdgeDeclaration__SecondNodeAssignment_0 )
+                    {
+                     before(grammarAccess.getRightEdgeDeclarationAccess().getSecondNodeAssignment_0()); 
+                    // InternalDotLanguage.g:585:3: ( rule__RightEdgeDeclaration__SecondNodeAssignment_0 )
+                    // InternalDotLanguage.g:585:4: rule__RightEdgeDeclaration__SecondNodeAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__RightEdgeDeclaration__SecondNodeAssignment_0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getRightEdgeDeclarationAccess().getSecondNodeAssignment_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalDotLanguage.g:589:2: ( ( rule__RightEdgeDeclaration__NodeListAssignment_1 ) )
+                    {
+                    // InternalDotLanguage.g:589:2: ( ( rule__RightEdgeDeclaration__NodeListAssignment_1 ) )
+                    // InternalDotLanguage.g:590:3: ( rule__RightEdgeDeclaration__NodeListAssignment_1 )
+                    {
+                     before(grammarAccess.getRightEdgeDeclarationAccess().getNodeListAssignment_1()); 
+                    // InternalDotLanguage.g:591:3: ( rule__RightEdgeDeclaration__NodeListAssignment_1 )
+                    // InternalDotLanguage.g:591:4: rule__RightEdgeDeclaration__NodeListAssignment_1
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__RightEdgeDeclaration__NodeListAssignment_1();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getRightEdgeDeclarationAccess().getNodeListAssignment_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RightEdgeDeclaration__Alternatives"
+
+
     // $ANTLR start "rule__Graph__Group__0"
-    // InternalDotLanguage.g:544:1: rule__Graph__Group__0 : rule__Graph__Group__0__Impl rule__Graph__Group__1 ;
+    // InternalDotLanguage.g:599:1: rule__Graph__Group__0 : rule__Graph__Group__0__Impl rule__Graph__Group__1 ;
     public final void rule__Graph__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:548:1: ( rule__Graph__Group__0__Impl rule__Graph__Group__1 )
-            // InternalDotLanguage.g:549:2: rule__Graph__Group__0__Impl rule__Graph__Group__1
+            // InternalDotLanguage.g:603:1: ( rule__Graph__Group__0__Impl rule__Graph__Group__1 )
+            // InternalDotLanguage.g:604:2: rule__Graph__Group__0__Impl rule__Graph__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Graph__Group__0__Impl();
@@ -1715,17 +1909,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Graph__Group__0__Impl"
-    // InternalDotLanguage.g:556:1: rule__Graph__Group__0__Impl : ( 'graph' ) ;
+    // InternalDotLanguage.g:611:1: rule__Graph__Group__0__Impl : ( 'graph' ) ;
     public final void rule__Graph__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:560:1: ( ( 'graph' ) )
-            // InternalDotLanguage.g:561:1: ( 'graph' )
+            // InternalDotLanguage.g:615:1: ( ( 'graph' ) )
+            // InternalDotLanguage.g:616:1: ( 'graph' )
             {
-            // InternalDotLanguage.g:561:1: ( 'graph' )
-            // InternalDotLanguage.g:562:2: 'graph'
+            // InternalDotLanguage.g:616:1: ( 'graph' )
+            // InternalDotLanguage.g:617:2: 'graph'
             {
              before(grammarAccess.getGraphAccess().getGraphKeyword_0()); 
             match(input,15,FOLLOW_2); 
@@ -1752,14 +1946,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Graph__Group__1"
-    // InternalDotLanguage.g:571:1: rule__Graph__Group__1 : rule__Graph__Group__1__Impl rule__Graph__Group__2 ;
+    // InternalDotLanguage.g:626:1: rule__Graph__Group__1 : rule__Graph__Group__1__Impl rule__Graph__Group__2 ;
     public final void rule__Graph__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:575:1: ( rule__Graph__Group__1__Impl rule__Graph__Group__2 )
-            // InternalDotLanguage.g:576:2: rule__Graph__Group__1__Impl rule__Graph__Group__2
+            // InternalDotLanguage.g:630:1: ( rule__Graph__Group__1__Impl rule__Graph__Group__2 )
+            // InternalDotLanguage.g:631:2: rule__Graph__Group__1__Impl rule__Graph__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__Graph__Group__1__Impl();
@@ -1790,21 +1984,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Graph__Group__1__Impl"
-    // InternalDotLanguage.g:583:1: rule__Graph__Group__1__Impl : ( ( rule__Graph__NameAssignment_1 ) ) ;
+    // InternalDotLanguage.g:638:1: rule__Graph__Group__1__Impl : ( ( rule__Graph__NameAssignment_1 ) ) ;
     public final void rule__Graph__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:587:1: ( ( ( rule__Graph__NameAssignment_1 ) ) )
-            // InternalDotLanguage.g:588:1: ( ( rule__Graph__NameAssignment_1 ) )
+            // InternalDotLanguage.g:642:1: ( ( ( rule__Graph__NameAssignment_1 ) ) )
+            // InternalDotLanguage.g:643:1: ( ( rule__Graph__NameAssignment_1 ) )
             {
-            // InternalDotLanguage.g:588:1: ( ( rule__Graph__NameAssignment_1 ) )
-            // InternalDotLanguage.g:589:2: ( rule__Graph__NameAssignment_1 )
+            // InternalDotLanguage.g:643:1: ( ( rule__Graph__NameAssignment_1 ) )
+            // InternalDotLanguage.g:644:2: ( rule__Graph__NameAssignment_1 )
             {
              before(grammarAccess.getGraphAccess().getNameAssignment_1()); 
-            // InternalDotLanguage.g:590:2: ( rule__Graph__NameAssignment_1 )
-            // InternalDotLanguage.g:590:3: rule__Graph__NameAssignment_1
+            // InternalDotLanguage.g:645:2: ( rule__Graph__NameAssignment_1 )
+            // InternalDotLanguage.g:645:3: rule__Graph__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Graph__NameAssignment_1();
@@ -1837,14 +2031,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Graph__Group__2"
-    // InternalDotLanguage.g:598:1: rule__Graph__Group__2 : rule__Graph__Group__2__Impl rule__Graph__Group__3 ;
+    // InternalDotLanguage.g:653:1: rule__Graph__Group__2 : rule__Graph__Group__2__Impl rule__Graph__Group__3 ;
     public final void rule__Graph__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:602:1: ( rule__Graph__Group__2__Impl rule__Graph__Group__3 )
-            // InternalDotLanguage.g:603:2: rule__Graph__Group__2__Impl rule__Graph__Group__3
+            // InternalDotLanguage.g:657:1: ( rule__Graph__Group__2__Impl rule__Graph__Group__3 )
+            // InternalDotLanguage.g:658:2: rule__Graph__Group__2__Impl rule__Graph__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__Graph__Group__2__Impl();
@@ -1875,17 +2069,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Graph__Group__2__Impl"
-    // InternalDotLanguage.g:610:1: rule__Graph__Group__2__Impl : ( '{' ) ;
+    // InternalDotLanguage.g:665:1: rule__Graph__Group__2__Impl : ( '{' ) ;
     public final void rule__Graph__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:614:1: ( ( '{' ) )
-            // InternalDotLanguage.g:615:1: ( '{' )
+            // InternalDotLanguage.g:669:1: ( ( '{' ) )
+            // InternalDotLanguage.g:670:1: ( '{' )
             {
-            // InternalDotLanguage.g:615:1: ( '{' )
-            // InternalDotLanguage.g:616:2: '{'
+            // InternalDotLanguage.g:670:1: ( '{' )
+            // InternalDotLanguage.g:671:2: '{'
             {
              before(grammarAccess.getGraphAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,16,FOLLOW_2); 
@@ -1912,14 +2106,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Graph__Group__3"
-    // InternalDotLanguage.g:625:1: rule__Graph__Group__3 : rule__Graph__Group__3__Impl rule__Graph__Group__4 ;
+    // InternalDotLanguage.g:680:1: rule__Graph__Group__3 : rule__Graph__Group__3__Impl rule__Graph__Group__4 ;
     public final void rule__Graph__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:629:1: ( rule__Graph__Group__3__Impl rule__Graph__Group__4 )
-            // InternalDotLanguage.g:630:2: rule__Graph__Group__3__Impl rule__Graph__Group__4
+            // InternalDotLanguage.g:684:1: ( rule__Graph__Group__3__Impl rule__Graph__Group__4 )
+            // InternalDotLanguage.g:685:2: rule__Graph__Group__3__Impl rule__Graph__Group__4
             {
             pushFollow(FOLLOW_6);
             rule__Graph__Group__3__Impl();
@@ -1950,33 +2144,33 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Graph__Group__3__Impl"
-    // InternalDotLanguage.g:637:1: rule__Graph__Group__3__Impl : ( ( rule__Graph__StatementsAssignment_3 )* ) ;
+    // InternalDotLanguage.g:692:1: rule__Graph__Group__3__Impl : ( ( rule__Graph__StatementsAssignment_3 )* ) ;
     public final void rule__Graph__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:641:1: ( ( ( rule__Graph__StatementsAssignment_3 )* ) )
-            // InternalDotLanguage.g:642:1: ( ( rule__Graph__StatementsAssignment_3 )* )
+            // InternalDotLanguage.g:696:1: ( ( ( rule__Graph__StatementsAssignment_3 )* ) )
+            // InternalDotLanguage.g:697:1: ( ( rule__Graph__StatementsAssignment_3 )* )
             {
-            // InternalDotLanguage.g:642:1: ( ( rule__Graph__StatementsAssignment_3 )* )
-            // InternalDotLanguage.g:643:2: ( rule__Graph__StatementsAssignment_3 )*
+            // InternalDotLanguage.g:697:1: ( ( rule__Graph__StatementsAssignment_3 )* )
+            // InternalDotLanguage.g:698:2: ( rule__Graph__StatementsAssignment_3 )*
             {
              before(grammarAccess.getGraphAccess().getStatementsAssignment_3()); 
-            // InternalDotLanguage.g:644:2: ( rule__Graph__StatementsAssignment_3 )*
-            loop7:
+            // InternalDotLanguage.g:699:2: ( rule__Graph__StatementsAssignment_3 )*
+            loop9:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt9=2;
+                int LA9_0 = input.LA(1);
 
-                if ( (LA7_0==RULE_ID||LA7_0==19) ) {
-                    alt7=1;
+                if ( (LA9_0==RULE_ID) ) {
+                    alt9=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt9) {
             	case 1 :
-            	    // InternalDotLanguage.g:644:3: rule__Graph__StatementsAssignment_3
+            	    // InternalDotLanguage.g:699:3: rule__Graph__StatementsAssignment_3
             	    {
             	    pushFollow(FOLLOW_7);
             	    rule__Graph__StatementsAssignment_3();
@@ -1988,7 +2182,7 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop9;
                 }
             } while (true);
 
@@ -2015,14 +2209,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Graph__Group__4"
-    // InternalDotLanguage.g:652:1: rule__Graph__Group__4 : rule__Graph__Group__4__Impl ;
+    // InternalDotLanguage.g:707:1: rule__Graph__Group__4 : rule__Graph__Group__4__Impl ;
     public final void rule__Graph__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:656:1: ( rule__Graph__Group__4__Impl )
-            // InternalDotLanguage.g:657:2: rule__Graph__Group__4__Impl
+            // InternalDotLanguage.g:711:1: ( rule__Graph__Group__4__Impl )
+            // InternalDotLanguage.g:712:2: rule__Graph__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Graph__Group__4__Impl();
@@ -2048,17 +2242,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Graph__Group__4__Impl"
-    // InternalDotLanguage.g:663:1: rule__Graph__Group__4__Impl : ( '}' ) ;
+    // InternalDotLanguage.g:718:1: rule__Graph__Group__4__Impl : ( '}' ) ;
     public final void rule__Graph__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:667:1: ( ( '}' ) )
-            // InternalDotLanguage.g:668:1: ( '}' )
+            // InternalDotLanguage.g:722:1: ( ( '}' ) )
+            // InternalDotLanguage.g:723:1: ( '}' )
             {
-            // InternalDotLanguage.g:668:1: ( '}' )
-            // InternalDotLanguage.g:669:2: '}'
+            // InternalDotLanguage.g:723:1: ( '}' )
+            // InternalDotLanguage.g:724:2: '}'
             {
              before(grammarAccess.getGraphAccess().getRightCurlyBracketKeyword_4()); 
             match(input,17,FOLLOW_2); 
@@ -2085,14 +2279,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Digraph__Group__0"
-    // InternalDotLanguage.g:679:1: rule__Digraph__Group__0 : rule__Digraph__Group__0__Impl rule__Digraph__Group__1 ;
+    // InternalDotLanguage.g:734:1: rule__Digraph__Group__0 : rule__Digraph__Group__0__Impl rule__Digraph__Group__1 ;
     public final void rule__Digraph__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:683:1: ( rule__Digraph__Group__0__Impl rule__Digraph__Group__1 )
-            // InternalDotLanguage.g:684:2: rule__Digraph__Group__0__Impl rule__Digraph__Group__1
+            // InternalDotLanguage.g:738:1: ( rule__Digraph__Group__0__Impl rule__Digraph__Group__1 )
+            // InternalDotLanguage.g:739:2: rule__Digraph__Group__0__Impl rule__Digraph__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Digraph__Group__0__Impl();
@@ -2123,17 +2317,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Digraph__Group__0__Impl"
-    // InternalDotLanguage.g:691:1: rule__Digraph__Group__0__Impl : ( 'digraph' ) ;
+    // InternalDotLanguage.g:746:1: rule__Digraph__Group__0__Impl : ( 'digraph' ) ;
     public final void rule__Digraph__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:695:1: ( ( 'digraph' ) )
-            // InternalDotLanguage.g:696:1: ( 'digraph' )
+            // InternalDotLanguage.g:750:1: ( ( 'digraph' ) )
+            // InternalDotLanguage.g:751:1: ( 'digraph' )
             {
-            // InternalDotLanguage.g:696:1: ( 'digraph' )
-            // InternalDotLanguage.g:697:2: 'digraph'
+            // InternalDotLanguage.g:751:1: ( 'digraph' )
+            // InternalDotLanguage.g:752:2: 'digraph'
             {
              before(grammarAccess.getDigraphAccess().getDigraphKeyword_0()); 
             match(input,18,FOLLOW_2); 
@@ -2160,14 +2354,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Digraph__Group__1"
-    // InternalDotLanguage.g:706:1: rule__Digraph__Group__1 : rule__Digraph__Group__1__Impl rule__Digraph__Group__2 ;
+    // InternalDotLanguage.g:761:1: rule__Digraph__Group__1 : rule__Digraph__Group__1__Impl rule__Digraph__Group__2 ;
     public final void rule__Digraph__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:710:1: ( rule__Digraph__Group__1__Impl rule__Digraph__Group__2 )
-            // InternalDotLanguage.g:711:2: rule__Digraph__Group__1__Impl rule__Digraph__Group__2
+            // InternalDotLanguage.g:765:1: ( rule__Digraph__Group__1__Impl rule__Digraph__Group__2 )
+            // InternalDotLanguage.g:766:2: rule__Digraph__Group__1__Impl rule__Digraph__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__Digraph__Group__1__Impl();
@@ -2198,21 +2392,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Digraph__Group__1__Impl"
-    // InternalDotLanguage.g:718:1: rule__Digraph__Group__1__Impl : ( ( rule__Digraph__NameAssignment_1 ) ) ;
+    // InternalDotLanguage.g:773:1: rule__Digraph__Group__1__Impl : ( ( rule__Digraph__NameAssignment_1 ) ) ;
     public final void rule__Digraph__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:722:1: ( ( ( rule__Digraph__NameAssignment_1 ) ) )
-            // InternalDotLanguage.g:723:1: ( ( rule__Digraph__NameAssignment_1 ) )
+            // InternalDotLanguage.g:777:1: ( ( ( rule__Digraph__NameAssignment_1 ) ) )
+            // InternalDotLanguage.g:778:1: ( ( rule__Digraph__NameAssignment_1 ) )
             {
-            // InternalDotLanguage.g:723:1: ( ( rule__Digraph__NameAssignment_1 ) )
-            // InternalDotLanguage.g:724:2: ( rule__Digraph__NameAssignment_1 )
+            // InternalDotLanguage.g:778:1: ( ( rule__Digraph__NameAssignment_1 ) )
+            // InternalDotLanguage.g:779:2: ( rule__Digraph__NameAssignment_1 )
             {
              before(grammarAccess.getDigraphAccess().getNameAssignment_1()); 
-            // InternalDotLanguage.g:725:2: ( rule__Digraph__NameAssignment_1 )
-            // InternalDotLanguage.g:725:3: rule__Digraph__NameAssignment_1
+            // InternalDotLanguage.g:780:2: ( rule__Digraph__NameAssignment_1 )
+            // InternalDotLanguage.g:780:3: rule__Digraph__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Digraph__NameAssignment_1();
@@ -2245,14 +2439,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Digraph__Group__2"
-    // InternalDotLanguage.g:733:1: rule__Digraph__Group__2 : rule__Digraph__Group__2__Impl rule__Digraph__Group__3 ;
+    // InternalDotLanguage.g:788:1: rule__Digraph__Group__2 : rule__Digraph__Group__2__Impl rule__Digraph__Group__3 ;
     public final void rule__Digraph__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:737:1: ( rule__Digraph__Group__2__Impl rule__Digraph__Group__3 )
-            // InternalDotLanguage.g:738:2: rule__Digraph__Group__2__Impl rule__Digraph__Group__3
+            // InternalDotLanguage.g:792:1: ( rule__Digraph__Group__2__Impl rule__Digraph__Group__3 )
+            // InternalDotLanguage.g:793:2: rule__Digraph__Group__2__Impl rule__Digraph__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__Digraph__Group__2__Impl();
@@ -2283,17 +2477,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Digraph__Group__2__Impl"
-    // InternalDotLanguage.g:745:1: rule__Digraph__Group__2__Impl : ( '{' ) ;
+    // InternalDotLanguage.g:800:1: rule__Digraph__Group__2__Impl : ( '{' ) ;
     public final void rule__Digraph__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:749:1: ( ( '{' ) )
-            // InternalDotLanguage.g:750:1: ( '{' )
+            // InternalDotLanguage.g:804:1: ( ( '{' ) )
+            // InternalDotLanguage.g:805:1: ( '{' )
             {
-            // InternalDotLanguage.g:750:1: ( '{' )
-            // InternalDotLanguage.g:751:2: '{'
+            // InternalDotLanguage.g:805:1: ( '{' )
+            // InternalDotLanguage.g:806:2: '{'
             {
              before(grammarAccess.getDigraphAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,16,FOLLOW_2); 
@@ -2320,14 +2514,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Digraph__Group__3"
-    // InternalDotLanguage.g:760:1: rule__Digraph__Group__3 : rule__Digraph__Group__3__Impl rule__Digraph__Group__4 ;
+    // InternalDotLanguage.g:815:1: rule__Digraph__Group__3 : rule__Digraph__Group__3__Impl rule__Digraph__Group__4 ;
     public final void rule__Digraph__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:764:1: ( rule__Digraph__Group__3__Impl rule__Digraph__Group__4 )
-            // InternalDotLanguage.g:765:2: rule__Digraph__Group__3__Impl rule__Digraph__Group__4
+            // InternalDotLanguage.g:819:1: ( rule__Digraph__Group__3__Impl rule__Digraph__Group__4 )
+            // InternalDotLanguage.g:820:2: rule__Digraph__Group__3__Impl rule__Digraph__Group__4
             {
             pushFollow(FOLLOW_6);
             rule__Digraph__Group__3__Impl();
@@ -2358,33 +2552,33 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Digraph__Group__3__Impl"
-    // InternalDotLanguage.g:772:1: rule__Digraph__Group__3__Impl : ( ( rule__Digraph__StatementsAssignment_3 )* ) ;
+    // InternalDotLanguage.g:827:1: rule__Digraph__Group__3__Impl : ( ( rule__Digraph__StatementsAssignment_3 )* ) ;
     public final void rule__Digraph__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:776:1: ( ( ( rule__Digraph__StatementsAssignment_3 )* ) )
-            // InternalDotLanguage.g:777:1: ( ( rule__Digraph__StatementsAssignment_3 )* )
+            // InternalDotLanguage.g:831:1: ( ( ( rule__Digraph__StatementsAssignment_3 )* ) )
+            // InternalDotLanguage.g:832:1: ( ( rule__Digraph__StatementsAssignment_3 )* )
             {
-            // InternalDotLanguage.g:777:1: ( ( rule__Digraph__StatementsAssignment_3 )* )
-            // InternalDotLanguage.g:778:2: ( rule__Digraph__StatementsAssignment_3 )*
+            // InternalDotLanguage.g:832:1: ( ( rule__Digraph__StatementsAssignment_3 )* )
+            // InternalDotLanguage.g:833:2: ( rule__Digraph__StatementsAssignment_3 )*
             {
              before(grammarAccess.getDigraphAccess().getStatementsAssignment_3()); 
-            // InternalDotLanguage.g:779:2: ( rule__Digraph__StatementsAssignment_3 )*
-            loop8:
+            // InternalDotLanguage.g:834:2: ( rule__Digraph__StatementsAssignment_3 )*
+            loop10:
             do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( (LA8_0==RULE_ID||LA8_0==19) ) {
-                    alt8=1;
+                if ( (LA10_0==RULE_ID) ) {
+                    alt10=1;
                 }
 
 
-                switch (alt8) {
+                switch (alt10) {
             	case 1 :
-            	    // InternalDotLanguage.g:779:3: rule__Digraph__StatementsAssignment_3
+            	    // InternalDotLanguage.g:834:3: rule__Digraph__StatementsAssignment_3
             	    {
             	    pushFollow(FOLLOW_7);
             	    rule__Digraph__StatementsAssignment_3();
@@ -2396,7 +2590,7 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
             	    break;
 
             	default :
-            	    break loop8;
+            	    break loop10;
                 }
             } while (true);
 
@@ -2423,14 +2617,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Digraph__Group__4"
-    // InternalDotLanguage.g:787:1: rule__Digraph__Group__4 : rule__Digraph__Group__4__Impl ;
+    // InternalDotLanguage.g:842:1: rule__Digraph__Group__4 : rule__Digraph__Group__4__Impl ;
     public final void rule__Digraph__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:791:1: ( rule__Digraph__Group__4__Impl )
-            // InternalDotLanguage.g:792:2: rule__Digraph__Group__4__Impl
+            // InternalDotLanguage.g:846:1: ( rule__Digraph__Group__4__Impl )
+            // InternalDotLanguage.g:847:2: rule__Digraph__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Digraph__Group__4__Impl();
@@ -2456,17 +2650,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Digraph__Group__4__Impl"
-    // InternalDotLanguage.g:798:1: rule__Digraph__Group__4__Impl : ( '}' ) ;
+    // InternalDotLanguage.g:853:1: rule__Digraph__Group__4__Impl : ( '}' ) ;
     public final void rule__Digraph__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:802:1: ( ( '}' ) )
-            // InternalDotLanguage.g:803:1: ( '}' )
+            // InternalDotLanguage.g:857:1: ( ( '}' ) )
+            // InternalDotLanguage.g:858:1: ( '}' )
             {
-            // InternalDotLanguage.g:803:1: ( '}' )
-            // InternalDotLanguage.g:804:2: '}'
+            // InternalDotLanguage.g:858:1: ( '}' )
+            // InternalDotLanguage.g:859:2: '}'
             {
              before(grammarAccess.getDigraphAccess().getRightCurlyBracketKeyword_4()); 
             match(input,17,FOLLOW_2); 
@@ -2493,14 +2687,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirectedStatement__Group__0"
-    // InternalDotLanguage.g:814:1: rule__DirectedStatement__Group__0 : rule__DirectedStatement__Group__0__Impl rule__DirectedStatement__Group__1 ;
+    // InternalDotLanguage.g:869:1: rule__DirectedStatement__Group__0 : rule__DirectedStatement__Group__0__Impl rule__DirectedStatement__Group__1 ;
     public final void rule__DirectedStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:818:1: ( rule__DirectedStatement__Group__0__Impl rule__DirectedStatement__Group__1 )
-            // InternalDotLanguage.g:819:2: rule__DirectedStatement__Group__0__Impl rule__DirectedStatement__Group__1
+            // InternalDotLanguage.g:873:1: ( rule__DirectedStatement__Group__0__Impl rule__DirectedStatement__Group__1 )
+            // InternalDotLanguage.g:874:2: rule__DirectedStatement__Group__0__Impl rule__DirectedStatement__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__DirectedStatement__Group__0__Impl();
@@ -2531,21 +2725,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirectedStatement__Group__0__Impl"
-    // InternalDotLanguage.g:826:1: rule__DirectedStatement__Group__0__Impl : ( ( rule__DirectedStatement__Alternatives_0 ) ) ;
+    // InternalDotLanguage.g:881:1: rule__DirectedStatement__Group__0__Impl : ( ( rule__DirectedStatement__Alternatives_0 ) ) ;
     public final void rule__DirectedStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:830:1: ( ( ( rule__DirectedStatement__Alternatives_0 ) ) )
-            // InternalDotLanguage.g:831:1: ( ( rule__DirectedStatement__Alternatives_0 ) )
+            // InternalDotLanguage.g:885:1: ( ( ( rule__DirectedStatement__Alternatives_0 ) ) )
+            // InternalDotLanguage.g:886:1: ( ( rule__DirectedStatement__Alternatives_0 ) )
             {
-            // InternalDotLanguage.g:831:1: ( ( rule__DirectedStatement__Alternatives_0 ) )
-            // InternalDotLanguage.g:832:2: ( rule__DirectedStatement__Alternatives_0 )
+            // InternalDotLanguage.g:886:1: ( ( rule__DirectedStatement__Alternatives_0 ) )
+            // InternalDotLanguage.g:887:2: ( rule__DirectedStatement__Alternatives_0 )
             {
              before(grammarAccess.getDirectedStatementAccess().getAlternatives_0()); 
-            // InternalDotLanguage.g:833:2: ( rule__DirectedStatement__Alternatives_0 )
-            // InternalDotLanguage.g:833:3: rule__DirectedStatement__Alternatives_0
+            // InternalDotLanguage.g:888:2: ( rule__DirectedStatement__Alternatives_0 )
+            // InternalDotLanguage.g:888:3: rule__DirectedStatement__Alternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__DirectedStatement__Alternatives_0();
@@ -2578,14 +2772,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirectedStatement__Group__1"
-    // InternalDotLanguage.g:841:1: rule__DirectedStatement__Group__1 : rule__DirectedStatement__Group__1__Impl ;
+    // InternalDotLanguage.g:896:1: rule__DirectedStatement__Group__1 : rule__DirectedStatement__Group__1__Impl ;
     public final void rule__DirectedStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:845:1: ( rule__DirectedStatement__Group__1__Impl )
-            // InternalDotLanguage.g:846:2: rule__DirectedStatement__Group__1__Impl
+            // InternalDotLanguage.g:900:1: ( rule__DirectedStatement__Group__1__Impl )
+            // InternalDotLanguage.g:901:2: rule__DirectedStatement__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DirectedStatement__Group__1__Impl();
@@ -2611,29 +2805,29 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirectedStatement__Group__1__Impl"
-    // InternalDotLanguage.g:852:1: rule__DirectedStatement__Group__1__Impl : ( ( rule__DirectedStatement__Alternatives_1 )? ) ;
+    // InternalDotLanguage.g:907:1: rule__DirectedStatement__Group__1__Impl : ( ( rule__DirectedStatement__Alternatives_1 )? ) ;
     public final void rule__DirectedStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:856:1: ( ( ( rule__DirectedStatement__Alternatives_1 )? ) )
-            // InternalDotLanguage.g:857:1: ( ( rule__DirectedStatement__Alternatives_1 )? )
+            // InternalDotLanguage.g:911:1: ( ( ( rule__DirectedStatement__Alternatives_1 )? ) )
+            // InternalDotLanguage.g:912:1: ( ( rule__DirectedStatement__Alternatives_1 )? )
             {
-            // InternalDotLanguage.g:857:1: ( ( rule__DirectedStatement__Alternatives_1 )? )
-            // InternalDotLanguage.g:858:2: ( rule__DirectedStatement__Alternatives_1 )?
+            // InternalDotLanguage.g:912:1: ( ( rule__DirectedStatement__Alternatives_1 )? )
+            // InternalDotLanguage.g:913:2: ( rule__DirectedStatement__Alternatives_1 )?
             {
              before(grammarAccess.getDirectedStatementAccess().getAlternatives_1()); 
-            // InternalDotLanguage.g:859:2: ( rule__DirectedStatement__Alternatives_1 )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // InternalDotLanguage.g:914:2: ( rule__DirectedStatement__Alternatives_1 )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( ((LA9_0>=13 && LA9_0<=14)) ) {
-                alt9=1;
+            if ( ((LA11_0>=13 && LA11_0<=14)) ) {
+                alt11=1;
             }
-            switch (alt9) {
+            switch (alt11) {
                 case 1 :
-                    // InternalDotLanguage.g:859:3: rule__DirectedStatement__Alternatives_1
+                    // InternalDotLanguage.g:914:3: rule__DirectedStatement__Alternatives_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__DirectedStatement__Alternatives_1();
@@ -2669,14 +2863,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__UndirectedStatement__Group__0"
-    // InternalDotLanguage.g:868:1: rule__UndirectedStatement__Group__0 : rule__UndirectedStatement__Group__0__Impl rule__UndirectedStatement__Group__1 ;
+    // InternalDotLanguage.g:923:1: rule__UndirectedStatement__Group__0 : rule__UndirectedStatement__Group__0__Impl rule__UndirectedStatement__Group__1 ;
     public final void rule__UndirectedStatement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:872:1: ( rule__UndirectedStatement__Group__0__Impl rule__UndirectedStatement__Group__1 )
-            // InternalDotLanguage.g:873:2: rule__UndirectedStatement__Group__0__Impl rule__UndirectedStatement__Group__1
+            // InternalDotLanguage.g:927:1: ( rule__UndirectedStatement__Group__0__Impl rule__UndirectedStatement__Group__1 )
+            // InternalDotLanguage.g:928:2: rule__UndirectedStatement__Group__0__Impl rule__UndirectedStatement__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__UndirectedStatement__Group__0__Impl();
@@ -2707,21 +2901,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__UndirectedStatement__Group__0__Impl"
-    // InternalDotLanguage.g:880:1: rule__UndirectedStatement__Group__0__Impl : ( ( rule__UndirectedStatement__Alternatives_0 ) ) ;
+    // InternalDotLanguage.g:935:1: rule__UndirectedStatement__Group__0__Impl : ( ( rule__UndirectedStatement__Alternatives_0 ) ) ;
     public final void rule__UndirectedStatement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:884:1: ( ( ( rule__UndirectedStatement__Alternatives_0 ) ) )
-            // InternalDotLanguage.g:885:1: ( ( rule__UndirectedStatement__Alternatives_0 ) )
+            // InternalDotLanguage.g:939:1: ( ( ( rule__UndirectedStatement__Alternatives_0 ) ) )
+            // InternalDotLanguage.g:940:1: ( ( rule__UndirectedStatement__Alternatives_0 ) )
             {
-            // InternalDotLanguage.g:885:1: ( ( rule__UndirectedStatement__Alternatives_0 ) )
-            // InternalDotLanguage.g:886:2: ( rule__UndirectedStatement__Alternatives_0 )
+            // InternalDotLanguage.g:940:1: ( ( rule__UndirectedStatement__Alternatives_0 ) )
+            // InternalDotLanguage.g:941:2: ( rule__UndirectedStatement__Alternatives_0 )
             {
              before(grammarAccess.getUndirectedStatementAccess().getAlternatives_0()); 
-            // InternalDotLanguage.g:887:2: ( rule__UndirectedStatement__Alternatives_0 )
-            // InternalDotLanguage.g:887:3: rule__UndirectedStatement__Alternatives_0
+            // InternalDotLanguage.g:942:2: ( rule__UndirectedStatement__Alternatives_0 )
+            // InternalDotLanguage.g:942:3: rule__UndirectedStatement__Alternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__UndirectedStatement__Alternatives_0();
@@ -2754,14 +2948,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__UndirectedStatement__Group__1"
-    // InternalDotLanguage.g:895:1: rule__UndirectedStatement__Group__1 : rule__UndirectedStatement__Group__1__Impl ;
+    // InternalDotLanguage.g:950:1: rule__UndirectedStatement__Group__1 : rule__UndirectedStatement__Group__1__Impl ;
     public final void rule__UndirectedStatement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:899:1: ( rule__UndirectedStatement__Group__1__Impl )
-            // InternalDotLanguage.g:900:2: rule__UndirectedStatement__Group__1__Impl
+            // InternalDotLanguage.g:954:1: ( rule__UndirectedStatement__Group__1__Impl )
+            // InternalDotLanguage.g:955:2: rule__UndirectedStatement__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__UndirectedStatement__Group__1__Impl();
@@ -2787,29 +2981,29 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__UndirectedStatement__Group__1__Impl"
-    // InternalDotLanguage.g:906:1: rule__UndirectedStatement__Group__1__Impl : ( ( rule__UndirectedStatement__Alternatives_1 )? ) ;
+    // InternalDotLanguage.g:961:1: rule__UndirectedStatement__Group__1__Impl : ( ( rule__UndirectedStatement__Alternatives_1 )? ) ;
     public final void rule__UndirectedStatement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:910:1: ( ( ( rule__UndirectedStatement__Alternatives_1 )? ) )
-            // InternalDotLanguage.g:911:1: ( ( rule__UndirectedStatement__Alternatives_1 )? )
+            // InternalDotLanguage.g:965:1: ( ( ( rule__UndirectedStatement__Alternatives_1 )? ) )
+            // InternalDotLanguage.g:966:1: ( ( rule__UndirectedStatement__Alternatives_1 )? )
             {
-            // InternalDotLanguage.g:911:1: ( ( rule__UndirectedStatement__Alternatives_1 )? )
-            // InternalDotLanguage.g:912:2: ( rule__UndirectedStatement__Alternatives_1 )?
+            // InternalDotLanguage.g:966:1: ( ( rule__UndirectedStatement__Alternatives_1 )? )
+            // InternalDotLanguage.g:967:2: ( rule__UndirectedStatement__Alternatives_1 )?
             {
              before(grammarAccess.getUndirectedStatementAccess().getAlternatives_1()); 
-            // InternalDotLanguage.g:913:2: ( rule__UndirectedStatement__Alternatives_1 )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // InternalDotLanguage.g:968:2: ( rule__UndirectedStatement__Alternatives_1 )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( ((LA10_0>=13 && LA10_0<=14)) ) {
-                alt10=1;
+            if ( ((LA12_0>=13 && LA12_0<=14)) ) {
+                alt12=1;
             }
-            switch (alt10) {
+            switch (alt12) {
                 case 1 :
-                    // InternalDotLanguage.g:913:3: rule__UndirectedStatement__Alternatives_1
+                    // InternalDotLanguage.g:968:3: rule__UndirectedStatement__Alternatives_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__UndirectedStatement__Alternatives_1();
@@ -2844,831 +3038,15 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__UndirectedStatement__Group__1__Impl"
 
 
-    // $ANTLR start "rule__DirectedSubgraphDeclaration__Group__0"
-    // InternalDotLanguage.g:922:1: rule__DirectedSubgraphDeclaration__Group__0 : rule__DirectedSubgraphDeclaration__Group__0__Impl rule__DirectedSubgraphDeclaration__Group__1 ;
-    public final void rule__DirectedSubgraphDeclaration__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:926:1: ( rule__DirectedSubgraphDeclaration__Group__0__Impl rule__DirectedSubgraphDeclaration__Group__1 )
-            // InternalDotLanguage.g:927:2: rule__DirectedSubgraphDeclaration__Group__0__Impl rule__DirectedSubgraphDeclaration__Group__1
-            {
-            pushFollow(FOLLOW_4);
-            rule__DirectedSubgraphDeclaration__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__DirectedSubgraphDeclaration__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__DirectedSubgraphDeclaration__Group__0"
-
-
-    // $ANTLR start "rule__DirectedSubgraphDeclaration__Group__0__Impl"
-    // InternalDotLanguage.g:934:1: rule__DirectedSubgraphDeclaration__Group__0__Impl : ( 'subgraph' ) ;
-    public final void rule__DirectedSubgraphDeclaration__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:938:1: ( ( 'subgraph' ) )
-            // InternalDotLanguage.g:939:1: ( 'subgraph' )
-            {
-            // InternalDotLanguage.g:939:1: ( 'subgraph' )
-            // InternalDotLanguage.g:940:2: 'subgraph'
-            {
-             before(grammarAccess.getDirectedSubgraphDeclarationAccess().getSubgraphKeyword_0()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getDirectedSubgraphDeclarationAccess().getSubgraphKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__DirectedSubgraphDeclaration__Group__0__Impl"
-
-
-    // $ANTLR start "rule__DirectedSubgraphDeclaration__Group__1"
-    // InternalDotLanguage.g:949:1: rule__DirectedSubgraphDeclaration__Group__1 : rule__DirectedSubgraphDeclaration__Group__1__Impl rule__DirectedSubgraphDeclaration__Group__2 ;
-    public final void rule__DirectedSubgraphDeclaration__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:953:1: ( rule__DirectedSubgraphDeclaration__Group__1__Impl rule__DirectedSubgraphDeclaration__Group__2 )
-            // InternalDotLanguage.g:954:2: rule__DirectedSubgraphDeclaration__Group__1__Impl rule__DirectedSubgraphDeclaration__Group__2
-            {
-            pushFollow(FOLLOW_5);
-            rule__DirectedSubgraphDeclaration__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__DirectedSubgraphDeclaration__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__DirectedSubgraphDeclaration__Group__1"
-
-
-    // $ANTLR start "rule__DirectedSubgraphDeclaration__Group__1__Impl"
-    // InternalDotLanguage.g:961:1: rule__DirectedSubgraphDeclaration__Group__1__Impl : ( ( rule__DirectedSubgraphDeclaration__NameAssignment_1 ) ) ;
-    public final void rule__DirectedSubgraphDeclaration__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:965:1: ( ( ( rule__DirectedSubgraphDeclaration__NameAssignment_1 ) ) )
-            // InternalDotLanguage.g:966:1: ( ( rule__DirectedSubgraphDeclaration__NameAssignment_1 ) )
-            {
-            // InternalDotLanguage.g:966:1: ( ( rule__DirectedSubgraphDeclaration__NameAssignment_1 ) )
-            // InternalDotLanguage.g:967:2: ( rule__DirectedSubgraphDeclaration__NameAssignment_1 )
-            {
-             before(grammarAccess.getDirectedSubgraphDeclarationAccess().getNameAssignment_1()); 
-            // InternalDotLanguage.g:968:2: ( rule__DirectedSubgraphDeclaration__NameAssignment_1 )
-            // InternalDotLanguage.g:968:3: rule__DirectedSubgraphDeclaration__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__DirectedSubgraphDeclaration__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getDirectedSubgraphDeclarationAccess().getNameAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__DirectedSubgraphDeclaration__Group__1__Impl"
-
-
-    // $ANTLR start "rule__DirectedSubgraphDeclaration__Group__2"
-    // InternalDotLanguage.g:976:1: rule__DirectedSubgraphDeclaration__Group__2 : rule__DirectedSubgraphDeclaration__Group__2__Impl rule__DirectedSubgraphDeclaration__Group__3 ;
-    public final void rule__DirectedSubgraphDeclaration__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:980:1: ( rule__DirectedSubgraphDeclaration__Group__2__Impl rule__DirectedSubgraphDeclaration__Group__3 )
-            // InternalDotLanguage.g:981:2: rule__DirectedSubgraphDeclaration__Group__2__Impl rule__DirectedSubgraphDeclaration__Group__3
-            {
-            pushFollow(FOLLOW_6);
-            rule__DirectedSubgraphDeclaration__Group__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__DirectedSubgraphDeclaration__Group__3();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__DirectedSubgraphDeclaration__Group__2"
-
-
-    // $ANTLR start "rule__DirectedSubgraphDeclaration__Group__2__Impl"
-    // InternalDotLanguage.g:988:1: rule__DirectedSubgraphDeclaration__Group__2__Impl : ( '{' ) ;
-    public final void rule__DirectedSubgraphDeclaration__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:992:1: ( ( '{' ) )
-            // InternalDotLanguage.g:993:1: ( '{' )
-            {
-            // InternalDotLanguage.g:993:1: ( '{' )
-            // InternalDotLanguage.g:994:2: '{'
-            {
-             before(grammarAccess.getDirectedSubgraphDeclarationAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,16,FOLLOW_2); 
-             after(grammarAccess.getDirectedSubgraphDeclarationAccess().getLeftCurlyBracketKeyword_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__DirectedSubgraphDeclaration__Group__2__Impl"
-
-
-    // $ANTLR start "rule__DirectedSubgraphDeclaration__Group__3"
-    // InternalDotLanguage.g:1003:1: rule__DirectedSubgraphDeclaration__Group__3 : rule__DirectedSubgraphDeclaration__Group__3__Impl rule__DirectedSubgraphDeclaration__Group__4 ;
-    public final void rule__DirectedSubgraphDeclaration__Group__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1007:1: ( rule__DirectedSubgraphDeclaration__Group__3__Impl rule__DirectedSubgraphDeclaration__Group__4 )
-            // InternalDotLanguage.g:1008:2: rule__DirectedSubgraphDeclaration__Group__3__Impl rule__DirectedSubgraphDeclaration__Group__4
-            {
-            pushFollow(FOLLOW_6);
-            rule__DirectedSubgraphDeclaration__Group__3__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__DirectedSubgraphDeclaration__Group__4();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__DirectedSubgraphDeclaration__Group__3"
-
-
-    // $ANTLR start "rule__DirectedSubgraphDeclaration__Group__3__Impl"
-    // InternalDotLanguage.g:1015:1: rule__DirectedSubgraphDeclaration__Group__3__Impl : ( ( rule__DirectedSubgraphDeclaration__StatementsAssignment_3 )* ) ;
-    public final void rule__DirectedSubgraphDeclaration__Group__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1019:1: ( ( ( rule__DirectedSubgraphDeclaration__StatementsAssignment_3 )* ) )
-            // InternalDotLanguage.g:1020:1: ( ( rule__DirectedSubgraphDeclaration__StatementsAssignment_3 )* )
-            {
-            // InternalDotLanguage.g:1020:1: ( ( rule__DirectedSubgraphDeclaration__StatementsAssignment_3 )* )
-            // InternalDotLanguage.g:1021:2: ( rule__DirectedSubgraphDeclaration__StatementsAssignment_3 )*
-            {
-             before(grammarAccess.getDirectedSubgraphDeclarationAccess().getStatementsAssignment_3()); 
-            // InternalDotLanguage.g:1022:2: ( rule__DirectedSubgraphDeclaration__StatementsAssignment_3 )*
-            loop11:
-            do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
-
-                if ( (LA11_0==RULE_ID||LA11_0==19) ) {
-                    alt11=1;
-                }
-
-
-                switch (alt11) {
-            	case 1 :
-            	    // InternalDotLanguage.g:1022:3: rule__DirectedSubgraphDeclaration__StatementsAssignment_3
-            	    {
-            	    pushFollow(FOLLOW_7);
-            	    rule__DirectedSubgraphDeclaration__StatementsAssignment_3();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop11;
-                }
-            } while (true);
-
-             after(grammarAccess.getDirectedSubgraphDeclarationAccess().getStatementsAssignment_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__DirectedSubgraphDeclaration__Group__3__Impl"
-
-
-    // $ANTLR start "rule__DirectedSubgraphDeclaration__Group__4"
-    // InternalDotLanguage.g:1030:1: rule__DirectedSubgraphDeclaration__Group__4 : rule__DirectedSubgraphDeclaration__Group__4__Impl ;
-    public final void rule__DirectedSubgraphDeclaration__Group__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1034:1: ( rule__DirectedSubgraphDeclaration__Group__4__Impl )
-            // InternalDotLanguage.g:1035:2: rule__DirectedSubgraphDeclaration__Group__4__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__DirectedSubgraphDeclaration__Group__4__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__DirectedSubgraphDeclaration__Group__4"
-
-
-    // $ANTLR start "rule__DirectedSubgraphDeclaration__Group__4__Impl"
-    // InternalDotLanguage.g:1041:1: rule__DirectedSubgraphDeclaration__Group__4__Impl : ( '}' ) ;
-    public final void rule__DirectedSubgraphDeclaration__Group__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1045:1: ( ( '}' ) )
-            // InternalDotLanguage.g:1046:1: ( '}' )
-            {
-            // InternalDotLanguage.g:1046:1: ( '}' )
-            // InternalDotLanguage.g:1047:2: '}'
-            {
-             before(grammarAccess.getDirectedSubgraphDeclarationAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,17,FOLLOW_2); 
-             after(grammarAccess.getDirectedSubgraphDeclarationAccess().getRightCurlyBracketKeyword_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__DirectedSubgraphDeclaration__Group__4__Impl"
-
-
-    // $ANTLR start "rule__UndirectedSubgraphDeclaration__Group__0"
-    // InternalDotLanguage.g:1057:1: rule__UndirectedSubgraphDeclaration__Group__0 : rule__UndirectedSubgraphDeclaration__Group__0__Impl rule__UndirectedSubgraphDeclaration__Group__1 ;
-    public final void rule__UndirectedSubgraphDeclaration__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1061:1: ( rule__UndirectedSubgraphDeclaration__Group__0__Impl rule__UndirectedSubgraphDeclaration__Group__1 )
-            // InternalDotLanguage.g:1062:2: rule__UndirectedSubgraphDeclaration__Group__0__Impl rule__UndirectedSubgraphDeclaration__Group__1
-            {
-            pushFollow(FOLLOW_4);
-            rule__UndirectedSubgraphDeclaration__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__UndirectedSubgraphDeclaration__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UndirectedSubgraphDeclaration__Group__0"
-
-
-    // $ANTLR start "rule__UndirectedSubgraphDeclaration__Group__0__Impl"
-    // InternalDotLanguage.g:1069:1: rule__UndirectedSubgraphDeclaration__Group__0__Impl : ( 'subgraph' ) ;
-    public final void rule__UndirectedSubgraphDeclaration__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1073:1: ( ( 'subgraph' ) )
-            // InternalDotLanguage.g:1074:1: ( 'subgraph' )
-            {
-            // InternalDotLanguage.g:1074:1: ( 'subgraph' )
-            // InternalDotLanguage.g:1075:2: 'subgraph'
-            {
-             before(grammarAccess.getUndirectedSubgraphDeclarationAccess().getSubgraphKeyword_0()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getUndirectedSubgraphDeclarationAccess().getSubgraphKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UndirectedSubgraphDeclaration__Group__0__Impl"
-
-
-    // $ANTLR start "rule__UndirectedSubgraphDeclaration__Group__1"
-    // InternalDotLanguage.g:1084:1: rule__UndirectedSubgraphDeclaration__Group__1 : rule__UndirectedSubgraphDeclaration__Group__1__Impl rule__UndirectedSubgraphDeclaration__Group__2 ;
-    public final void rule__UndirectedSubgraphDeclaration__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1088:1: ( rule__UndirectedSubgraphDeclaration__Group__1__Impl rule__UndirectedSubgraphDeclaration__Group__2 )
-            // InternalDotLanguage.g:1089:2: rule__UndirectedSubgraphDeclaration__Group__1__Impl rule__UndirectedSubgraphDeclaration__Group__2
-            {
-            pushFollow(FOLLOW_5);
-            rule__UndirectedSubgraphDeclaration__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__UndirectedSubgraphDeclaration__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UndirectedSubgraphDeclaration__Group__1"
-
-
-    // $ANTLR start "rule__UndirectedSubgraphDeclaration__Group__1__Impl"
-    // InternalDotLanguage.g:1096:1: rule__UndirectedSubgraphDeclaration__Group__1__Impl : ( ( rule__UndirectedSubgraphDeclaration__NameAssignment_1 ) ) ;
-    public final void rule__UndirectedSubgraphDeclaration__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1100:1: ( ( ( rule__UndirectedSubgraphDeclaration__NameAssignment_1 ) ) )
-            // InternalDotLanguage.g:1101:1: ( ( rule__UndirectedSubgraphDeclaration__NameAssignment_1 ) )
-            {
-            // InternalDotLanguage.g:1101:1: ( ( rule__UndirectedSubgraphDeclaration__NameAssignment_1 ) )
-            // InternalDotLanguage.g:1102:2: ( rule__UndirectedSubgraphDeclaration__NameAssignment_1 )
-            {
-             before(grammarAccess.getUndirectedSubgraphDeclarationAccess().getNameAssignment_1()); 
-            // InternalDotLanguage.g:1103:2: ( rule__UndirectedSubgraphDeclaration__NameAssignment_1 )
-            // InternalDotLanguage.g:1103:3: rule__UndirectedSubgraphDeclaration__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__UndirectedSubgraphDeclaration__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getUndirectedSubgraphDeclarationAccess().getNameAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UndirectedSubgraphDeclaration__Group__1__Impl"
-
-
-    // $ANTLR start "rule__UndirectedSubgraphDeclaration__Group__2"
-    // InternalDotLanguage.g:1111:1: rule__UndirectedSubgraphDeclaration__Group__2 : rule__UndirectedSubgraphDeclaration__Group__2__Impl rule__UndirectedSubgraphDeclaration__Group__3 ;
-    public final void rule__UndirectedSubgraphDeclaration__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1115:1: ( rule__UndirectedSubgraphDeclaration__Group__2__Impl rule__UndirectedSubgraphDeclaration__Group__3 )
-            // InternalDotLanguage.g:1116:2: rule__UndirectedSubgraphDeclaration__Group__2__Impl rule__UndirectedSubgraphDeclaration__Group__3
-            {
-            pushFollow(FOLLOW_6);
-            rule__UndirectedSubgraphDeclaration__Group__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__UndirectedSubgraphDeclaration__Group__3();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UndirectedSubgraphDeclaration__Group__2"
-
-
-    // $ANTLR start "rule__UndirectedSubgraphDeclaration__Group__2__Impl"
-    // InternalDotLanguage.g:1123:1: rule__UndirectedSubgraphDeclaration__Group__2__Impl : ( '{' ) ;
-    public final void rule__UndirectedSubgraphDeclaration__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1127:1: ( ( '{' ) )
-            // InternalDotLanguage.g:1128:1: ( '{' )
-            {
-            // InternalDotLanguage.g:1128:1: ( '{' )
-            // InternalDotLanguage.g:1129:2: '{'
-            {
-             before(grammarAccess.getUndirectedSubgraphDeclarationAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,16,FOLLOW_2); 
-             after(grammarAccess.getUndirectedSubgraphDeclarationAccess().getLeftCurlyBracketKeyword_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UndirectedSubgraphDeclaration__Group__2__Impl"
-
-
-    // $ANTLR start "rule__UndirectedSubgraphDeclaration__Group__3"
-    // InternalDotLanguage.g:1138:1: rule__UndirectedSubgraphDeclaration__Group__3 : rule__UndirectedSubgraphDeclaration__Group__3__Impl rule__UndirectedSubgraphDeclaration__Group__4 ;
-    public final void rule__UndirectedSubgraphDeclaration__Group__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1142:1: ( rule__UndirectedSubgraphDeclaration__Group__3__Impl rule__UndirectedSubgraphDeclaration__Group__4 )
-            // InternalDotLanguage.g:1143:2: rule__UndirectedSubgraphDeclaration__Group__3__Impl rule__UndirectedSubgraphDeclaration__Group__4
-            {
-            pushFollow(FOLLOW_6);
-            rule__UndirectedSubgraphDeclaration__Group__3__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__UndirectedSubgraphDeclaration__Group__4();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UndirectedSubgraphDeclaration__Group__3"
-
-
-    // $ANTLR start "rule__UndirectedSubgraphDeclaration__Group__3__Impl"
-    // InternalDotLanguage.g:1150:1: rule__UndirectedSubgraphDeclaration__Group__3__Impl : ( ( rule__UndirectedSubgraphDeclaration__StatementsAssignment_3 )* ) ;
-    public final void rule__UndirectedSubgraphDeclaration__Group__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1154:1: ( ( ( rule__UndirectedSubgraphDeclaration__StatementsAssignment_3 )* ) )
-            // InternalDotLanguage.g:1155:1: ( ( rule__UndirectedSubgraphDeclaration__StatementsAssignment_3 )* )
-            {
-            // InternalDotLanguage.g:1155:1: ( ( rule__UndirectedSubgraphDeclaration__StatementsAssignment_3 )* )
-            // InternalDotLanguage.g:1156:2: ( rule__UndirectedSubgraphDeclaration__StatementsAssignment_3 )*
-            {
-             before(grammarAccess.getUndirectedSubgraphDeclarationAccess().getStatementsAssignment_3()); 
-            // InternalDotLanguage.g:1157:2: ( rule__UndirectedSubgraphDeclaration__StatementsAssignment_3 )*
-            loop12:
-            do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
-
-                if ( (LA12_0==RULE_ID||LA12_0==19) ) {
-                    alt12=1;
-                }
-
-
-                switch (alt12) {
-            	case 1 :
-            	    // InternalDotLanguage.g:1157:3: rule__UndirectedSubgraphDeclaration__StatementsAssignment_3
-            	    {
-            	    pushFollow(FOLLOW_7);
-            	    rule__UndirectedSubgraphDeclaration__StatementsAssignment_3();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop12;
-                }
-            } while (true);
-
-             after(grammarAccess.getUndirectedSubgraphDeclarationAccess().getStatementsAssignment_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UndirectedSubgraphDeclaration__Group__3__Impl"
-
-
-    // $ANTLR start "rule__UndirectedSubgraphDeclaration__Group__4"
-    // InternalDotLanguage.g:1165:1: rule__UndirectedSubgraphDeclaration__Group__4 : rule__UndirectedSubgraphDeclaration__Group__4__Impl ;
-    public final void rule__UndirectedSubgraphDeclaration__Group__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1169:1: ( rule__UndirectedSubgraphDeclaration__Group__4__Impl )
-            // InternalDotLanguage.g:1170:2: rule__UndirectedSubgraphDeclaration__Group__4__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__UndirectedSubgraphDeclaration__Group__4__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UndirectedSubgraphDeclaration__Group__4"
-
-
-    // $ANTLR start "rule__UndirectedSubgraphDeclaration__Group__4__Impl"
-    // InternalDotLanguage.g:1176:1: rule__UndirectedSubgraphDeclaration__Group__4__Impl : ( '}' ) ;
-    public final void rule__UndirectedSubgraphDeclaration__Group__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1180:1: ( ( '}' ) )
-            // InternalDotLanguage.g:1181:1: ( '}' )
-            {
-            // InternalDotLanguage.g:1181:1: ( '}' )
-            // InternalDotLanguage.g:1182:2: '}'
-            {
-             before(grammarAccess.getUndirectedSubgraphDeclarationAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,17,FOLLOW_2); 
-             after(grammarAccess.getUndirectedSubgraphDeclarationAccess().getRightCurlyBracketKeyword_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UndirectedSubgraphDeclaration__Group__4__Impl"
-
-
     // $ANTLR start "rule__NodeDeclaration__Group__0"
-    // InternalDotLanguage.g:1192:1: rule__NodeDeclaration__Group__0 : rule__NodeDeclaration__Group__0__Impl rule__NodeDeclaration__Group__1 ;
+    // InternalDotLanguage.g:977:1: rule__NodeDeclaration__Group__0 : rule__NodeDeclaration__Group__0__Impl rule__NodeDeclaration__Group__1 ;
     public final void rule__NodeDeclaration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1196:1: ( rule__NodeDeclaration__Group__0__Impl rule__NodeDeclaration__Group__1 )
-            // InternalDotLanguage.g:1197:2: rule__NodeDeclaration__Group__0__Impl rule__NodeDeclaration__Group__1
+            // InternalDotLanguage.g:981:1: ( rule__NodeDeclaration__Group__0__Impl rule__NodeDeclaration__Group__1 )
+            // InternalDotLanguage.g:982:2: rule__NodeDeclaration__Group__0__Impl rule__NodeDeclaration__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__NodeDeclaration__Group__0__Impl();
@@ -3699,21 +3077,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__NodeDeclaration__Group__0__Impl"
-    // InternalDotLanguage.g:1204:1: rule__NodeDeclaration__Group__0__Impl : ( ( rule__NodeDeclaration__NodeNameAssignment_0 ) ) ;
+    // InternalDotLanguage.g:989:1: rule__NodeDeclaration__Group__0__Impl : ( ( rule__NodeDeclaration__NodeNameAssignment_0 ) ) ;
     public final void rule__NodeDeclaration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1208:1: ( ( ( rule__NodeDeclaration__NodeNameAssignment_0 ) ) )
-            // InternalDotLanguage.g:1209:1: ( ( rule__NodeDeclaration__NodeNameAssignment_0 ) )
+            // InternalDotLanguage.g:993:1: ( ( ( rule__NodeDeclaration__NodeNameAssignment_0 ) ) )
+            // InternalDotLanguage.g:994:1: ( ( rule__NodeDeclaration__NodeNameAssignment_0 ) )
             {
-            // InternalDotLanguage.g:1209:1: ( ( rule__NodeDeclaration__NodeNameAssignment_0 ) )
-            // InternalDotLanguage.g:1210:2: ( rule__NodeDeclaration__NodeNameAssignment_0 )
+            // InternalDotLanguage.g:994:1: ( ( rule__NodeDeclaration__NodeNameAssignment_0 ) )
+            // InternalDotLanguage.g:995:2: ( rule__NodeDeclaration__NodeNameAssignment_0 )
             {
              before(grammarAccess.getNodeDeclarationAccess().getNodeNameAssignment_0()); 
-            // InternalDotLanguage.g:1211:2: ( rule__NodeDeclaration__NodeNameAssignment_0 )
-            // InternalDotLanguage.g:1211:3: rule__NodeDeclaration__NodeNameAssignment_0
+            // InternalDotLanguage.g:996:2: ( rule__NodeDeclaration__NodeNameAssignment_0 )
+            // InternalDotLanguage.g:996:3: rule__NodeDeclaration__NodeNameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__NodeDeclaration__NodeNameAssignment_0();
@@ -3746,14 +3124,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__NodeDeclaration__Group__1"
-    // InternalDotLanguage.g:1219:1: rule__NodeDeclaration__Group__1 : rule__NodeDeclaration__Group__1__Impl ;
+    // InternalDotLanguage.g:1004:1: rule__NodeDeclaration__Group__1 : rule__NodeDeclaration__Group__1__Impl ;
     public final void rule__NodeDeclaration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1223:1: ( rule__NodeDeclaration__Group__1__Impl )
-            // InternalDotLanguage.g:1224:2: rule__NodeDeclaration__Group__1__Impl
+            // InternalDotLanguage.g:1008:1: ( rule__NodeDeclaration__Group__1__Impl )
+            // InternalDotLanguage.g:1009:2: rule__NodeDeclaration__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NodeDeclaration__Group__1__Impl();
@@ -3779,29 +3157,29 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__NodeDeclaration__Group__1__Impl"
-    // InternalDotLanguage.g:1230:1: rule__NodeDeclaration__Group__1__Impl : ( ( rule__NodeDeclaration__OptionalAttributesAssignment_1 )? ) ;
+    // InternalDotLanguage.g:1015:1: rule__NodeDeclaration__Group__1__Impl : ( ( rule__NodeDeclaration__OptionalAttributesAssignment_1 )? ) ;
     public final void rule__NodeDeclaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1234:1: ( ( ( rule__NodeDeclaration__OptionalAttributesAssignment_1 )? ) )
-            // InternalDotLanguage.g:1235:1: ( ( rule__NodeDeclaration__OptionalAttributesAssignment_1 )? )
+            // InternalDotLanguage.g:1019:1: ( ( ( rule__NodeDeclaration__OptionalAttributesAssignment_1 )? ) )
+            // InternalDotLanguage.g:1020:1: ( ( rule__NodeDeclaration__OptionalAttributesAssignment_1 )? )
             {
-            // InternalDotLanguage.g:1235:1: ( ( rule__NodeDeclaration__OptionalAttributesAssignment_1 )? )
-            // InternalDotLanguage.g:1236:2: ( rule__NodeDeclaration__OptionalAttributesAssignment_1 )?
+            // InternalDotLanguage.g:1020:1: ( ( rule__NodeDeclaration__OptionalAttributesAssignment_1 )? )
+            // InternalDotLanguage.g:1021:2: ( rule__NodeDeclaration__OptionalAttributesAssignment_1 )?
             {
              before(grammarAccess.getNodeDeclarationAccess().getOptionalAttributesAssignment_1()); 
-            // InternalDotLanguage.g:1237:2: ( rule__NodeDeclaration__OptionalAttributesAssignment_1 )?
+            // InternalDotLanguage.g:1022:2: ( rule__NodeDeclaration__OptionalAttributesAssignment_1 )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( (LA13_0==20) ) {
+            if ( (LA13_0==19) ) {
                 alt13=1;
             }
             switch (alt13) {
                 case 1 :
-                    // InternalDotLanguage.g:1237:3: rule__NodeDeclaration__OptionalAttributesAssignment_1
+                    // InternalDotLanguage.g:1022:3: rule__NodeDeclaration__OptionalAttributesAssignment_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__NodeDeclaration__OptionalAttributesAssignment_1();
@@ -3837,16 +3215,16 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__AttributeList__Group__0"
-    // InternalDotLanguage.g:1246:1: rule__AttributeList__Group__0 : rule__AttributeList__Group__0__Impl rule__AttributeList__Group__1 ;
+    // InternalDotLanguage.g:1031:1: rule__AttributeList__Group__0 : rule__AttributeList__Group__0__Impl rule__AttributeList__Group__1 ;
     public final void rule__AttributeList__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1250:1: ( rule__AttributeList__Group__0__Impl rule__AttributeList__Group__1 )
-            // InternalDotLanguage.g:1251:2: rule__AttributeList__Group__0__Impl rule__AttributeList__Group__1
+            // InternalDotLanguage.g:1035:1: ( rule__AttributeList__Group__0__Impl rule__AttributeList__Group__1 )
+            // InternalDotLanguage.g:1036:2: rule__AttributeList__Group__0__Impl rule__AttributeList__Group__1
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_4);
             rule__AttributeList__Group__0__Impl();
 
             state._fsp--;
@@ -3875,20 +3253,20 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__AttributeList__Group__0__Impl"
-    // InternalDotLanguage.g:1258:1: rule__AttributeList__Group__0__Impl : ( '[' ) ;
+    // InternalDotLanguage.g:1043:1: rule__AttributeList__Group__0__Impl : ( '[' ) ;
     public final void rule__AttributeList__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1262:1: ( ( '[' ) )
-            // InternalDotLanguage.g:1263:1: ( '[' )
+            // InternalDotLanguage.g:1047:1: ( ( '[' ) )
+            // InternalDotLanguage.g:1048:1: ( '[' )
             {
-            // InternalDotLanguage.g:1263:1: ( '[' )
-            // InternalDotLanguage.g:1264:2: '['
+            // InternalDotLanguage.g:1048:1: ( '[' )
+            // InternalDotLanguage.g:1049:2: '['
             {
              before(grammarAccess.getAttributeListAccess().getLeftSquareBracketKeyword_0()); 
-            match(input,20,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getAttributeListAccess().getLeftSquareBracketKeyword_0()); 
 
             }
@@ -3912,14 +3290,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__AttributeList__Group__1"
-    // InternalDotLanguage.g:1273:1: rule__AttributeList__Group__1 : rule__AttributeList__Group__1__Impl rule__AttributeList__Group__2 ;
+    // InternalDotLanguage.g:1058:1: rule__AttributeList__Group__1 : rule__AttributeList__Group__1__Impl rule__AttributeList__Group__2 ;
     public final void rule__AttributeList__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1277:1: ( rule__AttributeList__Group__1__Impl rule__AttributeList__Group__2 )
-            // InternalDotLanguage.g:1278:2: rule__AttributeList__Group__1__Impl rule__AttributeList__Group__2
+            // InternalDotLanguage.g:1062:1: ( rule__AttributeList__Group__1__Impl rule__AttributeList__Group__2 )
+            // InternalDotLanguage.g:1063:2: rule__AttributeList__Group__1__Impl rule__AttributeList__Group__2
             {
             pushFollow(FOLLOW_10);
             rule__AttributeList__Group__1__Impl();
@@ -3950,20 +3328,42 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__AttributeList__Group__1__Impl"
-    // InternalDotLanguage.g:1285:1: rule__AttributeList__Group__1__Impl : ( ( rule__AttributeList__AttrAssignment_1 )* ) ;
+    // InternalDotLanguage.g:1070:1: rule__AttributeList__Group__1__Impl : ( ( ( rule__AttributeList__AttrAssignment_1 ) ) ( ( rule__AttributeList__AttrAssignment_1 )* ) ) ;
     public final void rule__AttributeList__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1289:1: ( ( ( rule__AttributeList__AttrAssignment_1 )* ) )
-            // InternalDotLanguage.g:1290:1: ( ( rule__AttributeList__AttrAssignment_1 )* )
+            // InternalDotLanguage.g:1074:1: ( ( ( ( rule__AttributeList__AttrAssignment_1 ) ) ( ( rule__AttributeList__AttrAssignment_1 )* ) ) )
+            // InternalDotLanguage.g:1075:1: ( ( ( rule__AttributeList__AttrAssignment_1 ) ) ( ( rule__AttributeList__AttrAssignment_1 )* ) )
             {
-            // InternalDotLanguage.g:1290:1: ( ( rule__AttributeList__AttrAssignment_1 )* )
-            // InternalDotLanguage.g:1291:2: ( rule__AttributeList__AttrAssignment_1 )*
+            // InternalDotLanguage.g:1075:1: ( ( ( rule__AttributeList__AttrAssignment_1 ) ) ( ( rule__AttributeList__AttrAssignment_1 )* ) )
+            // InternalDotLanguage.g:1076:2: ( ( rule__AttributeList__AttrAssignment_1 ) ) ( ( rule__AttributeList__AttrAssignment_1 )* )
+            {
+            // InternalDotLanguage.g:1076:2: ( ( rule__AttributeList__AttrAssignment_1 ) )
+            // InternalDotLanguage.g:1077:3: ( rule__AttributeList__AttrAssignment_1 )
             {
              before(grammarAccess.getAttributeListAccess().getAttrAssignment_1()); 
-            // InternalDotLanguage.g:1292:2: ( rule__AttributeList__AttrAssignment_1 )*
+            // InternalDotLanguage.g:1078:3: ( rule__AttributeList__AttrAssignment_1 )
+            // InternalDotLanguage.g:1078:4: rule__AttributeList__AttrAssignment_1
+            {
+            pushFollow(FOLLOW_7);
+            rule__AttributeList__AttrAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getAttributeListAccess().getAttrAssignment_1()); 
+
+            }
+
+            // InternalDotLanguage.g:1081:2: ( ( rule__AttributeList__AttrAssignment_1 )* )
+            // InternalDotLanguage.g:1082:3: ( rule__AttributeList__AttrAssignment_1 )*
+            {
+             before(grammarAccess.getAttributeListAccess().getAttrAssignment_1()); 
+            // InternalDotLanguage.g:1083:3: ( rule__AttributeList__AttrAssignment_1 )*
             loop14:
             do {
                 int alt14=2;
@@ -3976,9 +3376,9 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
                 switch (alt14) {
             	case 1 :
-            	    // InternalDotLanguage.g:1292:3: rule__AttributeList__AttrAssignment_1
+            	    // InternalDotLanguage.g:1083:4: rule__AttributeList__AttrAssignment_1
             	    {
-            	    pushFollow(FOLLOW_11);
+            	    pushFollow(FOLLOW_7);
             	    rule__AttributeList__AttrAssignment_1();
 
             	    state._fsp--;
@@ -3993,6 +3393,9 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
             } while (true);
 
              after(grammarAccess.getAttributeListAccess().getAttrAssignment_1()); 
+
+            }
+
 
             }
 
@@ -4015,14 +3418,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__AttributeList__Group__2"
-    // InternalDotLanguage.g:1300:1: rule__AttributeList__Group__2 : rule__AttributeList__Group__2__Impl ;
+    // InternalDotLanguage.g:1092:1: rule__AttributeList__Group__2 : rule__AttributeList__Group__2__Impl ;
     public final void rule__AttributeList__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1304:1: ( rule__AttributeList__Group__2__Impl )
-            // InternalDotLanguage.g:1305:2: rule__AttributeList__Group__2__Impl
+            // InternalDotLanguage.g:1096:1: ( rule__AttributeList__Group__2__Impl )
+            // InternalDotLanguage.g:1097:2: rule__AttributeList__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AttributeList__Group__2__Impl();
@@ -4048,20 +3451,20 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__AttributeList__Group__2__Impl"
-    // InternalDotLanguage.g:1311:1: rule__AttributeList__Group__2__Impl : ( ']' ) ;
+    // InternalDotLanguage.g:1103:1: rule__AttributeList__Group__2__Impl : ( ']' ) ;
     public final void rule__AttributeList__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1315:1: ( ( ']' ) )
-            // InternalDotLanguage.g:1316:1: ( ']' )
+            // InternalDotLanguage.g:1107:1: ( ( ']' ) )
+            // InternalDotLanguage.g:1108:1: ( ']' )
             {
-            // InternalDotLanguage.g:1316:1: ( ']' )
-            // InternalDotLanguage.g:1317:2: ']'
+            // InternalDotLanguage.g:1108:1: ( ']' )
+            // InternalDotLanguage.g:1109:2: ']'
             {
              before(grammarAccess.getAttributeListAccess().getRightSquareBracketKeyword_2()); 
-            match(input,21,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getAttributeListAccess().getRightSquareBracketKeyword_2()); 
 
             }
@@ -4085,16 +3488,16 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Attribute__Group__0"
-    // InternalDotLanguage.g:1327:1: rule__Attribute__Group__0 : rule__Attribute__Group__0__Impl rule__Attribute__Group__1 ;
+    // InternalDotLanguage.g:1119:1: rule__Attribute__Group__0 : rule__Attribute__Group__0__Impl rule__Attribute__Group__1 ;
     public final void rule__Attribute__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1331:1: ( rule__Attribute__Group__0__Impl rule__Attribute__Group__1 )
-            // InternalDotLanguage.g:1332:2: rule__Attribute__Group__0__Impl rule__Attribute__Group__1
+            // InternalDotLanguage.g:1123:1: ( rule__Attribute__Group__0__Impl rule__Attribute__Group__1 )
+            // InternalDotLanguage.g:1124:2: rule__Attribute__Group__0__Impl rule__Attribute__Group__1
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_11);
             rule__Attribute__Group__0__Impl();
 
             state._fsp--;
@@ -4123,21 +3526,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Attribute__Group__0__Impl"
-    // InternalDotLanguage.g:1339:1: rule__Attribute__Group__0__Impl : ( ( rule__Attribute__AttributeNameAssignment_0 ) ) ;
+    // InternalDotLanguage.g:1131:1: rule__Attribute__Group__0__Impl : ( ( rule__Attribute__AttributeNameAssignment_0 ) ) ;
     public final void rule__Attribute__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1343:1: ( ( ( rule__Attribute__AttributeNameAssignment_0 ) ) )
-            // InternalDotLanguage.g:1344:1: ( ( rule__Attribute__AttributeNameAssignment_0 ) )
+            // InternalDotLanguage.g:1135:1: ( ( ( rule__Attribute__AttributeNameAssignment_0 ) ) )
+            // InternalDotLanguage.g:1136:1: ( ( rule__Attribute__AttributeNameAssignment_0 ) )
             {
-            // InternalDotLanguage.g:1344:1: ( ( rule__Attribute__AttributeNameAssignment_0 ) )
-            // InternalDotLanguage.g:1345:2: ( rule__Attribute__AttributeNameAssignment_0 )
+            // InternalDotLanguage.g:1136:1: ( ( rule__Attribute__AttributeNameAssignment_0 ) )
+            // InternalDotLanguage.g:1137:2: ( rule__Attribute__AttributeNameAssignment_0 )
             {
              before(grammarAccess.getAttributeAccess().getAttributeNameAssignment_0()); 
-            // InternalDotLanguage.g:1346:2: ( rule__Attribute__AttributeNameAssignment_0 )
-            // InternalDotLanguage.g:1346:3: rule__Attribute__AttributeNameAssignment_0
+            // InternalDotLanguage.g:1138:2: ( rule__Attribute__AttributeNameAssignment_0 )
+            // InternalDotLanguage.g:1138:3: rule__Attribute__AttributeNameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Attribute__AttributeNameAssignment_0();
@@ -4170,16 +3573,16 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Attribute__Group__1"
-    // InternalDotLanguage.g:1354:1: rule__Attribute__Group__1 : rule__Attribute__Group__1__Impl rule__Attribute__Group__2 ;
+    // InternalDotLanguage.g:1146:1: rule__Attribute__Group__1 : rule__Attribute__Group__1__Impl rule__Attribute__Group__2 ;
     public final void rule__Attribute__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1358:1: ( rule__Attribute__Group__1__Impl rule__Attribute__Group__2 )
-            // InternalDotLanguage.g:1359:2: rule__Attribute__Group__1__Impl rule__Attribute__Group__2
+            // InternalDotLanguage.g:1150:1: ( rule__Attribute__Group__1__Impl rule__Attribute__Group__2 )
+            // InternalDotLanguage.g:1151:2: rule__Attribute__Group__1__Impl rule__Attribute__Group__2
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_12);
             rule__Attribute__Group__1__Impl();
 
             state._fsp--;
@@ -4208,20 +3611,20 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Attribute__Group__1__Impl"
-    // InternalDotLanguage.g:1366:1: rule__Attribute__Group__1__Impl : ( '=' ) ;
+    // InternalDotLanguage.g:1158:1: rule__Attribute__Group__1__Impl : ( '=' ) ;
     public final void rule__Attribute__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1370:1: ( ( '=' ) )
-            // InternalDotLanguage.g:1371:1: ( '=' )
+            // InternalDotLanguage.g:1162:1: ( ( '=' ) )
+            // InternalDotLanguage.g:1163:1: ( '=' )
             {
-            // InternalDotLanguage.g:1371:1: ( '=' )
-            // InternalDotLanguage.g:1372:2: '='
+            // InternalDotLanguage.g:1163:1: ( '=' )
+            // InternalDotLanguage.g:1164:2: '='
             {
              before(grammarAccess.getAttributeAccess().getEqualsSignKeyword_1()); 
-            match(input,22,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getEqualsSignKeyword_1()); 
 
             }
@@ -4245,14 +3648,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Attribute__Group__2"
-    // InternalDotLanguage.g:1381:1: rule__Attribute__Group__2 : rule__Attribute__Group__2__Impl rule__Attribute__Group__3 ;
+    // InternalDotLanguage.g:1173:1: rule__Attribute__Group__2 : rule__Attribute__Group__2__Impl rule__Attribute__Group__3 ;
     public final void rule__Attribute__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1385:1: ( rule__Attribute__Group__2__Impl rule__Attribute__Group__3 )
-            // InternalDotLanguage.g:1386:2: rule__Attribute__Group__2__Impl rule__Attribute__Group__3
+            // InternalDotLanguage.g:1177:1: ( rule__Attribute__Group__2__Impl rule__Attribute__Group__3 )
+            // InternalDotLanguage.g:1178:2: rule__Attribute__Group__2__Impl rule__Attribute__Group__3
             {
             pushFollow(FOLLOW_13);
             rule__Attribute__Group__2__Impl();
@@ -4283,21 +3686,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Attribute__Group__2__Impl"
-    // InternalDotLanguage.g:1393:1: rule__Attribute__Group__2__Impl : ( ( rule__Attribute__AttributeValueAssignment_2 ) ) ;
+    // InternalDotLanguage.g:1185:1: rule__Attribute__Group__2__Impl : ( ( rule__Attribute__AttributeValueAssignment_2 ) ) ;
     public final void rule__Attribute__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1397:1: ( ( ( rule__Attribute__AttributeValueAssignment_2 ) ) )
-            // InternalDotLanguage.g:1398:1: ( ( rule__Attribute__AttributeValueAssignment_2 ) )
+            // InternalDotLanguage.g:1189:1: ( ( ( rule__Attribute__AttributeValueAssignment_2 ) ) )
+            // InternalDotLanguage.g:1190:1: ( ( rule__Attribute__AttributeValueAssignment_2 ) )
             {
-            // InternalDotLanguage.g:1398:1: ( ( rule__Attribute__AttributeValueAssignment_2 ) )
-            // InternalDotLanguage.g:1399:2: ( rule__Attribute__AttributeValueAssignment_2 )
+            // InternalDotLanguage.g:1190:1: ( ( rule__Attribute__AttributeValueAssignment_2 ) )
+            // InternalDotLanguage.g:1191:2: ( rule__Attribute__AttributeValueAssignment_2 )
             {
              before(grammarAccess.getAttributeAccess().getAttributeValueAssignment_2()); 
-            // InternalDotLanguage.g:1400:2: ( rule__Attribute__AttributeValueAssignment_2 )
-            // InternalDotLanguage.g:1400:3: rule__Attribute__AttributeValueAssignment_2
+            // InternalDotLanguage.g:1192:2: ( rule__Attribute__AttributeValueAssignment_2 )
+            // InternalDotLanguage.g:1192:3: rule__Attribute__AttributeValueAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Attribute__AttributeValueAssignment_2();
@@ -4330,14 +3733,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Attribute__Group__3"
-    // InternalDotLanguage.g:1408:1: rule__Attribute__Group__3 : rule__Attribute__Group__3__Impl ;
+    // InternalDotLanguage.g:1200:1: rule__Attribute__Group__3 : rule__Attribute__Group__3__Impl ;
     public final void rule__Attribute__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1412:1: ( rule__Attribute__Group__3__Impl )
-            // InternalDotLanguage.g:1413:2: rule__Attribute__Group__3__Impl
+            // InternalDotLanguage.g:1204:1: ( rule__Attribute__Group__3__Impl )
+            // InternalDotLanguage.g:1205:2: rule__Attribute__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Attribute__Group__3__Impl();
@@ -4363,20 +3766,20 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Attribute__Group__3__Impl"
-    // InternalDotLanguage.g:1419:1: rule__Attribute__Group__3__Impl : ( ( ',' )? ) ;
+    // InternalDotLanguage.g:1211:1: rule__Attribute__Group__3__Impl : ( ( ',' )? ) ;
     public final void rule__Attribute__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1423:1: ( ( ( ',' )? ) )
-            // InternalDotLanguage.g:1424:1: ( ( ',' )? )
+            // InternalDotLanguage.g:1215:1: ( ( ( ',' )? ) )
+            // InternalDotLanguage.g:1216:1: ( ( ',' )? )
             {
-            // InternalDotLanguage.g:1424:1: ( ( ',' )? )
-            // InternalDotLanguage.g:1425:2: ( ',' )?
+            // InternalDotLanguage.g:1216:1: ( ( ',' )? )
+            // InternalDotLanguage.g:1217:2: ( ',' )?
             {
              before(grammarAccess.getAttributeAccess().getCommaKeyword_3()); 
-            // InternalDotLanguage.g:1426:2: ( ',' )?
+            // InternalDotLanguage.g:1218:2: ( ',' )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -4385,7 +3788,7 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
             }
             switch (alt15) {
                 case 1 :
-                    // InternalDotLanguage.g:1426:3: ','
+                    // InternalDotLanguage.g:1218:3: ','
                     {
                     match(input,13,FOLLOW_2); 
 
@@ -4417,14 +3820,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirectedEdgeDeclaration__Group__0"
-    // InternalDotLanguage.g:1435:1: rule__DirectedEdgeDeclaration__Group__0 : rule__DirectedEdgeDeclaration__Group__0__Impl rule__DirectedEdgeDeclaration__Group__1 ;
+    // InternalDotLanguage.g:1227:1: rule__DirectedEdgeDeclaration__Group__0 : rule__DirectedEdgeDeclaration__Group__0__Impl rule__DirectedEdgeDeclaration__Group__1 ;
     public final void rule__DirectedEdgeDeclaration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1439:1: ( rule__DirectedEdgeDeclaration__Group__0__Impl rule__DirectedEdgeDeclaration__Group__1 )
-            // InternalDotLanguage.g:1440:2: rule__DirectedEdgeDeclaration__Group__0__Impl rule__DirectedEdgeDeclaration__Group__1
+            // InternalDotLanguage.g:1231:1: ( rule__DirectedEdgeDeclaration__Group__0__Impl rule__DirectedEdgeDeclaration__Group__1 )
+            // InternalDotLanguage.g:1232:2: rule__DirectedEdgeDeclaration__Group__0__Impl rule__DirectedEdgeDeclaration__Group__1
             {
             pushFollow(FOLLOW_14);
             rule__DirectedEdgeDeclaration__Group__0__Impl();
@@ -4455,21 +3858,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirectedEdgeDeclaration__Group__0__Impl"
-    // InternalDotLanguage.g:1447:1: rule__DirectedEdgeDeclaration__Group__0__Impl : ( ( rule__DirectedEdgeDeclaration__FirstNodeAssignment_0 ) ) ;
+    // InternalDotLanguage.g:1239:1: rule__DirectedEdgeDeclaration__Group__0__Impl : ( ( rule__DirectedEdgeDeclaration__FirstNodeAssignment_0 ) ) ;
     public final void rule__DirectedEdgeDeclaration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1451:1: ( ( ( rule__DirectedEdgeDeclaration__FirstNodeAssignment_0 ) ) )
-            // InternalDotLanguage.g:1452:1: ( ( rule__DirectedEdgeDeclaration__FirstNodeAssignment_0 ) )
+            // InternalDotLanguage.g:1243:1: ( ( ( rule__DirectedEdgeDeclaration__FirstNodeAssignment_0 ) ) )
+            // InternalDotLanguage.g:1244:1: ( ( rule__DirectedEdgeDeclaration__FirstNodeAssignment_0 ) )
             {
-            // InternalDotLanguage.g:1452:1: ( ( rule__DirectedEdgeDeclaration__FirstNodeAssignment_0 ) )
-            // InternalDotLanguage.g:1453:2: ( rule__DirectedEdgeDeclaration__FirstNodeAssignment_0 )
+            // InternalDotLanguage.g:1244:1: ( ( rule__DirectedEdgeDeclaration__FirstNodeAssignment_0 ) )
+            // InternalDotLanguage.g:1245:2: ( rule__DirectedEdgeDeclaration__FirstNodeAssignment_0 )
             {
              before(grammarAccess.getDirectedEdgeDeclarationAccess().getFirstNodeAssignment_0()); 
-            // InternalDotLanguage.g:1454:2: ( rule__DirectedEdgeDeclaration__FirstNodeAssignment_0 )
-            // InternalDotLanguage.g:1454:3: rule__DirectedEdgeDeclaration__FirstNodeAssignment_0
+            // InternalDotLanguage.g:1246:2: ( rule__DirectedEdgeDeclaration__FirstNodeAssignment_0 )
+            // InternalDotLanguage.g:1246:3: rule__DirectedEdgeDeclaration__FirstNodeAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__DirectedEdgeDeclaration__FirstNodeAssignment_0();
@@ -4502,16 +3905,16 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirectedEdgeDeclaration__Group__1"
-    // InternalDotLanguage.g:1462:1: rule__DirectedEdgeDeclaration__Group__1 : rule__DirectedEdgeDeclaration__Group__1__Impl rule__DirectedEdgeDeclaration__Group__2 ;
+    // InternalDotLanguage.g:1254:1: rule__DirectedEdgeDeclaration__Group__1 : rule__DirectedEdgeDeclaration__Group__1__Impl rule__DirectedEdgeDeclaration__Group__2 ;
     public final void rule__DirectedEdgeDeclaration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1466:1: ( rule__DirectedEdgeDeclaration__Group__1__Impl rule__DirectedEdgeDeclaration__Group__2 )
-            // InternalDotLanguage.g:1467:2: rule__DirectedEdgeDeclaration__Group__1__Impl rule__DirectedEdgeDeclaration__Group__2
+            // InternalDotLanguage.g:1258:1: ( rule__DirectedEdgeDeclaration__Group__1__Impl rule__DirectedEdgeDeclaration__Group__2 )
+            // InternalDotLanguage.g:1259:2: rule__DirectedEdgeDeclaration__Group__1__Impl rule__DirectedEdgeDeclaration__Group__2
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_15);
             rule__DirectedEdgeDeclaration__Group__1__Impl();
 
             state._fsp--;
@@ -4540,21 +3943,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirectedEdgeDeclaration__Group__1__Impl"
-    // InternalDotLanguage.g:1474:1: rule__DirectedEdgeDeclaration__Group__1__Impl : ( ( rule__DirectedEdgeDeclaration__EdgeAssignment_1 ) ) ;
+    // InternalDotLanguage.g:1266:1: rule__DirectedEdgeDeclaration__Group__1__Impl : ( ( rule__DirectedEdgeDeclaration__EdgeAssignment_1 ) ) ;
     public final void rule__DirectedEdgeDeclaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1478:1: ( ( ( rule__DirectedEdgeDeclaration__EdgeAssignment_1 ) ) )
-            // InternalDotLanguage.g:1479:1: ( ( rule__DirectedEdgeDeclaration__EdgeAssignment_1 ) )
+            // InternalDotLanguage.g:1270:1: ( ( ( rule__DirectedEdgeDeclaration__EdgeAssignment_1 ) ) )
+            // InternalDotLanguage.g:1271:1: ( ( rule__DirectedEdgeDeclaration__EdgeAssignment_1 ) )
             {
-            // InternalDotLanguage.g:1479:1: ( ( rule__DirectedEdgeDeclaration__EdgeAssignment_1 ) )
-            // InternalDotLanguage.g:1480:2: ( rule__DirectedEdgeDeclaration__EdgeAssignment_1 )
+            // InternalDotLanguage.g:1271:1: ( ( rule__DirectedEdgeDeclaration__EdgeAssignment_1 ) )
+            // InternalDotLanguage.g:1272:2: ( rule__DirectedEdgeDeclaration__EdgeAssignment_1 )
             {
              before(grammarAccess.getDirectedEdgeDeclarationAccess().getEdgeAssignment_1()); 
-            // InternalDotLanguage.g:1481:2: ( rule__DirectedEdgeDeclaration__EdgeAssignment_1 )
-            // InternalDotLanguage.g:1481:3: rule__DirectedEdgeDeclaration__EdgeAssignment_1
+            // InternalDotLanguage.g:1273:2: ( rule__DirectedEdgeDeclaration__EdgeAssignment_1 )
+            // InternalDotLanguage.g:1273:3: rule__DirectedEdgeDeclaration__EdgeAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__DirectedEdgeDeclaration__EdgeAssignment_1();
@@ -4587,14 +3990,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirectedEdgeDeclaration__Group__2"
-    // InternalDotLanguage.g:1489:1: rule__DirectedEdgeDeclaration__Group__2 : rule__DirectedEdgeDeclaration__Group__2__Impl ;
+    // InternalDotLanguage.g:1281:1: rule__DirectedEdgeDeclaration__Group__2 : rule__DirectedEdgeDeclaration__Group__2__Impl ;
     public final void rule__DirectedEdgeDeclaration__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1493:1: ( rule__DirectedEdgeDeclaration__Group__2__Impl )
-            // InternalDotLanguage.g:1494:2: rule__DirectedEdgeDeclaration__Group__2__Impl
+            // InternalDotLanguage.g:1285:1: ( rule__DirectedEdgeDeclaration__Group__2__Impl )
+            // InternalDotLanguage.g:1286:2: rule__DirectedEdgeDeclaration__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DirectedEdgeDeclaration__Group__2__Impl();
@@ -4620,21 +4023,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirectedEdgeDeclaration__Group__2__Impl"
-    // InternalDotLanguage.g:1500:1: rule__DirectedEdgeDeclaration__Group__2__Impl : ( ( rule__DirectedEdgeDeclaration__SecondNodeAssignment_2 ) ) ;
+    // InternalDotLanguage.g:1292:1: rule__DirectedEdgeDeclaration__Group__2__Impl : ( ( rule__DirectedEdgeDeclaration__SecondNodeAssignment_2 ) ) ;
     public final void rule__DirectedEdgeDeclaration__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1504:1: ( ( ( rule__DirectedEdgeDeclaration__SecondNodeAssignment_2 ) ) )
-            // InternalDotLanguage.g:1505:1: ( ( rule__DirectedEdgeDeclaration__SecondNodeAssignment_2 ) )
+            // InternalDotLanguage.g:1296:1: ( ( ( rule__DirectedEdgeDeclaration__SecondNodeAssignment_2 ) ) )
+            // InternalDotLanguage.g:1297:1: ( ( rule__DirectedEdgeDeclaration__SecondNodeAssignment_2 ) )
             {
-            // InternalDotLanguage.g:1505:1: ( ( rule__DirectedEdgeDeclaration__SecondNodeAssignment_2 ) )
-            // InternalDotLanguage.g:1506:2: ( rule__DirectedEdgeDeclaration__SecondNodeAssignment_2 )
+            // InternalDotLanguage.g:1297:1: ( ( rule__DirectedEdgeDeclaration__SecondNodeAssignment_2 ) )
+            // InternalDotLanguage.g:1298:2: ( rule__DirectedEdgeDeclaration__SecondNodeAssignment_2 )
             {
              before(grammarAccess.getDirectedEdgeDeclarationAccess().getSecondNodeAssignment_2()); 
-            // InternalDotLanguage.g:1507:2: ( rule__DirectedEdgeDeclaration__SecondNodeAssignment_2 )
-            // InternalDotLanguage.g:1507:3: rule__DirectedEdgeDeclaration__SecondNodeAssignment_2
+            // InternalDotLanguage.g:1299:2: ( rule__DirectedEdgeDeclaration__SecondNodeAssignment_2 )
+            // InternalDotLanguage.g:1299:3: rule__DirectedEdgeDeclaration__SecondNodeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__DirectedEdgeDeclaration__SecondNodeAssignment_2();
@@ -4667,16 +4070,16 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__UndirectedEdgeDeclaration__Group__0"
-    // InternalDotLanguage.g:1516:1: rule__UndirectedEdgeDeclaration__Group__0 : rule__UndirectedEdgeDeclaration__Group__0__Impl rule__UndirectedEdgeDeclaration__Group__1 ;
+    // InternalDotLanguage.g:1308:1: rule__UndirectedEdgeDeclaration__Group__0 : rule__UndirectedEdgeDeclaration__Group__0__Impl rule__UndirectedEdgeDeclaration__Group__1 ;
     public final void rule__UndirectedEdgeDeclaration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1520:1: ( rule__UndirectedEdgeDeclaration__Group__0__Impl rule__UndirectedEdgeDeclaration__Group__1 )
-            // InternalDotLanguage.g:1521:2: rule__UndirectedEdgeDeclaration__Group__0__Impl rule__UndirectedEdgeDeclaration__Group__1
+            // InternalDotLanguage.g:1312:1: ( rule__UndirectedEdgeDeclaration__Group__0__Impl rule__UndirectedEdgeDeclaration__Group__1 )
+            // InternalDotLanguage.g:1313:2: rule__UndirectedEdgeDeclaration__Group__0__Impl rule__UndirectedEdgeDeclaration__Group__1
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             rule__UndirectedEdgeDeclaration__Group__0__Impl();
 
             state._fsp--;
@@ -4705,21 +4108,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__UndirectedEdgeDeclaration__Group__0__Impl"
-    // InternalDotLanguage.g:1528:1: rule__UndirectedEdgeDeclaration__Group__0__Impl : ( ( rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0 ) ) ;
+    // InternalDotLanguage.g:1320:1: rule__UndirectedEdgeDeclaration__Group__0__Impl : ( ( rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0 ) ) ;
     public final void rule__UndirectedEdgeDeclaration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1532:1: ( ( ( rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0 ) ) )
-            // InternalDotLanguage.g:1533:1: ( ( rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0 ) )
+            // InternalDotLanguage.g:1324:1: ( ( ( rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0 ) ) )
+            // InternalDotLanguage.g:1325:1: ( ( rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0 ) )
             {
-            // InternalDotLanguage.g:1533:1: ( ( rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0 ) )
-            // InternalDotLanguage.g:1534:2: ( rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0 )
+            // InternalDotLanguage.g:1325:1: ( ( rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0 ) )
+            // InternalDotLanguage.g:1326:2: ( rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0 )
             {
              before(grammarAccess.getUndirectedEdgeDeclarationAccess().getFirstNodeAssignment_0()); 
-            // InternalDotLanguage.g:1535:2: ( rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0 )
-            // InternalDotLanguage.g:1535:3: rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0
+            // InternalDotLanguage.g:1327:2: ( rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0 )
+            // InternalDotLanguage.g:1327:3: rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0();
@@ -4752,16 +4155,16 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__UndirectedEdgeDeclaration__Group__1"
-    // InternalDotLanguage.g:1543:1: rule__UndirectedEdgeDeclaration__Group__1 : rule__UndirectedEdgeDeclaration__Group__1__Impl rule__UndirectedEdgeDeclaration__Group__2 ;
+    // InternalDotLanguage.g:1335:1: rule__UndirectedEdgeDeclaration__Group__1 : rule__UndirectedEdgeDeclaration__Group__1__Impl rule__UndirectedEdgeDeclaration__Group__2 ;
     public final void rule__UndirectedEdgeDeclaration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1547:1: ( rule__UndirectedEdgeDeclaration__Group__1__Impl rule__UndirectedEdgeDeclaration__Group__2 )
-            // InternalDotLanguage.g:1548:2: rule__UndirectedEdgeDeclaration__Group__1__Impl rule__UndirectedEdgeDeclaration__Group__2
+            // InternalDotLanguage.g:1339:1: ( rule__UndirectedEdgeDeclaration__Group__1__Impl rule__UndirectedEdgeDeclaration__Group__2 )
+            // InternalDotLanguage.g:1340:2: rule__UndirectedEdgeDeclaration__Group__1__Impl rule__UndirectedEdgeDeclaration__Group__2
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_15);
             rule__UndirectedEdgeDeclaration__Group__1__Impl();
 
             state._fsp--;
@@ -4790,21 +4193,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__UndirectedEdgeDeclaration__Group__1__Impl"
-    // InternalDotLanguage.g:1555:1: rule__UndirectedEdgeDeclaration__Group__1__Impl : ( ( rule__UndirectedEdgeDeclaration__EdgeAssignment_1 ) ) ;
+    // InternalDotLanguage.g:1347:1: rule__UndirectedEdgeDeclaration__Group__1__Impl : ( ( rule__UndirectedEdgeDeclaration__EdgeAssignment_1 ) ) ;
     public final void rule__UndirectedEdgeDeclaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1559:1: ( ( ( rule__UndirectedEdgeDeclaration__EdgeAssignment_1 ) ) )
-            // InternalDotLanguage.g:1560:1: ( ( rule__UndirectedEdgeDeclaration__EdgeAssignment_1 ) )
+            // InternalDotLanguage.g:1351:1: ( ( ( rule__UndirectedEdgeDeclaration__EdgeAssignment_1 ) ) )
+            // InternalDotLanguage.g:1352:1: ( ( rule__UndirectedEdgeDeclaration__EdgeAssignment_1 ) )
             {
-            // InternalDotLanguage.g:1560:1: ( ( rule__UndirectedEdgeDeclaration__EdgeAssignment_1 ) )
-            // InternalDotLanguage.g:1561:2: ( rule__UndirectedEdgeDeclaration__EdgeAssignment_1 )
+            // InternalDotLanguage.g:1352:1: ( ( rule__UndirectedEdgeDeclaration__EdgeAssignment_1 ) )
+            // InternalDotLanguage.g:1353:2: ( rule__UndirectedEdgeDeclaration__EdgeAssignment_1 )
             {
              before(grammarAccess.getUndirectedEdgeDeclarationAccess().getEdgeAssignment_1()); 
-            // InternalDotLanguage.g:1562:2: ( rule__UndirectedEdgeDeclaration__EdgeAssignment_1 )
-            // InternalDotLanguage.g:1562:3: rule__UndirectedEdgeDeclaration__EdgeAssignment_1
+            // InternalDotLanguage.g:1354:2: ( rule__UndirectedEdgeDeclaration__EdgeAssignment_1 )
+            // InternalDotLanguage.g:1354:3: rule__UndirectedEdgeDeclaration__EdgeAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__UndirectedEdgeDeclaration__EdgeAssignment_1();
@@ -4837,14 +4240,14 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__UndirectedEdgeDeclaration__Group__2"
-    // InternalDotLanguage.g:1570:1: rule__UndirectedEdgeDeclaration__Group__2 : rule__UndirectedEdgeDeclaration__Group__2__Impl ;
+    // InternalDotLanguage.g:1362:1: rule__UndirectedEdgeDeclaration__Group__2 : rule__UndirectedEdgeDeclaration__Group__2__Impl ;
     public final void rule__UndirectedEdgeDeclaration__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1574:1: ( rule__UndirectedEdgeDeclaration__Group__2__Impl )
-            // InternalDotLanguage.g:1575:2: rule__UndirectedEdgeDeclaration__Group__2__Impl
+            // InternalDotLanguage.g:1366:1: ( rule__UndirectedEdgeDeclaration__Group__2__Impl )
+            // InternalDotLanguage.g:1367:2: rule__UndirectedEdgeDeclaration__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__UndirectedEdgeDeclaration__Group__2__Impl();
@@ -4870,21 +4273,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__UndirectedEdgeDeclaration__Group__2__Impl"
-    // InternalDotLanguage.g:1581:1: rule__UndirectedEdgeDeclaration__Group__2__Impl : ( ( rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2 ) ) ;
+    // InternalDotLanguage.g:1373:1: rule__UndirectedEdgeDeclaration__Group__2__Impl : ( ( rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2 ) ) ;
     public final void rule__UndirectedEdgeDeclaration__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1585:1: ( ( ( rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2 ) ) )
-            // InternalDotLanguage.g:1586:1: ( ( rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2 ) )
+            // InternalDotLanguage.g:1377:1: ( ( ( rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2 ) ) )
+            // InternalDotLanguage.g:1378:1: ( ( rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2 ) )
             {
-            // InternalDotLanguage.g:1586:1: ( ( rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2 ) )
-            // InternalDotLanguage.g:1587:2: ( rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2 )
+            // InternalDotLanguage.g:1378:1: ( ( rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2 ) )
+            // InternalDotLanguage.g:1379:2: ( rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2 )
             {
              before(grammarAccess.getUndirectedEdgeDeclarationAccess().getSecondNodeAssignment_2()); 
-            // InternalDotLanguage.g:1588:2: ( rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2 )
-            // InternalDotLanguage.g:1588:3: rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2
+            // InternalDotLanguage.g:1380:2: ( rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2 )
+            // InternalDotLanguage.g:1380:3: rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2();
@@ -4916,22 +4319,295 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__UndirectedEdgeDeclaration__Group__2__Impl"
 
 
+    // $ANTLR start "rule__NodeList__Group__0"
+    // InternalDotLanguage.g:1389:1: rule__NodeList__Group__0 : rule__NodeList__Group__0__Impl rule__NodeList__Group__1 ;
+    public final void rule__NodeList__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDotLanguage.g:1393:1: ( rule__NodeList__Group__0__Impl rule__NodeList__Group__1 )
+            // InternalDotLanguage.g:1394:2: rule__NodeList__Group__0__Impl rule__NodeList__Group__1
+            {
+            pushFollow(FOLLOW_4);
+            rule__NodeList__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__NodeList__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NodeList__Group__0"
+
+
+    // $ANTLR start "rule__NodeList__Group__0__Impl"
+    // InternalDotLanguage.g:1401:1: rule__NodeList__Group__0__Impl : ( '{' ) ;
+    public final void rule__NodeList__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDotLanguage.g:1405:1: ( ( '{' ) )
+            // InternalDotLanguage.g:1406:1: ( '{' )
+            {
+            // InternalDotLanguage.g:1406:1: ( '{' )
+            // InternalDotLanguage.g:1407:2: '{'
+            {
+             before(grammarAccess.getNodeListAccess().getLeftCurlyBracketKeyword_0()); 
+            match(input,16,FOLLOW_2); 
+             after(grammarAccess.getNodeListAccess().getLeftCurlyBracketKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NodeList__Group__0__Impl"
+
+
+    // $ANTLR start "rule__NodeList__Group__1"
+    // InternalDotLanguage.g:1416:1: rule__NodeList__Group__1 : rule__NodeList__Group__1__Impl rule__NodeList__Group__2 ;
+    public final void rule__NodeList__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDotLanguage.g:1420:1: ( rule__NodeList__Group__1__Impl rule__NodeList__Group__2 )
+            // InternalDotLanguage.g:1421:2: rule__NodeList__Group__1__Impl rule__NodeList__Group__2
+            {
+            pushFollow(FOLLOW_17);
+            rule__NodeList__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__NodeList__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NodeList__Group__1"
+
+
+    // $ANTLR start "rule__NodeList__Group__1__Impl"
+    // InternalDotLanguage.g:1428:1: rule__NodeList__Group__1__Impl : ( ( ( rule__NodeList__NodesAssignment_1 ) ) ( ( rule__NodeList__NodesAssignment_1 )* ) ) ;
+    public final void rule__NodeList__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDotLanguage.g:1432:1: ( ( ( ( rule__NodeList__NodesAssignment_1 ) ) ( ( rule__NodeList__NodesAssignment_1 )* ) ) )
+            // InternalDotLanguage.g:1433:1: ( ( ( rule__NodeList__NodesAssignment_1 ) ) ( ( rule__NodeList__NodesAssignment_1 )* ) )
+            {
+            // InternalDotLanguage.g:1433:1: ( ( ( rule__NodeList__NodesAssignment_1 ) ) ( ( rule__NodeList__NodesAssignment_1 )* ) )
+            // InternalDotLanguage.g:1434:2: ( ( rule__NodeList__NodesAssignment_1 ) ) ( ( rule__NodeList__NodesAssignment_1 )* )
+            {
+            // InternalDotLanguage.g:1434:2: ( ( rule__NodeList__NodesAssignment_1 ) )
+            // InternalDotLanguage.g:1435:3: ( rule__NodeList__NodesAssignment_1 )
+            {
+             before(grammarAccess.getNodeListAccess().getNodesAssignment_1()); 
+            // InternalDotLanguage.g:1436:3: ( rule__NodeList__NodesAssignment_1 )
+            // InternalDotLanguage.g:1436:4: rule__NodeList__NodesAssignment_1
+            {
+            pushFollow(FOLLOW_7);
+            rule__NodeList__NodesAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getNodeListAccess().getNodesAssignment_1()); 
+
+            }
+
+            // InternalDotLanguage.g:1439:2: ( ( rule__NodeList__NodesAssignment_1 )* )
+            // InternalDotLanguage.g:1440:3: ( rule__NodeList__NodesAssignment_1 )*
+            {
+             before(grammarAccess.getNodeListAccess().getNodesAssignment_1()); 
+            // InternalDotLanguage.g:1441:3: ( rule__NodeList__NodesAssignment_1 )*
+            loop16:
+            do {
+                int alt16=2;
+                int LA16_0 = input.LA(1);
+
+                if ( (LA16_0==RULE_ID) ) {
+                    alt16=1;
+                }
+
+
+                switch (alt16) {
+            	case 1 :
+            	    // InternalDotLanguage.g:1441:4: rule__NodeList__NodesAssignment_1
+            	    {
+            	    pushFollow(FOLLOW_7);
+            	    rule__NodeList__NodesAssignment_1();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop16;
+                }
+            } while (true);
+
+             after(grammarAccess.getNodeListAccess().getNodesAssignment_1()); 
+
+            }
+
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NodeList__Group__1__Impl"
+
+
+    // $ANTLR start "rule__NodeList__Group__2"
+    // InternalDotLanguage.g:1450:1: rule__NodeList__Group__2 : rule__NodeList__Group__2__Impl ;
+    public final void rule__NodeList__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDotLanguage.g:1454:1: ( rule__NodeList__Group__2__Impl )
+            // InternalDotLanguage.g:1455:2: rule__NodeList__Group__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__NodeList__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NodeList__Group__2"
+
+
+    // $ANTLR start "rule__NodeList__Group__2__Impl"
+    // InternalDotLanguage.g:1461:1: rule__NodeList__Group__2__Impl : ( '}' ) ;
+    public final void rule__NodeList__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDotLanguage.g:1465:1: ( ( '}' ) )
+            // InternalDotLanguage.g:1466:1: ( '}' )
+            {
+            // InternalDotLanguage.g:1466:1: ( '}' )
+            // InternalDotLanguage.g:1467:2: '}'
+            {
+             before(grammarAccess.getNodeListAccess().getRightCurlyBracketKeyword_2()); 
+            match(input,17,FOLLOW_2); 
+             after(grammarAccess.getNodeListAccess().getRightCurlyBracketKeyword_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NodeList__Group__2__Impl"
+
+
     // $ANTLR start "rule__DotLanguage__GraphsAssignment"
-    // InternalDotLanguage.g:1597:1: rule__DotLanguage__GraphsAssignment : ( ( rule__DotLanguage__GraphsAlternatives_0 ) ) ;
+    // InternalDotLanguage.g:1477:1: rule__DotLanguage__GraphsAssignment : ( ( rule__DotLanguage__GraphsAlternatives_0 ) ) ;
     public final void rule__DotLanguage__GraphsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1601:1: ( ( ( rule__DotLanguage__GraphsAlternatives_0 ) ) )
-            // InternalDotLanguage.g:1602:2: ( ( rule__DotLanguage__GraphsAlternatives_0 ) )
+            // InternalDotLanguage.g:1481:1: ( ( ( rule__DotLanguage__GraphsAlternatives_0 ) ) )
+            // InternalDotLanguage.g:1482:2: ( ( rule__DotLanguage__GraphsAlternatives_0 ) )
             {
-            // InternalDotLanguage.g:1602:2: ( ( rule__DotLanguage__GraphsAlternatives_0 ) )
-            // InternalDotLanguage.g:1603:3: ( rule__DotLanguage__GraphsAlternatives_0 )
+            // InternalDotLanguage.g:1482:2: ( ( rule__DotLanguage__GraphsAlternatives_0 ) )
+            // InternalDotLanguage.g:1483:3: ( rule__DotLanguage__GraphsAlternatives_0 )
             {
              before(grammarAccess.getDotLanguageAccess().getGraphsAlternatives_0()); 
-            // InternalDotLanguage.g:1604:3: ( rule__DotLanguage__GraphsAlternatives_0 )
-            // InternalDotLanguage.g:1604:4: rule__DotLanguage__GraphsAlternatives_0
+            // InternalDotLanguage.g:1484:3: ( rule__DotLanguage__GraphsAlternatives_0 )
+            // InternalDotLanguage.g:1484:4: rule__DotLanguage__GraphsAlternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__DotLanguage__GraphsAlternatives_0();
@@ -4964,17 +4640,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Graph__NameAssignment_1"
-    // InternalDotLanguage.g:1612:1: rule__Graph__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalDotLanguage.g:1492:1: rule__Graph__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Graph__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1616:1: ( ( RULE_ID ) )
-            // InternalDotLanguage.g:1617:2: ( RULE_ID )
+            // InternalDotLanguage.g:1496:1: ( ( RULE_ID ) )
+            // InternalDotLanguage.g:1497:2: ( RULE_ID )
             {
-            // InternalDotLanguage.g:1617:2: ( RULE_ID )
-            // InternalDotLanguage.g:1618:3: RULE_ID
+            // InternalDotLanguage.g:1497:2: ( RULE_ID )
+            // InternalDotLanguage.g:1498:3: RULE_ID
             {
              before(grammarAccess.getGraphAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5001,17 +4677,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Graph__StatementsAssignment_3"
-    // InternalDotLanguage.g:1627:1: rule__Graph__StatementsAssignment_3 : ( ruleUndirectedStatement ) ;
+    // InternalDotLanguage.g:1507:1: rule__Graph__StatementsAssignment_3 : ( ruleUndirectedStatement ) ;
     public final void rule__Graph__StatementsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1631:1: ( ( ruleUndirectedStatement ) )
-            // InternalDotLanguage.g:1632:2: ( ruleUndirectedStatement )
+            // InternalDotLanguage.g:1511:1: ( ( ruleUndirectedStatement ) )
+            // InternalDotLanguage.g:1512:2: ( ruleUndirectedStatement )
             {
-            // InternalDotLanguage.g:1632:2: ( ruleUndirectedStatement )
-            // InternalDotLanguage.g:1633:3: ruleUndirectedStatement
+            // InternalDotLanguage.g:1512:2: ( ruleUndirectedStatement )
+            // InternalDotLanguage.g:1513:3: ruleUndirectedStatement
             {
              before(grammarAccess.getGraphAccess().getStatementsUndirectedStatementParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -5042,17 +4718,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Digraph__NameAssignment_1"
-    // InternalDotLanguage.g:1642:1: rule__Digraph__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalDotLanguage.g:1522:1: rule__Digraph__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Digraph__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1646:1: ( ( RULE_ID ) )
-            // InternalDotLanguage.g:1647:2: ( RULE_ID )
+            // InternalDotLanguage.g:1526:1: ( ( RULE_ID ) )
+            // InternalDotLanguage.g:1527:2: ( RULE_ID )
             {
-            // InternalDotLanguage.g:1647:2: ( RULE_ID )
-            // InternalDotLanguage.g:1648:3: RULE_ID
+            // InternalDotLanguage.g:1527:2: ( RULE_ID )
+            // InternalDotLanguage.g:1528:3: RULE_ID
             {
              before(grammarAccess.getDigraphAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5079,17 +4755,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Digraph__StatementsAssignment_3"
-    // InternalDotLanguage.g:1657:1: rule__Digraph__StatementsAssignment_3 : ( ruleDirectedStatement ) ;
+    // InternalDotLanguage.g:1537:1: rule__Digraph__StatementsAssignment_3 : ( ruleDirectedStatement ) ;
     public final void rule__Digraph__StatementsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1661:1: ( ( ruleDirectedStatement ) )
-            // InternalDotLanguage.g:1662:2: ( ruleDirectedStatement )
+            // InternalDotLanguage.g:1541:1: ( ( ruleDirectedStatement ) )
+            // InternalDotLanguage.g:1542:2: ( ruleDirectedStatement )
             {
-            // InternalDotLanguage.g:1662:2: ( ruleDirectedStatement )
-            // InternalDotLanguage.g:1663:3: ruleDirectedStatement
+            // InternalDotLanguage.g:1542:2: ( ruleDirectedStatement )
+            // InternalDotLanguage.g:1543:3: ruleDirectedStatement
             {
              before(grammarAccess.getDigraphAccess().getStatementsDirectedStatementParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -5119,174 +4795,18 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Digraph__StatementsAssignment_3"
 
 
-    // $ANTLR start "rule__DirectedSubgraphDeclaration__NameAssignment_1"
-    // InternalDotLanguage.g:1672:1: rule__DirectedSubgraphDeclaration__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__DirectedSubgraphDeclaration__NameAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1676:1: ( ( RULE_ID ) )
-            // InternalDotLanguage.g:1677:2: ( RULE_ID )
-            {
-            // InternalDotLanguage.g:1677:2: ( RULE_ID )
-            // InternalDotLanguage.g:1678:3: RULE_ID
-            {
-             before(grammarAccess.getDirectedSubgraphDeclarationAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getDirectedSubgraphDeclarationAccess().getNameIDTerminalRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__DirectedSubgraphDeclaration__NameAssignment_1"
-
-
-    // $ANTLR start "rule__DirectedSubgraphDeclaration__StatementsAssignment_3"
-    // InternalDotLanguage.g:1687:1: rule__DirectedSubgraphDeclaration__StatementsAssignment_3 : ( ruleDirectedStatement ) ;
-    public final void rule__DirectedSubgraphDeclaration__StatementsAssignment_3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1691:1: ( ( ruleDirectedStatement ) )
-            // InternalDotLanguage.g:1692:2: ( ruleDirectedStatement )
-            {
-            // InternalDotLanguage.g:1692:2: ( ruleDirectedStatement )
-            // InternalDotLanguage.g:1693:3: ruleDirectedStatement
-            {
-             before(grammarAccess.getDirectedSubgraphDeclarationAccess().getStatementsDirectedStatementParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_2);
-            ruleDirectedStatement();
-
-            state._fsp--;
-
-             after(grammarAccess.getDirectedSubgraphDeclarationAccess().getStatementsDirectedStatementParserRuleCall_3_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__DirectedSubgraphDeclaration__StatementsAssignment_3"
-
-
-    // $ANTLR start "rule__UndirectedSubgraphDeclaration__NameAssignment_1"
-    // InternalDotLanguage.g:1702:1: rule__UndirectedSubgraphDeclaration__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__UndirectedSubgraphDeclaration__NameAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1706:1: ( ( RULE_ID ) )
-            // InternalDotLanguage.g:1707:2: ( RULE_ID )
-            {
-            // InternalDotLanguage.g:1707:2: ( RULE_ID )
-            // InternalDotLanguage.g:1708:3: RULE_ID
-            {
-             before(grammarAccess.getUndirectedSubgraphDeclarationAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getUndirectedSubgraphDeclarationAccess().getNameIDTerminalRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UndirectedSubgraphDeclaration__NameAssignment_1"
-
-
-    // $ANTLR start "rule__UndirectedSubgraphDeclaration__StatementsAssignment_3"
-    // InternalDotLanguage.g:1717:1: rule__UndirectedSubgraphDeclaration__StatementsAssignment_3 : ( ruleUndirectedStatement ) ;
-    public final void rule__UndirectedSubgraphDeclaration__StatementsAssignment_3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDotLanguage.g:1721:1: ( ( ruleUndirectedStatement ) )
-            // InternalDotLanguage.g:1722:2: ( ruleUndirectedStatement )
-            {
-            // InternalDotLanguage.g:1722:2: ( ruleUndirectedStatement )
-            // InternalDotLanguage.g:1723:3: ruleUndirectedStatement
-            {
-             before(grammarAccess.getUndirectedSubgraphDeclarationAccess().getStatementsUndirectedStatementParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_2);
-            ruleUndirectedStatement();
-
-            state._fsp--;
-
-             after(grammarAccess.getUndirectedSubgraphDeclarationAccess().getStatementsUndirectedStatementParserRuleCall_3_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__UndirectedSubgraphDeclaration__StatementsAssignment_3"
-
-
     // $ANTLR start "rule__NodeDeclaration__NodeNameAssignment_0"
-    // InternalDotLanguage.g:1732:1: rule__NodeDeclaration__NodeNameAssignment_0 : ( ruleNodeId ) ;
+    // InternalDotLanguage.g:1552:1: rule__NodeDeclaration__NodeNameAssignment_0 : ( ruleNodeId ) ;
     public final void rule__NodeDeclaration__NodeNameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1736:1: ( ( ruleNodeId ) )
-            // InternalDotLanguage.g:1737:2: ( ruleNodeId )
+            // InternalDotLanguage.g:1556:1: ( ( ruleNodeId ) )
+            // InternalDotLanguage.g:1557:2: ( ruleNodeId )
             {
-            // InternalDotLanguage.g:1737:2: ( ruleNodeId )
-            // InternalDotLanguage.g:1738:3: ruleNodeId
+            // InternalDotLanguage.g:1557:2: ( ruleNodeId )
+            // InternalDotLanguage.g:1558:3: ruleNodeId
             {
              before(grammarAccess.getNodeDeclarationAccess().getNodeNameNodeIdParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -5317,17 +4837,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__NodeDeclaration__OptionalAttributesAssignment_1"
-    // InternalDotLanguage.g:1747:1: rule__NodeDeclaration__OptionalAttributesAssignment_1 : ( ruleAttributeList ) ;
+    // InternalDotLanguage.g:1567:1: rule__NodeDeclaration__OptionalAttributesAssignment_1 : ( ruleAttributeList ) ;
     public final void rule__NodeDeclaration__OptionalAttributesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1751:1: ( ( ruleAttributeList ) )
-            // InternalDotLanguage.g:1752:2: ( ruleAttributeList )
+            // InternalDotLanguage.g:1571:1: ( ( ruleAttributeList ) )
+            // InternalDotLanguage.g:1572:2: ( ruleAttributeList )
             {
-            // InternalDotLanguage.g:1752:2: ( ruleAttributeList )
-            // InternalDotLanguage.g:1753:3: ruleAttributeList
+            // InternalDotLanguage.g:1572:2: ( ruleAttributeList )
+            // InternalDotLanguage.g:1573:3: ruleAttributeList
             {
              before(grammarAccess.getNodeDeclarationAccess().getOptionalAttributesAttributeListParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5358,17 +4878,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__NodeId__NameAssignment"
-    // InternalDotLanguage.g:1762:1: rule__NodeId__NameAssignment : ( RULE_ID ) ;
+    // InternalDotLanguage.g:1582:1: rule__NodeId__NameAssignment : ( RULE_ID ) ;
     public final void rule__NodeId__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1766:1: ( ( RULE_ID ) )
-            // InternalDotLanguage.g:1767:2: ( RULE_ID )
+            // InternalDotLanguage.g:1586:1: ( ( RULE_ID ) )
+            // InternalDotLanguage.g:1587:2: ( RULE_ID )
             {
-            // InternalDotLanguage.g:1767:2: ( RULE_ID )
-            // InternalDotLanguage.g:1768:3: RULE_ID
+            // InternalDotLanguage.g:1587:2: ( RULE_ID )
+            // InternalDotLanguage.g:1588:3: RULE_ID
             {
              before(grammarAccess.getNodeIdAccess().getNameIDTerminalRuleCall_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5395,17 +4915,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__AttributeList__AttrAssignment_1"
-    // InternalDotLanguage.g:1777:1: rule__AttributeList__AttrAssignment_1 : ( ruleAttribute ) ;
+    // InternalDotLanguage.g:1597:1: rule__AttributeList__AttrAssignment_1 : ( ruleAttribute ) ;
     public final void rule__AttributeList__AttrAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1781:1: ( ( ruleAttribute ) )
-            // InternalDotLanguage.g:1782:2: ( ruleAttribute )
+            // InternalDotLanguage.g:1601:1: ( ( ruleAttribute ) )
+            // InternalDotLanguage.g:1602:2: ( ruleAttribute )
             {
-            // InternalDotLanguage.g:1782:2: ( ruleAttribute )
-            // InternalDotLanguage.g:1783:3: ruleAttribute
+            // InternalDotLanguage.g:1602:2: ( ruleAttribute )
+            // InternalDotLanguage.g:1603:3: ruleAttribute
             {
              before(grammarAccess.getAttributeListAccess().getAttrAttributeParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5436,17 +4956,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Attribute__AttributeNameAssignment_0"
-    // InternalDotLanguage.g:1792:1: rule__Attribute__AttributeNameAssignment_0 : ( RULE_ID ) ;
+    // InternalDotLanguage.g:1612:1: rule__Attribute__AttributeNameAssignment_0 : ( RULE_ID ) ;
     public final void rule__Attribute__AttributeNameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1796:1: ( ( RULE_ID ) )
-            // InternalDotLanguage.g:1797:2: ( RULE_ID )
+            // InternalDotLanguage.g:1616:1: ( ( RULE_ID ) )
+            // InternalDotLanguage.g:1617:2: ( RULE_ID )
             {
-            // InternalDotLanguage.g:1797:2: ( RULE_ID )
-            // InternalDotLanguage.g:1798:3: RULE_ID
+            // InternalDotLanguage.g:1617:2: ( RULE_ID )
+            // InternalDotLanguage.g:1618:3: RULE_ID
             {
              before(grammarAccess.getAttributeAccess().getAttributeNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5473,21 +4993,25 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Attribute__AttributeValueAssignment_2"
-    // InternalDotLanguage.g:1807:1: rule__Attribute__AttributeValueAssignment_2 : ( RULE_ID ) ;
+    // InternalDotLanguage.g:1627:1: rule__Attribute__AttributeValueAssignment_2 : ( ruleIDORINT ) ;
     public final void rule__Attribute__AttributeValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1811:1: ( ( RULE_ID ) )
-            // InternalDotLanguage.g:1812:2: ( RULE_ID )
+            // InternalDotLanguage.g:1631:1: ( ( ruleIDORINT ) )
+            // InternalDotLanguage.g:1632:2: ( ruleIDORINT )
             {
-            // InternalDotLanguage.g:1812:2: ( RULE_ID )
-            // InternalDotLanguage.g:1813:3: RULE_ID
+            // InternalDotLanguage.g:1632:2: ( ruleIDORINT )
+            // InternalDotLanguage.g:1633:3: ruleIDORINT
             {
-             before(grammarAccess.getAttributeAccess().getAttributeValueIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getAttributeAccess().getAttributeValueIDTerminalRuleCall_2_0()); 
+             before(grammarAccess.getAttributeAccess().getAttributeValueIDORINTParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleIDORINT();
+
+            state._fsp--;
+
+             after(grammarAccess.getAttributeAccess().getAttributeValueIDORINTParserRuleCall_2_0()); 
 
             }
 
@@ -5510,21 +5034,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirectedEdgeDeclaration__FirstNodeAssignment_0"
-    // InternalDotLanguage.g:1822:1: rule__DirectedEdgeDeclaration__FirstNodeAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalDotLanguage.g:1642:1: rule__DirectedEdgeDeclaration__FirstNodeAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__DirectedEdgeDeclaration__FirstNodeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1826:1: ( ( ( RULE_ID ) ) )
-            // InternalDotLanguage.g:1827:2: ( ( RULE_ID ) )
+            // InternalDotLanguage.g:1646:1: ( ( ( RULE_ID ) ) )
+            // InternalDotLanguage.g:1647:2: ( ( RULE_ID ) )
             {
-            // InternalDotLanguage.g:1827:2: ( ( RULE_ID ) )
-            // InternalDotLanguage.g:1828:3: ( RULE_ID )
+            // InternalDotLanguage.g:1647:2: ( ( RULE_ID ) )
+            // InternalDotLanguage.g:1648:3: ( RULE_ID )
             {
              before(grammarAccess.getDirectedEdgeDeclarationAccess().getFirstNodeNodeIdCrossReference_0_0()); 
-            // InternalDotLanguage.g:1829:3: ( RULE_ID )
-            // InternalDotLanguage.g:1830:4: RULE_ID
+            // InternalDotLanguage.g:1649:3: ( RULE_ID )
+            // InternalDotLanguage.g:1650:4: RULE_ID
             {
              before(grammarAccess.getDirectedEdgeDeclarationAccess().getFirstNodeNodeIdIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5555,17 +5079,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirectedEdgeDeclaration__EdgeAssignment_1"
-    // InternalDotLanguage.g:1841:1: rule__DirectedEdgeDeclaration__EdgeAssignment_1 : ( ruleDirectedEdge ) ;
+    // InternalDotLanguage.g:1661:1: rule__DirectedEdgeDeclaration__EdgeAssignment_1 : ( ruleDirectedEdge ) ;
     public final void rule__DirectedEdgeDeclaration__EdgeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1845:1: ( ( ruleDirectedEdge ) )
-            // InternalDotLanguage.g:1846:2: ( ruleDirectedEdge )
+            // InternalDotLanguage.g:1665:1: ( ( ruleDirectedEdge ) )
+            // InternalDotLanguage.g:1666:2: ( ruleDirectedEdge )
             {
-            // InternalDotLanguage.g:1846:2: ( ruleDirectedEdge )
-            // InternalDotLanguage.g:1847:3: ruleDirectedEdge
+            // InternalDotLanguage.g:1666:2: ( ruleDirectedEdge )
+            // InternalDotLanguage.g:1667:3: ruleDirectedEdge
             {
              before(grammarAccess.getDirectedEdgeDeclarationAccess().getEdgeDirectedEdgeParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5596,29 +5120,25 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DirectedEdgeDeclaration__SecondNodeAssignment_2"
-    // InternalDotLanguage.g:1856:1: rule__DirectedEdgeDeclaration__SecondNodeAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalDotLanguage.g:1676:1: rule__DirectedEdgeDeclaration__SecondNodeAssignment_2 : ( ruleRightEdgeDeclaration ) ;
     public final void rule__DirectedEdgeDeclaration__SecondNodeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1860:1: ( ( ( RULE_ID ) ) )
-            // InternalDotLanguage.g:1861:2: ( ( RULE_ID ) )
+            // InternalDotLanguage.g:1680:1: ( ( ruleRightEdgeDeclaration ) )
+            // InternalDotLanguage.g:1681:2: ( ruleRightEdgeDeclaration )
             {
-            // InternalDotLanguage.g:1861:2: ( ( RULE_ID ) )
-            // InternalDotLanguage.g:1862:3: ( RULE_ID )
+            // InternalDotLanguage.g:1681:2: ( ruleRightEdgeDeclaration )
+            // InternalDotLanguage.g:1682:3: ruleRightEdgeDeclaration
             {
-             before(grammarAccess.getDirectedEdgeDeclarationAccess().getSecondNodeNodeIdCrossReference_2_0()); 
-            // InternalDotLanguage.g:1863:3: ( RULE_ID )
-            // InternalDotLanguage.g:1864:4: RULE_ID
-            {
-             before(grammarAccess.getDirectedEdgeDeclarationAccess().getSecondNodeNodeIdIDTerminalRuleCall_2_0_1()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getDirectedEdgeDeclarationAccess().getSecondNodeNodeIdIDTerminalRuleCall_2_0_1()); 
+             before(grammarAccess.getDirectedEdgeDeclarationAccess().getSecondNodeRightEdgeDeclarationParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleRightEdgeDeclaration();
 
-            }
+            state._fsp--;
 
-             after(grammarAccess.getDirectedEdgeDeclarationAccess().getSecondNodeNodeIdCrossReference_2_0()); 
+             after(grammarAccess.getDirectedEdgeDeclarationAccess().getSecondNodeRightEdgeDeclarationParserRuleCall_2_0()); 
 
             }
 
@@ -5641,21 +5161,21 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0"
-    // InternalDotLanguage.g:1875:1: rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalDotLanguage.g:1691:1: rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__UndirectedEdgeDeclaration__FirstNodeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1879:1: ( ( ( RULE_ID ) ) )
-            // InternalDotLanguage.g:1880:2: ( ( RULE_ID ) )
+            // InternalDotLanguage.g:1695:1: ( ( ( RULE_ID ) ) )
+            // InternalDotLanguage.g:1696:2: ( ( RULE_ID ) )
             {
-            // InternalDotLanguage.g:1880:2: ( ( RULE_ID ) )
-            // InternalDotLanguage.g:1881:3: ( RULE_ID )
+            // InternalDotLanguage.g:1696:2: ( ( RULE_ID ) )
+            // InternalDotLanguage.g:1697:3: ( RULE_ID )
             {
              before(grammarAccess.getUndirectedEdgeDeclarationAccess().getFirstNodeNodeIdCrossReference_0_0()); 
-            // InternalDotLanguage.g:1882:3: ( RULE_ID )
-            // InternalDotLanguage.g:1883:4: RULE_ID
+            // InternalDotLanguage.g:1698:3: ( RULE_ID )
+            // InternalDotLanguage.g:1699:4: RULE_ID
             {
              before(grammarAccess.getUndirectedEdgeDeclarationAccess().getFirstNodeNodeIdIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5686,17 +5206,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__UndirectedEdgeDeclaration__EdgeAssignment_1"
-    // InternalDotLanguage.g:1894:1: rule__UndirectedEdgeDeclaration__EdgeAssignment_1 : ( ruleUndirectedEdge ) ;
+    // InternalDotLanguage.g:1710:1: rule__UndirectedEdgeDeclaration__EdgeAssignment_1 : ( ruleUndirectedEdge ) ;
     public final void rule__UndirectedEdgeDeclaration__EdgeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1898:1: ( ( ruleUndirectedEdge ) )
-            // InternalDotLanguage.g:1899:2: ( ruleUndirectedEdge )
+            // InternalDotLanguage.g:1714:1: ( ( ruleUndirectedEdge ) )
+            // InternalDotLanguage.g:1715:2: ( ruleUndirectedEdge )
             {
-            // InternalDotLanguage.g:1899:2: ( ruleUndirectedEdge )
-            // InternalDotLanguage.g:1900:3: ruleUndirectedEdge
+            // InternalDotLanguage.g:1715:2: ( ruleUndirectedEdge )
+            // InternalDotLanguage.g:1716:3: ruleUndirectedEdge
             {
              before(grammarAccess.getUndirectedEdgeDeclarationAccess().getEdgeUndirectedEdgeParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5727,29 +5247,25 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2"
-    // InternalDotLanguage.g:1909:1: rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalDotLanguage.g:1725:1: rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2 : ( ruleRightEdgeDeclaration ) ;
     public final void rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDotLanguage.g:1913:1: ( ( ( RULE_ID ) ) )
-            // InternalDotLanguage.g:1914:2: ( ( RULE_ID ) )
+            // InternalDotLanguage.g:1729:1: ( ( ruleRightEdgeDeclaration ) )
+            // InternalDotLanguage.g:1730:2: ( ruleRightEdgeDeclaration )
             {
-            // InternalDotLanguage.g:1914:2: ( ( RULE_ID ) )
-            // InternalDotLanguage.g:1915:3: ( RULE_ID )
+            // InternalDotLanguage.g:1730:2: ( ruleRightEdgeDeclaration )
+            // InternalDotLanguage.g:1731:3: ruleRightEdgeDeclaration
             {
-             before(grammarAccess.getUndirectedEdgeDeclarationAccess().getSecondNodeNodeIdCrossReference_2_0()); 
-            // InternalDotLanguage.g:1916:3: ( RULE_ID )
-            // InternalDotLanguage.g:1917:4: RULE_ID
-            {
-             before(grammarAccess.getUndirectedEdgeDeclarationAccess().getSecondNodeNodeIdIDTerminalRuleCall_2_0_1()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getUndirectedEdgeDeclarationAccess().getSecondNodeNodeIdIDTerminalRuleCall_2_0_1()); 
+             before(grammarAccess.getUndirectedEdgeDeclarationAccess().getSecondNodeRightEdgeDeclarationParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleRightEdgeDeclaration();
 
-            }
+            state._fsp--;
 
-             after(grammarAccess.getUndirectedEdgeDeclarationAccess().getSecondNodeNodeIdCrossReference_2_0()); 
+             after(grammarAccess.getUndirectedEdgeDeclarationAccess().getSecondNodeRightEdgeDeclarationParserRuleCall_2_0()); 
 
             }
 
@@ -5770,6 +5286,137 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
     }
     // $ANTLR end "rule__UndirectedEdgeDeclaration__SecondNodeAssignment_2"
 
+
+    // $ANTLR start "rule__RightEdgeDeclaration__SecondNodeAssignment_0"
+    // InternalDotLanguage.g:1740:1: rule__RightEdgeDeclaration__SecondNodeAssignment_0 : ( ( RULE_ID ) ) ;
+    public final void rule__RightEdgeDeclaration__SecondNodeAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDotLanguage.g:1744:1: ( ( ( RULE_ID ) ) )
+            // InternalDotLanguage.g:1745:2: ( ( RULE_ID ) )
+            {
+            // InternalDotLanguage.g:1745:2: ( ( RULE_ID ) )
+            // InternalDotLanguage.g:1746:3: ( RULE_ID )
+            {
+             before(grammarAccess.getRightEdgeDeclarationAccess().getSecondNodeNodeIdCrossReference_0_0()); 
+            // InternalDotLanguage.g:1747:3: ( RULE_ID )
+            // InternalDotLanguage.g:1748:4: RULE_ID
+            {
+             before(grammarAccess.getRightEdgeDeclarationAccess().getSecondNodeNodeIdIDTerminalRuleCall_0_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getRightEdgeDeclarationAccess().getSecondNodeNodeIdIDTerminalRuleCall_0_0_1()); 
+
+            }
+
+             after(grammarAccess.getRightEdgeDeclarationAccess().getSecondNodeNodeIdCrossReference_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RightEdgeDeclaration__SecondNodeAssignment_0"
+
+
+    // $ANTLR start "rule__RightEdgeDeclaration__NodeListAssignment_1"
+    // InternalDotLanguage.g:1759:1: rule__RightEdgeDeclaration__NodeListAssignment_1 : ( ruleNodeList ) ;
+    public final void rule__RightEdgeDeclaration__NodeListAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDotLanguage.g:1763:1: ( ( ruleNodeList ) )
+            // InternalDotLanguage.g:1764:2: ( ruleNodeList )
+            {
+            // InternalDotLanguage.g:1764:2: ( ruleNodeList )
+            // InternalDotLanguage.g:1765:3: ruleNodeList
+            {
+             before(grammarAccess.getRightEdgeDeclarationAccess().getNodeListNodeListParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleNodeList();
+
+            state._fsp--;
+
+             after(grammarAccess.getRightEdgeDeclarationAccess().getNodeListNodeListParserRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RightEdgeDeclaration__NodeListAssignment_1"
+
+
+    // $ANTLR start "rule__NodeList__NodesAssignment_1"
+    // InternalDotLanguage.g:1774:1: rule__NodeList__NodesAssignment_1 : ( ( RULE_ID ) ) ;
+    public final void rule__NodeList__NodesAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDotLanguage.g:1778:1: ( ( ( RULE_ID ) ) )
+            // InternalDotLanguage.g:1779:2: ( ( RULE_ID ) )
+            {
+            // InternalDotLanguage.g:1779:2: ( ( RULE_ID ) )
+            // InternalDotLanguage.g:1780:3: ( RULE_ID )
+            {
+             before(grammarAccess.getNodeListAccess().getNodesNodeIdCrossReference_1_0()); 
+            // InternalDotLanguage.g:1781:3: ( RULE_ID )
+            // InternalDotLanguage.g:1782:4: RULE_ID
+            {
+             before(grammarAccess.getNodeListAccess().getNodesNodeIdIDTerminalRuleCall_1_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getNodeListAccess().getNodesNodeIdIDTerminalRuleCall_1_0_1()); 
+
+            }
+
+             after(grammarAccess.getNodeListAccess().getNodesNodeIdCrossReference_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NodeList__NodesAssignment_1"
+
     // Delegated rules
 
 
@@ -5780,15 +5427,17 @@ public class InternalDotLanguageParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000048002L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x00000000000A0010L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000080012L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000020010L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000012L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000200010L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000030L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000010010L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000020000L});
 
 }

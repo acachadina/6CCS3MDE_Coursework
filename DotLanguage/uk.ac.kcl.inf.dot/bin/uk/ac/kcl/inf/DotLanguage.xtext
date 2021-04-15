@@ -3,11 +3,6 @@ grammar uk.ac.kcl.inf.DotLanguage with org.eclipse.xtext.common.Terminals
 generate dotLanguage "http://www.ac.uk/kcl/inf/DotLanguage"
 
 
-
-/**
- * TODO: subgraphs???
- */
-
 DotLanguage:
 	graphs += (Graph | Digraph)*;
 	
@@ -23,8 +18,7 @@ Digraph:
 DirectedStatement: 
 	( 
 		NodeDeclaration | 
-		DirectedEdgeDeclaration |
-		DirectedSubgraphDeclaration
+		DirectedEdgeDeclaration
 	)
 	("," | ";")?
 	
@@ -33,19 +27,11 @@ DirectedStatement:
 UndirectedStatement: 
 	(
 		NodeDeclaration | 
-		UndirectedEdgeDeclaration |
-		UndirectedSubgraphDeclaration	
+		UndirectedEdgeDeclaration 
 	)
 	("," | ";")?
 ;
 
-DirectedSubgraphDeclaration:
-	"subgraph" name=ID "{" statements += DirectedStatement* "}"
-;
-
-UndirectedSubgraphDeclaration:
-	"subgraph" name=ID "{" statements += UndirectedStatement* "}"
-;
 
 NodeDeclaration:
 	nodeName = NodeId (optionalAttributes = AttributeList)?
@@ -59,24 +45,33 @@ NodeId:
 // will be 'color' and 'label'
 // color defaults to black and the label to the node's ID
 AttributeList:
-	"[" attr += Attribute* "]"
+	"[" attr += Attribute+ "]"
 ;
 
 Attribute:
-	attributeName = ID "=" attributeValue = ID (',')?
+	attributeName = ID "=" attributeValue = IDORINT (',')?
 ;
 
-enum Color:
-	red | blue | green | black
+IDORINT :
+	ID | INT
 ;
 
 // a node can be a reference to a declared node for now
 DirectedEdgeDeclaration:
-	firstNode = [NodeId] edge = DirectedEdge secondNode = [NodeId]
+	firstNode = [NodeId] edge = DirectedEdge secondNode = RightEdgeDeclaration
 ;
 
 UndirectedEdgeDeclaration:
-	firstNode = [NodeId] edge = UndirectedEdge secondNode = [NodeId]
+	firstNode = [NodeId] edge = UndirectedEdge secondNode = RightEdgeDeclaration
+;
+
+RightEdgeDeclaration:
+	secondNode = [NodeId] |
+	nodeList = NodeList
+;
+
+NodeList returns NodeList:
+	'{' nodes += [NodeId]+ '}'
 ;
 
 DirectedEdge:
