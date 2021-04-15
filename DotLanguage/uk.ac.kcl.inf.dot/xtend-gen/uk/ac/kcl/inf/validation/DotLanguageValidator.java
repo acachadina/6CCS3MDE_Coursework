@@ -19,6 +19,7 @@ import uk.ac.kcl.inf.dotLanguage.Graph;
 import uk.ac.kcl.inf.dotLanguage.NodeDeclaration;
 import uk.ac.kcl.inf.dotLanguage.NodeId;
 import uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration;
+import uk.ac.kcl.inf.dotLanguage.UndirectedStatement;
 
 /**
  * This class contains custom validation rules.
@@ -184,7 +185,20 @@ public class DotLanguageValidator extends AbstractDotLanguageValidator {
   }
   
   public boolean multipleEdgeDeclarationGraph(final Graph graph, final ArrayList<NodeId> edge) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nno viable alternative at input \'val\'");
+    final EList<UndirectedStatement> statements = graph.getStatements();
+    for (final UndirectedStatement statement : statements) {
+      String _name = statement.eClass().getName();
+      boolean _equals = Objects.equal(_name, "UndirectedEdgeDeclaration");
+      if (_equals) {
+        final NodeId firstNode = ((UndirectedEdgeDeclaration) statement).getFirstNode();
+        final NodeId secondNode = ((UndirectedEdgeDeclaration) statement).getSecondNode();
+        final ArrayList<NodeId> pair = CollectionLiterals.<NodeId>newArrayList(firstNode, secondNode);
+        boolean _equals_1 = Objects.equal(pair, edge);
+        if (_equals_1) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 }

@@ -209,7 +209,6 @@ class DotLanguageValidator extends AbstractDotLanguageValidator {
 		
 		for(UndirectedStatement statement : statements){
 			if(statement.eClass.name == "UndirectedEdgeDeclaration"){
-				(statement as UndirectedEdgeDeclaration).
 				val firstNode = (statement as UndirectedEdgeDeclaration).firstNode
 				val secondNode = (statement as UndirectedEdgeDeclaration).secondNode
 				val pair = newArrayList(firstNode, secondNode)
