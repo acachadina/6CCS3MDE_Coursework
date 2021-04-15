@@ -38,7 +38,7 @@ NodeDeclaration:
 ;
 
 NodeId:
-	name = ID
+	name = ID 
 ;
 
 // the only supported attributes for now 

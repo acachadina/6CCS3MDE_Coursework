@@ -5,8 +5,14 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Custom class extending JPanel that represents the canvas
+ * for Dot Graphs.
+ * 
+ */
 public class DotCanvas extends JPanel
 {
+	
     private List<DotGraph> graphs = new ArrayList<>();
     private int width;
     private int height;
@@ -18,8 +24,6 @@ public class DotCanvas extends JPanel
 
     @Override
     protected void paintComponent(Graphics g) {
-        System.out.println("---- Call to paintComponent");
-        System.out.println("    number of graphs: " + graphs.size());
         super.paintComponent(g);
 
         for (DotGraph graph: graphs) {

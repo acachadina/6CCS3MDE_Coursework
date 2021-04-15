@@ -57,14 +57,21 @@ class DotLanguageGenerator extends AbstractGenerator {
 					@Override
 					
 					public void run() {
+						// Placeholders for the attributes and, in case of a declaration of a subgraph,
+						// the nodes that are connected to the source node
 						HashMap<String, String> attributes = new HashMap<>();
 						ArrayList<String> secondNodes = new ArrayList<>();
+						
+						// Add defined nodes and edges
 						« program.graphs.map[generateGraphStatements].join("\n")»	
+						
+						// Add graphs to the canvas
 						addGraphs();
 					}
 					
 				};
-				
+								
+				// Draw the graphs
 				dot.run();
 			}
 		}
@@ -81,21 +88,40 @@ class DotLanguageGenerator extends AbstractGenerator {
 	
 	// GRAPHS: 
 	dispatch def generateGraphCreationStatements(NodeDeclaration node, Graph graph)'''		
+		«node.nodeDeclarationStatement(graph.name)»
+	'''
+	dispatch def generateGraphCreationStatements(UndirectedEdgeDeclaration edge, Graph graph)'''		
+		«edge.secondNode.getRightSideEdgeDeclaration»
+		«edgeDeclarationStatement(graph.name, edge.firstNode.name)»
+	'''		
+		
+	//DIGRAPHS
+	dispatch def generateGraphCreationStatements(NodeDeclaration node, Digraph digraph)'''
+		«node.nodeDeclarationStatement(digraph.name)»	
+	'''
+	
+	dispatch def generateGraphCreationStatements(DirectedEdgeDeclaration edge, Digraph digraph)'''
+		«edge.secondNode.getRightSideEdgeDeclaration»
+		«edgeDeclarationStatement(digraph.name, edge.firstNode.name)»
+	'''
+	
+	//	GENERAL
+	def nodeDeclarationStatement(NodeDeclaration node, String graphName)'''
 		«IF node.optionalAttributes === null»
-			addNode("«graph.name»", "«node.nodeName.name»", null, false);
+			addNode("«graphName»", "«node.nodeName.name»", null, true);
 		«ELSE»
 			«FOR attr : node.optionalAttributes.attr»
 				attributes.put("«attr.attributeName»","«attr.attributeValue»");
 			«ENDFOR »
-			addNode("«graph.name»", "«node.nodeName.name»", attributes, false);
-		«ENDIF»
-		attributes.clear();
+			addNode("«graphName»", "«node.nodeName.name»", attributes, true);
+			attributes.clear();
+		«ENDIF»				
 	'''
-	dispatch def generateGraphCreationStatements(UndirectedEdgeDeclaration edge, Graph graph)'''		
-		«edge.secondNode.getRightSideEdgeDeclaration»
-		addEdge("«graph.name»", "«edge.firstNode.name»", secondNodes); 
+	
+	def edgeDeclarationStatement(String graphName, String firstNodeName)'''
+		addEdge("«graphName»", "«firstNodeName»", secondNodes); 
 		secondNodes.clear();
-	'''		
+	'''	
 	
 	dispatch def getRightSideEdgeDeclaration(RightEdgeDeclaration node)'''
 		secondNodes.add("«node.secondNode.name»");		
@@ -107,24 +133,5 @@ class DotLanguageGenerator extends AbstractGenerator {
 		 «ENDFOR »
 	'''
 	
-	//DIGRAPHS
-	dispatch def generateGraphCreationStatements(NodeDeclaration node, Digraph digraph)'''
-		«IF node.optionalAttributes === null»
-			addNode("«digraph.name»", "«node.nodeName.name»", null, true);
-		«ELSE»
-			«FOR attr : node.optionalAttributes.attr»
-				attributes.put("«attr.attributeName»","«attr.attributeValue»");
-			«ENDFOR »
-			addNode("«digraph.name»", "«node.nodeName.name»", attributes, true);
-		«ENDIF»		
-		attributes.clear();
-	'''
-	
-	dispatch def generateGraphCreationStatements(DirectedEdgeDeclaration edge, Digraph digraph)'''
-		«edge.secondNode.getRightSideEdgeDeclaration»
-		addEdge("«digraph.name»", "«edge.firstNode.name»"s, secondNodes); 
-		secondNodes.clear();
-	'''
-
 		
 }

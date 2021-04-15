@@ -5,6 +5,10 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * Custom class extending JFrame that holds a canvas. 
+ *
+ */
 public class DotFrame extends JFrame {
     private DotCanvas canvas = new DotCanvas(400, 400);
 
