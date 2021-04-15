@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.ArrayList;
 
 
-public class TestDot {
+public class SimpleExampleDot {
 	public static void main (String args[]){
 		DotFrame tf = new DotFrame();
 		

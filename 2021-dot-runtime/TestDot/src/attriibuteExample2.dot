@@ -1,0 +1,7 @@
+graph example {
+	node1 [fillColor = red lineColor = blue label = LABEL]
+	node2
+	node3
+	
+	node1--{node2 node3}
+}
