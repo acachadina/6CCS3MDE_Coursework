@@ -1,6 +1,7 @@
 # MDE - User Guide to DOT Language Implementation
 In order to run a demonstration of the implementation of the language, follow the steps provided below. 
-Start by cloning the repository and opening it with the Eclipse IDE. 
+Start by cloning the repository and opening it with the Eclipse IDE. Fix any erros which may arise due 
+to missing empty folders by adding them in the required locations.
 
 ### 1. Generate Artifacts
 
