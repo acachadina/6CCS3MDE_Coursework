@@ -18,14 +18,14 @@ import uk.ac.kcl.inf.dotLanguage.Attribute;
 import uk.ac.kcl.inf.dotLanguage.AttributeList;
 import uk.ac.kcl.inf.dotLanguage.Digraph;
 import uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration;
-import uk.ac.kcl.inf.dotLanguage.DirectedSubgraphDeclaration;
 import uk.ac.kcl.inf.dotLanguage.DotLanguage;
 import uk.ac.kcl.inf.dotLanguage.DotLanguagePackage;
 import uk.ac.kcl.inf.dotLanguage.Graph;
 import uk.ac.kcl.inf.dotLanguage.NodeDeclaration;
 import uk.ac.kcl.inf.dotLanguage.NodeId;
+import uk.ac.kcl.inf.dotLanguage.NodeList;
+import uk.ac.kcl.inf.dotLanguage.RightEdgeDeclaration;
 import uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration;
-import uk.ac.kcl.inf.dotLanguage.UndirectedSubgraphDeclaration;
 import uk.ac.kcl.inf.services.DotLanguageGrammarAccess;
 
 @SuppressWarnings("all")
@@ -54,9 +54,6 @@ public class DotLanguageSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case DotLanguagePackage.DIRECTED_EDGE_DECLARATION:
 				sequence_DirectedEdgeDeclaration(context, (DirectedEdgeDeclaration) semanticObject); 
 				return; 
-			case DotLanguagePackage.DIRECTED_SUBGRAPH_DECLARATION:
-				sequence_DirectedSubgraphDeclaration(context, (DirectedSubgraphDeclaration) semanticObject); 
-				return; 
 			case DotLanguagePackage.DOT_LANGUAGE:
 				sequence_DotLanguage(context, (DotLanguage) semanticObject); 
 				return; 
@@ -69,11 +66,14 @@ public class DotLanguageSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case DotLanguagePackage.NODE_ID:
 				sequence_NodeId(context, (NodeId) semanticObject); 
 				return; 
+			case DotLanguagePackage.NODE_LIST:
+				sequence_NodeList(context, (NodeList) semanticObject); 
+				return; 
+			case DotLanguagePackage.RIGHT_EDGE_DECLARATION:
+				sequence_RightEdgeDeclaration(context, (RightEdgeDeclaration) semanticObject); 
+				return; 
 			case DotLanguagePackage.UNDIRECTED_EDGE_DECLARATION:
 				sequence_UndirectedEdgeDeclaration(context, (UndirectedEdgeDeclaration) semanticObject); 
-				return; 
-			case DotLanguagePackage.UNDIRECTED_SUBGRAPH_DECLARATION:
-				sequence_UndirectedSubgraphDeclaration(context, (UndirectedSubgraphDeclaration) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -97,7 +97,7 @@ public class DotLanguageSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Attribute returns Attribute
 	 *
 	 * Constraint:
-	 *     (attributeName=ID attributeValue=ID)
+	 *     (attributeName=ID attributeValue=IDORINT)
 	 */
 	protected void sequence_Attribute(ISerializationContext context, Attribute semanticObject) {
 		if (errorAcceptor != null) {
@@ -108,7 +108,7 @@ public class DotLanguageSemanticSequencer extends AbstractDelegatingSemanticSequ
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAttributeAccess().getAttributeNameIDTerminalRuleCall_0_0(), semanticObject.getAttributeName());
-		feeder.accept(grammarAccess.getAttributeAccess().getAttributeValueIDTerminalRuleCall_2_0(), semanticObject.getAttributeValue());
+		feeder.accept(grammarAccess.getAttributeAccess().getAttributeValueIDORINTParserRuleCall_2_0(), semanticObject.getAttributeValue());
 		feeder.finish();
 	}
 	
@@ -131,7 +131,7 @@ public class DotLanguageSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     DirectedEdgeDeclaration returns DirectedEdgeDeclaration
 	 *
 	 * Constraint:
-	 *     (firstNode=[NodeId|ID] edge=DirectedEdge secondNode=[NodeId|ID])
+	 *     (firstNode=[NodeId|ID] edge=DirectedEdge secondNode=RightEdgeDeclaration)
 	 */
 	protected void sequence_DirectedEdgeDeclaration(ISerializationContext context, DirectedEdgeDeclaration semanticObject) {
 		if (errorAcceptor != null) {
@@ -145,21 +145,8 @@ public class DotLanguageSemanticSequencer extends AbstractDelegatingSemanticSequ
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getDirectedEdgeDeclarationAccess().getFirstNodeNodeIdIDTerminalRuleCall_0_0_1(), semanticObject.eGet(DotLanguagePackage.Literals.DIRECTED_EDGE_DECLARATION__FIRST_NODE, false));
 		feeder.accept(grammarAccess.getDirectedEdgeDeclarationAccess().getEdgeDirectedEdgeParserRuleCall_1_0(), semanticObject.getEdge());
-		feeder.accept(grammarAccess.getDirectedEdgeDeclarationAccess().getSecondNodeNodeIdIDTerminalRuleCall_2_0_1(), semanticObject.eGet(DotLanguagePackage.Literals.DIRECTED_EDGE_DECLARATION__SECOND_NODE, false));
+		feeder.accept(grammarAccess.getDirectedEdgeDeclarationAccess().getSecondNodeRightEdgeDeclarationParserRuleCall_2_0(), semanticObject.getSecondNode());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     DirectedStatement returns DirectedSubgraphDeclaration
-	 *     DirectedSubgraphDeclaration returns DirectedSubgraphDeclaration
-	 *
-	 * Constraint:
-	 *     (name=ID statements+=DirectedStatement*)
-	 */
-	protected void sequence_DirectedSubgraphDeclaration(ISerializationContext context, DirectedSubgraphDeclaration semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -221,11 +208,35 @@ public class DotLanguageSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
+	 *     NodeList returns NodeList
+	 *
+	 * Constraint:
+	 *     nodes+=[NodeId|ID]+
+	 */
+	protected void sequence_NodeList(ISerializationContext context, NodeList semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RightEdgeDeclaration returns RightEdgeDeclaration
+	 *
+	 * Constraint:
+	 *     (secondNode=[NodeId|ID] | nodeList=NodeList)
+	 */
+	protected void sequence_RightEdgeDeclaration(ISerializationContext context, RightEdgeDeclaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     UndirectedStatement returns UndirectedEdgeDeclaration
 	 *     UndirectedEdgeDeclaration returns UndirectedEdgeDeclaration
 	 *
 	 * Constraint:
-	 *     (firstNode=[NodeId|ID] edge=UndirectedEdge secondNode=[NodeId|ID])
+	 *     (firstNode=[NodeId|ID] edge=UndirectedEdge secondNode=RightEdgeDeclaration)
 	 */
 	protected void sequence_UndirectedEdgeDeclaration(ISerializationContext context, UndirectedEdgeDeclaration semanticObject) {
 		if (errorAcceptor != null) {
@@ -239,21 +250,8 @@ public class DotLanguageSemanticSequencer extends AbstractDelegatingSemanticSequ
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getUndirectedEdgeDeclarationAccess().getFirstNodeNodeIdIDTerminalRuleCall_0_0_1(), semanticObject.eGet(DotLanguagePackage.Literals.UNDIRECTED_EDGE_DECLARATION__FIRST_NODE, false));
 		feeder.accept(grammarAccess.getUndirectedEdgeDeclarationAccess().getEdgeUndirectedEdgeParserRuleCall_1_0(), semanticObject.getEdge());
-		feeder.accept(grammarAccess.getUndirectedEdgeDeclarationAccess().getSecondNodeNodeIdIDTerminalRuleCall_2_0_1(), semanticObject.eGet(DotLanguagePackage.Literals.UNDIRECTED_EDGE_DECLARATION__SECOND_NODE, false));
+		feeder.accept(grammarAccess.getUndirectedEdgeDeclarationAccess().getSecondNodeRightEdgeDeclarationParserRuleCall_2_0(), semanticObject.getSecondNode());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     UndirectedStatement returns UndirectedSubgraphDeclaration
-	 *     UndirectedSubgraphDeclaration returns UndirectedSubgraphDeclaration
-	 *
-	 * Constraint:
-	 *     (name=ID statements+=UndirectedStatement*)
-	 */
-	protected void sequence_UndirectedSubgraphDeclaration(ISerializationContext context, UndirectedSubgraphDeclaration semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

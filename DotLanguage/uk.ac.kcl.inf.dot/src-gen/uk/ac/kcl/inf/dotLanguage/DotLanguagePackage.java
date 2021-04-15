@@ -5,7 +5,6 @@ package uk.ac.kcl.inf.dotLanguage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -199,80 +198,6 @@ public interface DotLanguagePackage extends EPackage
   int UNDIRECTED_STATEMENT_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.dotLanguage.impl.DirectedSubgraphDeclarationImpl <em>Directed Subgraph Declaration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.dotLanguage.impl.DirectedSubgraphDeclarationImpl
-   * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getDirectedSubgraphDeclaration()
-   * @generated
-   */
-  int DIRECTED_SUBGRAPH_DECLARATION = 5;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIRECTED_SUBGRAPH_DECLARATION__NAME = DIRECTED_STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIRECTED_SUBGRAPH_DECLARATION__STATEMENTS = DIRECTED_STATEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Directed Subgraph Declaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIRECTED_SUBGRAPH_DECLARATION_FEATURE_COUNT = DIRECTED_STATEMENT_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.dotLanguage.impl.UndirectedSubgraphDeclarationImpl <em>Undirected Subgraph Declaration</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.dotLanguage.impl.UndirectedSubgraphDeclarationImpl
-   * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getUndirectedSubgraphDeclaration()
-   * @generated
-   */
-  int UNDIRECTED_SUBGRAPH_DECLARATION = 6;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNDIRECTED_SUBGRAPH_DECLARATION__NAME = UNDIRECTED_STATEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNDIRECTED_SUBGRAPH_DECLARATION__STATEMENTS = UNDIRECTED_STATEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Undirected Subgraph Declaration</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNDIRECTED_SUBGRAPH_DECLARATION_FEATURE_COUNT = UNDIRECTED_STATEMENT_FEATURE_COUNT + 2;
-
-  /**
    * The meta object id for the '{@link uk.ac.kcl.inf.dotLanguage.impl.NodeDeclarationImpl <em>Node Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -280,7 +205,7 @@ public interface DotLanguagePackage extends EPackage
    * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getNodeDeclaration()
    * @generated
    */
-  int NODE_DECLARATION = 7;
+  int NODE_DECLARATION = 5;
 
   /**
    * The feature id for the '<em><b>Node Name</b></em>' containment reference.
@@ -317,7 +242,7 @@ public interface DotLanguagePackage extends EPackage
    * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getNodeId()
    * @generated
    */
-  int NODE_ID = 8;
+  int NODE_ID = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -345,7 +270,7 @@ public interface DotLanguagePackage extends EPackage
    * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getAttributeList()
    * @generated
    */
-  int ATTRIBUTE_LIST = 9;
+  int ATTRIBUTE_LIST = 7;
 
   /**
    * The feature id for the '<em><b>Attr</b></em>' containment reference list.
@@ -373,7 +298,7 @@ public interface DotLanguagePackage extends EPackage
    * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 10;
+  int ATTRIBUTE = 8;
 
   /**
    * The feature id for the '<em><b>Attribute Name</b></em>' attribute.
@@ -410,7 +335,7 @@ public interface DotLanguagePackage extends EPackage
    * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getDirectedEdgeDeclaration()
    * @generated
    */
-  int DIRECTED_EDGE_DECLARATION = 11;
+  int DIRECTED_EDGE_DECLARATION = 9;
 
   /**
    * The feature id for the '<em><b>First Node</b></em>' reference.
@@ -431,7 +356,7 @@ public interface DotLanguagePackage extends EPackage
   int DIRECTED_EDGE_DECLARATION__EDGE = DIRECTED_STATEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Second Node</b></em>' reference.
+   * The feature id for the '<em><b>Second Node</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -456,7 +381,7 @@ public interface DotLanguagePackage extends EPackage
    * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getUndirectedEdgeDeclaration()
    * @generated
    */
-  int UNDIRECTED_EDGE_DECLARATION = 12;
+  int UNDIRECTED_EDGE_DECLARATION = 10;
 
   /**
    * The feature id for the '<em><b>First Node</b></em>' reference.
@@ -477,7 +402,7 @@ public interface DotLanguagePackage extends EPackage
   int UNDIRECTED_EDGE_DECLARATION__EDGE = UNDIRECTED_STATEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Second Node</b></em>' reference.
+   * The feature id for the '<em><b>Second Node</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -495,14 +420,69 @@ public interface DotLanguagePackage extends EPackage
   int UNDIRECTED_EDGE_DECLARATION_FEATURE_COUNT = UNDIRECTED_STATEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.dotLanguage.Color <em>Color</em>}' enum.
+   * The meta object id for the '{@link uk.ac.kcl.inf.dotLanguage.impl.RightEdgeDeclarationImpl <em>Right Edge Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.dotLanguage.Color
-   * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getColor()
+   * @see uk.ac.kcl.inf.dotLanguage.impl.RightEdgeDeclarationImpl
+   * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getRightEdgeDeclaration()
    * @generated
    */
-  int COLOR = 13;
+  int RIGHT_EDGE_DECLARATION = 11;
+
+  /**
+   * The feature id for the '<em><b>Second Node</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RIGHT_EDGE_DECLARATION__SECOND_NODE = 0;
+
+  /**
+   * The feature id for the '<em><b>Node List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RIGHT_EDGE_DECLARATION__NODE_LIST = 1;
+
+  /**
+   * The number of structural features of the '<em>Right Edge Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RIGHT_EDGE_DECLARATION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.dotLanguage.impl.NodeListImpl <em>Node List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.dotLanguage.impl.NodeListImpl
+   * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getNodeList()
+   * @generated
+   */
+  int NODE_LIST = 12;
+
+  /**
+   * The feature id for the '<em><b>Nodes</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE_LIST__NODES = 0;
+
+  /**
+   * The number of structural features of the '<em>Node List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE_LIST_FEATURE_COUNT = 1;
 
 
   /**
@@ -609,70 +589,6 @@ public interface DotLanguagePackage extends EPackage
    * @generated
    */
   EClass getUndirectedStatement();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.kcl.inf.dotLanguage.DirectedSubgraphDeclaration <em>Directed Subgraph Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Directed Subgraph Declaration</em>'.
-   * @see uk.ac.kcl.inf.dotLanguage.DirectedSubgraphDeclaration
-   * @generated
-   */
-  EClass getDirectedSubgraphDeclaration();
-
-  /**
-   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.dotLanguage.DirectedSubgraphDeclaration#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.kcl.inf.dotLanguage.DirectedSubgraphDeclaration#getName()
-   * @see #getDirectedSubgraphDeclaration()
-   * @generated
-   */
-  EAttribute getDirectedSubgraphDeclaration_Name();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.dotLanguage.DirectedSubgraphDeclaration#getStatements <em>Statements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see uk.ac.kcl.inf.dotLanguage.DirectedSubgraphDeclaration#getStatements()
-   * @see #getDirectedSubgraphDeclaration()
-   * @generated
-   */
-  EReference getDirectedSubgraphDeclaration_Statements();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.kcl.inf.dotLanguage.UndirectedSubgraphDeclaration <em>Undirected Subgraph Declaration</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Undirected Subgraph Declaration</em>'.
-   * @see uk.ac.kcl.inf.dotLanguage.UndirectedSubgraphDeclaration
-   * @generated
-   */
-  EClass getUndirectedSubgraphDeclaration();
-
-  /**
-   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.dotLanguage.UndirectedSubgraphDeclaration#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see uk.ac.kcl.inf.dotLanguage.UndirectedSubgraphDeclaration#getName()
-   * @see #getUndirectedSubgraphDeclaration()
-   * @generated
-   */
-  EAttribute getUndirectedSubgraphDeclaration_Name();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.dotLanguage.UndirectedSubgraphDeclaration#getStatements <em>Statements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see uk.ac.kcl.inf.dotLanguage.UndirectedSubgraphDeclaration#getStatements()
-   * @see #getUndirectedSubgraphDeclaration()
-   * @generated
-   */
-  EReference getUndirectedSubgraphDeclaration_Statements();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.inf.dotLanguage.NodeDeclaration <em>Node Declaration</em>}'.
@@ -813,10 +729,10 @@ public interface DotLanguagePackage extends EPackage
   EAttribute getDirectedEdgeDeclaration_Edge();
 
   /**
-   * Returns the meta object for the reference '{@link uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration#getSecondNode <em>Second Node</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration#getSecondNode <em>Second Node</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Second Node</em>'.
+   * @return the meta object for the containment reference '<em>Second Node</em>'.
    * @see uk.ac.kcl.inf.dotLanguage.DirectedEdgeDeclaration#getSecondNode()
    * @see #getDirectedEdgeDeclaration()
    * @generated
@@ -856,10 +772,10 @@ public interface DotLanguagePackage extends EPackage
   EAttribute getUndirectedEdgeDeclaration_Edge();
 
   /**
-   * Returns the meta object for the reference '{@link uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration#getSecondNode <em>Second Node</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration#getSecondNode <em>Second Node</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Second Node</em>'.
+   * @return the meta object for the containment reference '<em>Second Node</em>'.
    * @see uk.ac.kcl.inf.dotLanguage.UndirectedEdgeDeclaration#getSecondNode()
    * @see #getUndirectedEdgeDeclaration()
    * @generated
@@ -867,14 +783,57 @@ public interface DotLanguagePackage extends EPackage
   EReference getUndirectedEdgeDeclaration_SecondNode();
 
   /**
-   * Returns the meta object for enum '{@link uk.ac.kcl.inf.dotLanguage.Color <em>Color</em>}'.
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.dotLanguage.RightEdgeDeclaration <em>Right Edge Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Color</em>'.
-   * @see uk.ac.kcl.inf.dotLanguage.Color
+   * @return the meta object for class '<em>Right Edge Declaration</em>'.
+   * @see uk.ac.kcl.inf.dotLanguage.RightEdgeDeclaration
    * @generated
    */
-  EEnum getColor();
+  EClass getRightEdgeDeclaration();
+
+  /**
+   * Returns the meta object for the reference '{@link uk.ac.kcl.inf.dotLanguage.RightEdgeDeclaration#getSecondNode <em>Second Node</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Second Node</em>'.
+   * @see uk.ac.kcl.inf.dotLanguage.RightEdgeDeclaration#getSecondNode()
+   * @see #getRightEdgeDeclaration()
+   * @generated
+   */
+  EReference getRightEdgeDeclaration_SecondNode();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.dotLanguage.RightEdgeDeclaration#getNodeList <em>Node List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Node List</em>'.
+   * @see uk.ac.kcl.inf.dotLanguage.RightEdgeDeclaration#getNodeList()
+   * @see #getRightEdgeDeclaration()
+   * @generated
+   */
+  EReference getRightEdgeDeclaration_NodeList();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.dotLanguage.NodeList <em>Node List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Node List</em>'.
+   * @see uk.ac.kcl.inf.dotLanguage.NodeList
+   * @generated
+   */
+  EClass getNodeList();
+
+  /**
+   * Returns the meta object for the reference list '{@link uk.ac.kcl.inf.dotLanguage.NodeList#getNodes <em>Nodes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Nodes</em>'.
+   * @see uk.ac.kcl.inf.dotLanguage.NodeList#getNodes()
+   * @see #getNodeList()
+   * @generated
+   */
+  EReference getNodeList_Nodes();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -988,58 +947,6 @@ public interface DotLanguagePackage extends EPackage
      * @generated
      */
     EClass UNDIRECTED_STATEMENT = eINSTANCE.getUndirectedStatement();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.dotLanguage.impl.DirectedSubgraphDeclarationImpl <em>Directed Subgraph Declaration</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.dotLanguage.impl.DirectedSubgraphDeclarationImpl
-     * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getDirectedSubgraphDeclaration()
-     * @generated
-     */
-    EClass DIRECTED_SUBGRAPH_DECLARATION = eINSTANCE.getDirectedSubgraphDeclaration();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DIRECTED_SUBGRAPH_DECLARATION__NAME = eINSTANCE.getDirectedSubgraphDeclaration_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DIRECTED_SUBGRAPH_DECLARATION__STATEMENTS = eINSTANCE.getDirectedSubgraphDeclaration_Statements();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.dotLanguage.impl.UndirectedSubgraphDeclarationImpl <em>Undirected Subgraph Declaration</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.dotLanguage.impl.UndirectedSubgraphDeclarationImpl
-     * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getUndirectedSubgraphDeclaration()
-     * @generated
-     */
-    EClass UNDIRECTED_SUBGRAPH_DECLARATION = eINSTANCE.getUndirectedSubgraphDeclaration();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute UNDIRECTED_SUBGRAPH_DECLARATION__NAME = eINSTANCE.getUndirectedSubgraphDeclaration_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference UNDIRECTED_SUBGRAPH_DECLARATION__STATEMENTS = eINSTANCE.getUndirectedSubgraphDeclaration_Statements();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.inf.dotLanguage.impl.NodeDeclarationImpl <em>Node Declaration</em>}' class.
@@ -1156,7 +1063,7 @@ public interface DotLanguagePackage extends EPackage
     EAttribute DIRECTED_EDGE_DECLARATION__EDGE = eINSTANCE.getDirectedEdgeDeclaration_Edge();
 
     /**
-     * The meta object literal for the '<em><b>Second Node</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Second Node</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1190,7 +1097,7 @@ public interface DotLanguagePackage extends EPackage
     EAttribute UNDIRECTED_EDGE_DECLARATION__EDGE = eINSTANCE.getUndirectedEdgeDeclaration_Edge();
 
     /**
-     * The meta object literal for the '<em><b>Second Node</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Second Node</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1198,14 +1105,48 @@ public interface DotLanguagePackage extends EPackage
     EReference UNDIRECTED_EDGE_DECLARATION__SECOND_NODE = eINSTANCE.getUndirectedEdgeDeclaration_SecondNode();
 
     /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.dotLanguage.Color <em>Color</em>}' enum.
+     * The meta object literal for the '{@link uk.ac.kcl.inf.dotLanguage.impl.RightEdgeDeclarationImpl <em>Right Edge Declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.dotLanguage.Color
-     * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getColor()
+     * @see uk.ac.kcl.inf.dotLanguage.impl.RightEdgeDeclarationImpl
+     * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getRightEdgeDeclaration()
      * @generated
      */
-    EEnum COLOR = eINSTANCE.getColor();
+    EClass RIGHT_EDGE_DECLARATION = eINSTANCE.getRightEdgeDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Second Node</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RIGHT_EDGE_DECLARATION__SECOND_NODE = eINSTANCE.getRightEdgeDeclaration_SecondNode();
+
+    /**
+     * The meta object literal for the '<em><b>Node List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RIGHT_EDGE_DECLARATION__NODE_LIST = eINSTANCE.getRightEdgeDeclaration_NodeList();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.dotLanguage.impl.NodeListImpl <em>Node List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.dotLanguage.impl.NodeListImpl
+     * @see uk.ac.kcl.inf.dotLanguage.impl.DotLanguagePackageImpl#getNodeList()
+     * @generated
+     */
+    EClass NODE_LIST = eINSTANCE.getNodeList();
+
+    /**
+     * The meta object literal for the '<em><b>Nodes</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NODE_LIST__NODES = eINSTANCE.getNodeList_Nodes();
 
   }
 

@@ -23,7 +23,6 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -285,25 +284,16 @@ ruleDirectedStatement returns [EObject current=null]
 				$current = $this_DirectedEdgeDeclaration_1.current;
 				afterParserOrEnumRuleCall();
 			}
-			    |
-			{
-				newCompositeNode(grammarAccess.getDirectedStatementAccess().getDirectedSubgraphDeclarationParserRuleCall_0_2());
-			}
-			this_DirectedSubgraphDeclaration_2=ruleDirectedSubgraphDeclaration
-			{
-				$current = $this_DirectedSubgraphDeclaration_2.current;
-				afterParserOrEnumRuleCall();
-			}
 		)
 		(
-			otherlv_3=','
+			otherlv_2=','
 			{
-				newLeafNode(otherlv_3, grammarAccess.getDirectedStatementAccess().getCommaKeyword_1_0());
+				newLeafNode(otherlv_2, grammarAccess.getDirectedStatementAccess().getCommaKeyword_1_0());
 			}
 			    |
-			otherlv_4=';'
+			otherlv_3=';'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getDirectedStatementAccess().getSemicolonKeyword_1_1());
+				newLeafNode(otherlv_3, grammarAccess.getDirectedStatementAccess().getSemicolonKeyword_1_1());
 			}
 		)?
 	)
@@ -343,163 +333,18 @@ ruleUndirectedStatement returns [EObject current=null]
 				$current = $this_UndirectedEdgeDeclaration_1.current;
 				afterParserOrEnumRuleCall();
 			}
-			    |
-			{
-				newCompositeNode(grammarAccess.getUndirectedStatementAccess().getUndirectedSubgraphDeclarationParserRuleCall_0_2());
-			}
-			this_UndirectedSubgraphDeclaration_2=ruleUndirectedSubgraphDeclaration
-			{
-				$current = $this_UndirectedSubgraphDeclaration_2.current;
-				afterParserOrEnumRuleCall();
-			}
 		)
 		(
-			otherlv_3=','
+			otherlv_2=','
 			{
-				newLeafNode(otherlv_3, grammarAccess.getUndirectedStatementAccess().getCommaKeyword_1_0());
+				newLeafNode(otherlv_2, grammarAccess.getUndirectedStatementAccess().getCommaKeyword_1_0());
 			}
 			    |
-			otherlv_4=';'
+			otherlv_3=';'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getUndirectedStatementAccess().getSemicolonKeyword_1_1());
+				newLeafNode(otherlv_3, grammarAccess.getUndirectedStatementAccess().getSemicolonKeyword_1_1());
 			}
 		)?
-	)
-;
-
-// Entry rule entryRuleDirectedSubgraphDeclaration
-entryRuleDirectedSubgraphDeclaration returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getDirectedSubgraphDeclarationRule()); }
-	iv_ruleDirectedSubgraphDeclaration=ruleDirectedSubgraphDeclaration
-	{ $current=$iv_ruleDirectedSubgraphDeclaration.current; }
-	EOF;
-
-// Rule DirectedSubgraphDeclaration
-ruleDirectedSubgraphDeclaration returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='subgraph'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getDirectedSubgraphDeclarationAccess().getSubgraphKeyword_0());
-		}
-		(
-			(
-				lv_name_1_0=RULE_ID
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getDirectedSubgraphDeclarationAccess().getNameIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDirectedSubgraphDeclarationRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		otherlv_2='{'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getDirectedSubgraphDeclarationAccess().getLeftCurlyBracketKeyword_2());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getDirectedSubgraphDeclarationAccess().getStatementsDirectedStatementParserRuleCall_3_0());
-				}
-				lv_statements_3_0=ruleDirectedStatement
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDirectedSubgraphDeclarationRule());
-					}
-					add(
-						$current,
-						"statements",
-						lv_statements_3_0,
-						"uk.ac.kcl.inf.DotLanguage.DirectedStatement");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_4='}'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getDirectedSubgraphDeclarationAccess().getRightCurlyBracketKeyword_4());
-		}
-	)
-;
-
-// Entry rule entryRuleUndirectedSubgraphDeclaration
-entryRuleUndirectedSubgraphDeclaration returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getUndirectedSubgraphDeclarationRule()); }
-	iv_ruleUndirectedSubgraphDeclaration=ruleUndirectedSubgraphDeclaration
-	{ $current=$iv_ruleUndirectedSubgraphDeclaration.current; }
-	EOF;
-
-// Rule UndirectedSubgraphDeclaration
-ruleUndirectedSubgraphDeclaration returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='subgraph'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getUndirectedSubgraphDeclarationAccess().getSubgraphKeyword_0());
-		}
-		(
-			(
-				lv_name_1_0=RULE_ID
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getUndirectedSubgraphDeclarationAccess().getNameIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getUndirectedSubgraphDeclarationRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		otherlv_2='{'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getUndirectedSubgraphDeclarationAccess().getLeftCurlyBracketKeyword_2());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getUndirectedSubgraphDeclarationAccess().getStatementsUndirectedStatementParserRuleCall_3_0());
-				}
-				lv_statements_3_0=ruleUndirectedStatement
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getUndirectedSubgraphDeclarationRule());
-					}
-					add(
-						$current,
-						"statements",
-						lv_statements_3_0,
-						"uk.ac.kcl.inf.DotLanguage.UndirectedStatement");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_4='}'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getUndirectedSubgraphDeclarationAccess().getRightCurlyBracketKeyword_4());
-		}
 	)
 ;
 
@@ -633,7 +478,7 @@ ruleAttributeList returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)*
+		)+
 		otherlv_2=']'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getAttributeListAccess().getRightSquareBracketKeyword_2());
@@ -681,19 +526,20 @@ ruleAttribute returns [EObject current=null]
 		}
 		(
 			(
-				lv_attributeValue_2_0=RULE_ID
 				{
-					newLeafNode(lv_attributeValue_2_0, grammarAccess.getAttributeAccess().getAttributeValueIDTerminalRuleCall_2_0());
+					newCompositeNode(grammarAccess.getAttributeAccess().getAttributeValueIDORINTParserRuleCall_2_0());
 				}
+				lv_attributeValue_2_0=ruleIDORINT
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAttributeRule());
+						$current = createModelElementForParent(grammarAccess.getAttributeRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"attributeValue",
 						lv_attributeValue_2_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"uk.ac.kcl.inf.DotLanguage.IDORINT");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -703,6 +549,40 @@ ruleAttribute returns [EObject current=null]
 				newLeafNode(otherlv_3, grammarAccess.getAttributeAccess().getCommaKeyword_3());
 			}
 		)?
+	)
+;
+
+// Entry rule entryRuleIDORINT
+entryRuleIDORINT returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getIDORINTRule()); }
+	iv_ruleIDORINT=ruleIDORINT
+	{ $current=$iv_ruleIDORINT.current.getText(); }
+	EOF;
+
+// Rule IDORINT
+ruleIDORINT returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_ID_0=RULE_ID
+		{
+			$current.merge(this_ID_0);
+		}
+		{
+			newLeafNode(this_ID_0, grammarAccess.getIDORINTAccess().getIDTerminalRuleCall_0());
+		}
+		    |
+		this_INT_1=RULE_INT
+		{
+			$current.merge(this_INT_1);
+		}
+		{
+			newLeafNode(this_INT_1, grammarAccess.getIDORINTAccess().getINTTerminalRuleCall_1());
+		}
 	)
 ;
 
@@ -757,13 +637,19 @@ ruleDirectedEdgeDeclaration returns [EObject current=null]
 		(
 			(
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDirectedEdgeDeclarationRule());
-					}
+					newCompositeNode(grammarAccess.getDirectedEdgeDeclarationAccess().getSecondNodeRightEdgeDeclarationParserRuleCall_2_0());
 				}
-				otherlv_2=RULE_ID
+				lv_secondNode_2_0=ruleRightEdgeDeclaration
 				{
-					newLeafNode(otherlv_2, grammarAccess.getDirectedEdgeDeclarationAccess().getSecondNodeNodeIdCrossReference_2_0());
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDirectedEdgeDeclarationRule());
+					}
+					set(
+						$current,
+						"secondNode",
+						lv_secondNode_2_0,
+						"uk.ac.kcl.inf.DotLanguage.RightEdgeDeclaration");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -821,16 +707,114 @@ ruleUndirectedEdgeDeclaration returns [EObject current=null]
 		(
 			(
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getUndirectedEdgeDeclarationRule());
-					}
+					newCompositeNode(grammarAccess.getUndirectedEdgeDeclarationAccess().getSecondNodeRightEdgeDeclarationParserRuleCall_2_0());
 				}
-				otherlv_2=RULE_ID
+				lv_secondNode_2_0=ruleRightEdgeDeclaration
 				{
-					newLeafNode(otherlv_2, grammarAccess.getUndirectedEdgeDeclarationAccess().getSecondNodeNodeIdCrossReference_2_0());
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getUndirectedEdgeDeclarationRule());
+					}
+					set(
+						$current,
+						"secondNode",
+						lv_secondNode_2_0,
+						"uk.ac.kcl.inf.DotLanguage.RightEdgeDeclaration");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleRightEdgeDeclaration
+entryRuleRightEdgeDeclaration returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRightEdgeDeclarationRule()); }
+	iv_ruleRightEdgeDeclaration=ruleRightEdgeDeclaration
+	{ $current=$iv_ruleRightEdgeDeclaration.current; }
+	EOF;
+
+// Rule RightEdgeDeclaration
+ruleRightEdgeDeclaration returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRightEdgeDeclarationRule());
+					}
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getRightEdgeDeclarationAccess().getSecondNodeNodeIdCrossReference_0_0());
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRightEdgeDeclarationAccess().getNodeListNodeListParserRuleCall_1_0());
+				}
+				lv_nodeList_1_0=ruleNodeList
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRightEdgeDeclarationRule());
+					}
+					set(
+						$current,
+						"nodeList",
+						lv_nodeList_1_0,
+						"uk.ac.kcl.inf.DotLanguage.NodeList");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleNodeList
+entryRuleNodeList returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getNodeListRule()); }
+	iv_ruleNodeList=ruleNodeList
+	{ $current=$iv_ruleNodeList.current; }
+	EOF;
+
+// Rule NodeList
+ruleNodeList returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='{'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getNodeListAccess().getLeftCurlyBracketKeyword_0());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNodeListRule());
+					}
+				}
+				otherlv_1=RULE_ID
+				{
+					newLeafNode(otherlv_1, grammarAccess.getNodeListAccess().getNodesNodeIdCrossReference_1_0());
+				}
+			)
+		)+
+		otherlv_2='}'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getNodeListAccess().getRightCurlyBracketKeyword_2());
+		}
 	)
 ;
 
